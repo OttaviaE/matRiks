@@ -13,13 +13,13 @@ concatenation.double <- function(...) {
   attr(obj, "class") <- "double"
   obj
 }
-
-concatenation.character <- function(...) {
-  obj <- c(...)
-  return(obj)
-}
-
-concatenation.integer <- function(...) {
-  obj <- c(...)
-  return(obj)
-}
+#
+# concatenation.character <- function(...) {
+#   obj <- c(...)
+#   return(obj)
+# }
+#
+# concatenation.integer <- function(...) {
+#   obj <- c(...)
+#   return(obj)
+# }
