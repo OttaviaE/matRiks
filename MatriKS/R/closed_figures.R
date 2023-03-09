@@ -6,6 +6,7 @@
 #' @param pos.x Position on the x axis
 #' @param pos.y Position on the y axis
 #' @param shd Color of the object. Deafsult is NA which results in a transparent object
+#' @param rot Rotation of the ellipse in which the figure is inscribed
 #' @param vis Integer, indicates whether the object should be visible (1) or not (0). Deafult is visible
 #' @param lty Border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd Width of the border line. Deafult is 3.
@@ -16,6 +17,7 @@
 #' @examples Ci sarà
 circle <- function(size.x = 10, size.y = 10,
                    pos.x = 0, pos.y = 0, shd = NA,
+                   rot = 0,
                    vis = 1,
                    lty = 1,
                    lwd = 3) {
@@ -25,7 +27,7 @@ circle <- function(size.x = 10, size.y = 10,
     size.y = list(size.y),
     theta.1  = list(0),
     theta.2  = list(0),
-    rotation = list(0),
+    rotation = list(rotation),
     pos.x = list(pos.x),
     pos.y = list(pos.y),
     lty = list(lty),
