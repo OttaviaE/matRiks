@@ -1,4 +1,4 @@
-#' Other figures
+#' Define the cooordinates for a vertical bow tie
 #'
 #' @param size.x
 #' @param pos.x
@@ -24,6 +24,20 @@ bow.tie <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for an horizontal bow tie
+#'
+#' @param size.x
+#' @param pos.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
@@ -39,6 +53,20 @@ bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for a single bow tie (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param pos.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.bow.tie <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+size.x,
                        rot=pi/6,
@@ -55,6 +83,20 @@ s.bow.tie <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for a single bow tie inverse (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param pos.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
@@ -72,6 +114,19 @@ s.bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+#'  Define the cooordinates for a Malta cross
+#'
+#' @param size.x
+#' @param pos.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
               bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty))
@@ -79,6 +134,20 @@ malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for a single Malta cross (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param pos.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value = cof(s.bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
               s.bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
@@ -88,7 +157,23 @@ s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   attr(value, "class") <- "cell"
   value
 }
-thing = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
+
+
+
+#'  Define the cooordinates for an axe
+#'
+#' @param size.x
+#' @param pos.x
+#' @param pos.y
+#' @param lty
+#' @param lwd
+#' @param shd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
@@ -99,19 +184,49 @@ thing = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
   attr(value, "class") <- "cell"
   value
 }
-s.thing = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
+
+
+#'  Define the cooordinates for a single axe (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param pos.x
+#' @param pos.y
+#' @param lty
+#' @param lwd
+#' @param shd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
               rotation(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5),
-              name = "s.thing",
+              name = "s.axe",
               single = TRUE)
   value$tag = list("compose2")
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for a maxi
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   value = cof(luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
                    size.x = size.x, size.y=size.y,
@@ -129,6 +244,21 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   attr(value, "class") <- "cell"
   value
 }
+
+
+#'  Define the cooordinates for a single maxi (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   value = cof(luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
                    size.x = size.x, size.y=size.y,

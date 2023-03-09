@@ -1,4 +1,4 @@
-#' Arches of a circle
+#' Define the coordinates of the vertical left up arch
 #'
 #' @param size.x
 #' @param size.y
@@ -38,7 +38,7 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
   value
 }
 
-#' Vertical arc right up
+#' Define the coordinates of the vertical right up arch
 #'
 #' @return Return the vertical arc right up object
 #' @examples
@@ -71,7 +71,7 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 }
 
 
-#' Vertical arc left down
+#' Define the coordinates of the vertical left down arch
 #'
 #' @return Return the vertical arc left down object
 #' @examples
@@ -102,7 +102,7 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 }
 
 
-#' Vertical arc right down
+#' Define the coordinates of the vertical right down arch
 #'
 #' @return Return the vertical arc right down object
 #' @examples
@@ -133,7 +133,7 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
 }
 
 
-#' Horizontal arc left up
+#' Define the coordinates of the horizontal left up arch
 #'
 #' @return Return the horizontal arc left up object
 #' @examples
@@ -162,7 +162,7 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
   value
 }
 
-#' Horizontal arc right up
+#' Define the coordinates of the horizontal right up arch
 #'
 #' @return Return the horizontal arc right up object
 #' @examples
@@ -193,7 +193,7 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 }
 
 
-#' Horizontal arc left down
+#' Define the coordinates of the horizontal left down arch
 #'
 #' @return Return the horizontal arc left down object
 #' @examples
@@ -223,7 +223,7 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
   value
 }
 
-#' Horizontal arc right down
+#' Define the coordinates of the horizontal right down arch
 #'
 #' @return Return the horizontal arc right down object
 #' @examples

@@ -1,4 +1,4 @@
-#' Black figures
+#' Define the coordinates of a dot
 #'
 #' @param size.x
 #' @param size.y
@@ -39,6 +39,19 @@ dot <- function(size.x = 2,
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a dice with 4 dots
+#'
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
   value <-cof(dot(pos.x = pos.x, pos.y = pos.y, shd = shd, lwd = lwd, lty = lty),
               dot(pos.x = -pos.x, pos.y = pos.y, shd = shd,  lwd = lwd, lty = lty),
@@ -49,6 +62,16 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a cross dice with 4 dots
+#'
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
   value <-cof(dot(pos.x=13,
                   pos.y=0,
@@ -62,6 +85,19 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a biscuit
+#'
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 biscuit = function(size.x = 15, size.y = 15,
                    shd = "black", lwd = 3, lty = 0) {
   value = cof(hexagon(size.x = size.x,
@@ -77,6 +113,19 @@ biscuit = function(size.x = 15, size.y = 15,
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a ninja star
+#'
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
@@ -86,6 +135,18 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a star
+#'
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),

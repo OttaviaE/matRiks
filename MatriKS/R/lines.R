@@ -1,4 +1,4 @@
-#' Title
+#' Define the coordinates of a vertical line
 #'
 #' @param size.x
 #' @param size.y
@@ -37,6 +37,21 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of an horizontal line
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param lty
+#' @param lwd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                   size.y = sqrt(square()$ size.y[[1]]^2 /2),
                   pos.x=0 ,pos.y=0,
@@ -62,6 +77,17 @@ hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a cross
+#'
+#' @param size.x
+#' @param size.y
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                   size.y = sqrt(square()$ size.y[[1]]^2 /2),
                   lwd = 3, lty = 1) {
@@ -76,6 +102,20 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a square composed of 4 lines
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = sqrt(square()$ size.y[[1]]^2 /2),
                     pos.x = sqrt(square()$ size.x[[1]]^2 /2),
@@ -97,6 +137,22 @@ square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of the main diagonal line
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param lty
+#' @param lwd
+#' @param rotation
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
                      size.y=list(sqrt(square()$ size.x[[1]]^2 /2)),
                      pos.x=0 ,pos.y=0,
@@ -122,6 +178,22 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of the secondary diagonal line
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param lty
+#' @param lwd
+#' @param rotation
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                          size.y = sqrt(square()$ size.y[[1]]^2 /2),
                          pos.x=0 ,pos.y=0,
@@ -148,6 +220,17 @@ diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of an X
+#'
+#' @param size.x
+#' @param size.y
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               size.y =  sqrt(square()$ size.y[[1]]^2 /2),
               lwd = 3, lty = 1) {
@@ -159,6 +242,17 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a luck composed of 4 lines
+#'
+#' @param size.x
+#' @param size.y
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 luck.4 = function(size.x = 10,
                   size.y = 7,
                   lwd = 3, lty = 1) {

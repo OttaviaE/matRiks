@@ -1,4 +1,4 @@
-#' Combination of arches (S shapes)
+#'  Define the cooordinates for a vertical s
 #'
 #' @param lwd
 #' @param lty
@@ -15,6 +15,15 @@ s.vertical <- function(lty= 1,
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for a vertical inverted s
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.vertical.inv <- function(lty =1,
                            lwd = 3) {
   value <-cof( v.arc.right.up(lty = lty, lwd = lwd),
@@ -23,12 +32,30 @@ s.vertical.inv <- function(lty =1,
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for an horizontal s
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.horizontal <- function(lty = 1, lwd = 3) {
   value <-cof( h.arc.left.up(lty = lty, lwd = lwd), h.arc.right.down(lty = lty, lwd = lwd))
   value$tag <- list("compose2","fill")
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for an horizontal invertred s
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.horizontal.inv <- function(lty = 1, lwd = 3) {
   value <-cof( h.arc.left.down(lty = lty, lwd = lwd),
                h.arc.right.up(lty = lty, lwd = lwd))
@@ -36,6 +63,15 @@ s.horizontal.inv <- function(lty = 1, lwd = 3) {
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for a single vertical s (to be used in diff_shapes)
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.s.vertical <- function(lty= 1,
                          lwd = 3) {
   value <-cof( v.arc.left.up(lty = lty, lwd = lwd), v.arc.right.down(lty = lty, lwd = lwd),
@@ -44,6 +80,15 @@ s.s.vertical <- function(lty= 1,
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for a single inverted vertical s (to be used in diff_shapes)
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.s.vertical.inv <- function(lty= 1,
                              lwd = 3) {
   value <-cof( v.arc.right.up(lty = lty, lwd = lwd), v.arc.left.down(lty = lty, lwd = lwd),single=TRUE,
@@ -52,6 +97,15 @@ s.s.vertical.inv <- function(lty= 1,
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for a single horizontal s (to be used in diff shapes)
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.s.horizontal <- function(lty= 1,
                            lwd = 3) {
   value <-cof(h.arc.left.up(lty = lty, lwd = lwd),
@@ -62,6 +116,15 @@ s.s.horizontal <- function(lty= 1,
   attr(value, "class") <- "cell"
   value
 }
+#'  Define the cooordinates for a single inverted horizontal s (to be used in diff shapes)
+#'
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.s.horizontal.inv <- function(lty= 1,
                                lwd = 3) {
   value <-cof( h.arc.left.down(lty = lty,  lwd = lwd),

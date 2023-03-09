@@ -1,4 +1,4 @@
-#' Title
+#' Define the coordinates of a pizza slice
 #'
 #' @param size.x
 #' @param size.y
@@ -43,6 +43,23 @@ slice <- function(size.x =15,
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a pacman
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param theta1
+#' @param theta2
+#' @param lty
+#' @param lwd
+#' @param shd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                    size.y = 0,pos.x=0 ,pos.y=0,
                    theta1 = pi/4,
@@ -69,7 +86,18 @@ pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
-pie.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
+#' Define the coordinates of a pizza with four slices
+#'
+#' @param size.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
+pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
@@ -78,17 +106,47 @@ pie.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   attr(value, "class") <- "cell"
   value
 }
-s.pie.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
+#' Define the coordinates of a single pizza with four slices
+#'
+#' @param size.x
+#' @param shd
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 7*pi/4, theta2 = 9*pi/4, shd = shd, lty = lty, lwd = lwd),
-              name = "s.pie.4",
+              name = "s.pizza.4",
               single = TRUE)
   value$tag <- list("compose4","fill")
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a downward-facing left semi-circle
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param theta1
+#' @param theta2
+#' @param shd
+#' @param rotation
+#' @param lty
+#' @param lwd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
@@ -119,6 +177,25 @@ semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of an upward-facing right semi-circle
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param theta1
+#' @param theta2
+#' @param shd
+#' @param rotation
+#' @param lty
+#' @param lwd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
@@ -149,7 +226,22 @@ semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
-pie.2 <- function(size.x = 15, size.y = 0,
+
+#' Define the coordinates of a pizza with two slices
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+pizza.2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi.circle(size.x = size.x,
@@ -170,8 +262,21 @@ pie.2 <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "cell"
   value
 }
-
-s.pie.2 <- function(size.x = 15, size.y = 0,
+#' Define the coordinates of a single pizza with two slices (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.pizza.2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi.circle(size.x = size.x,
@@ -188,12 +293,30 @@ s.pie.2 <- function(size.x = 15, size.y = 0,
                               shd = NA,
                               lty = lty,
                               lwd = lwd),
-              name= "s.pie.2",
+              name= "s.pizza.2",
               single = T)
   value$tag <- list("compose2","fill")
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of an downward facing right semi-circle
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param theta1
+#' @param theta2
+#' @param shd
+#' @param rotation
+#' @param lty
+#' @param lwd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
@@ -224,6 +347,24 @@ semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of an upward facing left semi-circle
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param theta1
+#' @param theta2
+#' @param shd
+#' @param rotation
+#' @param lty
+#' @param lwd
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                             size.y = 0,
                             pos.x=0 ,pos.y=0,
@@ -254,7 +395,21 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "cell"
   value
 }
-pie.2.rev <- function(size.x = 15, size.y = 0,
+#' Define the coordinates of an inverse pizza with two slices
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+pizza.2.rev <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi.circle.rev(size.x = size.x,
@@ -275,8 +430,21 @@ pie.2.rev <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "cell"
   value
 }
-
-s.pie.2.rev <- function(size.x = 15, size.y = 0,
+#' Define the coordinates of a single inverse pizza with two slices (to be used in diff_shapes)
+#'
+#' @param size.x
+#' @param size.y
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.pizza.2.rev <- function(size.x = 15, size.y = 0,
                     pos.x=0 ,pos.y=0,
                     shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi.circle(size.x = size.x,
@@ -293,7 +461,7 @@ s.pie.2.rev <- function(size.x = 15, size.y = 0,
                               shd = NA,
                               lty = lty,
                               lwd = lwd),
-              name= "s.pie.2.rev",
+              name= "s.pizza.2.rev",
               single = T)
   value$tag <- list("compose2","fill")
   attr(value, "class") <- "cell"

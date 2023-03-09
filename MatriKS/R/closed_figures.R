@@ -1,4 +1,4 @@
-#' Closed figures
+#' Define the coordinates of a circle
 #'
 #' @param size.x Length of the x axis
 #' @param size.y Length of the y axis
@@ -42,7 +42,7 @@ circle <- function(size.x = 10, size.y = 10,
   value
 }
 
-#' Default ellipse
+#' Define the coordinates of an ellipse
 #'
 #' @return Return the default ellipse object
 #' @examples
@@ -76,6 +76,12 @@ ellipse <- function(size.x=10,
   value
 }
 
+#' Define the coordinates of a triangle
+#'
+#' @return Return the default triangle object
+#' @examples
+#' triangle()
+#' @export
 triangle <- function(size.x=15,
                      size.y=15,
                      pos.x = 0,
@@ -106,7 +112,12 @@ triangle <- function(size.x=15,
   value
 }
 
-
+#' Define the coordinates of a square
+#'
+#' @return Return the default square object
+#' @examples
+#' square()
+#' @export
 square <- function(size.x= 15,
                    size.y= size.x,
                    rot=pi / 4,
@@ -137,6 +148,22 @@ square <- function(size.x= 15,
   value
 }
 
+#' Define the coordinates of a rectangle
+#'
+#' @param size.x
+#' @param size.y
+#' @param rot
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param lwd
+#' @param lty
+#' @param vis
+#'
+#' @return
+#' @export
+#'
+#' @examples
 rectangle <- function(size.x=15,
                       size.y=20,
                       rot=pi / 4, pos.x = 0, pos.y = 0,
@@ -165,6 +192,23 @@ rectangle <- function(size.x=15,
   value
 }
 
+
+#' Define the coordinates of a luck
+#'
+#' @param size.x
+#' @param size.y
+#' @param rot
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param vis
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 luck <- function(    size.x=10,
                      size.y=15,
                      rot=pi / 2,
@@ -194,6 +238,23 @@ luck <- function(    size.x=10,
   value
 }
 
+
+#' Define the coordinates of a pentagon
+#'
+#' @param size.x
+#' @param size.y
+#' @param rot
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param vis
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 pentagon <- function(size.x=15,
                      size.y=15,
                      rot=pi / 2,
@@ -223,6 +284,22 @@ pentagon <- function(size.x=15,
   value
 }
 
+#' Define the coordinates of an hexagon
+#'
+#' @param size.x
+#' @param size.y
+#' @param rot
+#' @param pos.x
+#' @param pos.y
+#' @param shd
+#' @param vis
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 hexagon <- function(size.x=15,
                     size.y=15,
                       rot=0,

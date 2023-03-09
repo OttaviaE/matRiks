@@ -1,4 +1,4 @@
-#' Eight shapes
+#' Define the coordinates of a vertical eight
 #'
 #' @param lwd
 #' @param lty
@@ -14,6 +14,16 @@ vertical.eight <- function(lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of an horizontal eight
+#'
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 horizontal.eight <- function(lwd = 3, lty = 1) {
   value <-cof(  s.horizontal.inv(lwd = lwd, lty = lty),
                 s.horizontal(lwd = lwd, lty))
@@ -22,6 +32,15 @@ horizontal.eight <- function(lwd = 3, lty = 1) {
   value
 }
 
+#' Define the coordinates of a single vertical eight (to be used in diff_shapes)
+#'
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.vertical.eight <- function(lwd = 3, lty = 1) {
   value <-cof(  s.s.vertical.inv(lwd = lwd, lty = lty),
                 s.s.vertical(lwd = lwd, lty),
@@ -31,6 +50,16 @@ s.vertical.eight <- function(lwd = 3, lty = 1) {
   attr(value, "class") <- "cell"
   value
 }
+
+#' Define the coordinates of a single horizontal eight (to be used in diff_shapes)
+#'
+#' @param lwd
+#' @param lty
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.horizontal.eight <- function(lwd = 3, lty = 1) {
   value <-cof(  s.s.horizontal.inv(lwd = lwd, lty = lty),
                 s.s.horizontal(lwd = lwd, lty),

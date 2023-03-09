@@ -1,4 +1,4 @@
-#' Objects composed of multiple objects
+#' Define the coordinates of a biscuit
 #'
 #' @param pos.x
 #' @param pos.y
@@ -26,6 +26,20 @@ biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a biscuit (to be used in diff_shapes)
+#'
+#' @param pos.x
+#' @param pos.y
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
                     size.y = 10, shd = "black", lty = 1, lwd = 3) {
   value <-cof(hexagon(pos.x = pos.x,
@@ -42,6 +56,19 @@ s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a vertical bow tie
+#'
+#' @param pos.x
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 bow.tie <- function(pos.x = 0, size.x = 10,
                     size.y = 10, shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
@@ -54,6 +81,19 @@ bow.tie <- function(pos.x = 0, size.x = 10,
   attr(value, "class") <- "cell"
   value
 }
+#' Define the coordinates of a single vertical bow tie (to be used in diff_shapes)
+#'
+#' @param pos.x
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
 s.bow.tie <- function(pos.x = 0, size.x = 10,
                     size.y = 10, shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
