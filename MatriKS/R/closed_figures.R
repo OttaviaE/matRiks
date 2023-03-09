@@ -34,7 +34,7 @@ circle <- function(size.x = 10, size.y = 10,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'fill', 'filling', 'd.ext'))
   )
   attr(value, "class") <- "cell"
   value
@@ -68,7 +68,7 @@ ellipse <- function(size.x=10,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag=list(c('simple', 'small','rotate'))
+    tag=list(c('simple', 'small','rotate', 'd.ext'))
   )
   attr(value, "class") <- "cell"
   value

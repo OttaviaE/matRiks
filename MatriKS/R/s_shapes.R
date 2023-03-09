@@ -64,9 +64,11 @@ s.s.horizontal <- function(lty= 1,
 }
 s.s.horizontal.inv <- function(lty= 1,
                                lwd = 3) {
-  value <-cof( h.arc.left.down(lty = lty, lty = lty, lwd = lwd), h.arc.right.up(lty = lty, lty = lty, lwd = lwd),single=TRUE,
-               name="s.horizontal.inv")
+  value <-cof( h.arc.left.down(lty = lty,  lwd = lwd),
+               h.arc.right.up(lty = lty,  lwd = lwd),single=TRUE,
+               name="s.s.horizontal.inv")
   value$tag <- list("simple","fill")
   attr(value, "class") <- "cell"
   value
 }
+
