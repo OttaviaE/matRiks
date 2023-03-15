@@ -1,6 +1,6 @@
-#' Concatenation of objects
+#' Concatenation of figures
 #'
-#' @param ... Vector of objects to be concatened together.
+#' @param ... Vector of shapes to be concatened together.
 #' @param name Name of the newely created object (See Details).
 #' @param single Should the objects be collapsed into a single object? Deafult is FALSE
 #'

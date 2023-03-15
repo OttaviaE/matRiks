@@ -1,6 +1,6 @@
-#' Draw objects
+#' Draw figures
 #'
-#' @param obj The object to be draw. Can be a single object, a matrix, or the responses
+#' @param obj The object to be draw. Can be a single figure, a matrix, or the responses
 #' @param main Print a title? Default is FALSE
 #' @param canvas Do you want to overimpose the objects? Default is FALSE
 #' @param hide Do you want to hide the cell of the correct response? Default is FALSE
