@@ -1,7 +1,7 @@
-#' Define the coordinates of a a lily
+#' Define the coordinates for drawing a lily
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -16,18 +16,18 @@ lily <- function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates of a a single lily (to be used in diff_shapes)
+#' Define the coordinates for drawing a single lily (to be used in `shape()`)
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
 #'
 #' @examples
 s.lily <- function(lwd = 3, lty = 1) {
-  value <-cof( horizontal.eight(lwd = lwd, lty = 1),
-               vertical.eight(lwd = lwd, lty = 1),
+  value <-cof( s.horizontal.eight(lwd = lwd, lty = 1),
+               s.vertical.eight(lwd = lwd, lty = 1),
                name = "s.lily",
                single = T)
   value$tag <- list("compose4")
@@ -36,10 +36,10 @@ s.lily <- function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates of a the up petal
+#' Define the coordinates for drawing the up petal
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -56,10 +56,10 @@ up.petal = function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates of a the down petal
+#' Define the coordinates for drawing the down petal
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -75,10 +75,10 @@ down.petal = function(lwd = 3, lty = 1) {
   value
 }
 
-#' Define the coordinates of a the left petal
+#' Define the coordinates for drawing the left petal
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -93,10 +93,10 @@ left.petal = function(lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a the right petal
+#' Define the coordinates for drawing the right petal
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -111,10 +111,10 @@ right.petal = function(lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a a flower
+#' Define the coordinates for drawing a flower
 #'
-#' @param lwd
-#' @param lty
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -129,10 +129,11 @@ flower = function(lwd = 3, lty = 1) {
   attr(value, "class") = "figure"
   value
 }
-#' Define the coordinates of a single flower (to be used in diff shapes)
+#' Define the coordinates for drawing a single flower (to be used in `shape()`)
 #'
-#' @param lwd
-#' @param lty
+
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
