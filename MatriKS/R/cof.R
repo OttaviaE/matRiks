@@ -4,7 +4,7 @@
 #' @param name Name of the newely created object (See Details).
 #' @param single Should the objects be collapsed into a single object? Deafult is FALSE
 #'
-#' @return An object of class cell
+#' @return An object of class figure
 #' @export
 #'
 #' @examples Poi li scrivo un attimo
@@ -12,7 +12,7 @@ cof <- function(...,name, single) {
   UseMethod("cof")
 }
 
-cof.cell <- function( ...,name=NULL, single=FALSE) {
+cof.figure <- function( ...,name=NULL, single=FALSE) {
   if(single==TRUE)
   {
     obj <- Map("concatenation", ...)
@@ -21,7 +21,7 @@ cof.cell <- function( ...,name=NULL, single=FALSE) {
   }else{
     obj <- Map("c", ...)
   }
-  attr(obj, "class") <- "cell"
+  attr(obj, "class") <- "figure"
   obj
 }
 

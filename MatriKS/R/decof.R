@@ -2,7 +2,7 @@ decof<- function(obj) {
   UseMethod("decof")
 }
 
-#' Split the elements of a cell
+#' Split the elements of a figure
 #'
 #' @param The object to be splitted
 #'
@@ -10,7 +10,7 @@ decof<- function(obj) {
 #' @export A list of objects
 #'
 #' @examples
-decof.cell<-function(obj)
+decof.figure<-function(obj)
 {
   if(length(obj$shape)==1){
     nobj<-length(obj$nv[[1]])

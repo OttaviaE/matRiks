@@ -34,7 +34,7 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -66,7 +66,7 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -97,7 +97,7 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -128,7 +128,7 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -158,7 +158,7 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -188,7 +188,7 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -219,7 +219,7 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -249,6 +249,6 @@ h.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
     visible = vis,
     tag=list(c('simple', 'small'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }

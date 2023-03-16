@@ -40,7 +40,7 @@ slice <- function(size.x =15,
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a pacman
@@ -83,7 +83,7 @@ pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a pizza with four slices
@@ -103,7 +103,7 @@ pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
               slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 7*pi/4, theta2 = 9*pi/4, shd = shd, lty = lty, lwd = lwd))
   value$tag <- list("compose4","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a single pizza with four slices
@@ -125,7 +125,7 @@ s.pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
               name = "s.pizza.4",
               single = TRUE)
   value$tag <- list("compose4","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -174,7 +174,7 @@ semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -223,7 +223,7 @@ semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -259,7 +259,7 @@ pizza.2 <- function(size.x = 15, size.y = 0,
                               lty = lty,
                               lwd = lwd))
   value$tag <- list("compose2","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a single pizza with two slices (to be used in diff_shapes)
@@ -296,7 +296,7 @@ s.pizza.2 <- function(size.x = 15, size.y = 0,
               name= "s.pizza.2",
               single = T)
   value$tag <- list("compose2","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of an downward facing right semi-circle
@@ -344,7 +344,7 @@ semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of an upward facing left semi-circle
@@ -392,7 +392,7 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill", "rotate" )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of an inverse pizza with two slices
@@ -427,7 +427,7 @@ pizza.2.rev <- function(size.x = 15, size.y = 0,
                               lty = lty,
                               lwd = lwd))
   value$tag <- list("compose2","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a single inverse pizza with two slices (to be used in diff_shapes)
@@ -464,7 +464,7 @@ s.pizza.2.rev <- function(size.x = 15, size.y = 0,
               name= "s.pizza.2.rev",
               single = T)
   value$tag <- list("compose2","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 

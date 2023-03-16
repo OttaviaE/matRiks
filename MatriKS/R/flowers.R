@@ -11,7 +11,7 @@ lily <- function(lwd = 3, lty = 1) {
   value <-cof( horizontal.eight(lwd = lwd, lty = 1),
                vertical.eight(lwd = lwd, lty = 1))
   value$tag <- list("compose4")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -31,7 +31,7 @@ s.lily <- function(lwd = 3, lty = 1) {
                name = "s.lily",
                single = T)
   value$tag <- list("compose4")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -51,7 +51,7 @@ up.petal = function(lwd = 3, lty = 1) {
         name="up.petal",
         single = T)
  value$tag = list("compose2")
- attr(value, "class") <- "cell"
+ attr(value, "class") <- "figure"
  value
 }
 
@@ -71,7 +71,7 @@ down.petal = function(lwd = 3, lty = 1) {
                name="down.petal",
                single = T)
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -90,7 +90,7 @@ left.petal = function(lwd = 3, lty = 1) {
                name="left.petal",
                single = T)
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a the right petal
@@ -108,7 +108,7 @@ right.petal = function(lwd = 3, lty = 1) {
                name="right.petal",
                single = T)
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a a flower
@@ -126,7 +126,7 @@ flower = function(lwd = 3, lty = 1) {
               left.petal(lwd = lwd, lty = lty),
               right.petal(lwd = lwd, lty = lty))
   value$tag = list("compose4")
-  attr(value, "class") = "cell"
+  attr(value, "class") = "figure"
   value
 }
 #' Define the coordinates of a single flower (to be used in diff shapes)
@@ -146,7 +146,7 @@ s.flower = function(lwd = 3, lty = 1) {
               name = "flower",
               single = TRUE)
   value$tag = list("compose4")
-  attr(value, "class") = "cell"
+  attr(value, "class") = "figure"
   value
 }
 

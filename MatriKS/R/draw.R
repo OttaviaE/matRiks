@@ -3,8 +3,8 @@
 #' @param obj The object to be draw. Can be a single figure, a matrix, or the responses
 #' @param main Print a title? Default is FALSE
 #' @param canvas Do you want to overimpose the objects? Default is FALSE
-#' @param hide Do you want to hide the cell of the correct response? Default is FALSE
-#' @param n.cell How main cell should the matrix have? Default is 9
+#' @param hide Do you want to hide the figure of the correct response? Default is FALSE
+#' @param n.figure How main figure should the matrix have? Default is 9
 #' @param bg Choose the color of  the background. Deafult is white
 #' @param mar Change margins
 #' @param xlim Change the length of the x axis
@@ -14,13 +14,13 @@
 #'
 #' @examplespoi
 draw <- function(obj, main = NULL, canvas = TRUE,
-                 hide = FALSE, n.cell = 9,
+                 hide = FALSE, n.figure = 9,
                  bg = "white",mar=c(1,1,1,1),xlim=16) {
   UseMethod("draw")
 }
 
 
-draw.cell<- function(obj, main = NULL, canvas = TRUE,
+draw.figure<- function(obj, main = NULL, canvas = TRUE,
                      bg = "white",mar=c(1,1,1,1),xlim=16) {
   if (canvas == TRUE)
   {

@@ -1,6 +1,6 @@
-#' Functions to modify the visible objects in a cell
+#' Functions to modify the visible objects in a figure
 #'
-#' @param obj The cell of a matrix
+#' @param obj The figure of a matrix
 #' @param index The index of the element to hide/show/replace
 #' @param replacement The object with which an element should be replaced
 #'
@@ -11,7 +11,7 @@
 hide<- function(obj,index) {
   UseMethod("hide")
 }
-hide.cell<-function(obj,index="Full")
+hide.figure<-function(obj,index="Full")
 {
   if(any(index=="Full"))
   {
@@ -25,7 +25,7 @@ show<- function(obj,index) {
   UseMethod("show")
 }
 
-show.cell<-function(obj,index="Full")
+show.figure<-function(obj,index="Full")
 {
   if(any(index=="Full"))
   {
@@ -38,7 +38,7 @@ replace <- function(obj,index,replacement) {
   UseMethod("replace")
 }
 
-replace.cell<-function(obj,index,replacement)
+replace.figure<-function(obj,index,replacement)
 {
   for(i in 1:length(obj))
   {

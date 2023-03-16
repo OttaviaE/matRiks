@@ -36,7 +36,7 @@ dot <- function(size.x = 2,
     visible = vis,
     tag = list('single','fill')
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -59,7 +59,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
               dot(pos.x = -pos.x, pos.y = -pos.y, shd = shd, lwd = lwd, lty = lty),
               single = TRUE, name = "dice")
   value$tag <- list("simple")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a cross dice with 4 dots
@@ -82,7 +82,7 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
                   pos.y =13, shd = shd, lty = lty, lwd =lwd),
               single = TRUE,name = "cross.dice")
   value$tag <- list("simple")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -110,7 +110,7 @@ biscuit = function(size.x = 15, size.y = 15,
                                shd = shd), 3),
               single = T, name = "biscuit")
   value$tag <- list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -132,7 +132,7 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               name = "ninja",
               single = TRUE)
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a star

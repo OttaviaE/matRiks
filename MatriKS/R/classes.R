@@ -1,4 +1,4 @@
-cell <- list(
+figure <- list(
   shape = NULL,
   size.x = list(),
   size.y = list(),
@@ -13,10 +13,10 @@ cell <- list(
   visible = NULL,
   tag = list()
 )
-class(cell) <- "cell"
+class(figure) <- "figure"
 
-##  Class Matriks ----
-Matriks <- list(
+##  Class matriks ----
+matriks <- list(
   Sq1 = list(),
   Sq2 = list(),
   Sq3 = list(),
@@ -31,7 +31,7 @@ Matriks <- list(
   hrule = list(),
   vrule = list()
 )
-class(Matriks) <- "Matriks"
+class(matriks) <- "matriks"
 
 ##  Class responses ----
 responses<-list(

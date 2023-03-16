@@ -36,9 +36,9 @@ circle <- function(size.x = 10, size.y = 10,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag=list(c('simple', 'fill', 'filling', 'd.ext'))
+    tag=list(c('simple', 'fill', 'small', 'd.ext'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -70,9 +70,9 @@ ellipse <- function(size.x=10,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag=list(c('simple', 'small','rotate', 'd.ext'))
+    tag=list(c('simple', 'fill', 'small','rotate', 'd.ext'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -108,7 +108,7 @@ triangle <- function(size.x=15,
     visible = vis,
     tag=list(c('simple', 'small','rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -144,7 +144,7 @@ square <- function(size.x= 15,
     visible = vis,
     tag=list(c('simple', 'small','rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -188,7 +188,7 @@ rectangle <- function(size.x=15,
     visible = vis,
     tag=list(c('simple', 'small','rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -234,7 +234,7 @@ luck <- function(    size.x=10,
     visible = vis,
     tag=list(c('simple', 'small','rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -280,7 +280,7 @@ pentagon <- function(size.x=15,
     visible = vis,
     tag=list(c('simple', 'small','rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -325,7 +325,7 @@ hexagon <- function(size.x=15,
     visible = vis,
     tag=list(c('simple', 'small', 'rotate'))
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 

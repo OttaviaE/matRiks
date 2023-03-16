@@ -34,7 +34,7 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill",'rotate')
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -74,7 +74,7 @@ hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill",'rotate' )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a cross
@@ -99,7 +99,7 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               name = "cross")
   value$tag <- list("simple","fill",'rotate')
   value$visible<-1
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -134,7 +134,7 @@ square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = size.y, pos.y=pos.y,
               lty = lty, lwd = lwd))
   value$tag <- list("compose4",'rotate')
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -175,7 +175,7 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
     visible = vis,
     tag = list("simple","fill",'rotate' )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -217,7 +217,7 @@ diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     visible = vis,
     tag = list("simple","fill",'rotate' )
   )
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of an X
@@ -239,7 +239,7 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               single = TRUE,name = "X")
   value$tag <- list("simple","fill",'rotate')
   value$visible<-1
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 #' Define the coordinates of a luck composed of 4 lines
@@ -261,6 +261,6 @@ luck.4 = function(size.x = 10,
                diagline.inv(size.x = size.x, pos.x = size.y, pos.y = -size.y),
                diagline(size.x = size.x, pos.x = -size.y, pos.y = -size.y))
   value$tag <- list("compose4",'rotate')
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }

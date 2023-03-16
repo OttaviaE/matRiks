@@ -21,7 +21,7 @@ bow.tie <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
                        size.x = size.x, size.y=size.x, shd = shd,
                        lty = lty, lwd = lwd))
   value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -50,7 +50,7 @@ bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
                        size.x = size.x, size.y=size.x, shd = shd,
                        lty = lty, lwd = lwd))
   value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -80,7 +80,7 @@ s.bow.tie <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
               name = "s.bow.tie",
               single = TRUE)
   value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -111,7 +111,7 @@ s.bow.tie.inv <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
               name = "s.bow.tie.inv",
               single = TRUE)
   value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -131,7 +131,7 @@ malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
               bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty))
   value$tag = list("compose4")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -154,7 +154,7 @@ s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
               single = TRUE,
               name = "s.malta")
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -181,7 +181,7 @@ axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5))
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -209,7 +209,7 @@ s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
               name = "s.axe",
               single = TRUE)
   value$tag = list("compose2")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -241,7 +241,7 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd))
   value$tag = list("compose4")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -275,6 +275,34 @@ s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
               single = T,
               names = "s.maxi")
   value$tag = list("compose4")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
+  value
+}
+
+#' Define the cooordinates of a panthom figure
+#'
+#' @return
+#' @export
+#'
+#' @examples
+phantom <- function() {
+  value <- list(
+    shape = "phantom",
+    size.x = list(5),
+    size.y = list(5),
+    theta.1= list(0),
+    theta.2= list(0),
+    rotation = list(pi),
+    pos.x = list(0),
+    pos.y = list(0),
+    lty = list(0),
+    lwd = list(1),
+    num = list(1),
+    nv = list(101),
+    shade = list(NA),
+    visible = 0,
+    tag=list(c('simple'))
+  )
+  attr(value, "class") <- "field"
   value
 }
