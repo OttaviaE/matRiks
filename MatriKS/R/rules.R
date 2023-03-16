@@ -1,20 +1,20 @@
-#' Rule for rotating a figure
+#' Rotates a figure
 #'
-#' @param obj the object on which the rule is applied
-#' @param n A number defining the angle of the rotation. Default is $\pi$.
-#' @param rule Define the rotation rules. Default is anticlockwise.`rule = "inv"` forces a clockwise rotation
-#' @param ...
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of $\frac{\pi}{4}$.
+#' @param rule Define the rotation rule. Default is anticlockwise.`rule = "inv"` forces a clockwise rotation
+#' @param ... Other arguments
 #'
 #' @return
 #' @export
 #'
 #' @examples one day not todaty
 
-rotate <- function(obj,n,rule,...) {
+rotate <- function(fig ,n, rule,...) {
   UseMethod("rotate")
 }
 
-rotate.figure<-function(obj,n=4,rule="rot",...) {
+rotate.figure<-function(fig,n=4,rule="rotation",...) {
   numbers<-unlist(strsplit(rule,split=""))
   num<-4
   for(i in 1:length(numbers))
@@ -24,53 +24,54 @@ rotate.figure<-function(obj,n=4,rule="rot",...) {
     }
   }
   if(grepl("inv",rule)){
-    obj$rotation<-Map('+', obj$rotation,(n-1)*-pi/num)
-    obj$theta.1<-Map('+', obj$theta.1,(n-1)*-pi/num)
-    obj$theta.2<-Map('+', obj$theta.2,(n-1)*-pi/num)
+    fig$rotation<-Map('+', fig$rotation,(n-1)*-pi/num)
+    fig$theta.1<-Map('+', fig$theta.1,(n-1)*-pi/num)
+    fig$theta.2<-Map('+', fig$theta.2,(n-1)*-pi/num)
   }else{
-    obj$rotation<-Map('+', obj$rotation,(n-1)*pi/num)
-    obj$theta.1<-Map('+', obj$theta.1,(n-1)*pi/num)
-    obj$theta.2<-Map('+', obj$theta.2,(n-1)*pi/num)
+    fig$rotation<-Map('+', fig$rotation,(n-1)*pi/num)
+    fig$theta.1<-Map('+', fig$theta.1,(n-1)*pi/num)
+    fig$theta.2<-Map('+', fig$theta.2,(n-1)*pi/num)
   }
-  return(obj)
+  return(fig)
 }
 
 
-#' Rule for reflecting a
+#' Reflect a figure
 #'
-#' @param obj the object on which the rule is applied
-#' @param n
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree reflection (CREDO)
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-reflect <- function(obj,n,...) {
+reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
 
-reflect.figure<-function(obj,n=2,...) {
-  obj$rotation<-Map('+', obj$rotation,(n-1)*pi)
-  obj$theta.1<-Map('+', obj$theta.1,(n-1)*pi)
-  obj$theta.2<-Map('+', obj$theta.2,(n-1)*pi)
-  return(obj)
+reflect.figure<-function(fig,n=2,...) {
+  fig$rotation<-Map('+', fig$rotation,(n-1)*pi)
+  fig$theta.1<-Map('+', fig$theta.1,(n-1)*pi)
+  fig$theta.2<-Map('+', fig$theta.2,(n-1)*pi)
+  return(fig)
 }
 
-#' Rule for resizing an object
+#' Resize a figure
 #'
-#' @param obj
-#' @param n
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the dimension of the sizing. Default is 2, which corresponds to a change of 1.8 COSA?? BANANE???
+#' @param rule Define the sizing rule. Default is to reduce the dimension. `rule = "inv"` forces to increase the dimension.
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-size <- function(obj,n,rule, ...) {
+size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
-size.figure<-function(obj,n = 2,  rule = "size", ...) {
+size.figure<-function(fig,n = 2,  rule = "size", ...) {
   numbers<-unlist(strsplit(rule,split=""))
   num<-2
   for(i in 1:length(numbers))
@@ -80,35 +81,36 @@ size.figure<-function(obj,n = 2,  rule = "size", ...) {
     }
   }
   if (grepl("inv", rule)) {
-    obj$size.x<-Map('+', obj$size.x,(n*.9))
-    obj$size.y<-Map('+', obj$size.y,(n*.9))
-    obj$pos.x<-Map('+', obj$pos.x,(n*.9))
-    obj$pos.y<-Map('-', obj$pos.y,(n*.9))
+    fig$size.x<-Map('+', fig$size.x,(n*.9))
+    fig$size.y<-Map('+', fig$size.y,(n*.9))
+    fig$pos.x<-Map('+', fig$pos.x,(n*.9))
+    fig$pos.y<-Map('-', fig$pos.y,(n*.9))
   } else {
-    obj$size.x<-Map('/', obj$size.x,(n*.9))
-    obj$size.y<-Map('/', obj$size.y,(n*.9))
-    obj$pos.x<-Map('/', obj$pos.x,(n*.9))
-    obj$pos.y<-Map('/', obj$pos.y,(n*.9))
+    fig$size.x<-Map('/', fig$size.x,(n*.9))
+    fig$size.y<-Map('/', fig$size.y,(n*.9))
+    fig$pos.x<-Map('/', fig$pos.x,(n*.9))
+    fig$pos.y<-Map('/', fig$pos.y,(n*.9))
   }
 
-  return(obj)
+  return(fig)
 }
 
-#' Change shapes
+#' Change the visibility of the shapes in a figure
 #'
-#' @param obj
-#' @param n
+#' @param fig A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.
+#' @param n ???
+#' @param Define the non so bene come dirlo, aiuto
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-shape <- function(obj,n,...) {
+shape <- function(fig,n,...) {
   UseMethod("shape")
 }
-shape.figure<-function(obj,n = 1,rule = "default",...) {
-  if(length(obj$visible)!=3)
+shape.figure<-function(fig,n = 1,rule = "default",...) {
+  if(length(fig$visible)!=3)
   {
     stop("You must have at least three forms to change shapes!")
   }
@@ -119,43 +121,43 @@ shape.figure<-function(obj,n = 1,rule = "default",...) {
     index<-c(1:3,1:3,1:3) #TR-LL
   }
 
-  pos<-which(obj$visible==1)
+  pos<-which(fig$visible==1)
   if(length(pos)>1){
-    obj$visible[pos]<-0
-    obj$visible[index[n]]<-1
+    fig$visible[pos]<-0
+    fig$visible[index[n]]<-1
   }else {
-    obj$visible[pos]<-0
-    obj$visible[index[pos+n]]<-1
+    fig$visible[pos]<-0
+    fig$visible[index[pos+n]]<-1
   }
 
-  return(obj)
+  return(fig)
 }
 
-#' Apply logic rules to a figure
+#' Apply logic rules to different figures
 #'
-#' @param obj
-#' @param n
-#' @param rule
-#' @param seed
+#' @param fig A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.
+#' @param n ???
+#' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
+#' @param seed Set the ranodm seed so that the permutations are consistent
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-logic <- function(obj,n,rule,seed,...) {
+logic <- function(fig,n,rule,seed,...) {
   UseMethod("logic")
 }
-logic.figure<-function(obj,n = 1,rule = "logic",seed = 1,...) {
-  if(length(obj$shape) < 3)
+logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
+  if(length(fig$shape) < 3)
   {
     stop("You must have three forms to apply a logical AND !")
   }
   ##gestione di più immagini
-  domain<-1:length(obj$shape)
-  obj$visible[domain]<-1
+  domain<-1:length(fig$shape)
+  fig$visible[domain]<-1
   set.seed(seed)
-  fixed<-sample(domain,round(length(obj$shape)/5))
+  fixed<-sample(domain,round(length(fig$shape)/5))
   domain<-setdiff(domain,fixed)
   half<-length(domain)%/%2
   index<-list()
@@ -164,50 +166,51 @@ logic.figure<-function(obj,n = 1,rule = "logic",seed = 1,...) {
 
   if(rule=="AND"){
     index[[3]]<-union(index[[1]],index[[2]])
-    obj$visible[index[[n]]]<-0
+    fig$visible[index[[n]]]<-0
   }else if(rule=="OR"){
     if(n<3){
-      obj$visible[index[[n]]]<-0
+      fig$visible[index[[n]]]<-0
     }
   }else if(rule=="XOR"){
 
     index[[3]]<-union(setdiff(domain,union(index[[1]],index[[2]])),fixed)
-    obj$visible[index[[n]]]<-0
+    fig$visible[index[[n]]]<-0
   }
-  return(obj)
+  return(fig)
 }
 
 
 #' Indentity rule
 #'
-#' @param obj
+#' @param fig
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-identity <- function(obj,...) {
+identity <- function(fig,...) {
   UseMethod("identity")
 }
-identity.figure <- function(obj,...) {
-  return(obj)
+identity.figure <- function(fig,...) {
+  return(fig)
 }
 
-#' Rule for changing the filling of a figure
+#' Change the shading of a figure
 #'
-#' @param obj
-#' @param n
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the color of the shading. Default is 1 (white). Other options are 2 (grey) and 3 (black)
+#' @param rule
 #' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-fill <- function(obj,n,...) {
+fill <- function(fig,n,...) {
   UseMethod("fill")
 }
-fill.figure<-function(obj,n = 1,rule = "fill",...){
+fill.figure<-function(fig,n = 1,rule = "fill",...){
   if(grepl("par",rule))
   {
     index<-c("line1h","line2h","line12h","line1","line2","line12",
@@ -221,8 +224,8 @@ fill.figure<-function(obj,n = 1,rule = "fill",...){
   if(grepl("multi",rule))
   {
     set.seed(n)
-    new<-Map("c",obj$shade,sample(1:length(obj$shape),length(obj$shape)))
-    obj$shade <-lapply(new, function(x,i,n)
+    new<-Map("c",fig$shade,sample(1:length(fig$shape),length(fig$shape)))
+    fig$shade <-lapply(new, function(x,i,n)
     {
       pos <- index==x[1]
 
@@ -236,7 +239,7 @@ fill.figure<-function(obj,n = 1,rule = "fill",...){
     },i=index,n=n)
 
   }else{
-    obj$shade <- lapply(obj$shade, function(x,i,n)
+    fig$shade <- lapply(fig$shade, function(x,i,n)
     {
       pos <- index==x
       if(is.na(sum(pos)))
@@ -249,5 +252,5 @@ fill.figure<-function(obj,n = 1,rule = "fill",...){
     },index,n)
   }
 
-  return(obj)
+  return(fig)
 }
