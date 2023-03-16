@@ -1,13 +1,13 @@
-#' Define the coordinates of a dot
+#' Define the coordinates for drawing a dot
 #'
-#' @param size.x
-#' @param size.y
-#' @param pos.x
-#' @param pos.y
-#' @param shd
-#' @param lty
-#' @param lwd
-#' @param vis
+#' @param size.x The length of the x-axis. Default is 2.
+#' @param size.y The length of the x-axis. Default is 2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
 #' @return
 #' @export
@@ -40,13 +40,13 @@ dot <- function(size.x = 2,
   value
 }
 
-#' Define the coordinates of a dice with 4 dots
+#' Define the coordinates for drawing a dice with 4 dots
 #'
-#' @param pos.x
-#' @param pos.y
-#' @param shd
-#' @param lwd
-#' @param lty
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 13 (-13).
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 13 (-13).
+#' @param shd The shading of the figure. Default is NA (transparent)
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -62,11 +62,11 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a cross dice with 4 dots
+#' Define the coordinates for drawing a cross dice with 4 dots
 #'
-#' @param shd
-#' @param lwd
-#' @param lty
+#' @param shd The shading of the figure. Default is NA (transparent)
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -86,13 +86,13 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
   value
 }
 
-#' Define the coordinates of a biscuit
+#' Define the coordinates for drawing a biscuit
 #'
-#' @param size.x
-#' @param size.y
-#' @param shd
-#' @param lwd
-#' @param lty
+#' @param size.x The length of the x-axis. Default is 15.
+#' @param size.y The length of the x-axis. Default is 15.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -114,13 +114,13 @@ biscuit = function(size.x = 15, size.y = 15,
   value
 }
 
-#' Define the coordinates of a ninja star
+#' Define the coordinates for drawing a ninja star
 #'
-#' @param size.x
-#' @param size.y
-#' @param shd
-#' @param lwd
-#' @param lty
+#' @param size.x The length of the x-axis. Default is 10.
+#' @param size.y The length of the x-axis. Default is 15.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export
@@ -135,13 +135,13 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a star
+#' Define the coordinates for drawing a star
 #'
-#' @param size.x
-#' @param size.y
-#' @param shd
-#' @param lwd
-#' @param lty
+#' @param size.x The length of the x-axis. Default is 10.
+#' @param size.y The length of the x-axis. Default is 15.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
 #'
 #' @return
 #' @export

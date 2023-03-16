@@ -1,12 +1,12 @@
-#' Define the coordinates of the vertical left up arch
+#' Define the coordinates for drawing the vertical left up arch
 #'
-#' @param size.x
-#' @param size.y
-#' @param lty
-#' @param lwd
-#' @param vis
-#' @param pos.x
-#' @param pos.y
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
 #' @return
 #' @export
@@ -38,7 +38,15 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
   value
 }
 
-#' Define the coordinates of the vertical right up arch
+#' Define the coordinates for drawing the vertical right up arch
+#'
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
 #' @return Return the vertical arc right up object
 #' @examples
@@ -71,8 +79,14 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 }
 
 
-#' Define the coordinates of the vertical left down arch
-#'
+#' Define the coordinates for drawing the vertical left down arch
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #' @return Return the vertical arc left down object
 #' @examples
 #' v.arc.left.down()
@@ -104,6 +118,13 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 
 #' Define the coordinates of the vertical right down arch
 #'
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #' @return Return the vertical arc right down object
 #' @examples
 #' v.arc.right.down()
@@ -135,7 +156,16 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
 
 #' Define the coordinates of the horizontal left up arch
 #'
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
+#'
 #' @return Return the horizontal arc left up object
+#'
 #' @examples
 #' h.arc.left.up()
 #' @export
@@ -164,7 +194,16 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
 
 #' Define the coordinates of the horizontal right up arch
 #'
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
+#'
 #' @return Return the horizontal arc right up object
+#'
 #' @examples
 #' h.arc.right.up()
 #' @export
@@ -195,7 +234,16 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 
 #' Define the coordinates of the horizontal left down arch
 #'
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
+#'
 #' @return Return the horizontal arc left down object
+#'
 #' @examples
 #' h.arc.left.down()
 #' @export
@@ -224,8 +272,16 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 }
 
 #' Define the coordinates of the horizontal right down arch
+#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
+#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
+#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
 #' @return Return the horizontal arc right down object
+#'
 #' @examples
 #' h.arc.right.down()
 #' @export
