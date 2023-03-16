@@ -98,7 +98,7 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #' Change the visibility of the shapes in a figure
 #'
 #' @param fig A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.
-#' @param n ???
+#' @param n The number of the figure you want to see. Default is 1, such that the first figure in `cof()` is shown
 #' @param Define the non so bene come dirlo, aiuto
 #' @param ...
 #'
@@ -112,7 +112,7 @@ shape <- function(fig,n,...) {
 shape.figure<-function(fig,n = 1,rule = "default",...) {
   if(length(fig$visible)!=3)
   {
-    stop("You must have at least three forms to change shapes!")
+    stop("You must have at least three forms to change shapes! If you already specified three figures, make sure you used the s. ones ;)")
   }
   if(grepl("inv",rule))
   {
