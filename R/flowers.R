@@ -20,7 +20,7 @@
 lily <- function(lwd = 3, lty = 1) {
   value <-cof( s.horizontal.eight(lwd = lwd, lty = 1),
                s.vertical.eight(lwd = lwd, lty = 1))
-  value$tag <- list("compose2")
+  value$tag <- list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -50,7 +50,7 @@ s.lily <- function(lwd = 3, lty = 1) {
                s.vertical.eight(lwd = lwd, lty = 1),
                name = "s.lily",
                single = T)
-  value$tag <- list("simple")
+  value$tag <- list("simple", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -80,7 +80,7 @@ up.petal = function(lwd = 3, lty = 1) {
          v.arc.right.up(lwd = lwd, lty = lty),
         name="up.petal",
         single = T)
- value$tag = list("compose2")
+ value$tag = list("compose2", "d.int")
  attr(value, "class") <- "figure"
  value
 }
@@ -110,7 +110,7 @@ down.petal = function(lwd = 3, lty = 1) {
                v.arc.right.down(lwd = lwd, lty = lty),
                name="down.petal",
                single = T)
-  value$tag = list("compose2")
+  value$tag = list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -139,7 +139,7 @@ left.petal = function(lwd = 3, lty = 1) {
                h.arc.left.up(lwd = lwd, lty = lty),
                name="left.petal",
                single = T)
-  value$tag = list("compose2")
+  value$tag = list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -167,7 +167,7 @@ right.petal = function(lwd = 3, lty = 1) {
                h.arc.right.up(lwd = lwd, lty = lty),
                name="right.petal",
                single = T)
-  value$tag = list("compose2")
+  value$tag = list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -195,7 +195,7 @@ flower = function(lwd = 3, lty = 1) {
               down.petal(lwd = lwd, lty = lty),
               left.petal(lwd = lwd, lty = lty),
               right.petal(lwd = lwd, lty = lty))
-  value$tag = list("compose4")
+  value$tag = list("compose4", "d.int")
   attr(value, "class") = "figure"
   value
 }
@@ -225,7 +225,7 @@ s.flower = function(lwd = 3, lty = 1) {
               right.petal(lwd = lwd, lty = lty),
               name = "flower",
               single = TRUE)
-  value$tag = list("simple")
+  value$tag = list("simple", "d.int")
   attr(value, "class") = "figure"
   value
 }
