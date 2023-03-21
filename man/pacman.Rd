@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{pacman}
 \alias{pacman}
-\title{Define the coordinates of a pacman}
+\title{Coordinates of a pacman}
 \usage{
 pacman(
   size.x = sqrt(square()$size.x[[1]]^2/2),
@@ -18,8 +18,37 @@ pacman(
 )
 }
 \arguments{
-\item{vis}{}
+\item{size.x}{The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).}
+
+\item{size.y}{The length of the x-axis. Default is 0.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{theta1}{Starting angle of the circle section. Default is pi/4.}
+
+\item{theta2}{Ending angle of the circle section. Default is 7*pi/4.}
+
+\item{lty}{The lime type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{vis}{Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.}
+}
+\value{
+The coordinates of a pacman
 }
 \description{
-Define the coordinates of a pacman
+Define the coordinates of the circle sections drawing a pacman
+}
+\examples{
+\dontrun{
+# default coordinates of pacman
+slice()
+# draw an actual pacman
+draw(cof(pacman(shd = "yellow"), dot(pos.y = 6)))
+}
 }

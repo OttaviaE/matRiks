@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{semi.circle.rev}
 \alias{semi.circle.rev}
-\title{Define the coordinates of an downward facing right semi-circle}
+\title{Coordinates of a downward-facing right semi-circle}
 \usage{
 semi.circle.rev(
   size.x = sqrt(square()$size.x[[1]]^2/2),
@@ -19,8 +19,37 @@ semi.circle.rev(
 )
 }
 \arguments{
-\item{vis}{}
+\item{size.x}{The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).}
+
+\item{size.y}{The length of the x-axis. Default is 0.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{theta1}{Starting angle of the circle section. Default is 7*pi/4.}
+
+\item{theta2}{Ending angle of the circle section (built counterclockwise). Default is 3*pi/4.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure.}
+
+\item{lty}{The line type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+
+\item{vis}{Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.}
+}
+\value{
+The coordinates a downward-facing right semi-circle
 }
 \description{
-Define the coordinates of an downward facing right semi-circle
+Define the coordinates of a downward-facing right semi-circle
+}
+\examples{
+\dontrun{
+# default coordinates of the downward-facing right semi-circle
+semi.circle.rev()
+# change the rotation of the downward-facing right semi-circle
+semi.circle.rev(theta1 = 0, theta2 = pi/2)
+}
 }

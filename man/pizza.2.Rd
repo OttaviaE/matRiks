@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{pizza.2}
 \alias{pizza.2}
-\title{Define the coordinates of a pizza with two slices}
+\title{Coordinates of a pizza with two slices}
 \usage{
 pizza.2(
   size.x = 15,
@@ -15,8 +15,23 @@ pizza.2(
 )
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{The length of the x-axis. Default is 15.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{lty}{The lime type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+}
+\value{
+The coordinates of two circle sections composing a pizza with two slices
 }
 \description{
-Define the coordinates of a pizza with two slices
+Define the coordinates of the circle section composing a pizza with two slices
+}
+\examples{
+\dontrun{
+# default coordinates of the pizza with two slices
+pizza.2()
+}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{s.pizza.2.rev}
 \alias{s.pizza.2.rev}
-\title{Define the coordinates of a single inverse pizza with two slices (to be used in diff_shapes)}
+\title{Coordinates of a single inverse pizza with two slices}
 \usage{
 s.pizza.2.rev(
   size.x = 15,
@@ -15,8 +15,23 @@ s.pizza.2.rev(
 )
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{The length of the x-axis. Default is 15.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{lty}{The lime type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+}
+\value{
+The coordinates of two circle sections composing a single pizza with two slices
 }
 \description{
-Define the coordinates of a single inverse pizza with two slices (to be used in diff_shapes)
+Define the coordinates of the circle section composing an inverse pizza with two slices, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# default coordinates of the single inverse pizza with two slices
+s.pizza.2()
+}
 }

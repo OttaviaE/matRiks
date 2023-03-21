@@ -2,13 +2,28 @@
 % Please edit documentation in R/circle_sections.R
 \name{s.pizza.4}
 \alias{s.pizza.4}
-\title{Define the coordinates of a single pizza with four slices}
+\title{Coordinates of a single pizza with four slices}
 \usage{
 s.pizza.4(size.x = 15, shd = NA, lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{The length of the x-axis. Default is 15.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{lwd}{The line width. Default is 3.}
+
+\item{lty}{The lime type, default is 1 (solid line).}
+}
+\value{
+The coordinates of four circle sections composing a single pizza with four slices
 }
 \description{
-Define the coordinates of a single pizza with four slices
+Define the coordinates of the circle section composing a pizza with four slices, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# default coordinates of the single pizza with four slices
+s.pizza.4()
+}
 }

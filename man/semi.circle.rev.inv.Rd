@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{semi.circle.rev.inv}
 \alias{semi.circle.rev.inv}
-\title{Define the coordinates of an upward facing left semi-circle}
+\title{Coordinates of a upward-facing left semi-circle}
 \usage{
 semi.circle.rev.inv(
   size.x = sqrt(square()$size.x[[1]]^2/2),
@@ -19,8 +19,37 @@ semi.circle.rev.inv(
 )
 }
 \arguments{
-\item{vis}{}
+\item{size.x}{The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).}
+
+\item{size.y}{The length of the x-axis. Default is 0.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{theta1}{Starting angle of the circle section. Default is 3*pi/4.}
+
+\item{theta2}{Ending angle of the circle section (built counterclockwise). Default is 7*pi/4.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure.}
+
+\item{lty}{The line type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+
+\item{vis}{Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.}
+}
+\value{
+The coordinates a upward-facing left semi-circle
 }
 \description{
-Define the coordinates of an upward facing left semi-circle
+Define the coordinates of a upward-facing left semi-circle
+}
+\examples{
+\dontrun{
+# default coordinates of the upward-facing left semi-circle
+semi.circle.rev.inv()
+# change the rotation of the upward-facing left semi-circle
+semi.circle.rev.inv(theta1 = pi, theta2 = 2*pi)
+}
 }

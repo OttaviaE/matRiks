@@ -2,7 +2,7 @@
 % Please edit documentation in R/circle_sections.R
 \name{slice}
 \alias{slice}
-\title{Define the coordinates of a pizza slice}
+\title{Coordinates of a pizza slice}
 \usage{
 slice(
   size.x = 15,
@@ -18,8 +18,37 @@ slice(
 )
 }
 \arguments{
-\item{shd}{}
+\item{size.x}{The length of the x-axis. Default is 15.}
+
+\item{size.y}{The length of the x-axis. Default is 0.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{theta1}{Starting angle of the circle section. Default is pi/4.}
+
+\item{theta2}{Ending angle of the circle section (built counterclockwise). Default is 3*pi/4.}
+
+\item{lty}{The lime type, default is 1 (solid line).}
+
+\item{lwd}{The line width. Default is 3.}
+
+\item{vis}{Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+}
+\value{
+The coordinates of a circle section
 }
 \description{
-Define the coordinates of a pizza slice
+Define the coordinates of a circle section
+}
+\examples{
+\dontrun{
+# default coordinates of the pizza slice
+slice()
+# change the rotation of the pizza slice
+slice(theta1 = 3*pi/4, theta2 = 5*pi/4)
+}
 }
