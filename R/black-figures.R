@@ -1,4 +1,6 @@
-#' Define the coordinates for drawing a dot
+#' Coordinates for drawing a dot
+#'
+#'  Qui c'è una descrizione di cosa fa questo coso
 #'
 #' @param size.x The length of the x-axis. Default is 2.
 #' @param size.y The length of the x-axis. Default is 2.
@@ -16,8 +18,8 @@
 dot <- function(size.x = 2,
                 size.y = 2,
                 pos.x = 0, pos.y = 0, shd = "black",
-                lty = lty,
-                lwd = lwd,
+                lty = 1,
+                lwd = 3,
                 vis = 1) {
   value <- list(
     shape = "dot",
@@ -25,7 +27,7 @@ dot <- function(size.x = 2,
     size.y = list(size.y),
     theta.1  = list(5*pi/4),
     theta.2  = list(7*pi/4),
-    rotate = list(pi),
+    rotation = list(pi),
     pos.x = list(pos.x),
     pos.y = list(pos.y),
     lty = list(lty),

@@ -13,6 +13,9 @@ cross.dice(shd = "black", lwd = 3, lty = 1)
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+The coordinates for drawing a for drawing a dice with 4 dots
+}
 \description{
 Define the coordinates for drawing a cross dice with 4 dots
 }

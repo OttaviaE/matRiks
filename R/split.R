@@ -1,18 +1,17 @@
-split.mat<- function(obj) {
-  UseMethod("split.mat")
+split_mat<- function(obj) {
+  UseMethod("split_mat")
 }
 #' Isolate ONLY the visible objects in a cell
 #'
 #' @param m The matrix
 #' @param cell the index of the cell to be splitted
 #' @param vis boh Ah si forse era quando volevo integrare con decof
-#' @param mat.type Does the matrix have 4 or 9 cells? Default is 9
 #'
 #' @return
 #' @export
 #'
 #' @examples
-split.mat = function(m, cell = NULL, vis = NULL, mat.type = 9) {
+split_mat.figure = function(m, cell = NULL, vis = NULL) {
   if (is.null(cell) == T) {
     m.start = correct(m, mat.type = mat.type)
   } else {
@@ -51,7 +50,7 @@ correct<- function(obj) {
 #' @export
 #'
 #' @examples
-correct = function(m, mat.type = 9) {
+correct.matriKS = function(m, mat.type = 9) {
   if (mat.type == 9) {
     correct = m$Sq9
   } else {

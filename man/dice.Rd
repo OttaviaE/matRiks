@@ -17,6 +17,9 @@ dice(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1)
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+The coordinates for drawing a dice with 4 dots
+}
 \description{
 Define the coordinates for drawing a dice with 4 dots
 }

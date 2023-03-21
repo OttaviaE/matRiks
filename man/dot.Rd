@@ -2,7 +2,7 @@
 % Please edit documentation in R/black-figures.R
 \name{dot}
 \alias{dot}
-\title{Define the coordinates for drawing a dot}
+\title{Coordinates for drawing a dot}
 \usage{
 dot(
   size.x = 2,
@@ -10,8 +10,8 @@ dot(
   pos.x = 0,
   pos.y = 0,
   shd = "black",
-  lty = lty,
-  lwd = lwd,
+  lty = 1,
+  lwd = 3,
   vis = 1
 )
 }
@@ -32,8 +32,11 @@ dot(
 
 \item{vis}{Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.}
 }
+\value{
+The coordinates for drawing a black dot
+}
 \description{
-Define the coordinates for drawing a dot
+Qui c'è una descrizione di cosa fa questo coso
 }
 \examples{
 One day not today

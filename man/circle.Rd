@@ -2,45 +2,49 @@
 % Please edit documentation in R/closed_figures.R
 \name{circle}
 \alias{circle}
-\title{Define the coordinates of a circle}
+\title{Coordinates of a circle}
 \usage{
 circle(
   size.x = 10,
-  size.y = 10,
+  size.y = size.x,
   pos.x = 0,
   pos.y = 0,
   shd = NA,
-  rot = 0,
   vis = 1,
   lty = 1,
   lwd = 3
 )
 }
 \arguments{
-\item{size.x}{Length of the x axis}
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
 
-\item{size.y}{Length of the y axis}
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
 
-\item{pos.x}{Position on the x axis}
+\item{pos.x}{Position on the x axis. Default is 0.}
 
-\item{pos.y}{Position on the y axis}
+\item{pos.y}{Position on the y axis, Default is 0.}
 
-\item{shd}{Color of the object. Deafsult is NA which results in a transparent object}
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
 
-\item{rot}{Rotation of the ellipse in which the figure is inscribed}
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
 
-\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Deafult is visible}
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
 
-\item{lty}{Border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
-
-\item{lwd}{Width of the border line. Deafult is 3.}
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
 }
 \value{
-Based on the chosen shape, return an object with the information for plotting the desired design
+Return the coordinates fro drawing a circle
 }
 \description{
-Define the coordinates of a circle
+Define the coordinates of the ellipse whitin which a circle can be inscribed.
 }
 \examples{
-Ci sarà
+\dontrun{
+# return the default coordinates for drawing a circle
+circle()
+
+# change the coordinates for drawing a smaller circle
+
+circle(size.x = 5)
+}
 }
