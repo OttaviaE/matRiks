@@ -225,7 +225,7 @@ s.flower = function(lwd = 3, lty = 1) {
               right.petal(lwd = lwd, lty = lty),
               name = "flower",
               single = TRUE)
-  value$tag = list("compose4")
+  value$tag = list("simple")
   attr(value, "class") = "figure"
   value
 }
