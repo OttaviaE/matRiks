@@ -2,18 +2,21 @@
 % Please edit documentation in R/rules.R
 \name{size}
 \alias{size}
-\title{Resize a figure}
+\title{Sizing rule}
 \usage{
 size(fig, n, rule, ...)
 }
 \arguments{
 \item{fig}{The figure on which the rule is applied}
 
-\item{n}{A number defining the dimension of the sizing. Default is 2, which corresponds to a change of 1.8 COSA?? BANANE???}
+\item{n}{A number defining the dimension of the sizing. Default is 2.}
 
-\item{rule}{Define the sizing rule. Default is to reduce the dimension. `rule = "inv"` forces to increase the dimension.}
+\item{rule}{Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.}
 
 \item{...}{}
+}
+\value{
+A figure with different size.x (and size.y) coordinates
 }
 \description{
 Resize a figure

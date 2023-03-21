@@ -17,6 +17,19 @@ star(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0)
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+The coordinates of a star composed of four lucks
+}
 \description{
 Define the coordinates for drawing a star
+}
+\examples{
+\dontrun{
+# get the coordinates of a star composed of four luck
+star()
+
+# change the color of the star
+draw(star(shd = "grey", lty = 0))
+
+}
 }
