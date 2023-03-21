@@ -19,6 +19,7 @@ draw <- function(obj, main = NULL, canvas = TRUE,
   UseMethod("draw")
 }
 
+# bisogna portare la funzione line dall'altra parte ----
 
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
                      bg = "white",mar=c(1,1,1,1),xlim=16) {

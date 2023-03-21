@@ -43,7 +43,7 @@ decof.figure<-function(obj)
       visible = obj$visible[i],
       tag = obj$tag[i]
     )
-    attr(ele, "class") <- "field"
+    attr(ele, "class") <- "figure"
     newobj[[i]]<-ele
   }
   return(newobj)

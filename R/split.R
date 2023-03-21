@@ -1,8 +1,11 @@
+split.mat<- function(obj) {
+  UseMethod("split.mat")
+}
 #' Isolate ONLY the visible objects in a cell
 #'
 #' @param m The matrix
 #' @param cell the index of the cell to be splitted
-#' @param vis boh
+#' @param vis boh Ah si forse era quando volevo integrare con decof
 #' @param mat.type Does the matrix have 4 or 9 cells? Default is 9
 #'
 #' @return
@@ -28,11 +31,32 @@ split.mat = function(m, cell = NULL, vis = NULL, mat.type = 9) {
     split.m[[i]] <- vector("list", length(m.start))
     for (j in 1:length(split.m[[i]])) {
       names(split.m)[i] = m.start$shape[index_elements[i]]
-      attr(split.m[[i]], "class") = "field"
+      attr(split.m[[i]], "class") = "figure"
       split.m[[i]][[j]] = m.start[[j]][index_elements[i]]
       names(split.m[[i]])[j] = names(m.start)[j]
       split.m[[i]][j]$visible = 1
     }
   }
   return(split.m)
+}
+correct<- function(obj) {
+  UseMethod("correct")
+}
+#' Extract the cell of the correct response
+#'
+#' @param m
+#' @param mat.type
+#'
+#' @return The cell with the correct response, either Sq9 (9-cell matrix) or Sq5 (4-cell matrix)
+#' @export
+#'
+#' @examples
+correct = function(m, mat.type = 9) {
+  if (mat.type == 9) {
+    correct = m$Sq9
+  } else {
+    correct = m$Sq5
+  }
+
+  return(correct)
 }

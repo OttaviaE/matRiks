@@ -177,7 +177,7 @@ axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
-              rotation(slice(size.x = size.x,
+              rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5))
   value$tag = list("compose2")
@@ -203,7 +203,7 @@ s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
-              rotation(slice(size.x = size.x,
+              rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5),
               name = "s.axe",

@@ -25,7 +25,7 @@ dot <- function(size.x = 2,
     size.y = list(size.y),
     theta.1  = list(5*pi/4),
     theta.2  = list(7*pi/4),
-    rotation = list(pi),
+    rotate = list(pi),
     pos.x = list(pos.x),
     pos.y = list(pos.y),
     lty = list(lty),
@@ -104,12 +104,64 @@ biscuit = function(size.x = 15, size.y = 15,
                       size.y = size.y,
                       lwd = lwd, lty = lty,
                       shd = shd),
-              rotation(hexagon(size.x = size.x,
+              rotate(hexagon(size.x = size.x,
                                size.y = size.y,
                                lwd = lwd, lty = lty,
                                shd = shd), 3),
               single = T, name = "biscuit")
   value$tag <- list("compose2")
+  attr(value, "class") <- "figure"
+  value
+}
+#' Define the coordinates of a biscuit (to be used in diff_shapes)
+#'
+#' @param pos.x
+#' @param pos.y
+#' @param size.x
+#' @param size.y
+#' @param shd
+#' @param lty
+#' @param lwd
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
+                      size.y = 10, shd = "black", lty = 1, lwd = 3) {
+  value <-cof(hexagon(pos.x = pos.x,
+                      pos.y = pos.y, size.x = size.x, size.y = size.y,
+                      shd = shd, rot = 3*pi/2,
+                      lty = lty,
+                      lwd = lwd),
+              hexagon(pos.x = pos.x,
+                      pos.y = pos.y, size.x = size.x, size.y = size.y,
+                      shd = shd, lty = lty, lwd = lwd),
+              name = "s.biscuit",
+              single = TRUE)
+  value$tag <- list("small", "compose2","fill")
+  attr(value, "class") <- "cell"
+  value
+}
+
+#' Define the coordinates for drawing a single ninja star (to be used in shape())
+#'
+#' @param size.x The length of the x-axis. Default is 10.
+#' @param size.y The length of the x-axis. Default is 15.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+  value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
+              name = "s.ninja",
+              single = TRUE)
+  value$tag = list("compose2")
   attr(value, "class") <- "figure"
   value
 }
@@ -128,13 +180,13 @@ biscuit = function(size.x = 15, size.y = 15,
 #' @examples
 ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
-              rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
-              name = "ninja",
-              single = TRUE)
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
+              name = "ninja")
   value$tag = list("compose2")
   attr(value, "class") <- "figure"
   value
 }
+
 #' Define the coordinates for drawing a star
 #'
 #' @param size.x The length of the x-axis. Default is 10.
@@ -149,12 +201,32 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @examples
 star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
-              rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
-              rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
-              rotation(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
-              single = TRUE,
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               name = "star")
 }
+#' Define the coordinates for drawing a single star (to be used in shape())
+#'
+#' @param size.x The length of the x-axis. Default is 10.
+#' @param size.y The length of the x-axis. Default is 15.
+#' @param shd The shading of the figure. Default is black
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line).
+#'
+#' @return
+#' @export
+#'
+#' @examples
+s.star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+  value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
+              rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
+              single = TRUE,
+              name = "s.star")
+}
+
 
 
 
