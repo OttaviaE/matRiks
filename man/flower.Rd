@@ -2,15 +2,28 @@
 % Please edit documentation in R/flowers.R
 \name{flower}
 \alias{flower}
-\title{Define the coordinates for drawing a flower}
+\title{Define the coordinates of a flower}
 \usage{
 flower(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{The line width. Default is 3.}
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+Return the coordinates for drawing a flower made of petals
+}
 \description{
-Define the coordinates for drawing a flower
+Define the coordinates of the circle sections composing a flower
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a right petal
+flower()
+
+# change the line type of the right petal
+
+flower(lty = 3)
+}
 }

@@ -2,15 +2,28 @@
 % Please edit documentation in R/flowers.R
 \name{s.lily}
 \alias{s.lily}
-\title{Define the coordinates for drawing a single lily (to be used in `shape()`)}
+\title{Define the coordinates a single lily}
 \usage{
 s.lily(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{The line width. Default is 3.}
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+Return the coordinates for drawing a single lily
+}
 \description{
-Define the coordinates for drawing a single lily (to be used in `shape()`)
+Define the coordinates of the circle sections composing a lily, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a single lily
+s.lily()
+
+# change the line type of the single lily
+
+s.lily(lty = 3)
+}
 }

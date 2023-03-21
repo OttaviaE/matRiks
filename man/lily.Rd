@@ -2,7 +2,7 @@
 % Please edit documentation in R/flowers.R
 \name{lily}
 \alias{lily}
-\title{Define the coordinates for drawing a lily}
+\title{Define the coordinates of a lily}
 \usage{
 lily(lwd = 3, lty = 1)
 }
@@ -11,6 +11,19 @@ lily(lwd = 3, lty = 1)
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+Return the coordinates for drawing a lily
+}
 \description{
-Define the coordinates for drawing a lily
+Define the coordinates of the circle sections composing a lily
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a lily
+lily()
+
+# change the line type of the lily
+
+lily(lty = 3)
+}
 }

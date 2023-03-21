@@ -33,10 +33,10 @@ circle(
 \item{lwd}{An integer defining the width of the border line. Default is 3.}
 }
 \value{
-Return the coordinates fro drawing a circle
+Return the coordinates for drawing a circle
 }
 \description{
-Define the coordinates of the ellipse whitin which a circle can be inscribed.
+Define the coordinates of the ellipse within which a circle can be inscribed.
 }
 \examples{
 \dontrun{

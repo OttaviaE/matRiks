@@ -2,15 +2,28 @@
 % Please edit documentation in R/flowers.R
 \name{right.petal}
 \alias{right.petal}
-\title{Define the coordinates for drawing the right petal}
+\title{Define the coordinates of a right petal}
 \usage{
 right.petal(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{The line width. Default is 3.}
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+Return the coordinates for drawing a right petal
+}
 \description{
-Define the coordinates for drawing the right petal
+Define the coordinates of the circle sections composing a right petal
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a right petal
+right.petal()
+
+# change the line type of the right petal
+
+right.petal(lty = 3)
+}
 }

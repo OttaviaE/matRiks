@@ -2,15 +2,28 @@
 % Please edit documentation in R/flowers.R
 \name{up.petal}
 \alias{up.petal}
-\title{Define the coordinates for drawing the up petal}
+\title{Define the coordinates of an up petal}
 \usage{
 up.petal(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{The line width. Default is 3.}
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+Return the coordinates for drawing an up petal
+}
 \description{
-Define the coordinates for drawing the up petal
+Define the coordinates of the circle sections composing an up petal
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing an up petal
+up.petal()
+
+# change the line type of the up petal
+
+up.petal(lty = 3)
+}
 }

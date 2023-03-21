@@ -2,11 +2,11 @@
 % Please edit documentation in R/closed_figures.R
 \name{hexagon}
 \alias{hexagon}
-\title{Define the coordinates of an hexagon}
+\title{Coordinates of a hexagon}
 \usage{
 hexagon(
   size.x = 15,
-  size.y = 15,
+  size.y = size.x,
   rot = 0,
   pos.x = 0,
   pos.y = 0,
@@ -17,8 +17,37 @@ hexagon(
 )
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15}
+
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{rot}{Rotation of the figure. Default is 0.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
+
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
+
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
+}
+\value{
+Return the coordinates for drawing an hexagon
 }
 \description{
-Define the coordinates of an hexagon
+Define the coordinates  of the ellipse within which an hexagon can be inscribed.
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a hexagon
+hexagon()
+
+# change the coordinates for drawing a smaller hexagon
+
+hexagon(size.x = 10)
+}
 }

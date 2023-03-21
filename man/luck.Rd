@@ -2,7 +2,7 @@
 % Please edit documentation in R/closed_figures.R
 \name{luck}
 \alias{luck}
-\title{Define the coordinates of a luck}
+\title{Coordinates of a luck}
 \usage{
 luck(
   size.x = 10,
@@ -17,8 +17,37 @@ luck(
 )
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.}
+
+\item{rot}{Rotation of the figure. Default is pi/2.}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
+
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
+
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
+}
+\value{
+Return the coordinates for drawing a luck
 }
 \description{
-Define the coordinates of a luck
+Define the coordinates  of the ellipse within which a luck can be inscribed.
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a luck
+luck()
+
+# change the coordinates for drawing a smaller luck
+
+luck(size.x = 10, size.y = 15)
+}
 }
