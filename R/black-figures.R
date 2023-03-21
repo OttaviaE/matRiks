@@ -9,7 +9,7 @@
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates for drawing a black dot
 #' @export
 #'
 #' @examples One day not today
@@ -48,7 +48,7 @@ dot <- function(size.x = 2,
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #'
-#' @return
+#' @return The coordinates for drawing a dice with 4 dots
 #' @export
 #'
 #' @examples
@@ -68,7 +68,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #'
-#' @return
+#' @return The coordinates for drawing a for drawing a dice with 4 dots
 #' @export
 #'
 #' @examples
@@ -140,7 +140,7 @@ s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
               name = "s.biscuit",
               single = TRUE)
   value$tag <- list("small", "compose2","fill")
-  attr(value, "class") <- "cell"
+  attr(value, "class") <- "figure"
   value
 }
 
