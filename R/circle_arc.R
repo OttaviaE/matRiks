@@ -10,7 +10,7 @@
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the left up arch of a circle
 #' @export
 #'
 #' @examples
@@ -58,7 +58,7 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the right up arch
 #' @export
 #'
 #' @examples
@@ -107,7 +107,7 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the left down arch
 #' @export
 #'
 #' @examples
@@ -154,7 +154,7 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the right down arch
 #' @export
 #'
 #' @examples
@@ -201,7 +201,7 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the left up arch
 #' @export
 #'
 #' @examples
@@ -247,7 +247,7 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the right up arch
 #' @export
 #'
 #' @examples
@@ -294,7 +294,7 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the left down arch
 #' @export
 #'
 #' @examples
@@ -340,7 +340,7 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return
+#' @return The coordinates of the right down arch
 #' @export
 #'
 #' @examples

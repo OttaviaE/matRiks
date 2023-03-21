@@ -1,14 +1,26 @@
-#' Rotates a figure
+#' Rotation rule
+#'
+#' Apply a rotation of pi/4 to a figure.
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of $\frac{\pi}{4}$.
-#' @param rule Define the rotation rule. Default is anticlockwise.`rule = "inv"` forces a clockwise rotation
+#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of pi/4.
+#' @param rule Define the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
 #' @param ... Other arguments
 #'
-#' @return
+#' @return A figure with different rotation coordinates
 #' @export
 #'
-#' @examples one day not todaty
+#' @examples
+#' \dontrun{
+#' # default luck
+#' draw(luck())
+#'
+#' # apply the default rotation on the default luck
+#' draw(rotate(luck()))
+#'
+#' # force clockwise rotation
+#' draw(rotate(luck(), rule = "inv"))
+#' }
 
 rotate <- function(fig ,n, rule,...) {
   UseMethod("rotate")
@@ -36,16 +48,24 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 }
 
 
-#' Reflect a figure
+#' Reflection rule
+#'
+#' Apply a reflection of pi on a figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree reflection (CREDO)
+#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection
 #' @param ...
 #'
-#' @return
+#' @return A figure with different rotation coordinates
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default pacman
+#' draw(pacman())
+#'
+#' # apply the default rotation on the default luck
+#' draw(reflect(pacman()))
 reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
@@ -57,17 +77,28 @@ reflect.figure<-function(fig,n=2,...) {
   return(fig)
 }
 
+#' Sizing rule
+#'
 #' Resize a figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the dimension of the sizing. Default is 2, which corresponds to a change of 1.8 COSA?? BANANE???
-#' @param rule Define the sizing rule. Default is to reduce the dimension. `rule = "inv"` forces to increase the dimension.
+#' @param n A number defining the dimension of the sizing. Default is 2.
+#' @param rule Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.
 #' @param ...
 #'
-#' @return
+#' @return A figure with different size.x (and size.y) coordinates
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default square
+#' draw(square())
+#'
+#' # apply the default resizing to the default square
+#' draw(size(square()))
+#'
+#' # make the square bigger
+#' draw(size(square(), rule = "inv"))
 size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
@@ -97,15 +128,25 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 
 #' Change the visibility of the shapes in a figure
 #'
-#' @param fig A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.
-#' @param n The number of the figure you want to see. Default is 1, such that the first figure in `cof()` is shown
+#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
+#' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
 #' @param Define the non so bene come dirlo, aiuto
 #' @param ...
 #'
-#' @return
+#' @return A list of three figures, only the first of which is visible
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # Three figures, only the first is shown
+#' draw(shape(cof(s.lily(), square(), s.star())))
+#'
+#' # Show the third figure (star)
+#' draw(shape(cof(s.lily(), square(), s.star()), n = 3))
+#'
+#' # Show the first and the second figures
+#'  draw(shape(cof(s.lily(), square(), s.star()), n = c(1,2)))
+#' }
 shape <- function(fig,n,...) {
   UseMethod("shape")
 }
@@ -128,6 +169,74 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
   }else {
     fig$visible[pos]<-0
     fig$visible[index[pos+n]]<-1
+  }
+
+  return(fig)
+}
+
+#' Change the shading of a figure
+#'
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
+#' @param rule
+#' @param ...
+#'
+#' @return A figure with different shading characteristics
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'
+#' # draw defaul triangle
+#' draw(triangle())
+#'
+#' # make it grey
+#' draw(shade(triangle(), 2))
+#'
+#' }
+shade <- function(fig,n,...) {
+  UseMethod("shade")
+}
+shade.figure<-function(fig,n = 1,rule = "shade",...){
+  if(grepl("par",rule))
+  {
+    index<-c("line1h","line2h","line12h","line1","line2","line12",
+             "line1inv","line2inv","line12inv")
+  }else if(grepl("line",rule)){
+    index <- rep(c("line12","line12h","line12inv"),3)
+  }else{
+    index <- rep(c("white","grey","black"),3)
+  }
+
+  if(grepl("multi",rule))
+  {
+    set.seed(n)
+    new<-Map("c",fig$shade,sample(1:length(fig$shape),length(fig$shape)))
+    fig$shade <-lapply(new, function(x,i,n)
+    {
+      pos <- index==x[1]
+
+      if(is.na(sum(pos)))
+      {
+        return(index[n+as.numeric(x[2])])
+      }else{
+        pos <- which(pos)
+        return(index[pos+n+as.numeric(x[2])])
+      }
+    },i=index,n=n)
+
+  }else{
+    fig$shade <- lapply(fig$shade, function(x,i,n)
+    {
+      pos <- index==x
+      if(is.na(sum(pos)))
+      {
+        return(index[n])
+      }else{
+        pos <- which(pos)
+        return(index[pos[1]+n])
+      }
+    },index,n)
   }
 
   return(fig)
@@ -196,61 +305,4 @@ identity.figure <- function(fig,...) {
   return(fig)
 }
 
-#' Change the shading of a figure
-#'
-#' @param fig The figure on which the rule is applied
-#' @param n A number defining the color of the shading. Default is 1 (white). Other options are 2 (grey) and 3 (black)
-#' @param rule
-#' @param ...
-#'
-#' @return
-#' @export
-#'
-#' @examples
-fill <- function(fig,n,...) {
-  UseMethod("fill")
-}
-fill.figure<-function(fig,n = 1,rule = "fill",...){
-  if(grepl("par",rule))
-  {
-    index<-c("line1h","line2h","line12h","line1","line2","line12",
-             "line1inv","line2inv","line12inv")
-  }else if(grepl("line",rule)){
-    index <- rep(c("line12","line12h","line12inv"),3)
-  }else{
-    index <- rep(c("white","grey","black"),3)
-  }
 
-  if(grepl("multi",rule))
-  {
-    set.seed(n)
-    new<-Map("c",fig$shade,sample(1:length(fig$shape),length(fig$shape)))
-    fig$shade <-lapply(new, function(x,i,n)
-    {
-      pos <- index==x[1]
-
-      if(is.na(sum(pos)))
-      {
-        return(index[n+as.numeric(x[2])])
-      }else{
-        pos <- which(pos)
-        return(index[pos+n+as.numeric(x[2])])
-      }
-    },i=index,n=n)
-
-  }else{
-    fig$shade <- lapply(fig$shade, function(x,i,n)
-    {
-      pos <- index==x
-      if(is.na(sum(pos)))
-      {
-        return(index[n])
-      }else{
-        pos <- which(pos)
-        return(index[pos[1]+n])
-      }
-    },index,n)
-  }
-
-  return(fig)
-}

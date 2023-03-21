@@ -279,10 +279,18 @@ s.ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #'
-#' @return
+#' @return The coordinates of a star composed of four lucks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # get the coordinates of a star composed of four luck
+#' star()
+#'
+#' # change the color of the star
+#' draw(star(shd = "grey", lty = 0))
+#'
+#' }
 star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
@@ -298,10 +306,18 @@ star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #'
-#' @return
+#' @return The coordinates of a single star composed of four lucks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # get the coordinates of a single star composed of four luck
+#' s.star()
+#'
+#' # change the color of the star
+#' draw(s.star(shd = "grey", lty = 0))
+#'
+#' }
 s.star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),

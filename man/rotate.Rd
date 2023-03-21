@@ -2,22 +2,34 @@
 % Please edit documentation in R/rules.R
 \name{rotate}
 \alias{rotate}
-\title{Rotates a figure}
+\title{Rotation rule}
 \usage{
 rotate(fig, n, rule, ...)
 }
 \arguments{
 \item{fig}{The figure on which the rule is applied}
 
-\item{n}{A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of $\frac{\pi}{4}$.}
+\item{n}{A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of pi/4.}
 
-\item{rule}{Define the rotation rule. Default is anticlockwise.`rule = "inv"` forces a clockwise rotation}
+\item{rule}{Define the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation}
 
 \item{...}{Other arguments}
 }
+\value{
+A figure with different rotation coordinates
+}
 \description{
-Rotates a figure
+Apply a rotation of pi/4 to a figure.
 }
 \examples{
-one day not todaty
+\dontrun{
+# default luck
+draw(luck())
+
+# apply the default rotation on the default luck
+draw(rotate(luck()))
+
+# force clockwise rotation
+draw(rotate(luck(), rule = "inv"))
+}
 }

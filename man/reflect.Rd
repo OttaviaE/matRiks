@@ -2,17 +2,20 @@
 % Please edit documentation in R/rules.R
 \name{reflect}
 \alias{reflect}
-\title{Reflect a figure}
+\title{Reflection rule}
 \usage{
 reflect(fig, n, ...)
 }
 \arguments{
 \item{fig}{The figure on which the rule is applied}
 
-\item{n}{A number defining the reflection. Default is 2 which corresponds to a 180 degree reflection (CREDO)}
+\item{n}{A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection}
 
 \item{...}{}
 }
+\value{
+A figure with different rotation coordinates
+}
 \description{
-Reflect a figure
+Apply a reflection of pi on a figure
 }

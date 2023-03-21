@@ -455,20 +455,23 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of an inverse pizza with two slices
+#' Coordinates of an inverse pizza with two slices
 #'
-#' @param size.x
-#' @param size.y
-#' @param pos.x
-#' @param pos.y
-#' @param shd
-#' @param lty
-#' @param lwd
+#' Define the coordinates of the circle section composing an inverse pizza with two slices
 #'
-#' @return
+#' @param size.x The length of the x-axis. Default is 15.
+#' @param lwd The line width. Default is 3.
+#' @param lty The lime type, default is 1 (solid line).
+#' @param shd Color of the figure Default is NA which results in a transparent figure
+#'
+#' @return The coordinates of two circle sections composing an inverse pizza with two slices
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the single inverse pizza with two slices
+#' pizza.2.rev()
+#' }
 pizza.2.rev <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
