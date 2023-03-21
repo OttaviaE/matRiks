@@ -2,11 +2,11 @@
 % Please edit documentation in R/black-figures.R
 \name{dot}
 \alias{dot}
-\title{Coordinates for drawing a dot}
+\title{Coordinates of a dot}
 \usage{
 dot(
   size.x = 2,
-  size.y = 2,
+  size.y = size.x,
   pos.x = 0,
   pos.y = 0,
   shd = "black",
@@ -16,28 +16,35 @@ dot(
 )
 }
 \arguments{
-\item{size.x}{The length of the x-axis. Default is 2.}
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
 
-\item{size.y}{The length of the x-axis. Default is 2.}
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
 
-\item{pos.x}{The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.}
+\item{pos.x}{Position on the x axis. Default is 0.}
 
-\item{pos.y}{The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.}
+\item{pos.y}{Position on the y axis, Default is 0.}
 
-\item{shd}{The shading of the figure. Default is black}
+\item{shd}{Color of the figure Default is "black".}
 
-\item{lty}{The lime type, default is 1 (solid line).}
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
 
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
 
-\item{vis}{Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.}
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
 }
 \value{
-The coordinates for drawing a black dot
+Return the coordinates for drawing a dot
 }
 \description{
-Qui c'è una descrizione di cosa fa questo coso
+Define the coordinates of the ellipse within which a dot can be inscribed.
 }
 \examples{
-One day not today
+\dontrun{
+# return the default coordinates for drawing a dot
+dot()
+
+# change the shade of the dot
+
+dot(shd = "grey")
+}
 }

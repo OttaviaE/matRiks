@@ -2,21 +2,48 @@
 % Please edit documentation in R/black-figures.R
 \name{s.biscuit}
 \alias{s.biscuit}
-\title{Define the coordinates of a biscuit (to be used in diff_shapes)}
+\title{Coordinates of a single biscuit}
 \usage{
 s.biscuit(
   pos.x = 0,
   pos.y = 0,
   size.x = 10,
-  size.y = 10,
+  size.y = size.x,
   shd = "black",
   lty = 1,
   lwd = 3
 )
 }
 \arguments{
-\item{lwd}{}
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{shd}{Color of the figure Default is black.}
+
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
+
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
+
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
+}
+\value{
+Return the coordinates for drawing a single biscuit
 }
 \description{
-Define the coordinates of a biscuit (to be used in diff_shapes)
+Define the coordinates of the ellipses within which a biscuit (composed of two hexagons) can be inscribed, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a single biscuit
+s.biscuit()
+
+# change the shade of the single biscuit
+
+biscuit(shd = "grey", lty = 0)
+}
 }

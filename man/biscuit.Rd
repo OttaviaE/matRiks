@@ -2,21 +2,40 @@
 % Please edit documentation in R/black-figures.R
 \name{biscuit}
 \alias{biscuit}
-\title{Define the coordinates for drawing a biscuit}
+\title{Coordinates of a biscuit}
 \usage{
-biscuit(size.x = 15, size.y = 15, shd = "black", lwd = 3, lty = 0)
+biscuit(size.x = 15, size.y = size.x, shd = "black", lwd = 3, lty = 0)
 }
 \arguments{
-\item{size.x}{The length of the x-axis. Default is 15.}
+\item{size.x}{An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
 
-\item{size.y}{The length of the x-axis. Default is 15.}
+\item{size.y}{An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
 
-\item{shd}{The shading of the figure. Default is black}
+\item{shd}{Color of the figure Default is black.}
 
-\item{lwd}{The line width. Default is 3}
+\item{lwd}{An integer defining the width of the border line. Default is 3.}
 
-\item{lty}{The lime type, default is 1 (solid line).}
+\item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
+
+\item{pos.x}{Position on the x axis. Default is 0.}
+
+\item{pos.y}{Position on the y axis, Default is 0.}
+
+\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
+}
+\value{
+Return the coordinates for drawing a biscuit
 }
 \description{
-Define the coordinates for drawing a biscuit
+Define the coordinates of the ellipses within which a biscuit (composed of two hexagons) can be inscribed.
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a biscuit
+biscuit()
+
+# change the shade of the biscuit
+
+biscuit(shd = "grey", lty = 0)
+}
 }

@@ -2,20 +2,34 @@
 % Please edit documentation in R/black-figures.R
 \name{cross.dice}
 \alias{cross.dice}
-\title{Define the coordinates for drawing a cross dice with 4 dots}
+\title{Coordinates of a cross dice with four dots}
 \usage{
 cross.dice(shd = "black", lwd = 3, lty = 1)
 }
 \arguments{
-\item{shd}{The shading of the figure. Default is NA (transparent)}
+\item{shd}{The shading of the figure. Default is black.}
 
 \item{lwd}{The line width. Default is 3}
 
 \item{lty}{The lime type, default is 1 (solid line).}
+
+\item{pos.x}{The x coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).}
+
+\item{pos.y}{The y coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).}
 }
 \value{
-The coordinates for drawing a for drawing a dice with 4 dots
+The coordinates for drawing a dice with 4 dots
 }
 \description{
-Define the coordinates for drawing a cross dice with 4 dots
+Define the coordinates for drawing four dots placed in the vertices of a luck
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a dot
+cross.dice()
+
+# change the shade of the cross dice
+
+cross.dice(shd = "grey")
+}
 }
