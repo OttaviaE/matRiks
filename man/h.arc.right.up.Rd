@@ -2,11 +2,11 @@
 % Please edit documentation in R/circle_arc.R
 \name{h.arc.right.up}
 \alias{h.arc.right.up}
-\title{Define the coordinates of the horizontal right up arch}
+\title{Coordinates of a horizontal right up arch}
 \usage{
 h.arc.right.up(
   size.x = square()$size.x[[1]]/2,
-  size.y = square()$size.y[[1]]/2,
+  size.y = size.x,
   lty = 1,
   lwd = 3,
   vis = 1,
@@ -17,7 +17,7 @@ h.arc.right.up(
 \arguments{
 \item{size.x}{The length of the x-axis. Default is square()$size.x[[1]]/2.}
 
-\item{size.y}{The length of the x-axis. Default is square()$size.y[[1]]/2.}
+\item{size.y}{The length of the x-axis. Default is size.x.}
 
 \item{lty}{The lime type, default is 1 (solid line).}
 
@@ -25,16 +25,18 @@ h.arc.right.up(
 
 \item{vis}{Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.}
 
-\item{pos.x}{The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.}
+\item{pos.x}{Position on the x axis. Default is 0.}
 
-\item{pos.y}{The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.}
-}
-\value{
-Return the horizontal arc right up object
+\item{pos.y}{Position on the y axis, Default is 0.}
 }
 \description{
-Define the coordinates of the horizontal right up arch
+Define the coordinates of the right up arch of a circle
 }
 \examples{
+\dontrun{
+# default coordinates of the right up arch
+
 h.arc.right.up()
+
+}
 }

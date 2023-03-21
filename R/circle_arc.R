@@ -1,9 +1,11 @@
-#' Define the coordinates for drawing the vertical left up arch
+#' Coordinates of a vertical left up arch
+#'
+#' Define the coordinates of the left up arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
@@ -12,8 +14,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the left up arch
+#'
+#' v.arc.left.up()
+#'
+#' }
 v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
-                          size.y=square()$size.y[[1]]/2,
+                          size.y=size.x,
                           pos.x = 0, pos.y = 0,
                           vis = 1,
                           lty =1, lwd = 3) {
@@ -32,28 +40,36 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
-#' Define the coordinates for drawing the vertical right up arch
+#' Coordinates of a vertical right up arch
+#'
+#' Define the coordinates of the right up arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return Return the vertical arc right up object
-#' @examples
-#' v.arc.right.up()
+#' @return
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # default coordinates of the right up arch
+#'
+#' v.arc.right.up()
+#'
+#' }
 v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
-                           size.y=square()$size.y[[1]]/2,
+                           size.y=size.x,
                            pos.x = 0, pos.y = 0,
                            vis = 1,
                            lty =1, lwd = 3) {
@@ -72,27 +88,37 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
 
-#' Define the coordinates for drawing the vertical left down arch
+#' Coordinates of a vertical left down arch
+#'
+#' Define the coordinates of the left down arch of a circle
+#'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
-#' @return Return the vertical arc left down object
-#' @examples
-#' v.arc.left.down()
+#'
+#' @return
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # default coordinates of the left down arch
+#'
+#' v.arc.left.down()
+#'
+#' }
 v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
-                            size.y=square()$size.y[[1]]/2,
+                            size.y=size.x,
                             lty =1, lwd = 3, vis  = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape  = "v.arc.left.down",
@@ -109,28 +135,37 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
 
-#' Define the coordinates of the vertical right down arch
+#' Coordinates of a vertical right down arch
+#'
+#' Define the coordinates of the right down arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
-#' @return Return the vertical arc right down object
-#' @examples
-#' v.arc.right.down()
+#'
+#' @return
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # default coordinates of the right down arch
+#'
+#' v.arc.right.down()
+#'
+#' }
 v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
-                             size.y=square()$size.y[[1]]/2,
+                             size.y=size.x,
                              lty =1, lwd = 3,vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape = "v.arc.right.down",
@@ -147,30 +182,38 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
 
-#' Define the coordinates of the horizontal left up arch
+#' Coordinates of a horizontal left up arch
+#'
+#' Define the coordinates of the left up arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return Return the horizontal arc left up object
+#' @return
+#' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the left up arch
+#'
 #' h.arc.left.up()
-#' @export
+#'
+#' }
 h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
-                          size.y=square()$size.y[[1]]/2,lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
+                          size.y=size.x,
+                          lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape  = "h.arc.left.up",
     size.x  = list(size.x),
@@ -186,29 +229,36 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
-#' Define the coordinates of the horizontal right up arch
+#' Coordinates of a horizontal right up arch
+#'
+#' Define the coordinates of the right up arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return Return the horizontal arc right up object
+#' @return
+#' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the right up arch
+#'
 #' h.arc.right.up()
-#' @export
+#'
+#' }
 h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
-                           size.y=square()$size.y[[1]]/2,
+                           size.y=size.x,
                            lty =1, lwd = 3,vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape  = "h.arc.right.up",
@@ -225,30 +275,37 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
 
-#' Define the coordinates of the horizontal left down arch
+#' Coordinates of a horizontal left down arch
+#'
+#' Define the coordinates of the left down arch of a circle
 #'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return Return the horizontal arc left down object
+#' @return
+#' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the left down arch
+#'
 #' h.arc.left.down()
-#' @export
+#'
+#' }
 h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
-                            size.y=square()$size.y[[1]]/2,
+                            size.y=size.x,
                             lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape = "h.arc.left.down",
@@ -265,28 +322,36 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
 }
 
-#' Define the coordinates of the horizontal right down arch
+#' Coordinates of a horizontal right down arch
+#'
+#' Define the coordinates of the right down arch of a circle
+#'
 #' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is square()$size.y[[1]]/2.
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Deafult is 0.
+#' @param size.y The length of the x-axis. Default is size.x.
+#' @param pos.x Position on the x axis. Default is 0.
+#' @param pos.y Position on the y axis, Default is 0.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Deafult is 1, making the figure visible. To hide the figure, change it to 0.
 #'
-#' @return Return the horizontal arc right down object
+#' @return
+#' @export
 #'
 #' @examples
+#' \dontrun{
+#' # default coordinates of the right down arch
+#'
 #' h.arc.right.down()
-#' @export
+#'
+#' }
 h.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
-                             size.y=square()$size.y[[1]]/2,
+                             size.y=size.x,
                              lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
     shape = "h.arc.right.down",
@@ -303,7 +368,7 @@ h.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'small'))
+    tag=list(c('simple', 'no.d'))
   )
   attr(value, "class") <- "figure"
   value
