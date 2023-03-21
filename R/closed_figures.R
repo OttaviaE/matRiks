@@ -352,7 +352,7 @@ luck <- function(    size.x=10,
 #'
 #' # change the coordinates for drawing a smaller pentagon
 #'
-#' pentagon(size.x = 10,)
+#' pentagon(size.x = 10)
 #' }
 pentagon <- function(size.x=15,
                      size.y=size.x,
@@ -407,7 +407,7 @@ pentagon <- function(size.x=15,
 #'
 #' # change the coordinates for drawing a smaller hexagon
 #'
-#' hexagon(size.x = 10,)
+#' hexagon(size.x = 10)
 #' }
 hexagon <- function(size.x=15,
                     size.y=size.x,
