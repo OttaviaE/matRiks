@@ -118,7 +118,7 @@ ellipse <- function(size.x=10,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a triangle
+#' @return Return the coordinates for drawing a triangle
 #' @export
 #'
 #' @examples
@@ -174,7 +174,7 @@ triangle <- function(size.x=15,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a square
+#' @return Return the coordinates for drawing a square
 #' @export
 #'
 #' @examples
@@ -230,7 +230,7 @@ square <- function(size.x= 15,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a rectangle
+#' @return Return the coordinates for drawing a rectangle
 #' @export
 #'
 #' @examples
@@ -286,7 +286,7 @@ rectangle <- function(size.x=10,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a luck
+#' @return Return the coordinates for drawing a luck
 #' @export
 #'
 #' @examples
@@ -342,7 +342,7 @@ luck <- function(    size.x=10,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a pentagon
+#' @return Return the coordinates for drawing a pentagon
 #' @export
 #'
 #' @examples
@@ -397,7 +397,7 @@ pentagon <- function(size.x=15,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return Return the coordinates for drawing a a hexagon
+#' @return Return the coordinates for drawing an hexagon
 #' @export
 #'
 #' @examples
