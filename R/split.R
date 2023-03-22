@@ -1,7 +1,37 @@
-split_mat<- function(obj) {
+split_mat<- function(obj,vis = TRUE, cell = NULL) {
   UseMethod("split_mat")
 }
-#' Isolate ONLY the visible objects in a cell
+#' Isolate the objects in a cell
+#'
+#' @param obj The figure
+#' @param cell the index of the cell to be splitted
+#' @param vis boh Ah si forse era quando volevo integrare con decof
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
+  if(vis == TRUE) {
+    index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
+  } else {
+    index_elements = 1:length(obj$shape)
+  }
+
+  split.m <- vector("list", length(index_elements))
+  for (i in 1:length(split.m)) {
+    split.m[[i]] <- vector("list", length(obj))
+    for (j in 1:length(split.m[[i]])) {
+      names(split.m)[i] = obj$shape[index_elements[i]]
+      attr(split.m[[i]], "class") = "figure"
+      split.m[[i]][[j]] = obj[[j]][index_elements[i]]
+      names(split.m[[i]])[j] = names(obj)[j]
+    }
+  }
+  return(split.m)
+}
+#' Isolate the visible objects in a cell
 #'
 #' @param m The matrix
 #' @param cell the index of the cell to be splitted
@@ -11,31 +41,15 @@ split_mat<- function(obj) {
 #' @export
 #'
 #' @examples
-split_mat.figure = function(m, cell = NULL, vis = NULL) {
+#'
+split_mat.matrix = function(obj, vis = TRUE, cell = NULL) {
   if (is.null(cell) == T) {
-    m.start = correct(m, mat.type = mat.type)
+    cell.start = correct(obj, mat.type = mat.type)
   } else {
     cell = paste0("Sq", cell)
-    m.start = m[[cell]]
+    cell.start = obj[[cell]]
   }
-
-  if(is.null(vis) == T) {
-    index_elements<-which(m.start$visible==1 & unlist(lapply(m.start$num, all, 1)))
-  } else {
-    index_elements = 1:length(m.start$shape)
-  }
-
-  split.m <- vector("list", length(index_elements))
-  for (i in 1:length(split.m)) {
-    split.m[[i]] <- vector("list", length(m.start))
-    for (j in 1:length(split.m[[i]])) {
-      names(split.m)[i] = m.start$shape[index_elements[i]]
-      attr(split.m[[i]], "class") = "figure"
-      split.m[[i]][[j]] = m.start[[j]][index_elements[i]]
-      names(split.m[[i]])[j] = names(m.start)[j]
-      split.m[[i]][j]$visible = 1
-    }
-  }
+  split.m<-split_mat(cell.start, vis = vis)
   return(split.m)
 }
 correct<- function(obj) {
@@ -43,19 +57,18 @@ correct<- function(obj) {
 }
 #' Extract the cell of the correct response
 #'
-#' @param m
-#' @param mat.type
+#' @param obj
 #'
 #' @return The cell with the correct response, either Sq9 (9-cell matrix) or Sq5 (4-cell matrix)
 #' @export
 #'
 #' @examples
-correct.matriKS = function(m, mat.type = 9) {
-  if (mat.type == 9) {
+correct.matriKS = function(obj) {
+  if (obj$mat.type == 9) {
     correct = m$Sq9
   } else {
-    correct = m$Sq5
+    correct = m$Sq4
   }
-
   return(correct)
 }
+

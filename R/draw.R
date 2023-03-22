@@ -19,10 +19,10 @@ draw <- function(obj, main = NULL, canvas = TRUE,
   UseMethod("draw")
 }
 
-# bisogna portare la funzione line dall'altra parte ----
+# eliminiamo il riempimento a righe  ----
 
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
-                     bg = "white",mar=c(1,1,1,1),xlim=16) {
+                       bg = "white",mar=c(1,1,1,1),xlim=16) {
   if (canvas == TRUE)
   {
     DescTools::Canvas(xlim=xlim,mar=mar, main = main, bg = bg)
@@ -31,32 +31,17 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
   {
     if(obj$visible[[j]]==1)
     {
-      if(grepl("line",obj$shade[[j]][1]))
-      {
-        elements<-decof(obj)
-        plotting_lines<-which(obj$visible==1 & grepl("line",unlist(obj$shade)))
-        for(ll in 1:length(plotting_lines)){
-          line(elements[[plotting_lines[[ll]]]],
-               obj$shade[[j]][1])
-
-        }
-        obj$shade[[j]][1] <- NA
-      }
       if(obj$num[[j]][1]==1){
-
         DescTools::DrawRegPolygon(x = obj$pos.x[[j]], y = obj$pos.y[[j]], rot = obj$rotation[[j]],
-                       radius.x = obj$size.x[[j]], radius.y = obj$size.y[[j]], nv = obj$nv[[j]],
-                       lty=obj$lty[[j]],lwd=obj$lwd[[j]],col = obj$shade[[j]])
-
+                                  radius.x = obj$size.x[[j]], radius.y = obj$size.y[[j]], nv = obj$nv[[j]],
+                                  lty=obj$lty[[j]],lwd=obj$lwd[[j]],col = obj$shade[[j]])
 
       }else{
-
         DescTools::DrawCircle(x = obj$pos.x[[j]], y = obj$pos.y[[j]],
-                   r.out = obj$size.x[[j]],r.in= obj$size.y[[j]],
-                   theta.1=obj$theta.1[[j]],
-                   theta.2=obj$theta.2[[j]], nv = obj$nv[[j]],
-                   lty=obj$lty[[j]],lwd=obj$lwd[[j]],col = obj$shade[[j]])
-
+                              r.out = obj$size.x[[j]],r.in= obj$size.y[[j]],
+                              theta.1=obj$theta.1[[j]],
+                              theta.2=obj$theta.2[[j]], nv = obj$nv[[j]],
+                              lty=obj$lty[[j]],lwd=obj$lwd[[j]],col = obj$shade[[j]])
       }
     }
   }
