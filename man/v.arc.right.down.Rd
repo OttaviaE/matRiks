@@ -29,6 +29,9 @@ v.arc.right.down(
 
 \item{pos.y}{Position on the y axis, Default is 0.}
 }
+\value{
+The coordinates of the right down arch
+}
 \description{
 Define the coordinates of the right down arch of a circle
 }

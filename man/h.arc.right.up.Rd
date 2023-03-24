@@ -29,6 +29,9 @@ h.arc.right.up(
 
 \item{pos.y}{Position on the y axis, Default is 0.}
 }
+\value{
+The coordinates of the right up arch
+}
 \description{
 Define the coordinates of the right up arch of a circle
 }

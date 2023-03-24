@@ -2,17 +2,17 @@
 % Please edit documentation in R/split.R
 \name{split_mat.figure}
 \alias{split_mat.figure}
-\title{Isolate ONLY the visible objects in a cell}
+\title{Isolate the objects in a cell}
 \usage{
-\method{split_mat}{figure}(m, cell = NULL, vis = NULL)
+\method{split_mat}{figure}(obj, vis = TRUE, cell = NULL)
 }
 \arguments{
-\item{m}{The matrix}
+\item{obj}{The figure}
+
+\item{vis}{}
 
 \item{cell}{the index of the cell to be splitted}
-
-\item{vis}{boh Ah si forse era quando volevo integrare con decof}
 }
 \description{
-Isolate ONLY the visible objects in a cell
+Isolate the objects in a cell
 }

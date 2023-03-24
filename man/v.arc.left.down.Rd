@@ -29,6 +29,9 @@ v.arc.left.down(
 
 \item{pos.y}{Position on the y axis, Default is 0.}
 }
+\value{
+The coordinates of the left down arch
+}
 \description{
 Define the coordinates of the left down arch of a circle
 }

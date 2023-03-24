@@ -4,10 +4,10 @@
 \alias{correct.matriKS}
 \title{Extract the cell of the correct response}
 \usage{
-\method{correct}{matriKS}(m, mat.type = 9)
+\method{correct}{matriKS}(obj)
 }
 \arguments{
-\item{mat.type}{}
+\item{obj}{}
 }
 \value{
 The cell with the correct response, either Sq9 (9-cell matrix) or Sq5 (4-cell matrix)

@@ -29,6 +29,9 @@ v.arc.left.up(
 
 \item{lwd}{The line width. Default is 3}
 }
+\value{
+The coordinates of the left up arch of a circle
+}
 \description{
 Define the coordinates of the left up arch of a circle
 }

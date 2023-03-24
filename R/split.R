@@ -5,7 +5,7 @@ split_mat<- function(obj,vis = TRUE, cell = NULL) {
 #'
 #' @param obj The figure
 #' @param cell the index of the cell to be splitted
-#' @param vis boh Ah si forse era quando volevo integrare con decof
+#' @param vis
 #'
 #' @return
 #' @export
@@ -31,16 +31,27 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
   }
   return(split.m)
 }
-#' Isolate the visible objects in a cell
+#' Isolate the visible objects in a cell of the matrix
 #'
 #' @param m The matrix
-#' @param cell the index of the cell to be splitted
-#' @param vis boh Ah si forse era quando volevo integrare con decof
+#' @param cell The index of the cell to be splitted. Default is the cell of the correct response
+#' @param vis Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)
 #'
-#' @return
+#' @return A list of the same length of the visible figures in the selected cell (vis = TRUE) or of the same lenght of all the figures in the matrix (vis = TRUE)
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'
+#' my_matrix = apply(Raven(
+#' st1 = cof(triangle(), square(), circle())
+#' ))
+#'
+#' my_split = split_mat(my_matrix)
+#'
+#' draw(my_split[[1]])
+#'
+#' }
 #'
 split_mat.matrix = function(obj, vis = TRUE, cell = NULL) {
   if (is.null(cell) == T) {

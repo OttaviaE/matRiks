@@ -17,6 +17,19 @@ s.star(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0)
 
 \item{lty}{The lime type, default is 1 (solid line).}
 }
+\value{
+The coordinates of a single star composed of four lucks
+}
 \description{
 Define the coordinates for drawing a single star (to be used in shape())
+}
+\examples{
+\dontrun{
+# get the coordinates of a single star composed of four luck
+s.star()
+
+# change the color of the star
+draw(s.star(shd = "grey", lty = 0))
+
+}
 }
