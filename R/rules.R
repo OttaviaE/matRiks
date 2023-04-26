@@ -112,10 +112,10 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
     }
   }
   if (grepl("inv", rule)) {
-    fig$size.x<-Map('+', fig$size.x,(n*.9))
-    fig$size.y<-Map('+', fig$size.y,(n*.9))
-    fig$pos.x<-Map('+', fig$pos.x,(n*.9))
-    fig$pos.y<-Map('-', fig$pos.y,(n*.9))
+    fig$size.x<-Map('*', fig$size.x,(n*.6))
+    fig$size.y<-Map('*', fig$size.y,(n*.6))
+    fig$pos.x<-Map('/', fig$pos.x,(n*.6))
+    fig$pos.y<-Map('/', fig$pos.y,(n*.6))
   } else {
     fig$size.x<-Map('/', fig$size.x,(n*.9))
     fig$size.y<-Map('/', fig$size.y,(n*.9))
