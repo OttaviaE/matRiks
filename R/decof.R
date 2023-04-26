@@ -4,6 +4,8 @@ decof<- function(obj) {
 
 #' Split the elements of a figure
 #'
+#' Return the elements composing a figure
+#'
 #' @param The object to be splitted
 #'
 #' @return
