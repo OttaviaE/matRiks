@@ -5,7 +5,7 @@
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return
+#' @return Return the coordinates for drawing a vertical eight
 #' @export
 #'
 #' @examples
@@ -30,7 +30,7 @@ vertical.eight <- function(lwd = 3, lty = 1) {
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return
+#' @return Return the coordinates for drawing an horizontal eight
 #' @export
 #'
 #' @examples
@@ -55,7 +55,7 @@ horizontal.eight <- function(lwd = 3, lty = 1) {
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return
+#' @return Return the coordinates for drawing a single vertical eight to be used in shape()
 #' @export
 #'
 #' @examples
@@ -82,7 +82,7 @@ s.vertical.eight <- function(lwd = 3, lty = 1) {
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return
+#' @return Return the coordinates for drawing a single horizontal eight to be used in shape()
 #' @export
 #'
 #' @examples
