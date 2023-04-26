@@ -2,8 +2,8 @@
 #'
 #' Define the coordinates of the circle sections composing a lily
 #'
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a lily
 #' @export
@@ -30,8 +30,8 @@ lily <- function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a lily, which is forced to be a single figure (to be used in shape())
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a single lily
 #' @export
@@ -60,8 +60,8 @@ s.lily <- function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing an up petal
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing an up petal
 #' @export
@@ -90,8 +90,8 @@ up.petal = function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a down petal
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a down petal
 #' @export
@@ -119,8 +119,8 @@ down.petal = function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a left petal
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a left petal
 #' @export
@@ -147,8 +147,8 @@ left.petal = function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a right petal
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a right petal
 #' @export
@@ -175,8 +175,8 @@ right.petal = function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a flower
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a flower made of petals
 #' @export
@@ -203,8 +203,8 @@ flower = function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates of the circle sections composing a flower, which is forced to be a single figure (to be used in shape())
 #'
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
 #' @return Return the coordinates for drawing a single flower
 #' @export
