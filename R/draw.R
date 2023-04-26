@@ -1,13 +1,14 @@
 #' Draw figures
 #'
+#'
 #' @param obj The object to be draw. Can be a single figure, a matrix, or the responses
-#' @param main Print a title? Default is FALSE
-#' @param canvas Do you want to overimpose the objects? Default is FALSE
-#' @param hide Do you want to hide the figure of the correct response? Default is FALSE
-#' @param n.figure How main figure should the matrix have? Default is 9
-#' @param bg Choose the color of  the background. Deafult is white
-#' @param mar Change margins
-#' @param xlim Change the length of the x axis
+#' @param main logical, print the title of the drawing. Default is FALSE
+#' @param canvas logical, draw the figure on a new canvas. Default is TRUE
+#' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
+#' @param n.figure integer, define the number of cells of the matrix. Default is 9
+#' @param bg character, define the color background. Default is white
+#' @param mar numeric vector, change margins of the canvas
+#' @param xlim numeric, change the length of the x axis
 #'
 #' @return A graphic
 #' @export
