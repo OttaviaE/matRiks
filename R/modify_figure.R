@@ -1,10 +1,12 @@
-#' Functions to modify the visible objects in a figure
+#' Hide figures
+#'
+#' Change the visibility of the single objects composing a figure from 1 to 0
+#'
 #'
 #' @param obj The figure of a matrix
-#' @param index The index of the element to hide/show/replace
-#' @param replacement The object with which an element should be replaced
+#' @param index The index of the element to hide
 #'
-#' @return
+#' @return An object with changed visibility
 #' @export
 #'
 #' @examples Arrivano
@@ -21,6 +23,17 @@ hide.figure<-function(obj,index="Full")
   return(obj)
 }
 
+#' Show figures
+#'
+#' Change the visibility of the single objects composing a figure from 0 to 1
+#'
+#' @param obj The figure of a matrix
+#' @param index The index of the element to show
+#'
+#' @return An object with changed visibility
+#' @export
+#'
+#' @examples
 show<- function(obj,index) {
   UseMethod("show")
 }
@@ -34,6 +47,21 @@ show.figure<-function(obj,index="Full")
   obj$visible[index]<-rep(1,length(index))
   return(obj)
 }
+#' Replace objects
+#'
+#' Replace an object in a figure with another object
+#'
+#' @param obj The figure of a matrix
+#' @param index The index of the element to replace
+#' @param replacement The name of the figure with which the original one is replaced
+#'
+#' @return An object with a changed figure
+#' @param replacement
+#'
+#' @return
+#' @export
+#'
+#' @examples
 replace <- function(obj,index,replacement) {
   UseMethod("replace")
 }
