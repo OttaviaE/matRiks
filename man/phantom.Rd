@@ -2,10 +2,21 @@
 % Please edit documentation in R/other-figures.R
 \name{phantom}
 \alias{phantom}
-\title{Define the cooordinates of a panthom figure}
+\title{Cooordinates of a panthom figure}
 \usage{
 phantom()
 }
+\value{
+An empty figure (nothing is plotted in draw)
+}
 \description{
-Define the cooordinates of a panthom figure
+Draw an empty figure
+}
+\examples{
+\dontrun{
+# empty figure
+phantom()
+# draw an empty figure
+draw(phantom())
+}
 }

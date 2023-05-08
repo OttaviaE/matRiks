@@ -2,19 +2,50 @@
 % Please edit documentation in R/composed_figures.R, R/other-figures.R
 \name{bow.tie}
 \alias{bow.tie}
-\title{Define the coordinates of a vertical bow tie}
+\title{Coordinates of a vertical bow tie}
 \usage{
-bow.tie(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
+bow.tie(size.x = 10, size.y = 10, pos.x = 0, shd = NA, lty = 1, lwd = 3)
 
-bow.tie(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
+bow.tie(size.x = 10, size.y = 10, pos.x = 0, shd = NA, lty = 1, lwd = 3)
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
 
-\item{lty}{}
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+}
+\value{
+Return the coordinates for drawing a vertical bow tie
+
+Return the coordinates for drawing a vertical bow tie
 }
 \description{
-Define the coordinates of a vertical bow tie
+Define the coordinates for drawing a vertical bow tie composed of two triangles
 
-Define the cooordinates for a vertical bow tie
+Define the coordinates for drawing a vertical bow tie composed of two triangles
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a bow tie
+bow.tie()
+
+# change the coordinates for drawing a smaller bow tie
+
+bow.tie(size.x = 5)
+}
+\dontrun{
+# return the default coordinates for drawing a vertical bow tie
+bow.tie()
+
+# change the coordinates for drawing a smaller bow tie
+
+bow.tie(size.x = 5)
+}
 }

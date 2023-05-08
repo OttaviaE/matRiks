@@ -2,7 +2,7 @@
 % Please edit documentation in R/rules.R
 \name{shade}
 \alias{shade}
-\title{Change the shading of a figure}
+\title{Shading of a figure}
 \usage{
 shade(fig, n, ...)
 }
@@ -12,6 +12,8 @@ shade(fig, n, ...)
 \item{n}{A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)}
 
 \item{...}{}
+
+\item{rule}{The rule for shading the figure}
 }
 \value{
 A figure with different shading characteristics

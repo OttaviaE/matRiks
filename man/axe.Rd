@@ -2,13 +2,34 @@
 % Please edit documentation in R/other-figures.R
 \name{axe}
 \alias{axe}
-\title{Define the cooordinates for an axe}
+\title{Coordinates of an axe}
 \usage{
 axe(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA)
 }
 \arguments{
-\item{shd}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+}
+\value{
+Return the coordinates for drawing an axe
 }
 \description{
-Define the cooordinates for an axe
+Define the coordinates for drawing an axe
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing an axe
+axe()
+
+# change the coordinates for drawing a smaller single Malta cross
+
+axe(size.x = 5)
+}
 }

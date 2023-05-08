@@ -2,13 +2,36 @@
 % Please edit documentation in R/other-figures.R
 \name{malta}
 \alias{malta}
-\title{Define the cooordinates for a Malta cross}
+\title{Coordinates of a Malta cross}
 \usage{
-malta(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
+malta(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing a single horizontal bow tie
 }
 \description{
-Define the cooordinates for a Malta cross
+Define the coordinates for drawing a Malta cross
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a Malta cross
+malta()
+
+# change the coordinates for drawing a smaller Malta cross
+
+malta(size.x = 5)
+}
 }

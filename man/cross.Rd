@@ -2,18 +2,39 @@
 % Please edit documentation in R/lines.R
 \name{cross}
 \alias{cross}
-\title{Define the coordinates of a cross}
+\title{Coordinates of a cross}
 \usage{
 cross(
   size.x = sqrt(square()$size.x[[1]]^2/2),
-  size.y = sqrt(square()$size.y[[1]]^2/2),
+  size.y = size.x,
   lwd = 3,
   lty = 1
 )
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing an horizontal line
 }
 \description{
-Define the coordinates of a cross
+Define the coordinates for drawing a cross line
+}
+\examples{
+\dontrun{
+# default coordinates of an horizontal line
+
+cross()
+
+# draw a vertical line with different lty
+
+draw(cross(lty = 2))
+
+}
 }

@@ -7,9 +7,9 @@
 down.petal(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lwd}{The line width. Default is 3.}
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
 
-\item{lty}{The lime type, default is 1 (solid line).}
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 }
 \value{
 Return the coordinates for drawing a down petal

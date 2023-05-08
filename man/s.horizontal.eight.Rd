@@ -2,13 +2,26 @@
 % Please edit documentation in R/eight_shapes.R
 \name{s.horizontal.eight}
 \alias{s.horizontal.eight}
-\title{Define the coordinates of a single horizontal eight (to be used in diff_shapes)}
+\title{Coordinates of a single horizontal eight}
 \usage{
 s.horizontal.eight(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing a single horizontal eight to be used in shape()
 }
 \description{
-Define the coordinates of a single horizontal eight (to be used in diff_shapes)
+Define the coordinates of a single vertical eight, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# default coordinates of a single horizontal eight
+s.horizontal.eight()
+# change the line type
+s.horizontal.eight(lty = 2)
+}
 }

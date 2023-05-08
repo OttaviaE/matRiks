@@ -19,3 +19,12 @@ A figure with different rotation coordinates
 \description{
 Apply a reflection of pi on a figure
 }
+\examples{
+\dontrun{
+# default pacman
+draw(pacman())
+
+# apply the default rotation on the default luck
+draw(reflect(pacman()))
+}
+}

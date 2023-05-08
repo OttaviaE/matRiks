@@ -2,13 +2,19 @@
 % Please edit documentation in R/concatenation.R
 \name{com}
 \alias{com}
-\title{Concantenation of matrices}
+\title{Concatenation of matrices}
 \usage{
 com(...)
 }
 \arguments{
-\item{...}{}
+\item{...}{the matrices to be concatenated}
+}
+\value{
+Return a matrix composed of 2+ matrices
 }
 \description{
-Concantenation of matrices
+Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
+}
+\examples{
+la pazienza è la virtù dei forti
 }

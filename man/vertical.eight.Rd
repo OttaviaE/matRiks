@@ -2,13 +2,26 @@
 % Please edit documentation in R/eight_shapes.R
 \name{vertical.eight}
 \alias{vertical.eight}
-\title{Define the coordinates of a vertical eight}
+\title{Coordinates of a vertical eight}
 \usage{
 vertical.eight(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing a vertical eight
 }
 \description{
 Define the coordinates of a vertical eight
+}
+\examples{
+\dontrun{
+# default coordinates of the vertical eight
+vertical.eight()
+# change the line type
+vertical.eight(lty = 2)
+}
 }

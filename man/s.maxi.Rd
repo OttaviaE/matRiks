@@ -2,13 +2,36 @@
 % Please edit documentation in R/other-figures.R
 \name{s.maxi}
 \alias{s.maxi}
-\title{Define the cooordinates for a single maxi (to be used in diff_shapes)}
+\title{Coordinates of a single maxi}
 \usage{
 s.maxi(size.x = 8, size.y = 4, pos.x = 0, shd = NA, lty = 1, lwd = 3)
 }
 \arguments{
-\item{lwd}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 8}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 4.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+}
+\value{
+Return the coordinates for drawing a maxi
 }
 \description{
-Define the cooordinates for a single maxi (to be used in diff_shapes)
+Define the coordinates for drawing a single maxi (i.e., a cross composed of four lucks), which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a single maxi
+s.maxi()
+
+# change the coordinates for drawing a smaller single maxi
+
+s.maxi(size.x = 5)
+}
 }

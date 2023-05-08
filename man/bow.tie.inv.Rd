@@ -2,13 +2,43 @@
 % Please edit documentation in R/other-figures.R
 \name{bow.tie.inv}
 \alias{bow.tie.inv}
-\title{Define the cooordinates for an horizontal bow tie}
+\title{Coordinates of an horizontal bow tie}
 \usage{
-bow.tie.inv(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
+bow.tie.inv(
+  size.x = 10,
+  size.y = size.x,
+  pos.x = 0,
+  shd = NA,
+  lwd = 3,
+  lty = 1
+)
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing a vertical bow tie
 }
 \description{
-Define the cooordinates for an horizontal bow tie
+Define the coordinates for drawing an horizontal bow tie composed of two triangles
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a vertical bow tie
+bow.tie.inv()
+
+# change the coordinates for drawing a smaller bow tie
+
+bow.tie.inv(size.x = 5)
+}
 }

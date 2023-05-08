@@ -16,25 +16,34 @@ draw(
 )
 }
 \arguments{
-\item{obj}{The object to be draw. Can be a single figure, a matrix, or the responses}
+\item{obj}{The figure to be drawn. Can be a single figure, a matrix, or the responses}
 
-\item{main}{Print a title? Default is FALSE}
+\item{main}{logical, print the title of the drawing. Default is FALSE}
 
-\item{canvas}{Do you want to overimpose the objects? Default is FALSE}
+\item{canvas}{logical, draw the figure on a new canvas. Default is TRUE}
 
-\item{hide}{Do you want to hide the figure of the correct response? Default is FALSE}
+\item{hide}{logical, hide the cell corresponding to the correct response. Default is FALSE}
 
-\item{n.figure}{How main figure should the matrix have? Default is 9}
+\item{n.figure}{integer, define the number of cells of the matrix. Default is 9}
 
-\item{bg}{Choose the color of  the background. Deafult is white}
+\item{bg}{character, define the color background. Default is white}
 
-\item{mar}{Change margins}
+\item{mar}{numeric vector, change margins of the canvas}
 
-\item{xlim}{Change the length of the x axis}
+\item{xlim}{numeric, change the length of the x axis}
 }
 \value{
 A graphic
 }
 \description{
 Draw figures
+}
+\examples{
+\dontrun{
+# draw a circle
+draw(circle())
+
+# draw a circle inside the other
+draw(size(circle(), 2), canvas = FALSE)
+}
 }

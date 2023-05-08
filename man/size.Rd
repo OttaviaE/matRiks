@@ -21,3 +21,15 @@ A figure with different size.x (and size.y) coordinates
 \description{
 Resize a figure
 }
+\examples{
+\dontrun{
+# default square
+draw(square())
+
+# apply the default resizing to the default square
+draw(size(square()))
+
+# make the square bigger
+draw(size(square(), rule = "inv"))
+}
+}

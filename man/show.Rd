@@ -17,3 +17,13 @@ An object with changed visibility
 \description{
 Change the visibility of the single objects composing a figure from 0 to 1
 }
+\examples{
+\dontrun{
+# concanate three figures into an object
+my_shapes = cof(square(), triangle(), slice())
+# draw object
+draw(my_shapes)
+# show the triangle
+draw(show(my_shapes, 2))
+}
+}

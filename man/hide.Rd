@@ -2,20 +2,28 @@
 % Please edit documentation in R/modify_figure.R
 \name{hide}
 \alias{hide}
-\title{Functions to modify the visible objects in a figure}
+\title{Hide figures}
 \usage{
 hide(obj, index)
 }
 \arguments{
 \item{obj}{The figure of a matrix}
 
-\item{index}{The index of the element to hide/show/replace}
-
-\item{replacement}{The object with which an element should be replaced}
+\item{index}{The index of the element to hide}
+}
+\value{
+An object with changed visibility
 }
 \description{
-Functions to modify the visible objects in a figure
+Change the visibility of the single objects composing a figure from 1 to 0
 }
 \examples{
-Arrivano
+\dontrun{
+# concanate three figures into an object
+my_shapes = cof(square(), triangle(), slice())
+# draw object
+draw(my_shapes)
+# show the triangle
+draw(show(my_shapes, 2))
+}
 }

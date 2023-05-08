@@ -7,8 +7,14 @@
 \method{decof}{figure}(obj)
 }
 \arguments{
-\item{The}{object to be splitted}
+\item{The}{figure to be split in its single components}
+}
+\value{
+A named list of figures
 }
 \description{
-Split the elements of a figure
+Return the elements composing a figure
+}
+\examples{
+la salma è la virtù dei morti
 }

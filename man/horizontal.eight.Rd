@@ -2,13 +2,26 @@
 % Please edit documentation in R/eight_shapes.R
 \name{horizontal.eight}
 \alias{horizontal.eight}
-\title{Define the coordinates of an horizontal eight}
+\title{Coordinates of an horizontal eight}
 \usage{
 horizontal.eight(lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+}
+\value{
+Return the coordinates for drawing an horizontal eight
 }
 \description{
 Define the coordinates of an horizontal eight
+}
+\examples{
+\dontrun{
+# default coordinates of the horizontal eight
+horizontal.eight()
+# change the line type
+horizontal.eight(lty = 2)
+}
 }

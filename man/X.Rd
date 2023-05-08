@@ -2,18 +2,38 @@
 % Please edit documentation in R/lines.R
 \name{X}
 \alias{X}
-\title{Define the coordinates of an X}
+\title{Coordinates of an X}
 \usage{
-X(
-  size.x = sqrt(square()$size.x[[1]]^2/2),
-  size.y = sqrt(square()$size.y[[1]]^2/2),
-  lwd = 3,
-  lty = 1
-)
+X(size.x = sqrt(square()$size.x[[1]]^2/2), size.y = size.x, lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{pos.x}{numeric, position on the x axis. Default is 0.}
+
+\item{pos.y}{numeric, position the y axis, Default is 0.}
+}
+\value{
+Return the coordinates for drawing an X
 }
 \description{
-Define the coordinates of an X
+Define the coordinates for drawing an X
+}
+\examples{
+\dontrun{
+# default coordinates of an X
+
+X()
+
+# draw an X with different lty
+
+draw(X(lty = 2))
+
+}
 }

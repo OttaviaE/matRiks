@@ -7,15 +7,18 @@
 logic(fig, n, rule, seed, ...)
 }
 \arguments{
-\item{fig}{A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.}
+\item{fig}{Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.}
 
 \item{n}{???}
 
 \item{rule}{Define the logic rule to be applied, either `AND`, `OR`, `XOR`}
 
-\item{seed}{Set the ranodm seed so that the permutations are consistent}
+\item{seed}{Set the random seed so that the permutations are consistent}
 
 \item{...}{}
+}
+\value{
+An object composed of figures combined according to different logic rules
 }
 \description{
 Apply logic rules to different figures

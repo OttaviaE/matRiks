@@ -2,13 +2,18 @@
 % Please edit documentation in R/rules.R
 \name{identity}
 \alias{identity}
-\title{Indentity rule}
+\title{Identity rule}
 \usage{
 identity(fig, ...)
 }
 \arguments{
+\item{fig}{The figures on which the rules is applied.}
+
 \item{...}{}
 }
+\value{
+An object composed of figures combined according to an identity rule
+}
 \description{
-Indentity rule
+Apply an identity rule (i.e., no changes)
 }

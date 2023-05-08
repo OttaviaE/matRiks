@@ -15,7 +15,19 @@ replace(obj, index, replacement)
 }
 \value{
 An object with a changed figure
+
+Return an object with a different figure
 }
 \description{
 Replace an object in a figure with another object
+}
+\examples{
+\dontrun{
+# concanate three figures into an object
+my_shapes = cof(square(), triangle(), slice())
+# draw object
+draw(my_shapes)
+# replace the square with a gray pacman
+draw(replace(a, 1, pacman(shd = "grey")))
+}
 }

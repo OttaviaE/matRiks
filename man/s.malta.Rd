@@ -2,13 +2,36 @@
 % Please edit documentation in R/other-figures.R
 \name{s.malta}
 \alias{s.malta}
-\title{Define the cooordinates for a single Malta cross (to be used in diff_shapes)}
+\title{Coordinates of a Malta cross}
 \usage{
 s.malta(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
 }
 \arguments{
-\item{lty}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
+
+\item{pos.x}{numeric, define the position on the x axis. Default is 0.}
+
+\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+}
+\value{
+Return the coordinates for drawing a single Malta cross
 }
 \description{
-Define the cooordinates for a single Malta cross (to be used in diff_shapes)
+Define the coordinates for drawing a single Malta cross, which is forced to be a single figure (to be used in shape())
+}
+\examples{
+\dontrun{
+# return the default coordinates for drawing a single Malta cross
+s.malta()
+
+# change the coordinates for drawing a smaller single Malta cross
+
+s.malta(size.x = 5)
+}
 }

@@ -2,11 +2,11 @@
 % Please edit documentation in R/lines.R
 \name{diagline}
 \alias{diagline}
-\title{Define the coordinates of the main diagonal line}
+\title{Coordinates of the main diagonal line}
 \usage{
 diagline(
   size.x = list(sqrt(square()$size.x[[1]]^2/2)),
-  size.y = list(sqrt(square()$size.x[[1]]^2/2)),
+  size.y = size.x,
   pos.x = 0,
   pos.y = 0,
   lty = 1,
@@ -16,8 +16,33 @@ diagline(
 )
 }
 \arguments{
-\item{vis}{}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)}
+
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
+
+\item{pos.x}{numeric, position on the x axis. Default is 0.}
+
+\item{pos.y}{numeric, position the y axis, Default is 0.}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
+}
+\value{
+Return the coordinates for drawing an horizontal line
 }
 \description{
-Define the coordinates of the main diagonal line
+Define the coordinates for drawing the main diagonal line
+}
+\examples{
+\dontrun{
+# default coordinates of the main diagonal line
+
+diagline()
+
+# draw the main diagonal line with different lty
+
+draw(diagline(lty = 2))
+
+}
 }
