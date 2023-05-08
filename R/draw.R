@@ -54,3 +54,37 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
     }
   }
 }
+
+#' @export draw.matriks
+#' @export
+
+draw.matriks<- function(obj, main = NULL,
+                             hide = FALSE,
+                             bg = "white") {
+  n.cell<-obj$mat.type
+  squares <- paste0("Sq", 1:9)
+  if (n.cell == 9) {
+    par(
+      mfrow = c(3, 3),
+      mar = c(0.5, 6, 0.5, 2) + .1,
+      mai = c(.1, .1, .1, .1),
+      oma = c(4, 4, 0.2, 0.2)
+    )
+
+  } else if (n.cell == 4) {
+    par(
+      mfrow = c(2, 2),
+      mar = c(0.5, 6, 0.5, 2) + .1,
+      mai = c(.1, .1, .1, .1),
+      oma = c(4, 4, 0.2, 0.2)
+    )
+  }
+
+  if (hide == TRUE){n.cell<-n.cell-1}
+  for (i in 1:n.cell)
+  {
+    DescTools::Canvas(xlim=16,mar=c(1,1,1,1), main = main, bg = bg)
+    draw(obj[[squares[[i]]]],canvas = FALSE)
+  }
+
+}

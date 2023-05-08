@@ -48,7 +48,7 @@ com <- function(...) {
   UseMethod("com")
 }
 
-com.matriKS <- function(...) {
+com.matriks <- function(...) {
   obj <- Map("cof", ...)
   attr(obj, "class") <- "matriKS"
   obj

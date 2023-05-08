@@ -1,3 +1,4 @@
+
 figure <- list(
   shape = NULL,
   size.x = list(),
@@ -29,7 +30,8 @@ matriks <- list(
   Sq8 = list(),
   Sq9 = list(),
   hrule = list(),
-  vrule = list()
+  vrule = list(),
+  mat.type=integer()
 )
 class(matriks) <- "matriks"
 

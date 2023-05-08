@@ -74,7 +74,7 @@ correct<- function(obj) {
 #' @export
 #'
 #' @examples
-correct.matriKS = function(obj) {
+correct.matriks = function(obj) {
   if (obj$mat.type == 9) {
     correct = m$Sq9
   } else {
