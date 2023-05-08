@@ -9,7 +9,15 @@
 #' @return An object with changed visibility
 #' @export
 #'
-#' @examples Arrivano
+#' @examples
+#' \dontrun{
+#' # concanate three figures into an object
+#' my_shapes = cof(square(), triangle(), slice())
+#' # draw object
+#' draw(my_shapes)
+#' # show the triangle
+#' draw(show(my_shapes, 2))
+#' }
 hide<- function(obj,index) {
   UseMethod("hide")
 }
@@ -34,6 +42,14 @@ hide.figure<-function(obj,index="Full")
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # concanate three figures into an object
+#' my_shapes = cof(square(), triangle(), slice())
+#' # draw object
+#' draw(my_shapes)
+#' # show the triangle
+#' draw(show(my_shapes, 2))
+#' }
 show<- function(obj,index) {
   UseMethod("show")
 }
@@ -58,10 +74,18 @@ show.figure<-function(obj,index="Full")
 #' @return An object with a changed figure
 #' @param replacement
 #'
-#' @return
+#' @return Return an object with a different figure
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # concanate three figures into an object
+#' my_shapes = cof(square(), triangle(), slice())
+#' # draw object
+#' draw(my_shapes)
+#' # replace the square with a gray pacman
+#' draw(replace(a, 1, pacman(shd = "grey")))
+#' }
 replace <- function(obj,index,replacement) {
   UseMethod("replace")
 }
