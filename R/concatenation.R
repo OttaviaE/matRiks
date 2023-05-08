@@ -33,14 +33,17 @@ cof.character <- function(...) {
   obj
 }
 
-#' Concantenation of matrices
+#' Concatenation of matrices
 #'
-#' @param ...
+#' Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
 #'
-#' @return
+#' @param ... the matrices to be concatenated
+#'
+#' @return Return a matrix composed of 2+ matrices
+#'
 #' @export
 #'
-#' @examples
+#' @examples la pazienza è la virtù dei forti
 com <- function(...) {
   UseMethod("com")
 }

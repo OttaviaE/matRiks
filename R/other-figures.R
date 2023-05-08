@@ -13,6 +13,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
 #' bow.tie()
 #'
@@ -48,6 +49,7 @@ bow.tie <- function(size.x = 10,
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a bow tie
 #' s.bow.tie()
 #'
@@ -87,6 +89,7 @@ s.bow.tie <- function(size.x = 10,
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
 #' bow.tie.inv()
 #'
@@ -127,6 +130,7 @@ bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd =
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a single horizontal bow tie
 #' s.bow.tie.inv()
 #'
@@ -167,6 +171,7 @@ s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a Malta cross
 #' malta()
 #'
@@ -198,6 +203,7 @@ malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a single Malta cross
 #' s.malta()
 #'
@@ -231,6 +237,7 @@ s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing an axe
 #' axe()
 #'
@@ -261,10 +268,11 @@ axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return  Return the coordinates for drawing an axe
+#' @return Return the coordinates for drawing an axe
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing an axe
 #' axe()
 #'
@@ -302,6 +310,7 @@ s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a maxi
 #' maxi()
 #'
@@ -343,6 +352,7 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a single maxi
 #' s.maxi()
 #'
@@ -374,10 +384,16 @@ s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
 #'
 #' Draw an empty figure
 #'
-#' @return
+#' @return An empty figure (nothing is plotted in draw)
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # empty figure
+#' phantom()
+#' # draw an empty figure
+#' draw(phantom())
+#' }
 phantom <- function() {
   value <- list(
     shape = "phantom",

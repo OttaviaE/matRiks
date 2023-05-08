@@ -1,7 +1,7 @@
 #' Draw figures
 #'
 #'
-#' @param obj The object to be draw. Can be a single figure, a matrix, or the responses
+#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
@@ -13,7 +13,14 @@
 #' @return A graphic
 #' @export
 #'
-#' @examplespoi
+#' @examples
+#' \dontrun{
+#' # draw a circle
+#' draw(circle())
+#'
+#' # draw a circle inside the other
+#' draw(size(circle(), 2), canvas = FALSE)
+#' }
 draw <- function(obj, main = NULL, canvas = TRUE,
                  hide = FALSE, n.figure = 9,
                  bg = "white",mar=c(1,1,1,1),xlim=16) {

@@ -66,6 +66,7 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #'
 #' # apply the default rotation on the default luck
 #' draw(reflect(pacman()))
+#' }
 reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
@@ -99,6 +100,7 @@ reflect.figure<-function(fig,n=2,...) {
 #'
 #' # make the square bigger
 #' draw(size(square(), rule = "inv"))
+#' }
 size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
@@ -174,11 +176,13 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
   return(fig)
 }
 
+#' Shading of a figure
+#'
 #' Change the shading of a figure
 #'
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
-#' @param rule
+#' @param rule The rule for shading the figure
 #' @param ...
 #'
 #' @return A figure with different shading characteristics
@@ -244,13 +248,13 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 
 #' Apply logic rules to different figures
 #'
-#' @param fig A vector of figures obatined with the concatenation of figures function (`cof()`). Three figures are needed.
+#' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
 #' @param n ???
 #' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
-#' @param seed Set the ranodm seed so that the permutations are consistent
+#' @param seed Set the random seed so that the permutations are consistent
 #' @param ...
 #'
-#' @return
+#' @return An object composed of figures combined according to different logic rules
 #' @export
 #'
 #' @examples
@@ -289,12 +293,14 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 }
 
 
-#' Indentity rule
+#' Identity rule
 #'
-#' @param fig
+#' Apply an identity rule (i.e., no changes)
+#'
+#' @param fig The figures on which the rules is applied.
 #' @param ...
 #'
-#' @return
+#' @return An object composed of figures combined according to an identity rule
 #' @export
 #'
 #' @examples

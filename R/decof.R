@@ -6,12 +6,12 @@ decof<- function(obj) {
 #'
 #' Return the elements composing a figure
 #'
-#' @param The object to be splitted
+#' @param The figure to be split in its single components
 #'
-#' @return
-#' @export A list of objects
+#' @return A named list of figures
+#' @export
 #'
-#' @examples
+#' @examples la salma è la virtù dei morti
 decof.figure<-function(obj)
 {
   if(length(obj$shape)==1){

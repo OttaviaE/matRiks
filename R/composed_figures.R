@@ -13,6 +13,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a bow tie
 #' bow.tie()
 #'
@@ -44,10 +45,11 @@ bow.tie <- function(size.x = 10,
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
-#' @return
+#' @return Return the coordinates for drawing a single vertical bow tie
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # return the default coordinates for drawing a bow tie
 #' s.bow.tie()
 #'
