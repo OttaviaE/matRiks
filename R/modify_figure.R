@@ -84,7 +84,7 @@ show.figure<-function(obj,index="Full")
 #' # draw object
 #' draw(my_shapes)
 #' # replace the square with a gray pacman
-#' draw(replace(a, 1, pacman(shd = "grey")))
+#' draw(replace(my_shapes, 1, pacman(shd = "grey")))
 #' }
 replace <- function(obj,index,replacement) {
   UseMethod("replace")
