@@ -16,12 +16,6 @@ ninja(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0)
 \item{lwd}{An integer defining the width of the border line. Default is 3.}
 
 \item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
-
-\item{pos.x}{Position on the x axis. Default is 0.}
-
-\item{pos.y}{Position on the y axis, Default is 0.}
-
-\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
 }
 \value{
 Return the coordinates for drawing a ninja

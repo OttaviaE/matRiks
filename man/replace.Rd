@@ -11,7 +11,7 @@ replace(obj, index, replacement)
 
 \item{index}{The index of the element to replace}
 
-\item{replacement}{}
+\item{replacement}{The name of the figure with which the original one is replaced}
 }
 \value{
 An object with a changed figure

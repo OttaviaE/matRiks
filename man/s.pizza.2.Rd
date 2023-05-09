@@ -15,13 +15,19 @@ s.pizza.2(
 )
 }
 \arguments{
-\item{size.x}{The length of the x-axis. Default is 15.}
+\item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)}
 
-\item{shd}{Color of the figure Default is NA which results in a transparent figure}
+\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
 
-\item{lty}{The lime type, default is 1 (solid line).}
+\item{pos.x}{numeric, position on the x axis. Default is 0.}
 
-\item{lwd}{The line width. Default is 3.}
+\item{pos.y}{numeric, position the y axis, Default is 0.}
+
+\item{shd}{character, define the shading of the figure. Default is NA which results in a transparent figure}
+
+\item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
+
+\item{lwd}{integer, define the line width of the figure. Default is 3.}
 }
 \value{
 The coordinates of two circle sections composing a single pizza with two slices

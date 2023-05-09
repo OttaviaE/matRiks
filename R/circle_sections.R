@@ -271,10 +271,13 @@ semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #'
 #' Define the coordinates of the circle section composing a pizza with two slices
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param shd Color of the figure Default is NA which results in a transparent figure
+#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param pos.x numeric, position on the x axis. Default is 0.
+#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return The coordinates of two circle sections composing a pizza with two slices
 #' @export
@@ -309,10 +312,13 @@ pizza.2 <- function(size.x = 15, size.y = 0,
 #'
 #' Define the coordinates of the circle section composing a pizza with two slices, which is forced to be a single figure (to be used in shape())
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param shd Color of the figure Default is NA which results in a transparent figure
+#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param pos.x numeric, position on the x axis. Default is 0.
+#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return The coordinates of two circle sections composing a single pizza with two slices
 #' @export
@@ -356,6 +362,7 @@ s.pizza.2 <- function(size.x = 15, size.y = 0,
 #' @param theta1 Starting angle of the circle section. Default is 7*pi/4.
 #' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 3*pi/4.
 #' @param shd Color of the figure Default is NA which results in a transparent figure.
+#' @param rotation numeric, define the rotation of the semicircle. Default is $\pi - \pi/4$
 #' @param lwd The line width. Default is 3.
 #' @param lty The line type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
@@ -410,6 +417,7 @@ semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @param pos.y Position on the y axis, Default is 0.
 #' @param theta1 Starting angle of the circle section. Default is 3*pi/4.
 #' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 7*pi/4.
+#' @param rotation numeric, define the rotation of the semicircle. Default is $\pi - \pi/4$
 #' @param shd Color of the figure Default is NA which results in a transparent figure.
 #' @param lwd The line width. Default is 3.
 #' @param lty The line type, default is 1 (solid line).
@@ -459,10 +467,13 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #'
 #' Define the coordinates of the circle section composing an inverse pizza with two slices
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param shd Color of the figure Default is NA which results in a transparent figure
+#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param pos.x numeric, position on the x axis. Default is 0.
+#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return The coordinates of two circle sections composing an inverse pizza with two slices
 #' @export
@@ -472,7 +483,7 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' # default coordinates of the single inverse pizza with two slices
 #' pizza.2.rev()
 #' }
-pizza.2.rev <- function(size.x = 15, size.y = 0,
+pizza.2.rev <- function(size.x = 15, size.y = size.x,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi.circle.rev(size.x = size.x,
@@ -498,9 +509,13 @@ pizza.2.rev <- function(size.x = 15, size.y = 0,
 #' Define the coordinates of the circle section composing an inverse pizza with two slices, which is forced to be a single figure (to be used in shape())
 #'
 #' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param shd Color of the figure Default is NA which results in a transparent figure
+#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param pos.x numeric, position on the x axis. Default is 0.
+#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return The coordinates of two circle sections composing a single pizza with two slices
 #' @export

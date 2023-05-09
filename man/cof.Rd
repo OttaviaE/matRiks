@@ -19,6 +19,3 @@ An object of class figure
 \description{
 Concatenation of figures
 }
-\examples{
-Poi li scrivo un attimo
-}

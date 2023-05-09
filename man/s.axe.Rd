@@ -11,11 +11,15 @@ s.axe(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA)
 
 \item{pos.x}{numeric, define the position on the x axis. Default is 0.}
 
+\item{pos.y}{numeric, position the y axis, Default is 0.}
+
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
 
-\item{shd}{character, define the color of the figure. Default is NA, which results in a transparent figure}
+\item{shd}{character, define the shading of the figure. Default is NA which results in a transparent figure}
+
+\item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }
 \value{
 Return the coordinates for drawing an axe
@@ -26,10 +30,10 @@ Define the coordinates for drawing a single axe, which is forced to be a single 
 \examples{
 \dontrun{
 # return the default coordinates for drawing an axe
-axe()
+s.axe()
 
 # change the coordinates for drawing a smaller single Malta cross
 
-axe(size.x = 5)
+s.axe(size.x = 5)
 }
 }

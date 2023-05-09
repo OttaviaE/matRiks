@@ -38,7 +38,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 }
 #' Isolate the visible objects in a cell of the matrix
 #'
-#' @param m The matrix
+#' @param obj The matrix
 #' @param cell The index of the cell to be splitted. Default is the cell of the correct response
 #' @param vis Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)
 #'

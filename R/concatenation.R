@@ -5,14 +5,17 @@
 #' @param single Should the objects be collapsed into a single object? Deafult is FALSE
 #'
 #' @return An object of class figure
-#' @export cof.figure
+#' @export cof
 #' @export
 #'
-#' @examples Poi li scrivo un attimo
+#' @examples
 cof <- function(...,name, single) {
   UseMethod("cof")
 }
-
+#' Cof Figure
+#'
+#' @export cof.figure
+#' @export
 cof.figure <- function( ...,name=NULL, single=FALSE) {
   if(single==TRUE)
   {
@@ -26,8 +29,17 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
   obj
 }
 
-#Per generalizzare la funzione per concatenzione di matrici ho definito
-#il metodo cof anche per i caratteri
+
+#' Cof character
+#'
+#' Per generalizzare la funzione per concatenzione di matrici ho definito metodo cof anche per i caratteri
+#'
+#' @param ... Arguments of the function
+#'
+#' @return
+#' @export
+#'
+#' @examples
 cof.character <- function(...) {
   obj <- c(...)
   attr(obj, "class") <- "character"
@@ -42,13 +54,17 @@ cof.character <- function(...) {
 #'
 #' @return Return a matrix composed of 2+ matrices
 #'
+#' @export com
 #' @export
 #'
 #' @examples la pazienza è la virtù dei forti
 com <- function(...) {
   UseMethod("com")
 }
-
+#' Com of matrices
+#'
+#' @export com.matriks
+#' @export
 com.matriks <- function(...) {
   obj <- Map("cof", ...)
   attr(obj, "class") <- "matriKS"

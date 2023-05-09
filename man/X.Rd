@@ -14,10 +14,6 @@ X(size.x = sqrt(square()$size.x[[1]]^2/2), size.y = size.x, lwd = 3, lty = 1)
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
 
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
-
-\item{pos.x}{numeric, position on the x axis. Default is 0.}
-
-\item{pos.y}{numeric, position the y axis, Default is 0.}
 }
 \value{
 Return the coordinates for drawing an X

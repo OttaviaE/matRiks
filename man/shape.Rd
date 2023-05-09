@@ -4,16 +4,16 @@
 \alias{shape}
 \title{Change the visibility of the shapes in a figure}
 \usage{
-shape(fig, n, ...)
+shape(fig, n, rule, ...)
 }
 \arguments{
 \item{fig}{A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.}
 
 \item{n}{The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.}
 
-\item{...}{Other arguments}
+\item{rule}{Define the shape rule.}
 
-\item{Define}{the non so bene come dirlo, aiuto}
+\item{...}{Other arguments}
 }
 \value{
 A list of three figures, only the first of which is visible

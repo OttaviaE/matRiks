@@ -4,16 +4,16 @@
 \alias{shade}
 \title{Shading of a figure}
 \usage{
-shade(fig, n, ...)
+shade(fig, n, rule, ...)
 }
 \arguments{
 \item{fig}{The figure on which the rule is applied}
 
 \item{n}{A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)}
 
-\item{...}{Otehr arguments}
-
 \item{rule}{The rule for shading the figure}
+
+\item{...}{Other arguments}
 }
 \value{
 A figure with different shading characteristics

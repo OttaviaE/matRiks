@@ -27,6 +27,10 @@ diagline(
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{rotation}{integer, rotation of the line. Default is $\pi -\pi/4$.}
+
+\item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }
 \value{
 Return the coordinates for drawing an horizontal line

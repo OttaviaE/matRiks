@@ -18,8 +18,8 @@
 #' lily(lty = 3)
 #' }
 lily <- function(lwd = 3, lty = 1) {
-  value <-cof( s.horizontal.eight(lwd = lwd, lty = 1),
-               s.vertical.eight(lwd = lwd, lty = 1))
+  value <-cof( horizontal.s.eight(lwd = lwd, lty = 1),
+               vertical.s.eight(lwd = lwd, lty = 1))
   value$tag <- list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
@@ -46,8 +46,8 @@ lily <- function(lwd = 3, lty = 1) {
 #' s.lily(lty = 3)
 #' }
 s.lily <- function(lwd = 3, lty = 1) {
-  value <-cof( s.horizontal.eight(lwd = lwd, lty = 1),
-               s.vertical.eight(lwd = lwd, lty = 1),
+  value <-cof( horizontal.s.eight(lwd = lwd, lty = 1),
+               vertical.s.eight(lwd = lwd, lty = 1),
                name = "s.lily",
                single = T)
   value$tag <- list("simple", "d.int")

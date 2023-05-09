@@ -139,7 +139,7 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #'
 #' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
 #' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
-#' @param Define the non so bene come dirlo, aiuto
+#' @param rule Define the shape rule.
 #' @param ... Other arguments
 #'
 #' @return A list of three figures, only the first of which is visible
@@ -156,12 +156,12 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #' # Show the first and the second figures
 #'  draw(shape(cof(s.lily(), square(), s.star()), n = c(1,2)))
 #' }
-shape <- function(fig,n,...) {
+shape <- function(fig,n, rule, ...) {
   UseMethod("shape")
 }
 #' @export shape.figure
 #' @export
-shape.figure<-function(fig,n = 1,rule = "default",...) {
+shape.figure<-function(fig,n = 1,rule = "shape",...) {
   if(length(fig$visible)!=3)
   {
     stop("You must have at least three forms to change shapes! If you already specified three figures, make sure you used the s. ones ;)")
@@ -192,7 +192,7 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
 #' @param rule The rule for shading the figure
-#' @param ... Otehr arguments
+#' @param ... Other arguments
 #'
 #' @return A figure with different shading characteristics
 #' @export
@@ -207,7 +207,7 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
 #' draw(shade(triangle(), 2))
 #'
 #' }
-shade <- function(fig,n,...) {
+shade <- function(fig, n, rule, ...) {
   UseMethod("shade")
 }
 #' @export shade.figure

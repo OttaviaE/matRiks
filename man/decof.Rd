@@ -7,7 +7,7 @@
 decof(obj)
 }
 \arguments{
-\item{The}{figure to be split in its single components}
+\item{obj}{The figure to be split in its single components}
 }
 \value{
 A named list of figures

@@ -11,6 +11,8 @@ axe(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA)
 
 \item{pos.x}{numeric, define the position on the x axis. Default is 0.}
 
+\item{pos.y}{numeric, define the position on the y axis. Default is 0.}
+
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}

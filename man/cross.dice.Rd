@@ -12,10 +12,6 @@ cross.dice(shd = "black", lwd = 3, lty = 1)
 \item{lwd}{The line width. Default is 3}
 
 \item{lty}{The lime type, default is 1 (solid line).}
-
-\item{pos.x}{The x coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).}
-
-\item{pos.y}{The y coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).}
 }
 \value{
 The coordinates for drawing a dice with 4 dots

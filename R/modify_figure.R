@@ -72,7 +72,6 @@ show.figure<-function(obj,index="Full")
 #' @param replacement The name of the figure with which the original one is replaced
 #'
 #' @return An object with a changed figure
-#' @param replacement
 #'
 #' @return Return an object with a different figure
 #' @export

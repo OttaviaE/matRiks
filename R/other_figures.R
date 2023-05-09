@@ -193,7 +193,6 @@ malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty
 #' Define the coordinates for drawing a single Malta cross, which is forced to be a single figure (to be used in shape())
 #'
 #' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
 #' @param pos.x numeric, define the position on the x axis. Default is 0.
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
 #' @param lwd integer, define the line width of the figure. Default is 3.
@@ -229,6 +228,7 @@ s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #'
 #' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param pos.y numeric, define the position on the y axis. Default is 0.
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
@@ -245,7 +245,8 @@ s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #'
 #' axe(size.x = 5)
 #' }
-axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
+axe = function(size.x = 15, pos.x = 0,
+               pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
@@ -264,9 +265,10 @@ axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
 #'
 #' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param pos.x numeric, define the position on the x axis. Default is 0.
-#' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
+#' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return Return the coordinates for drawing an axe
 #' @export
@@ -274,11 +276,11 @@ axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing an axe
-#' axe()
+#' s.axe()
 #'
 #' # change the coordinates for drawing a smaller single Malta cross
 #'
-#' axe(size.x = 5)
+#' s.axe(size.x = 5)
 #' }
 s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,

@@ -16,8 +16,6 @@ s.malta(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1)
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
 
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
-
-\item{size.y}{numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.}
 }
 \value{
 Return the coordinates for drawing a single Malta cross

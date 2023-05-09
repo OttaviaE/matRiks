@@ -16,8 +16,8 @@
 #' vertical.eight(lty = 2)
 #' }
 vertical.eight <- function(lwd = 3, lty = 1) {
-  value <-cof(  s.vertical.inv(lwd = lwd, lty = lty),
-                s.vertical(lwd = lwd, lty))
+  value <-cof(  vertical.s.inv(lwd = lwd, lty = lty),
+                vertical.s(lwd = lwd, lty))
   value$tag <- list("compose4")
   attr(value, "class") <- "figure"
   value
@@ -41,8 +41,8 @@ vertical.eight <- function(lwd = 3, lty = 1) {
 #' horizontal.eight(lty = 2)
 #' }
 horizontal.eight <- function(lwd = 3, lty = 1) {
-  value <-cof(  s.horizontal.inv(lwd = lwd, lty = lty),
-                s.horizontal(lwd = lwd, lty))
+  value <-cof(  horizontal.s.inv(lwd = lwd, lty = lty),
+                horizontal.s(lwd = lwd, lty))
   value$tag <- list("compose4")
   attr(value, "class") <- "figure"
   value
@@ -61,14 +61,14 @@ horizontal.eight <- function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of te single vertical eight
-#' s.vertical.eight()
+#' vertical.s.eight()
 #' # change the line type
-#' s.vertical.eight(lty = 2)
+#' vertical.s.eight(lty = 2)
 #' }
-s.vertical.eight <- function(lwd = 3, lty = 1) {
-  value <-cof(  s.s.vertical.inv(lwd = lwd, lty = lty),
-                s.s.vertical(lwd = lwd, lty),
-                name = "s.vertical.eight",
+vertical.s.eight <- function(lwd = 3, lty = 1) {
+  value <-cof(  s.vertical.s.inv(lwd = lwd, lty = lty),
+                s.vertical.s(lwd = lwd, lty),
+                name = "vertical.s.eight",
                 single = T)
   value$tag <- list("compose2")
   attr(value, "class") <- "figure"
@@ -88,14 +88,14 @@ s.vertical.eight <- function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of a single horizontal eight
-#' s.horizontal.eight()
+#' horizontal.s.eight()
 #' # change the line type
-#' s.horizontal.eight(lty = 2)
+#' horizontal.s.eight(lty = 2)
 #' }
-s.horizontal.eight <- function(lwd = 3, lty = 1) {
-  value <-cof(  s.s.horizontal.inv(lwd = lwd, lty = lty),
-                s.s.horizontal(lwd = lwd, lty),
-                name = "s.horizontal.eight",
+horizontal.s.eight <- function(lwd = 3, lty = 1) {
+  value <-cof(  s.horizontal.s.inv(lwd = lwd, lty = lty),
+                s.horizontal.s(lwd = lwd, lty),
+                name = "horizontal.s.eight",
                 single = T)
   value$tag <- list("compose2")
   attr(value, "class") <- "figure"

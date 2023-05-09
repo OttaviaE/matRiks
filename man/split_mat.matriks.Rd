@@ -7,11 +7,11 @@
 \method{split_mat}{matriks}(obj, vis = TRUE, cell = NULL)
 }
 \arguments{
+\item{obj}{The matrix}
+
 \item{vis}{Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)}
 
 \item{cell}{The index of the cell to be splitted. Default is the cell of the correct response}
-
-\item{m}{The matrix}
 }
 \value{
 A list of the same length of the visible figures in the selected cell (vis = TRUE) or of the same lenght of all the figures in the matrix (vis = TRUE)

@@ -8,6 +8,7 @@
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param vis integer, define the visibility of the figure (default is 1, visible).
 #'
 #' @return Return the coordinates for drawing a vertical line
 #' @export
@@ -59,6 +60,7 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param vis integer, define the visibility of the figure (default is 1, visible).
 #'
 #' @return Return the coordinates for drawing an horizontal line
 #' @export
@@ -194,6 +196,8 @@ square.4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param rotation integer, rotation of the line. Default is $\pi -\pi/4$.
+#' @param vis integer, define the visibility of the figure (default is 1, visible).
 #'
 #' @return Return the coordinates for drawing an horizontal line
 #' @export
@@ -212,7 +216,8 @@ square.4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
                      size.y=size.x,
                      pos.x=0 ,pos.y=0,
-                     lty = 1, lwd =3, rotation = pi-pi/4,
+                     lty = 1, lwd =3,
+                     rotation = pi-pi/4,
                      vis = 1) {
   value <- list(
     shape = "diagline.inv",
@@ -245,7 +250,8 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
-#'
+#' @param rotation integer, rotation of the line. Default is $\pi + \pi/4$.
+#' @param vis integer, define the visibility of the figure (default is 1, visible).
 #' @return Return the coordinates for drawing the inverse diagonal line
 #' @export
 #'
@@ -293,8 +299,6 @@ diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #'
 #' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
 #' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, position on the x axis. Default is 0.
-#' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'

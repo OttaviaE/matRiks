@@ -28,8 +28,6 @@ s.biscuit(
 \item{lty}{An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)}
 
 \item{lwd}{An integer defining the width of the border line. Default is 3.}
-
-\item{vis}{Integer, indicates whether the object should be visible (1) or not (0). Default is 1}
 }
 \value{
 Return the coordinates for drawing a single biscuit

@@ -86,8 +86,6 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
 #'
 #' Define the coordinates for drawing four dots placed in the vertices of a luck
 #'
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13).
 #' @param shd The shading of the figure. Default is black.
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
@@ -124,10 +122,7 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
 #' @param shd Color of the figure Default is black.
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
@@ -167,7 +162,6 @@ biscuit = function(size.x = 15, size.y = size.x,
 #' @param pos.x Position on the x axis. Default is 0.
 #' @param pos.y Position on the y axis, Default is 0.
 #' @param shd Color of the figure Default is black.
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
@@ -206,10 +200,7 @@ s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
 #' @param shd Color of the figure Default is black.
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'
@@ -240,10 +231,7 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
 #' @param shd Color of the figure Default is black.
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
 #' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
 #' @param lwd An integer defining the width of the border line. Default is 3.
 #'

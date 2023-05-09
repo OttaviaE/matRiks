@@ -26,6 +26,8 @@ vline(
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
+
+\item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }
 \value{
 Return the coordinates for drawing a vertical line

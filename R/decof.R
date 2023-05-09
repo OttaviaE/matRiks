@@ -2,7 +2,7 @@
 #'
 #' Return the elements composing a figure
 #'
-#' @param The figure to be split in its single components
+#' @param obj The figure to be split in its single components
 #'
 #' @return A named list of figures
 #' @export decof
