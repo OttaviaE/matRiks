@@ -28,8 +28,6 @@ s.pizza.2.rev(
 \item{lty}{integer, define the line type of the figure, default is 1 (solid line).}
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
-
-\item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }
 \value{
 The coordinates of two circle sections composing a single pizza with two slices

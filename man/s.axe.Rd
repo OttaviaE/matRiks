@@ -18,8 +18,6 @@ s.axe(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA)
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
 
 \item{shd}{character, define the shading of the figure. Default is NA which results in a transparent figure}
-
-\item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }
 \value{
 Return the coordinates for drawing an axe
