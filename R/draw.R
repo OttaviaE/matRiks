@@ -1,5 +1,6 @@
-#' Draw figures
+#' Draw
 #'
+#' Draws single figures or a matrix with 9 or 4 cells
 #'
 #' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
 #' @param main logical, print the title of the drawing. Default is FALSE
@@ -11,6 +12,8 @@
 #' @param xlim numeric, change the length of the x axis
 #'
 #' @return A graphic
+#' @import DescTools
+#' @export draw.figure
 #' @export
 #'
 #' @examples
@@ -27,8 +30,9 @@ draw <- function(obj, main = NULL, canvas = TRUE,
   UseMethod("draw")
 }
 
-# eliminiamo il riempimento a righe  ----
 
+#' @export draw.figure
+#' @export
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
                        bg = "white",mar=c(1,1,1,1),xlim=16) {
   if (canvas == TRUE)
@@ -57,7 +61,6 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 
 #' @export draw.matriks
 #' @export
-
 draw.matriks<- function(obj, main = NULL,
                              hide = FALSE,
                              bg = "white") {

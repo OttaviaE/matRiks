@@ -2,7 +2,7 @@
 % Please edit documentation in R/draw.R
 \name{draw}
 \alias{draw}
-\title{Draw figures}
+\title{Draw}
 \usage{
 draw(
   obj,
@@ -36,7 +36,7 @@ draw(
 A graphic
 }
 \description{
-Draw figures
+Draws single figures or a matrix with 9 or 4 cells
 }
 \examples{
 \dontrun{

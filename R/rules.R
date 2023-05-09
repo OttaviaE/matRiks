@@ -26,6 +26,8 @@ rotate <- function(fig ,n, rule,...) {
   UseMethod("rotate")
 }
 
+#' @export rotate.figure
+#' @export
 rotate.figure<-function(fig,n=4,rule="rotation",...) {
   numbers<-unlist(strsplit(rule,split=""))
   num<-4
@@ -71,6 +73,8 @@ reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
 
+#' @export reflect.figure
+#' @export
 reflect.figure<-function(fig,n=2,...) {
   fig$rotation<-Map('+', fig$rotation,(n-1)*pi)
   fig$theta.1<-Map('+', fig$theta.1,(n-1)*pi)
@@ -88,6 +92,7 @@ reflect.figure<-function(fig,n=2,...) {
 #' @param ...
 #'
 #' @return A figure with different size.x (and size.y) coordinates
+#' @export size.figure
 #' @export
 #'
 #' @examples
@@ -104,6 +109,8 @@ reflect.figure<-function(fig,n=2,...) {
 size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
+#' @export size.figure
+#' @export
 size.figure<-function(fig,n = 2,  rule = "size", ...) {
   numbers<-unlist(strsplit(rule,split=""))
   num<-2
@@ -152,6 +159,8 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 shape <- function(fig,n,...) {
   UseMethod("shape")
 }
+#' @export shape.figure
+#' @export
 shape.figure<-function(fig,n = 1,rule = "default",...) {
   if(length(fig$visible)!=3)
   {
@@ -201,6 +210,8 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
 shade <- function(fig,n,...) {
   UseMethod("shade")
 }
+#' @export shade.figure
+#' @export
 shade.figure<-function(fig,n = 1,rule = "shade",...){
   if(grepl("par",rule))
   {
@@ -261,6 +272,8 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 logic <- function(fig,n,rule,seed,...) {
   UseMethod("logic")
 }
+#' @export logic.figure
+#' @export
 logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
   if(length(fig$shape) < 3)
   {
@@ -307,6 +320,8 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 identity <- function(fig,...) {
   UseMethod("identity")
 }
+#' @export identity.figure
+#' @export
 identity.figure <- function(fig,...) {
   return(fig)
 }

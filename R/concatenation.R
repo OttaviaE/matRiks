@@ -5,6 +5,7 @@
 #' @param single Should the objects be collapsed into a single object? Deafult is FALSE
 #'
 #' @return An object of class figure
+#' @export cof.figure
 #' @export
 #'
 #' @examples Poi li scrivo un attimo

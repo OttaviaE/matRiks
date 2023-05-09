@@ -28,6 +28,6 @@ my_shapes = cof(square(), triangle(), slice())
 # draw object
 draw(my_shapes)
 # replace the square with a gray pacman
-draw(replace(a, 1, pacman(shd = "grey")))
+draw(replace(my_shapes, 1, pacman(shd = "grey")))
 }
 }
