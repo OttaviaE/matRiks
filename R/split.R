@@ -58,6 +58,8 @@ split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
   return(split.m)
 }
 
+#' Correct cell
+#'
 #' @export correct
 #' @export
 correct<- function(obj) {

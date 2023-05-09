@@ -56,8 +56,6 @@ cof.character <- function(...) {
 #'
 #' @export com
 #' @export
-#'
-#' @examples la pazienza è la virtù dei forti
 com <- function(...) {
   UseMethod("com")
 }

@@ -20,7 +20,10 @@ decof<- function(obj) {
   UseMethod("decof")
 }
 
-
+#' Decof
+#'
+#' @param obj
+#'
 #' @export decof.figure
 #' @export
 decof.figure<-function(obj)
