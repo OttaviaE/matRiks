@@ -9,9 +9,9 @@
 \arguments{
 \item{obj}{The figure}
 
-\item{vis}{}
+\item{vis}{Does the selection involve ony the figures visible in the selected cell? Default is TRUE}
 
-\item{cell}{the index of the cell to be splitted}
+\item{cell}{the index of the cell to be split}
 }
 \description{
 Isolate the objects in a cell

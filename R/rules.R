@@ -56,7 +56,7 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #'
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection
-#' @param ...
+#' @param ... Other arguments
 #'
 #' @return A figure with different rotation coordinates
 #' @export
@@ -89,7 +89,7 @@ reflect.figure<-function(fig,n=2,...) {
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the dimension of the sizing. Default is 2.
 #' @param rule Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.
-#' @param ...
+#' @param ... Other arguments
 #'
 #' @return A figure with different size.x (and size.y) coordinates
 #' @export size.figure
@@ -140,7 +140,7 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
 #' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
 #' @param Define the non so bene come dirlo, aiuto
-#' @param ...
+#' @param ... Other arguments
 #'
 #' @return A list of three figures, only the first of which is visible
 #' @export
@@ -192,7 +192,7 @@ shape.figure<-function(fig,n = 1,rule = "default",...) {
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
 #' @param rule The rule for shading the figure
-#' @param ...
+#' @param ... Otehr arguments
 #'
 #' @return A figure with different shading characteristics
 #' @export
@@ -263,7 +263,7 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 #' @param n ???
 #' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
 #' @param seed Set the random seed so that the permutations are consistent
-#' @param ...
+#' @param ... Other arguments
 #'
 #' @return An object composed of figures combined according to different logic rules
 #' @export
@@ -311,7 +311,7 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 #' Apply an identity rule (i.e., no changes)
 #'
 #' @param fig The figures on which the rules is applied.
-#' @param ...
+#' @param ... Other arguments
 #'
 #' @return An object composed of figures combined according to an identity rule
 #' @export

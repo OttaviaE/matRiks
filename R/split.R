@@ -1,13 +1,18 @@
+#' @export split_mat
+#' @export
+#'
+#' @examples
 split_mat<- function(obj,vis = TRUE, cell = NULL) {
   UseMethod("split_mat")
 }
 #' Isolate the objects in a cell
 #'
 #' @param obj The figure
-#' @param cell the index of the cell to be splitted
-#' @param vis
+#' @param cell the index of the cell to be split
+#' @param vis Does the selection involve ony the figures visible in the selected cell? Default is TRUE
 #'
 #' @return
+#' @export split_mat.figure
 #' @export
 #'
 #' @examples
@@ -38,24 +43,13 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 #' @param vis Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)
 #'
 #' @return A list of the same length of the visible figures in the selected cell (vis = TRUE) or of the same lenght of all the figures in the matrix (vis = TRUE)
+#' @export split_mat.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'
-#' my_matrix = apply(Raven(
-#' st1 = cof(triangle(), square(), circle())
-#' ))
-#'
-#' my_split = split_mat(my_matrix)
-#'
-#' draw(my_split[[1]])
-#'
-#' }
-#'
-split_mat.matrix = function(obj, vis = TRUE, cell = NULL) {
+split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
   if (is.null(cell) == T) {
-    cell.start = correct(obj, mat.type = mat.type)
+    cell.start = correct(obj)
   } else {
     cell = paste0("Sq", cell)
     cell.start = obj[[cell]]
@@ -63,22 +57,45 @@ split_mat.matrix = function(obj, vis = TRUE, cell = NULL) {
   split.m<-split_mat(cell.start, vis = vis)
   return(split.m)
 }
+
+#' @export correct
+#' @export
 correct<- function(obj) {
   UseMethod("correct")
 }
-#' Extract the cell of the correct response
+#' Correct response
 #'
-#' @param obj
+#' Extract the cell of the correct response, either Sq9 (9-cell matriks) or Sq4 (4-cell matriks)
 #'
-#' @return The cell with the correct response, either Sq9 (9-cell matrix) or Sq5 (4-cell matrix)
+#' @param obj The matriks
+#'
+#' @return The cell with the correct response
+#' @export correct.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # apply the size rule on a triangle for creating a matriks with 9 cell
+#' my_mat = mat_apply(triangle(), mat.type = 9,
+#' hrule = "size")
+#' # draw the matriks without the correct response
+#' draw(my_mat, hide = TRUE)
+#' # add the correct response
+#' draw(correct(my_mat))
+#'
+#' # # apply the reflect rule on a pacman for creating a matriks with 4 cell
+#' my_mat = mat_apply(pacman(), mat.type = 4,
+#'                   vrule = "reflect")
+#' # draw the matriks without the correct response
+#' draw(my_mat, hide = TRUE)
+#' # add the correct response
+#' draw(correct(my_mat))
+#' }
 correct.matriks = function(obj) {
   if (obj$mat.type == 9) {
-    correct = m$Sq9
+    correct = obj$Sq9
   } else {
-    correct = m$Sq4
+    correct = obj$Sq4
   }
   return(correct)
 }

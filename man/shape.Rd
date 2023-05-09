@@ -11,7 +11,7 @@ shape(fig, n, ...)
 
 \item{n}{The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.}
 
-\item{...}{}
+\item{...}{Other arguments}
 
 \item{Define}{the non so bene come dirlo, aiuto}
 }

@@ -9,7 +9,7 @@ identity(fig, ...)
 \arguments{
 \item{fig}{The figures on which the rules is applied.}
 
-\item{...}{}
+\item{...}{Other arguments}
 }
 \value{
 An object composed of figures combined according to an identity rule

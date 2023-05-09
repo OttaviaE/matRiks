@@ -2,16 +2,35 @@
 % Please edit documentation in R/split.R
 \name{correct.matriks}
 \alias{correct.matriks}
-\title{Extract the cell of the correct response}
+\title{Correct response}
 \usage{
 \method{correct}{matriks}(obj)
 }
 \arguments{
-\item{obj}{}
+\item{obj}{The matriks}
 }
 \value{
-The cell with the correct response, either Sq9 (9-cell matrix) or Sq5 (4-cell matrix)
+The cell with the correct response
 }
 \description{
-Extract the cell of the correct response
+Extract the cell of the correct response, either Sq9 (9-cell matriks) or Sq4 (4-cell matriks)
+}
+\examples{
+\dontrun{
+# apply the size rule on a triangle for creating a matriks with 9 cell
+my_mat = mat_apply(triangle(), mat.type = 9,
+hrule = "size")
+# draw the matriks without the correct response
+draw(my_mat, hide = TRUE)
+# add the correct response
+draw(correct(my_mat))
+
+# # apply the reflect rule on a pacman for creating a matriks with 4 cell
+my_mat = mat_apply(pacman(), mat.type = 4,
+                  vrule = "reflect")
+# draw the matriks without the correct response
+draw(my_mat, hide = TRUE)
+# add the correct response
+draw(correct(my_mat))
+}
 }

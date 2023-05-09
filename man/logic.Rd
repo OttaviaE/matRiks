@@ -15,7 +15,7 @@ logic(fig, n, rule, seed, ...)
 
 \item{seed}{Set the random seed so that the permutations are consistent}
 
-\item{...}{}
+\item{...}{Other arguments}
 }
 \value{
 An object composed of figures combined according to different logic rules

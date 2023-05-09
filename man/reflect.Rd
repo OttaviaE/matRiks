@@ -11,7 +11,7 @@ reflect(fig, n, ...)
 
 \item{n}{A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection}
 
-\item{...}{}
+\item{...}{Other arguments}
 }
 \value{
 A figure with different rotation coordinates

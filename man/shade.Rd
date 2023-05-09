@@ -11,7 +11,7 @@ shade(fig, n, ...)
 
 \item{n}{A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)}
 
-\item{...}{}
+\item{...}{Otehr arguments}
 
 \item{rule}{The rule for shading the figure}
 }

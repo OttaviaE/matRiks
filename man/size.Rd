@@ -13,7 +13,7 @@ size(fig, n, rule, ...)
 
 \item{rule}{Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.}
 
-\item{...}{}
+\item{...}{Other arguments}
 }
 \value{
 A figure with different size.x (and size.y) coordinates

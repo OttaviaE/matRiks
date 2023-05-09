@@ -29,7 +29,7 @@ bow.tie <- function(size.x = 10,
               triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill", "rotate")
+  value$tag <- list("compose2","fill", "rotate", "d.int")
   attr(value, "class") <- "cell"
   value
 }
@@ -68,7 +68,7 @@ s.bow.tie <- function(size.x = 10,
                        lty = lty, lwd = lwd),
               name = "s.bow.tie",
               single = T)
-  value$tag <- list("compose2","fill", "rotate")
+  value$tag <- list("compose2","fill", "rotate", "d.int")
   attr(value, "class") <- "cell"
   value
 }

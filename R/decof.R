@@ -1,7 +1,3 @@
-decof<- function(obj) {
-  UseMethod("decof")
-}
-
 #' Split the elements of a figure
 #'
 #' Return the elements composing a figure
@@ -9,9 +5,24 @@ decof<- function(obj) {
 #' @param The figure to be split in its single components
 #'
 #' @return A named list of figures
+#' @export decof
 #' @export
 #'
-#' @examples la salma è la virtù dei morti
+#' @examples
+#' \dontrun{
+#' # apply the size rule on a triangle for creating a matriks with 9 cell
+#' my_mat = mat_apply(triangle(), mat.type = 9,
+#' hrule = "size")
+#' # Return the figures composing the first cell of the matriks
+#' decof(my_mat)
+#' }
+decof<- function(obj) {
+  UseMethod("decof")
+}
+
+
+#' @export decof.figure
+#' @export
 decof.figure<-function(obj)
 {
   if(length(obj$shape)==1){

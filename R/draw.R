@@ -13,6 +13,8 @@
 #'
 #' @return A graphic
 #' @import DescTools
+#' @importFrom graphics par
+#' @importFrom utils read.csv
 #' @export draw.figure
 #' @export
 #'
