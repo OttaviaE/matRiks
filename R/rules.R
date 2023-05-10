@@ -8,6 +8,7 @@
 #' @param ... Other arguments
 #'
 #' @return A figure with different rotation coordinates
+#' @export rotate
 #' @export
 #'
 #' @examples
@@ -26,6 +27,13 @@ rotate <- function(fig ,n, rule,...) {
   UseMethod("rotate")
 }
 
+#' Rotate figure
+#'
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of pi/4.
+#' @param rule Define the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
+#' @param ... Other arguments
+#'
 #' @export rotate.figure
 #' @export
 rotate.figure<-function(fig,n=4,rule="rotation",...) {
@@ -59,6 +67,7 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #' @param ... Other arguments
 #'
 #' @return A figure with different rotation coordinates
+#' @export reflect
 #' @export
 #'
 #' @examples
@@ -73,6 +82,12 @@ reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
 
+#' Reflect figure
+#'
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection
+#' @param ... Other arguments
+#'
 #' @export reflect.figure
 #' @export
 reflect.figure<-function(fig,n=2,...) {
@@ -92,7 +107,7 @@ reflect.figure<-function(fig,n=2,...) {
 #' @param ... Other arguments
 #'
 #' @return A figure with different size.x (and size.y) coordinates
-#' @export size.figure
+#' @export size
 #' @export
 #'
 #' @examples
@@ -109,6 +124,13 @@ reflect.figure<-function(fig,n=2,...) {
 size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
+#' Size figure
+#'
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the dimension of the sizing. Default is 2.
+#' @param rule Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.
+#' @param ... Other arguments
+#'
 #' @export size.figure
 #' @export
 size.figure<-function(fig,n = 2,  rule = "size", ...) {
@@ -143,6 +165,7 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #' @param ... Other arguments
 #'
 #' @return A list of three figures, only the first of which is visible
+#' @export shape
 #' @export
 #'
 #' @examples
@@ -159,6 +182,13 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 shape <- function(fig,n, rule, ...) {
   UseMethod("shape")
 }
+#' Shape figure
+#'
+#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
+#' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
+#' @param rule Define the shape rule.
+#' @param ... Other arguments
+#'
 #' @export shape.figure
 #' @export
 shape.figure<-function(fig,n = 1,rule = "shape",...) {
@@ -195,6 +225,7 @@ shape.figure<-function(fig,n = 1,rule = "shape",...) {
 #' @param ... Other arguments
 #'
 #' @return A figure with different shading characteristics
+#' @export shade
 #' @export
 #'
 #' @examples
@@ -210,6 +241,13 @@ shape.figure<-function(fig,n = 1,rule = "shape",...) {
 shade <- function(fig, n, rule, ...) {
   UseMethod("shade")
 }
+#' Shade figure
+#'
+#' @param fig The figure on which the rule is applied
+#' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
+#' @param rule The rule for shading the figure
+#' @param ... Other arguments
+#'
 #' @export shade.figure
 #' @export
 shade.figure<-function(fig,n = 1,rule = "shade",...){
@@ -266,12 +304,21 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 #' @param ... Other arguments
 #'
 #' @return An object composed of figures combined according to different logic rules
+#' @export logic
 #' @export
 #'
 #' @examples
 logic <- function(fig,n,rule,seed,...) {
   UseMethod("logic")
 }
+#' Logic figure
+#'
+#' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
+#' @param n ???
+#' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
+#' @param seed Set the random seed so that the permutations are consistent
+#' @param ... Other arguments
+#'
 #' @export logic.figure
 #' @export
 logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
@@ -304,8 +351,6 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
   }
   return(fig)
 }
-
-
 #' Identity rule
 #'
 #' Apply an identity rule (i.e., no changes)
@@ -314,12 +359,18 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 #' @param ... Other arguments
 #'
 #' @return An object composed of figures combined according to an identity rule
+#' @export identity
 #' @export
 #'
 #' @examples
 identity <- function(fig,...) {
   UseMethod("identity")
 }
+#' Identity figure
+#'
+#' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
+#' @param ... Other arguments
+#'
 #' @export identity.figure
 #' @export
 identity.figure <- function(fig,...) {

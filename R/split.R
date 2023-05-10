@@ -1,3 +1,9 @@
+#' Split mat
+#'
+#' @param obj The figure
+#' @param cell the index of the cell to be split
+#' @param vis Does the selection involve ony the figures visible in the selected cell? Default is TRUE
+#'
 #' @export split_mat
 #' @export
 #'
@@ -59,6 +65,8 @@ split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
 }
 
 #' Correct cell
+#'
+#' @param obj The matrix
 #'
 #' @export correct
 #' @export

@@ -15,7 +15,7 @@
 #' @import DescTools
 #' @importFrom graphics par
 #' @importFrom utils read.csv
-#' @export draw.figure
+#' @export draw
 #' @export
 #'
 #' @examples
@@ -33,9 +33,33 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 }
 
 
+#' Draw figure
+#'
+#' Devo ancora capire bene
+#'
+#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param main logical, print the title of the drawing. Default is FALSE
+#' @param canvas logical, draw the figure on a new canvas. Default is TRUE
+#' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
+#' @param n.figure integer, define the number of cells of the matrix. Default is 9
+#' @param bg character, define the color background. Default is white
+#' @param mar numeric vector, change margins of the canvas
+#' @param xlim numeric, change the length of the x axis
+#'
+#' @return A graphic
 #' @export draw.figure
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # draw a circle
+#' draw.figure(circle())
+#'
+#' # draw a circle inside the other
+#' draw.figure(size(circle(), 2), canvas = FALSE)
+#' }
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
+                       hide = FALSE, n.figure = 9,
                        bg = "white",mar=c(1,1,1,1),xlim=16) {
   if (canvas == TRUE)
   {
@@ -61,11 +85,34 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
   }
 }
 
-#' @export draw.matriks
+#' Draw MATRIKS
+#'
+#' Devo ancora capire bene
+#'
+#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param main logical, print the title of the drawing. Default is FALSE
+#' @param canvas logical, draw the figure on a new canvas. Default is TRUE
+#' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
+#' @param n.figure integer, define the number of cells of the matrix. Default is 9
+#' @param bg character, define the color background. Default is white
+#' @param mar numeric vector, change margins of the canvas
+#' @param xlim numeric, change the length of the x axis
+#'
+#' @return A graphic
+#' @export draw.figure
 #' @export
-draw.matriks<- function(obj, main = NULL,
-                             hide = FALSE,
-                             bg = "white") {
+#'
+#' @examples
+#' \dontrun{
+#' # draw a circle
+#' draw.matriks(circle())
+#'
+#' # draw a circle inside the other
+#' draw.matriks(size(circle(), 2), canvas = FALSE)
+#' }
+draw.matriks<- function(obj, main = NULL, canvas = TRUE,
+                        hide = FALSE, n.figure = 9,
+                        bg = "white",mar=c(1,1,1,1),xlim=16) {
   n.cell<-obj$mat.type
   squares <- paste0("Sq", 1:9)
   if (n.cell == 9) {

@@ -22,7 +22,7 @@ decof<- function(obj) {
 
 #' Decof
 #'
-#' @param obj
+#' @param obj The object to split
 #'
 #' @export decof.figure
 #' @export

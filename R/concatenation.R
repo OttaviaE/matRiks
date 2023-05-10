@@ -14,6 +14,10 @@ cof <- function(...,name, single) {
 }
 #' Cof Figure
 #'
+#' @param ... The figures to be concatenated
+#' @param name character, the name to assign to the newly created figure. Default is NULL (no name).
+#' @param single logical, define whether the newly created figure is considered as single element to e used in shape() or not. Default is FALSE.
+#'
 #' @export cof.figure
 #' @export
 cof.figure <- function( ...,name=NULL, single=FALSE) {
@@ -60,6 +64,8 @@ com <- function(...) {
   UseMethod("com")
 }
 #' Com of matrices
+#'
+#' @param ... The matrices to be concatenated
 #'
 #' @export com.matriks
 #' @export
