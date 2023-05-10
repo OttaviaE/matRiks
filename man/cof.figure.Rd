@@ -6,6 +6,13 @@
 \usage{
 \method{cof}{figure}(..., name = NULL, single = FALSE)
 }
+\arguments{
+\item{...}{The figures to be concatenated}
+
+\item{name}{character, the name to assign to the newly created figure. Default is NULL (no name).}
+
+\item{single}{logical, define whether the newly created figure is considered as single element to e used in shape() or not. Default is FALSE.}
+}
 \description{
 Cof Figure
 }

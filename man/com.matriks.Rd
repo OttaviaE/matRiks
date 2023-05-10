@@ -6,6 +6,9 @@
 \usage{
 \method{com}{matriks}(...)
 }
+\arguments{
+\item{...}{The matrices to be concatenated}
+}
 \description{
 Com of matrices
 }

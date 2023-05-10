@@ -33,7 +33,7 @@ semi.circle.rev(
 
 \item{shd}{Color of the figure Default is NA which results in a transparent figure.}
 
-\item{rotation}{numeric, define the rotation of the semicircle. Default is $\pi - \pi/4$}
+\item{rotation}{numeric, define the rotation of the semicircle. Default is pi - pi/4}
 
 \item{lty}{The line type, default is 1 (solid line).}
 

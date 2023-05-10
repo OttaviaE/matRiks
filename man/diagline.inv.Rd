@@ -28,7 +28,7 @@ diagline.inv(
 
 \item{lwd}{integer, define the line width of the figure. Default is 3.}
 
-\item{rotation}{integer, rotation of the line. Default is $\pi + \pi/4$.}
+\item{rotation}{integer, rotation of the line. Default is pi + pi/4.}
 
 \item{vis}{integer, define the visibility of the figure (default is 1, visible).}
 }

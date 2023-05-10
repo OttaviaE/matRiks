@@ -6,6 +6,9 @@
 \usage{
 correct(obj)
 }
+\arguments{
+\item{obj}{The matrix}
+}
 \description{
 Correct cell
 }
