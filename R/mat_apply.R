@@ -52,6 +52,29 @@ mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "iden
     }
 
   }
+  if(length(vrules)>length(unique(vrules))|| length(hrules)>length(unique(hrules)))
+  {
+    warning("You have repeat the same rule on the same logic\n")
+    vrules<-unique(vrules)
+    hrules<-unique(hrules)
+  }
+  #Checking if logical or visuospatial rules are used on the same layer
+  logic<-0
+  if(any(grepl("OR|AND", c(hrules,vrules))))
+  {
+    if(mat.type==4)
+    {
+      stop("You cannot use logical rules on a 2 x 2 matriks\n")
+    }else if(!all(grepl("OR|AND|identity", c(hrules,vrules))))
+    {
+      stop("You cannot combine logical rules and visuospatial rules on the same layer\n")
+    }else{
+      logic<-c(sum(grepl("AND",c(hrules,vrules))),
+               sum(grepl("XOR",c(hrules,vrules))),
+               sum(grepl("OR",c(hrules,vrules))))
+      logic[3]<-logic[3]-logic[2]
+    }
+  }
   obj$hrule <- hrules
   obj$vrule <- vrules
   obj$mat.type <- mat.type
@@ -79,11 +102,38 @@ mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "iden
     nrow<-3
   }
 
+  if(any(logic>1))
+  {
+    if(length(Sq1$shape)!=4)
+    {
+      error("You must have four forms to apply logical rules horizontal and vertical!")
+    }
+    if(logic[3]>1){
+      ele<-list(Sq1=1,Sq2=2,Sq3=c(1,2),
+                Sq4=3,Sq5=4,Sq6=c(3,4),
+                Sq7=c(1,3),Sq8=c(2,4),Sq9=1:4)
 
+    }else if(logic[1]>1){
+      ele<-list(Sq1=c(1,2,4),Sq2=c(1,2,3),Sq3=c(1,2),
+                Sq4=c(1,3,4),Sq5=c(1,2,4),Sq6=c(1,4),
+                Sq7=c(1,4),Sq8=c(1,2),Sq9=1)
+
+    }else if(logic[2]>1){
+      ele<-list(Sq1=1,Sq2=c(1,4),Sq3=4,
+                Sq4=c(1,2),Sq5=1:4,Sq6=c(3,4),
+                Sq7=2,Sq8=c(2,3),Sq9=3)
+
+    }
+    for(i in squares)
+    {
+      new<-integer(4)
+      new[ele[[i]]]<-1
+      obj[[i]]$visible<-new
+    }
+  }else{
   #This table contains in the first row the label of the rules
   #and in the second row the function associated
   function_list <- read.csv("R/function_list.prn", sep="")
-
   for (r in 1:length(hrules))
   {
     nth_rule<-function_list$function.[unlist(lapply(function_list$label,grepl,hrules[r]))]
@@ -118,7 +168,7 @@ mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "iden
       if(mat.type==9){obj[[col_3[i]]] <- f(obj[[col_3[i]]],i,vrules[r],seed=6)}
     }
   }
-
+ }
   attr(obj, "class") <- "matriks"
   return(obj)
 }

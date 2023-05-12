@@ -48,7 +48,7 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #'
 #' @return A graphic
 #' @export draw.figure
-#' @export none
+#' @export
 #'
 #'
 #' @examples
