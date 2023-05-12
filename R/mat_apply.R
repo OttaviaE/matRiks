@@ -1,3 +1,24 @@
+#' Split the elements of a figure
+#'
+#' Return the elements composing a figure
+#'
+#' @param obj The figure to be split in its single components
+#'
+#' @return A named list of figures
+#' @export mat_apply
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # apply the size rule on a triangle for creating a matriks with 9 cell
+#' my_mat = mat_apply(triangle(), mat.type = 9,
+#' hrule = "size")
+#' }
+mat_apply<- function(Sq1,mat.type=9,
+                             hrules = "identity", vrules = "identity") {
+  UseMethod("mat_apply")
+}
+
 #' Apply rule to matrix
 #'
 #' Apply a rule or a set of rules to a figure in order to create a matriks
@@ -8,7 +29,7 @@
 #' @param vrules character, the rule(s) to be applied vertically
 #'
 #' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
-#' @export mat_apply
+#' @export mat_apply.matriks
 #' @export
 #'
 #' @examples
@@ -16,7 +37,8 @@
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
 #' my_mat = mat_apply(triangle(), mat.type = 9,
 #' hrule = "size")
-mat_apply <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
+#' }
+mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
   #Definition of the matRiks
   obj <- list()
   squares <- paste0("Sq", 1:9)
@@ -101,21 +123,4 @@ mat_apply <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
   return(obj)
 }
 
-#' Split the elements of a figure
-#'
-#' Return the elements composing a figure
-#'
-#' @param obj The figure to be split in its single components
-#'
-#' @return A named list of figures
-#' @export mat_apply.matriks
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
-mat_apply.matriks<- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
-  UseMethod("mat_apply")
-}
+

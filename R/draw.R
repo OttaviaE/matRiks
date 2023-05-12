@@ -48,7 +48,8 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #'
 #' @return A graphic
 #' @export draw.figure
-#' @export
+#' @export none
+#'
 #'
 #' @examples
 #' \dontrun{
@@ -99,7 +100,7 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 #' @param xlim numeric, change the length of the x axis
 #'
 #' @return A graphic
-#' @export draw.figure
+#' @export draw.matriks
 #' @export
 #'
 #' @examples

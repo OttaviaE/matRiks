@@ -2,22 +2,23 @@
 % Please edit documentation in R/mat_apply.R
 \name{mat_apply}
 \alias{mat_apply}
-\title{Apply rule to matrix}
+\title{Split the elements of a figure}
 \usage{
 mat_apply(Sq1, mat.type = 9, hrules = "identity", vrules = "identity")
 }
 \arguments{
-\item{Sq1}{the figures on which the rule should be applied for creating the matriks}
-
-\item{mat.type}{ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)}
-
-\item{hrules}{character, the rule(s) to be applied horizontally}
-
-\item{vrules}{character, the rule(s) to be applied vertically}
+\item{obj}{The figure to be split in its single components}
 }
 \value{
-A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
+A named list of figures
 }
 \description{
-Apply a rule or a set of rules to a figure in order to create a matriks
+Return the elements composing a figure
+}
+\examples{
+\dontrun{
+# apply the size rule on a triangle for creating a matriks with 9 cell
+my_mat = mat_apply(triangle(), mat.type = 9,
+hrule = "size")
+}
 }
