@@ -1,10 +1,13 @@
-#' Split the elements of a figure
+#' Apply rule
 #'
-#' Return the elements composing a figure
+#' Apply a rule or a set of rules to a figure in order to create a matriks
 #'
-#' @param obj The figure to be split in its single components
+#' @param Sq1 the figures on which the rule should be applied for creating the matriks
+#' @param mat.type ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
+#' @param hrules character, the rule(s) to be applied horizontally
+#' @param vrules character, the rule(s) to be applied vertically
 #'
-#' @return A named list of figures
+#' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
 #' @export mat_apply
 #' @export
 #'
@@ -19,7 +22,7 @@ mat_apply<- function(Sq1,mat.type=9,
   UseMethod("mat_apply")
 }
 
-#' Apply rule to matrix
+#' Apply rule
 #'
 #' Apply a rule or a set of rules to a figure in order to create a matriks
 #'
@@ -29,7 +32,7 @@ mat_apply<- function(Sq1,mat.type=9,
 #' @param vrules character, the rule(s) to be applied vertically
 #'
 #' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
-#' @export mat_apply.matriks
+#' @export mat_apply.figure
 #' @export
 #'
 #' @examples
@@ -38,7 +41,7 @@ mat_apply<- function(Sq1,mat.type=9,
 #' my_mat = mat_apply(triangle(), mat.type = 9,
 #' hrule = "size")
 #' }
-mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
+mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
   #Definition of the matRiks
   obj <- list()
   squares <- paste0("Sq", 1:9)
@@ -106,7 +109,7 @@ mat_apply.matriks <- function(Sq1,mat.type=9,hrules = "identity", vrules = "iden
   {
     if(length(Sq1$shape)!=4)
     {
-      error("You must have four forms to apply logical rules horizontal and vertical!")
+      stop("You must have four forms to apply logical rules horizontal and vertical!")
     }
     if(logic[3]>1){
       ele<-list(Sq1=1,Sq2=2,Sq3=c(1,2),

@@ -24,7 +24,7 @@ Change the shading of a figure
 \examples{
 \dontrun{
 
-# draw defaul triangle
+# draw default triangle
 draw(triangle())
 
 # make it grey

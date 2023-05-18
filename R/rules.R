@@ -231,7 +231,7 @@ shape.figure<-function(fig,n = 1,rule = "shape",...) {
 #' @examples
 #' \dontrun{
 #'
-#' # draw defaul triangle
+#' # draw default triangle
 #' draw(triangle())
 #'
 #' # make it grey
@@ -294,6 +294,73 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 
   return(fig)
 }
+
+#' Margin
+#'
+#' Chnage the margin of the figure
+#'
+#' @param obj the figure
+#' @param n ineteger, either the linetype or the linewidth
+#' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewdith
+#' @param ... Other arguments
+#'
+#' @return A figure with changed margins
+#' @export margin
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'
+#' # draw default triangle
+#' draw(triangle())
+#'
+#' # change the linetype
+#' draw(margin(triangle(), 2))
+#'
+#' }
+margin <- function(obj,n,rule,...) {
+  UseMethod("margin")
+}
+
+
+#' Margin
+#'
+#' Chnage the margin of the figure
+#'
+#' @param obj the figure
+#' @param n ineteger, either the linetype or the linewidth
+#' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewdith
+#' @param ... Other arguments
+#'
+#' @return A figure with changed margins
+#' @export margin.figure
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'
+#' # draw default triangle
+#' draw(triangle())
+#'
+#' # change the linetype
+#' draw(margin(triangle(), 2))
+#'
+#' }
+margin.figure <-function(obj,n,rule,...){
+  if(grepl("inv",rule))
+  {
+    index<-c(3:1,3:1,3:1) #TL-LR
+  }else{
+    index<-c(1:3,1:3,1:3) #TR-LL
+  }
+  if(grepl("lwd",rule)){
+    obj$lwd<- lapply(obj$lwd,function(x,i,n){i[x+n]+1},index,n)
+  }else if(grepl("lty",rule)){
+    obj$lty<- lapply(obj$lty,function(x,i,n){i[x+n]},index,n)
+  }
+  return(obj)
+}
+
 
 #' Apply logic rules to different figures
 #'
