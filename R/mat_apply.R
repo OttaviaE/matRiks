@@ -27,9 +27,9 @@ mat_apply<- function(Sq1,mat.type=9,
 #' Apply a rule or a set of rules to a figure in order to create a matriks
 #'
 #' @param Sq1 the figures on which the rule should be applied for creating the matriks
-#' @param mat.type ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
 #' @param hrules character, the rule(s) to be applied horizontally
 #' @param vrules character, the rule(s) to be applied vertically
+#' @param mat.type ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
 #'
 #' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
 #' @export mat_apply.figure
@@ -41,7 +41,7 @@ mat_apply<- function(Sq1,mat.type=9,
 #' my_mat = mat_apply(triangle(), mat.type = 9,
 #' hrule = "size")
 #' }
-mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "identity") {
+mat_apply.figure <- function(Sq1,hrules = "identity", vrules = "identity", mat.type=9) {
   #Definition of the matRiks
   obj <- list()
   squares <- paste0("Sq", 1:9)
@@ -62,7 +62,7 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
     hrules<-unique(hrules)
   }
   #Checking if logical or visuospatial rules are used on the same layer
-  logic<-0
+
   if(any(grepl("OR|AND", c(hrules,vrules))))
   {
     if(mat.type==4)
@@ -72,10 +72,10 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
     {
       stop("You cannot combine logical rules and visuospatial rules on the same layer\n")
     }else{
-      logic<-c(sum(grepl("AND",c(hrules,vrules))),
+      logic.diag<-c(sum(grepl("AND",c(hrules,vrules))),
                sum(grepl("XOR",c(hrules,vrules))),
                sum(grepl("OR",c(hrules,vrules))))
-      logic[3]<-logic[3]-logic[2]
+      logic.diag[3]<-logic.diag[3]-logic.diag[2]
     }
   }
   obj$hrule <- hrules
@@ -105,23 +105,23 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
     nrow<-3
   }
 
-  if(any(logic>1))
+  if(any(logic.diag>1))
   {
     if(length(Sq1$shape)!=4)
     {
       stop("You must have four forms to apply logical rules horizontal and vertical!")
     }
-    if(logic[3]>1){
+    if(logic.diag[3]>1){
       ele<-list(Sq1=1,Sq2=2,Sq3=c(1,2),
                 Sq4=3,Sq5=4,Sq6=c(3,4),
                 Sq7=c(1,3),Sq8=c(2,4),Sq9=1:4)
 
-    }else if(logic[1]>1){
+    }else if(logic.diag[1]>1){
       ele<-list(Sq1=c(1,2,4),Sq2=c(1,2,3),Sq3=c(1,2),
                 Sq4=c(1,3,4),Sq5=c(1,2,4),Sq6=c(1,4),
                 Sq7=c(1,4),Sq8=c(1,2),Sq9=1)
 
-    }else if(logic[2]>1){
+    }else if(logic.diag[2]>1){
       ele<-list(Sq1=1,Sq2=c(1,4),Sq3=4,
                 Sq4=c(1,2),Sq5=1:4,Sq6=c(3,4),
                 Sq7=2,Sq8=c(2,3),Sq9=3)
@@ -150,11 +150,11 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
                               fun = c( "rotate",
                                        "size",
                                        "shape",
-                                       "lwd",
-                                       "lty",
-                                       "AND",
-                                       "OR",
-                                       "XOR",
+                                       "margin",
+                                       "margin",
+                                       "logic",
+                                       "logic",
+                                       "logic",
                                        "identity",
                                        "shade",
                                        "reflect"))

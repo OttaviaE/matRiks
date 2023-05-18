@@ -4,16 +4,16 @@
 \alias{mat_apply.figure}
 \title{Apply rule}
 \usage{
-\method{mat_apply}{figure}(Sq1, mat.type = 9, hrules = "identity", vrules = "identity")
+\method{mat_apply}{figure}(Sq1, hrules = "identity", vrules = "identity", mat.type = 9)
 }
 \arguments{
 \item{Sq1}{the figures on which the rule should be applied for creating the matriks}
 
-\item{mat.type}{ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)}
-
 \item{hrules}{character, the rule(s) to be applied horizontally}
 
 \item{vrules}{character, the rule(s) to be applied vertically}
+
+\item{mat.type}{ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)}
 }
 \value{
 A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)

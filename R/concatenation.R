@@ -41,6 +41,7 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 #' @param ... Arguments of the function
 #'
 #' @return
+#' @export cof.character
 #' @export
 #'
 #' @examples
@@ -76,27 +77,57 @@ com.matriks <- function(...) {
 }
 
 
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export concatenation
+#' @export
 concatenation <- function(...) {
   UseMethod("concatenation")
 }
 
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export concatenation.list
+#' @export
 concatenation.list <- function(...) {
   obj <- Map("c", ...)
   return(obj)
 }
 
 
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export concatenation.double
+#' @export
 concatenation.double <- function(...) {
   obj <- c(...)
   attr(obj, "class") <- "double"
   obj
 }
 
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export concatenation.character
+#' @export
 concatenation.character <- function(...) {
   obj <- c(...)
   return(obj)
 }
 
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export concatenation.integer
+#' @export
 concatenation.integer <- function(...) {
   obj <- c(...)
   return(obj)

@@ -49,7 +49,7 @@ s.lily <- function(lwd = 3, lty = 1) {
   value <-cof( horizontal.s.eight(lwd = lwd, lty = 1),
                vertical.s.eight(lwd = lwd, lty = 1),
                name = "s.lily",
-               single = T)
+               single = TRUE)
   value$tag <- list("simple", "d.int")
   attr(value, "class") <- "figure"
   value
