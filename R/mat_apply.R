@@ -136,10 +136,31 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
   }else{
   #This table contains in the first row the label of the rules
   #and in the second row the function associated
-  function_list <- read.csv("./R/function_list.prn", sep="")
+  function_list <- data.frame(label = c( "rotate",
+                                         "size",
+                                         "shape",
+                                         "lwd",
+                                         "lty",
+                                         "AND",
+                                         "OR",
+                                         "XOR",
+                                         "identity",
+                                         "shade",
+                                         "reflect"),
+                              fun = c( "rotate",
+                                       "size",
+                                       "shape",
+                                       "lwd",
+                                       "lty",
+                                       "AND",
+                                       "OR",
+                                       "XOR",
+                                       "identity",
+                                       "shade",
+                                       "reflect"))
   for (r in 1:length(hrules))
   {
-    nth_rule<-function_list$function.[unlist(lapply(function_list$label,grepl,hrules[r]))]
+    nth_rule<-function_list$fun[unlist(lapply(function_list$label,grepl,hrules[r]))]
     if(length(nth_rule)>1)
     {
       nth_rule <-unique(nth_rule)
@@ -157,7 +178,7 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
   #applying the vertical rules
   for (r in 1:length(vrules))
   {
-    nth_rule<-function_list$function.[unlist(lapply(function_list$label,grepl,vrules[r]))]
+    nth_rule<-function_list$fun[unlist(lapply(function_list$label,grepl,vrules[r]))]
     if(length(nth_rule)>1)
     {
       nth_rule <-unique(nth_rule)
