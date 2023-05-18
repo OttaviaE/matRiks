@@ -1,4 +1,4 @@
 library(testthat)
-library(MatriKS)
+library(matRiks)
 
-test_check("MatriKS")
+test_check("matRiks")
