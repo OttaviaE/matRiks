@@ -136,7 +136,7 @@ mat_apply.figure <- function(Sq1,mat.type=9,hrules = "identity", vrules = "ident
   }else{
   #This table contains in the first row the label of the rules
   #and in the second row the function associated
-  function_list <- read.csv("R/function_list.prn", sep="")
+  function_list <- read.csv("./R/function_list.prn", sep="")
   for (r in 1:length(hrules))
   {
     nth_rule<-function_list$function.[unlist(lapply(function_list$label,grepl,hrules[r]))]
