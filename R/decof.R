@@ -56,7 +56,7 @@ decof.figure<-function(obj)
       num = obj$num[i],
       nv = obj$nv[i],
       shade =obj$shade[i],
-      visible = obj$visible[i],
+      visible = obj$visible,
       tag = obj$tag[i]
     )
     attr(ele, "class") <- "figure"
