@@ -353,6 +353,10 @@ margin.figure <-function(obj,n,rule,...){
   }else{
     index<-c(1:3,1:3,1:3) #TR-LL
   }
+  # if (rule == "margin") {
+  #   obj$lwd<- lapply(obj$lwd,function(x,i,n){i[x+n]+1},index,n)
+  #   obj$lty<- lapply(obj$lty,function(x,i,n){i[x+n]},index,n)
+  # }  else
   if(grepl("lwd",rule)){
     obj$lwd<- lapply(obj$lwd,function(x,i,n){i[x+n]+1},index,n)
   }else if(grepl("lty",rule)){
