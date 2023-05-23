@@ -62,7 +62,7 @@ mat_apply.figure <- function(Sq1,hrules = "identity", vrules = "identity", mat.t
     hrules<-unique(hrules)
   }
   #Checking if logical or visuospatial rules are used on the same layer
-
+  logic.diag <- 0
   if(any(grepl("OR|AND", c(hrules,vrules))))
   {
     if(mat.type==4)
