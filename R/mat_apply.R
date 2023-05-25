@@ -17,8 +17,9 @@
 #' my_mat = mat_apply(triangle(), mat.type = 9,
 #' hrule = "size")
 #' }
-mat_apply<- function(Sq1,mat.type=9,
-                             hrules = "identity", vrules = "identity") {
+mat_apply<- function(Sq1,
+                             hrules = "identity", vrules = "identity",
+                     mat.type=9) {
   UseMethod("mat_apply")
 }
 
