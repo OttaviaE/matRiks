@@ -38,15 +38,15 @@ class(matriks) <- "matriks"
 ##  Class responses ----
 responses<-list(
   correct = list(),
-  r.top = list(),
-  r.diag = list(),
-  r.left = list(),
-  wp.copy = list(),
-  wp.matrix = list(),
-  d.union = list(),
-  ic.scale = list(),
-  ic.flip = list(),
-  ic.inc = list(),
-  ic.neg = list()
+  r_top = list(),
+  r_diag = list(),
+  r_left = list(),
+  wp_copy = list(),
+  wp_matrix = list(),
+  d_union = list(),
+  ic_scale = list(),
+  ic_flip = list(),
+  ic_inc = list(),
+  ic_neg = list()
 )
 class(responses) <- "responses"

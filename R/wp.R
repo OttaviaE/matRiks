@@ -31,6 +31,9 @@ wp.matriks <- function(obj, ...) {
   hrules =gsub(".inv", "", obj$hrule)
   vrules = gsub(".inv", "", obj$vrule)
 
+
+
+
   if (any(hrules[order(hrules)] == vrules[order(vrules)]) == TRUE) {
     wp_copy = obj$Sq3
     wp_matrix_start = size(obj$Sq8)
@@ -39,16 +42,18 @@ wp.matriks <- function(obj, ...) {
     wp_matrix_start = size(obj$Sq5)
   }
 
-  if (any(unlist(wp_copy$tag) =="rotate") == FALSE) {
-    wp_matrix = cof(wp_matrix_start,
-                    wp_copy)
-  } else {
+  if (length(unlist(wp_copy$nv)) == sum(grepl("rotate", unlist(wp_copy$tag)))) {
     wp_matrix = cof(wp_matrix_start,
                     rotate(wp_copy))
+  } else {
+    wp_matrix = cof(wp_copy,
+                    wp_matrix_start)
   }
+
 
   distr_wp = list(wp_copy = wp_copy,
                   wp_matrix = wp_matrix)
+  class(distr_wp) <- "responses"
   return(distr_wp)
 
 }

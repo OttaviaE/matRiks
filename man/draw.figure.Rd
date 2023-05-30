@@ -9,10 +9,10 @@
   main = NULL,
   canvas = TRUE,
   hide = FALSE,
-  n.figure = 9,
   bg = "white",
   mar = c(1, 1, 1, 1),
-  xlim = 16
+  xlim = 16,
+  ...
 )
 }
 \arguments{
@@ -24,13 +24,13 @@
 
 \item{hide}{logical, hide the cell corresponding to the correct response. Default is FALSE}
 
-\item{n.figure}{integer, define the number of cells of the matrix. Default is 9}
-
 \item{bg}{character, define the color background. Default is white}
 
 \item{mar}{numeric vector, change margins of the canvas}
 
 \item{xlim}{numeric, change the length of the x axis}
+
+\item{n.figure}{integer, define the number of cells of the matrix. Default is 9}
 }
 \value{
 A graphic
