@@ -181,7 +181,7 @@ square.4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               hline(size.x = size.x,
                     size.y = size.y, pos.y=pos.y,
               lty = lty, lwd = lwd))
-  value$tag <- list("compose4",'rotate')
+  value$tag <- list("compose4",'rotate', "d.ext")
   attr(value, "class") <- "figure"
   value
 }
@@ -322,7 +322,7 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value <-cof(diagline(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
               diagline.inv(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
               single = TRUE,name = "X")
-  value$tag <- list("simple","fill",'rotate')
+  value$tag <- list("simple","fill",'rotate', "d.int")
   value$visible<-1
   attr(value, "class") <- "figure"
   value
@@ -357,7 +357,7 @@ luck.4 = function(size.x = 10,
                diagline.inv(size.x = size.x, pos.x = -size.y, pos.y = size.y),
                diagline.inv(size.x = size.x, pos.x = size.y, pos.y = -size.y),
                diagline(size.x = size.x, pos.x = -size.y, pos.y = -size.y))
-  value$tag <- list("compose4",'rotate')
+  value$tag <- list("compose4",'rotate', "d.ext")
   attr(value, "class") <- "figure"
   value
 }

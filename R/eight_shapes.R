@@ -18,7 +18,7 @@
 vertical.eight <- function(lwd = 3, lty = 1) {
   value <-cof(  vertical.s.inv(lwd = lwd, lty = lty),
                 vertical.s(lwd = lwd, lty))
-  value$tag <- list("compose4")
+  value$tag <- list("compose4", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -43,7 +43,7 @@ vertical.eight <- function(lwd = 3, lty = 1) {
 horizontal.eight <- function(lwd = 3, lty = 1) {
   value <-cof(  horizontal.s.inv(lwd = lwd, lty = lty),
                 horizontal.s(lwd = lwd, lty))
-  value$tag <- list("compose4")
+  value$tag <- list("compose4", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -70,7 +70,7 @@ vertical.s.eight <- function(lwd = 3, lty = 1) {
                 s.vertical.s(lwd = lwd, lty),
                 name = "vertical.s.eight",
                 single = T)
-  value$tag <- list("compose2")
+  value$tag <- list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -97,7 +97,7 @@ horizontal.s.eight <- function(lwd = 3, lty = 1) {
                 s.horizontal.s(lwd = lwd, lty),
                 name = "horizontal.s.eight",
                 single = T)
-  value$tag <- list("compose2")
+  value$tag <- list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
 }

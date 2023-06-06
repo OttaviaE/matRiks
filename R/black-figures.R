@@ -78,7 +78,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
               dot(pos.x = pos.x, pos.y = -pos.y, shd = shd, lwd = lwd, lty = lty),
               dot(pos.x = -pos.x, pos.y = -pos.y, shd = shd, lwd = lwd, lty = lty),
               single = TRUE, name = "dice")
-  value$tag <- list("simple", "d.ext")
+  value$tag <- list("compose4", "d.ext")
   attr(value, "class") <- "figure"
   value
 }
@@ -111,7 +111,7 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
               dot(pos.x = 0,
                   pos.y =13, shd = shd, lty = lty, lwd =lwd),
               single = TRUE,name = "cross.dice")
-  value$tag <- list("simple", "d.ext")
+  value$tag <- list("compose4", "d.ext")
   attr(value, "class") <- "figure"
   value
 }
@@ -149,7 +149,7 @@ biscuit = function(size.x = 15, size.y = size.x,
                                lwd = lwd, lty = lty,
                                shd = shd), 3),
               single = T, name = "biscuit")
-  value$tag <- list("compose2", "fill", "d.int")
+  value$tag <- list("compose2", "d.int", "black.figure")
   attr(value, "class") <- "figure"
   value
 }
@@ -189,7 +189,7 @@ s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
                       shd = shd, lty = lty, lwd = lwd),
               name = "s.biscuit",
               single = TRUE)
-  value$tag <- list("simple","fill", "d.int")
+  value$tag <- list("compose2", "d.int", "black.figure")
   attr(value, "class") <- "figure"
   value
 }
@@ -220,7 +220,7 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "ninja")
-  value$tag = list("compose2", "fill", "d.int")
+  value$tag = list("compose2", "rotate", "d.int", "black.figure")
   attr(value, "class") <- "figure"
   value
 }
@@ -252,7 +252,7 @@ s.ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "s.ninja",
               single = TRUE)
-  value$tag = list("simple", "fill", "d.int")
+  value$tag = list("compose2", "rotate", "d.int", "black.figure")
   attr(value, "class") <- "figure"
   value
 }
@@ -285,6 +285,9 @@ star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               name = "star")
+  value$tag = list("compose4",  "d.int", "black.figure")
+  attr(value, "class") <- "figure"
+  value
 }
 #' Define the coordinates for drawing a single star (to be used in shape())
 #'
@@ -313,6 +316,9 @@ s.star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               single = TRUE,
               name = "s.star")
+  value$tag = list("compose4",  "d.int", "black.figure")
+  attr(value, "class") <- "figure"
+  value
 }
 
 

@@ -19,7 +19,7 @@ vertical.s <- function(lty= 1,
                        lwd = 3) {
   value <-cof( v.arc.left.up(lty = lty, lwd = lwd),
                v.arc.right.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill")
+  value$tag <- list("compose2","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -44,7 +44,7 @@ vertical.s.inv <- function(lty =1,
                            lwd = 3) {
   value <-cof( v.arc.right.up(lty = lty, lwd = lwd),
                v.arc.left.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill")
+  value$tag <- list("compose2","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -67,7 +67,7 @@ vertical.s.inv <- function(lty =1,
 #' }
 horizontal.s <- function(lty = 1, lwd = 3) {
   value <-cof( h.arc.left.up(lty = lty, lwd = lwd), h.arc.right.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill")
+  value$tag <- list("compose2","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -91,7 +91,7 @@ horizontal.s <- function(lty = 1, lwd = 3) {
 horizontal.s.inv <- function(lty = 1, lwd = 3) {
   value <-cof( h.arc.left.down(lty = lty, lwd = lwd),
                h.arc.right.up(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill")
+  value$tag <- list("compose2","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -116,7 +116,7 @@ s.vertical.s <- function(lty= 1,
                          lwd = 3) {
   value <-cof( v.arc.left.up(lty = lty, lwd = lwd), v.arc.right.down(lty = lty, lwd = lwd),
                single=TRUE, name="vertical.s")
-  value$tag <- list("simple","fill")
+  value$tag <- list("simple","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -141,7 +141,7 @@ s.vertical.s.inv <- function(lty= 1,
                              lwd = 3) {
   value <-cof( v.arc.right.up(lty = lty, lwd = lwd), v.arc.left.down(lty = lty, lwd = lwd),single=TRUE,
                name="vertical.s.inv")
-  value$tag <- list("simple","fill")
+  value$tag <- list("simple","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -168,7 +168,7 @@ s.horizontal.s <- function(lty= 1,
               h.arc.right.down(lty = lty, lwd = lwd),
               name="horizontal.s",
               single=TRUE)
-  value$tag <- list("simple","fill")
+  value$tag <- list("simple","d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -194,7 +194,7 @@ s.horizontal.s.inv <- function(lty= 1,
   value <-cof( h.arc.left.down(lty = lty,  lwd = lwd),
                h.arc.right.up(lty = lty,  lwd = lwd),single=TRUE,
                name="s.horizontal.s.inv")
-  value$tag <- list("simple","fill")
+  value$tag <- list("simple","d.int")
   attr(value, "class") <- "figure"
   value
 }

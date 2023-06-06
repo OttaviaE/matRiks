@@ -29,8 +29,8 @@ bow.tie <- function(size.x = 10,
               triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+  value$tag <- list("compose2","fill", "d.int")
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -67,9 +67,9 @@ s.bow.tie <- function(size.x = 10,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd),
               name = "s.bow.tie",
-              single = T)
-  value$tag <- list("compose2","fill", "rotate")
-  attr(value, "class") <- "cell"
+              single = TRUE)
+  value$tag <- list("compose2","fill", "rotate",  "d.int")
+  attr(value, "class") <- "figure"
   value
 }
 
@@ -108,7 +108,7 @@ bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd =
                        rot=-pi,
                        size.x = size.x, size.y=size.x, shd = shd,
                        lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill", "rotate")
+  value$tag <- list("compose2","fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -151,7 +151,7 @@ s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
                        lty = lty, lwd = lwd),
               name = "s.bow.tie.inv",
               single = TRUE)
-  value$tag <- list("compose2","fill", "rotate")
+  value$tag <- list("compose2","fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -180,9 +180,9 @@ s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 #' malta(size.x = 5)
 #' }
 malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
+  value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty))
-  value$tag = list("compose4")
+  value$tag = list("compose4", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -211,11 +211,11 @@ malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty
 #' s.malta(size.x = 5)
 #' }
 s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(s.bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
+  value = cof(s.bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               s.bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
               single = TRUE,
               name = "s.malta")
-  value$tag = list("compose2")
+  value$tag = list("compose2", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -253,7 +253,7 @@ axe = function(size.x = 15, pos.x = 0,
               rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5))
-  value$tag = list("compose2")
+  value$tag = list("compose2", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -291,7 +291,7 @@ s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
                              lwd = lwd, lty = lty, shd = shd), 5),
               name = "s.axe",
               single = TRUE)
-  value$tag = list("compose2")
+  value$tag = list("compose2", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -333,7 +333,7 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
               luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd))
-  value$tag = list("compose4")
+  value$tag = list("compose4", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -377,7 +377,7 @@ s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
                    shd = shd, lty = lty, lwd = lwd),
               single = T,
               names = "s.maxi")
-  value$tag = list("compose4")
+  value$tag = list("compose4", "fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
@@ -412,7 +412,7 @@ phantom <- function() {
     nv = list(101),
     shade = list(NA),
     visible = 0,
-    tag=list(c('simple'))
+    tag=list(c('simple', 'phantom'))
   )
   attr(value, "class") <- "field"
   value
