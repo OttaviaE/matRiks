@@ -49,7 +49,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 #' @param vis Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)
 #'
 #' @return A list of the same length of the visible figures in the selected cell (vis = TRUE) or of the same lenght of all the figures in the matrix (vis = TRUE)
-#' @export spli_mat.matriks
+#' @export split_mat.matriks
 #' @export
 #'
 #' @examples

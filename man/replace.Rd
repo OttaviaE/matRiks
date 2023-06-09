@@ -4,7 +4,7 @@
 \alias{replace}
 \title{Replace objects}
 \usage{
-replace(obj, index, replacement)
+replace(obj, index, replacement, visible)
 }
 \arguments{
 \item{obj}{The figure of a matrix}
@@ -12,6 +12,8 @@ replace(obj, index, replacement)
 \item{index}{The index of the element to replace}
 
 \item{replacement}{The name of the figure with which the original one is replaced}
+
+\item{visible}{If true it will replace only the visible figure}
 }
 \value{
 An object with a changed figure

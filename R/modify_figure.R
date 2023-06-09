@@ -113,6 +113,7 @@ show.figure<-function(obj,index="Full")
 #' @param obj The figure of a matrix
 #' @param index The index of the element to replace
 #' @param replacement The name of the figure with which the original one is replaced
+#' @param visible If true it will replace only the visible figure
 #'
 #' @return An object with a changed figure
 #'
@@ -129,7 +130,7 @@ show.figure<-function(obj,index="Full")
 #' # replace the square with a gray pacman
 #' draw(replace(my_shapes, 1, pacman(shd = "grey")))
 #' }
-replace <- function(obj,index,replacement) {
+replace <- function(obj,index,replacement,visible) {
   UseMethod("replace")
 }
 #' Replace objects
@@ -139,6 +140,7 @@ replace <- function(obj,index,replacement) {
 #' @param obj The figure of a matrix
 #' @param index The index of the element to replace
 #' @param replacement The name of the figure with which the original one is replaced
+#' @param visible If true it will replace only the visible figure
 #'
 #' @return An object with a changed figure
 #'
@@ -156,8 +158,14 @@ replace <- function(obj,index,replacement) {
 #' draw(replace(my_shapes, 1, pacman(shd = "grey")))
 #' }
 
-replace.figure<-function(obj,index,replacement)
+replace.figure<-function(obj,index,replacement,visible=FALSE)
 {
+  if(visible==TRUE)
+  {
+    vis<-which(obj$visible==1)
+    index<-vis[index]
+  }
+
   for(i in 1:length(obj))
   {
     obj[[i]][[index]]<-replacement[[i]][[1]]
