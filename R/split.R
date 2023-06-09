@@ -25,7 +25,8 @@ split_mat<- function(obj,vis = TRUE, cell = NULL) {
 #'
 split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
   if(vis == TRUE) {
-    index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
+   # index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
+    index_elements<-which(obj$visible==1)
   } else {
     index_elements <- 1:length(obj$shape)
   }
