@@ -68,7 +68,7 @@ s.bow.tie <- function(size.x = 10,
                        lty = lty, lwd = lwd),
               name = "s.bow.tie",
               single = TRUE)
-  value$tag <- list("compose2","fill", "rotate",  "d.int")
+  value$tag <- list("compose2","fill", "d.int")
   attr(value, "class") <- "figure"
   value
 }
