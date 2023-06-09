@@ -26,11 +26,22 @@ ic_flip <- function(obj) {
 ic_flip.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {
-    dist_ic_flip <- change_color(m_correct)
+    dist_ic_flip <- rotate(m_correct, 3)
   } else {
     split_correct <- split_mat(obj)
-    dist_ic_flip <-  replace(m_correct, length(m_correct$shape),
-                            rotate(split_correct[[length(split_correct)]]))
+    if (any(split_correct[[length(split_correct)]]$tag == "rotate")) {
+      dist_ic_flip <-  replace(m_correct, length(m_correct$shape),
+                               rotate(split_correct[[length(split_correct)]]))
+    } else {
+      token <- TRUE
+      for (i in 1:length(split_correct)) {
+        if (any(unlist(split_correct[[i]]$tag) == "rotate") & token == TRUE) {
+          dist_ic_flip <- replace(m_correct, i,
+                                  rotate(split_correct[[i]], 3), visible = TRUE)
+          token <- FALSE
+        }
+      }
+    }
 
   }
 

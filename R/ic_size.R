@@ -26,11 +26,11 @@ ic_size <- function(obj) {
 ic_size.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {
-    dist_ic_size <- change_color(m_correct)
+    dist_ic_size <- size(m_correct, 3)
   } else {
     split_correct <- split_mat(obj)
     dist_ic_size <-  replace(m_correct, length(m_correct$shape),
-                             size(split_correct[[length(split_correct)]]))
+                             size(split_correct[[length(split_correct)]]), 3)
 
   }
 

@@ -26,7 +26,8 @@ ic_inc <- function(obj) {
 ic_inc.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {
-    dist_ic_inc <- change_color(m_correct)
+    dist_ic_inc <- m_correct
+    warning("IC-Inc cannot be obtained with a single figure")
   } else {
     split_correct <- split_mat(obj)
     dist_ic_inc <-  hide(m_correct, length(m_correct$shape))
