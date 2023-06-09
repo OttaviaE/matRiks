@@ -44,7 +44,7 @@ dot <- function(size.x = 2,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag = list('single','fill', 'd.int')
+    tag = list('simple','fill', 'd.int')
   )
   attr(value, "class") <- "figure"
   value
