@@ -100,7 +100,13 @@ correct<- function(obj) {
 #' draw(correct(my_mat))
 #' }
 correct.matriks = function(obj) {
-  if (obj$mat.type == 9) {
+  if (class(obj$mat.type) == "numeric") {
+    n.cell<-obj$mat.type
+  } else {
+    n.cell <- obj$mat.type[1]
+  }
+
+  if (n.cell == 9) {
     correct = obj$Sq9
   } else {
     correct = obj$Sq4

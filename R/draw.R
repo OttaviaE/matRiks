@@ -119,6 +119,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
   # quando commi delle matrici, mat.type prende classe double ed ha lunghezza del numero di matrici
   # che sono state concatenate (questa può essere una info importante per il futuro)
   # sicuramente tu hai una soluzione più elegante ma ora la solzuzione qui and dirty è:
+  # il probklema di questa soluzion eè che è stata estesa a tutto
   if (class(obj$mat.type) == "numeric") {
     n.cell<-obj$mat.type
   } else {
