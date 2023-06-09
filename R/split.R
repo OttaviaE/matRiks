@@ -30,17 +30,17 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
     index_elements = 1:length(obj$shape)
   }
 
-  split.m <- vector("list", length(index_elements))
-  for (i in 1:length(split.m)) {
-    split.m[[i]] <- vector("list", length(obj))
-    for (j in 1:length(split.m[[i]])) {
-      names(split.m)[i] = obj$shape[index_elements[i]]
-      attr(split.m[[i]], "class") = "figure"
-      split.m[[i]][[j]] = obj[[j]][index_elements[i]]
-      names(split.m[[i]])[j] = names(obj)[j]
+  split_m <- vector("list", length(index_elements))
+  for (i in 1:length(split_m)) {
+    split_m[[i]] <- vector("list", length(obj))
+    for (j in 1:length(split_m[[i]])) {
+      names(split_m)[i] = obj$shape[index_elements[i]]
+      attr(split_m[[i]], "class") = "figure"
+      split_m[[i]][[j]] = obj[[j]][index_elements[i]]
+      names(split_m[[i]])[j] = names(obj)[j]
     }
   }
-  return(split.m)
+  return(split_m)
 }
 #' Isolate the visible objects in a cell of the matrix
 #'
@@ -49,6 +49,8 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 #' @param vis Whether you want to split only the visible figures in a cell (vis = TRUE, default) or all the figures (vis = FALSE)
 #'
 #' @return A list of the same length of the visible figures in the selected cell (vis = TRUE) or of the same lenght of all the figures in the matrix (vis = TRUE)
+#' @export spli_mat.matriks
+#' @export
 #'
 #' @examples
 split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
@@ -58,8 +60,8 @@ split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
     cell = paste0("Sq", cell)
     cell.start = obj[[cell]]
   }
-  split.m<-split_mat(cell.start, vis = vis)
-  return(split.m)
+  split_m<-split_mat(cell.start, vis = vis)
+  return(split_m)
 }
 
 #' Correct cell
