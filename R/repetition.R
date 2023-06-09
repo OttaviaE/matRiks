@@ -27,12 +27,7 @@ repetition <- function(obj) {
 #' @examples
 repetition.matriks <- function(obj, ...) {
   m_correct = correct(obj)
-  if (class(obj$mat.type) == "numeric") {
-    n.cell<-obj$mat.type
-  } else {
-    n.cell <- obj$mat.type[1]
-  }
-
+  n.cell<-obj$mat.type
   if (n.cell == 9) {
 
     distr_repetition = list(  r_top = obj$Sq6,

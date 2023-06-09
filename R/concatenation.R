@@ -118,7 +118,7 @@ concatenation.double <- function(...) {
 #' @export cof.double
 #' @export
 cof.double <- function(...) {
-  obj <- c(...)
+  obj <- unique(c(...))
   attr(obj, "class") <- "double"
   obj
 }
@@ -130,7 +130,7 @@ cof.double <- function(...) {
 #' @export cof.numeric
 #' @export
 cof.numeric <- function(...) {
-  obj <- c(...)
+  obj <- unique(c(...))
   attr(obj, "class") <- "numeric"
   obj
 }

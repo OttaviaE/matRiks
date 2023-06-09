@@ -27,7 +27,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
   if(vis == TRUE) {
     index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
   } else {
-    index_elements = 1:length(obj$shape)
+    index_elements <- 1:length(obj$shape)
   }
 
   split_m <- vector("list", length(index_elements))
@@ -102,16 +102,12 @@ correct<- function(obj) {
 #' draw(correct(my_mat))
 #' }
 correct.matriks = function(obj) {
-  if (class(obj$mat.type) == "numeric") {
-    n.cell<-obj$mat.type
-  } else {
-    n.cell <- obj$mat.type[1]
-  }
 
+    n.cell<-obj$mat.type
   if (n.cell == 9) {
-    correct = obj$Sq9
+    correct <- obj$Sq9
   } else {
-    correct = obj$Sq4
+    correct <- obj$Sq4
   }
   return(correct)
 }

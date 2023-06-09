@@ -120,11 +120,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
   # che sono state concatenate (questa può essere una info importante per il futuro)
   # sicuramente tu hai una soluzione più elegante ma ora la solzuzione qui and dirty è:
   # il probklema di questa soluzion eè che è stata estesa a tutto
-  if (class(obj$mat.type) == "numeric") {
-    n.cell<-obj$mat.type
-  } else {
-    n.cell <- obj$mat.type[1]
-  }
+  n.cell <- obj$mat.type
 
   squares <- paste0("Sq", 1:9)
   if (n.cell == 9) {
