@@ -72,7 +72,7 @@ com <- function(...) {
 #' @export
 com.matriks <- function(...) {
   obj <- Map("cof", ...)
-  attr(obj, "class") <- "matriKS"
+  attr(obj, "class") <- "matriks"
   obj
 }
 
@@ -110,6 +110,32 @@ concatenation.double <- function(...) {
   attr(obj, "class") <- "double"
   obj
 }
+
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export cof.double
+#' @export
+cof.double <- function(...) {
+  obj <- c(...)
+  attr(obj, "class") <- "double"
+  obj
+}
+
+#' Concatenation of stuff
+#'
+#' @param ... The matrices to be concatenated
+#'
+#' @export cof.numeric
+#' @export
+cof.numeric <- function(...) {
+  obj <- c(...)
+  attr(obj, "class") <- "numeric"
+  obj
+}
+
+
 
 #' Concatenation of stuff
 #'

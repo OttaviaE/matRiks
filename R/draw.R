@@ -114,7 +114,17 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 draw.matriks<- function(obj, main = NULL, canvas = TRUE,
                         hide = FALSE,
                         bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
-  n.cell<-obj$mat.type
+  # ti prego non arrabbiarti
+  # come non fungeva più per ragioni che boh, ho capito che aveva bisogno di nuove funzioni (cof.double e cof.numeric)
+  # quando commi delle matrici, mat.type prende classe double ed ha lunghezza del numero di matrici
+  # che sono state concatenate (questa può essere una info importante per il futuro)
+  # sicuramente tu hai una soluzione più elegante ma ora la solzuzione qui and dirty è:
+  if (class(obj$mat.type) == "numeric") {
+    n.cell<-obj$mat.type
+  } else {
+    n.cell <- obj$mat.type[1]
+  }
+
   squares <- paste0("Sq", 1:9)
   if (n.cell == 9) {
     par(
