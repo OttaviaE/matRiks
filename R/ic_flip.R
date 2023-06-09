@@ -3,7 +3,7 @@
 #' @param obj Matriks
 #'
 #' @return A list
-#' @export repetition
+#' @export ic_flip
 #' @export
 #'
 #' @examples
