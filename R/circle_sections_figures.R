@@ -97,7 +97,7 @@ pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
     nv =  list(100),
     shade = list(shd),
     visible = vis,
-    tag = list("simple","fill", "rotate", "d.int" )
+    tag = c("simple","fill", "rotate", "d.int" )
   )
   attr(value, "class") <- "figure"
   value
