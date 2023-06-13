@@ -30,7 +30,7 @@ ic_flip.matriks <- function(obj, ...) {
     dist_ic_flip <- rotate(m_correct, 3)
   } else {
     split_correct <- split_mat(obj)
-    if (any(split_correct[[length(split_correct)]]$tag == "rotate")) {
+    if (any(unlist(split_correct[[length(split_correct)]]$tag) == "rotate")) {
       dist_ic_flip <-  replace(m_correct, length(m_correct$shape),
                                rotate(split_correct[[length(split_correct)]]))
     } else {
