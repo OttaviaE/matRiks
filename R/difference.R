@@ -42,7 +42,7 @@ difference.matriks <- function(obj, seed = 666, ...) {
 
   list_star<-dir(paste0(system.file(package = "matRiks"), "/R"))
   list_star<-list_star[grep("figure",list_star)]
-  list_star<-paste0(paste0(system.file(package = "matRiks"), "/R"),list_star)
+  list_star<-paste0(paste0(system.file(package = "matRiks"), "/R/"),list_star)
   list_figures <- multi_list(list_star)
   list_figures <- list_figures[!list_figures$name %in% unlist(obj$Sq1$shape), ]
 
