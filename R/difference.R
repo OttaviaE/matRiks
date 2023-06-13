@@ -40,9 +40,9 @@ difference.matriks <- function(obj, seed = 666, ...) {
     start_cell <- obj$Sq1
   }
 
-  list_star<-dir("R")
+  list_star<-dir("./R/")
   list_star<-list_star[grep("figure",list_star)]
-  list_star<-paste0("R/",list_star)
+  list_star<-paste0("./R/",list_star)
   list_figures <- multi_list(list_star)
   list_figures <- list_figures[!list_figures$name %in% unlist(obj$Sq1$shape), ]
 
