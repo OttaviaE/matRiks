@@ -31,15 +31,22 @@ wp.matriks <- function(obj, ...) {
   hrules =gsub(".inv", "", obj$hrule)
   vrules = gsub(".inv", "", obj$vrule)
 
-
-
-
   if (any(hrules[order(hrules)] == vrules[order(vrules)]) == TRUE) {
-    wp_copy = obj$Sq3
-    wp_matrix_start = size(obj$Sq8)
+
+    if (obj$mat.type == 4) {
+      wp_copy <- obj$Sq1
+      wp_matrix_start <- size(obj$Sq3)
+    } else {
+      wp_copy <- obj$Sq3
+      wp_matrix_start <- size(obj$Sq8)
+    }
   } else {
-    wp_copy = obj$Sq1
-    wp_matrix_start = size(obj$Sq5)
+    if (obj$mat.type == 4) {
+      wp_matrix_start <- size(obj$Sq2)
+    } else {
+      wp_matrix_start <- size(obj$Sq5)
+    }
+    wp_copy <- obj$Sq1
   }
 
   if (length(unlist(wp_copy$nv)) == sum(grepl("rotate", unlist(wp_copy$tag)))) {
