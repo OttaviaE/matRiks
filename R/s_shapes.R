@@ -11,15 +11,15 @@
 #' @examples
 #' \dontrun{
 #' # default coordinates of the vertical S
-#' vertical.s()
+#' vertical_s()
 #' # change the line type
-#' vertical.s(lty = 2)
+#' vertical_s(lty = 2)
 #' }
-vertical.s <- function(lty= 1,
+vertical_s <- function(lty= 1,
                        lwd = 3) {
   value <-cof( v.arc.left.up(lty = lty, lwd = lwd),
                v.arc.right.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","d.int")
+  value$tag <- list(c("compose2","d.int", "vert", "s_shape"))
   attr(value, "class") <- "figure"
   value
 }
@@ -36,15 +36,15 @@ vertical.s <- function(lty= 1,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the inverted vertical S
-#' vertical.s.inv()
+#' vertical_s_inv()
 #' # change the line type
-#' vertical.s.inv(lty = 2)
+#' vertical_s_inv(lty = 2)
 #' }
-vertical.s.inv <- function(lty =1,
+vertical_s_inv <- function(lty =1,
                            lwd = 3) {
   value <-cof( v.arc.right.up(lty = lty, lwd = lwd),
                v.arc.left.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","d.int")
+  value$tag <- list(c("compose2","d.int", "vert", "s_shape", "inv"))
   attr(value, "class") <- "figure"
   value
 }
@@ -61,13 +61,14 @@ vertical.s.inv <- function(lty =1,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the horizontal S
-#' horizontal.s()
+#' horizontal_s()
 #' # change the line type
-#' horizontal.s(lty = 2)
+#' horizontal_s(lty = 2)
 #' }
-horizontal.s <- function(lty = 1, lwd = 3) {
-  value <-cof( h.arc.left.up(lty = lty, lwd = lwd), h.arc.right.down(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","d.int")
+horizontal_s <- function(lty = 1, lwd = 3) {
+  value <-cof( h.arc.left.up(lty = lty, lwd = lwd),
+               h.arc.right.down(lty = lty, lwd = lwd))
+  value$tag <- list(c("compose2","d.int", "hor", "s_shape"))
   attr(value, "class") <- "figure"
   value
 }
@@ -84,14 +85,14 @@ horizontal.s <- function(lty = 1, lwd = 3) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of the horizontal S
-#' horizontal.s.inv()
+#' horizontal_s_inv()
 #' # change the line type
-#' horizontal.s.inv(lty = 2)
+#' horizontal_s_inv(lty = 2)
 #' }
-horizontal.s.inv <- function(lty = 1, lwd = 3) {
+horizontal_s_inv <- function(lty = 1, lwd = 3) {
   value <-cof( h.arc.left.down(lty = lty, lwd = lwd),
                h.arc.right.up(lty = lty, lwd = lwd))
-  value$tag <- list("compose2","d.int")
+  value$tag <- list(c("compose2","d.int", "hor", "s_shape", "inv"))
   attr(value, "class") <- "figure"
   value
 }
@@ -108,15 +109,16 @@ horizontal.s.inv <- function(lty = 1, lwd = 3) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of the vertical S
-#' s.vertical.s()
+#' s_vertical_s()
 #' # change the line type
-#' s.vertical.s(lty = 2)
+#' s_vertical_s(lty = 2)
 #' }
-s.vertical.s <- function(lty= 1,
+s_vertical_s <- function(lty= 1,
                          lwd = 3) {
-  value <-cof( v.arc.left.up(lty = lty, lwd = lwd), v.arc.right.down(lty = lty, lwd = lwd),
-               single=TRUE, name="vertical.s")
-  value$tag <- list("simple","d.int")
+  value <-cof( v.arc.left.up(lty = lty, lwd = lwd),
+               v.arc.right.down(lty = lty, lwd = lwd),
+               single=TRUE, name="vertical_s")
+  value$tag <- list(c("simple","d.int", "vert", "s_shape"))
   attr(value, "class") <- "figure"
   value
 }
@@ -133,15 +135,16 @@ s.vertical.s <- function(lty= 1,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single inverted vertical S
-#' s.vertical.s.inv()
+#' s_vertical_s_inv()
 #' # change the line type
-#' s.vertical.s.inv(lty = 2)
+#' s_vertical_s_inv(lty = 2)
 #' }
-s.vertical.s.inv <- function(lty= 1,
+s_vertical_s_inv <- function(lty= 1,
                              lwd = 3) {
-  value <-cof( v.arc.right.up(lty = lty, lwd = lwd), v.arc.left.down(lty = lty, lwd = lwd),single=TRUE,
-               name="vertical.s.inv")
-  value$tag <- list("simple","d.int")
+  value <-cof( v.arc.right.up(lty = lty, lwd = lwd),
+               v.arc.left.down(lty = lty, lwd = lwd),single=TRUE,
+               name="vertical_s_inv")
+  value$tag <- list(c("simple","d.int", "vert", "s_shape", "inv"))
   attr(value, "class") <- "figure"
   value
 }
@@ -158,17 +161,17 @@ s.vertical.s.inv <- function(lty= 1,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single horizontal S
-#' s.horizontal.s()
+#' s_horizontal_s()
 #' # change the line type
-#' s.horizontal.s(lty = 2)
+#' s_horizontal_s(lty = 2)
 #' }
-s.horizontal.s <- function(lty= 1,
+s_horizontal_s <- function(lty= 1,
                            lwd = 3) {
   value <-cof(h.arc.left.up(lty = lty, lwd = lwd),
               h.arc.right.down(lty = lty, lwd = lwd),
-              name="horizontal.s",
+              name="horizontal_s",
               single=TRUE)
-  value$tag <- list("simple","d.int")
+  value$tag <- list("simple","d.int", "hor", "s_shape")
   attr(value, "class") <- "figure"
   value
 }
@@ -185,16 +188,16 @@ s.horizontal.s <- function(lty= 1,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single inverted horizontal S
-#' s.horizontal.s.inv()
+#' s_horizontal_s_inv()
 #' # change the line type
-#' s.horizontal.s.inv(lty = 2)
+#' s_horizontal_s_inv(lty = 2)
 #' }
-s.horizontal.s.inv <- function(lty= 1,
+s_horizontal_s_inv <- function(lty= 1,
                                lwd = 3) {
   value <-cof( h.arc.left.down(lty = lty,  lwd = lwd),
                h.arc.right.up(lty = lty,  lwd = lwd),single=TRUE,
-               name="s.horizontal.s.inv")
-  value$tag <- list("simple","d.int")
+               name="s_horizontal_s_inv")
+  value$tag <- list(c("simple","d.int", "hor", "s_shape", "inv"))
   attr(value, "class") <- "figure"
   value
 }

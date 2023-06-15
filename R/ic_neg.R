@@ -26,11 +26,20 @@ ic_neg <- function(obj) {
 ic_neg.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {
-    dist_ic_neg <- change_color(m_correct)
+    if (any(!unlist(m_correct$tag) == "fill")) {
+      dist_ic_neg <- margin(m_correct, 2, "lty")
+    } else {
+      dist_ic_neg <- change_color(m_correct)
+    }
   } else {
     split_correct <- split_mat(obj)
+    if (any(!unlist(split_correct) == "fill")) {
+      new_image <- margin(split_correct[[length(split_correct)]], 2, "lty")
+    } else {
+      new_image <- change_color(split_correct[[length(split_correct)]])
+    }
    dist_ic_neg <-  replace(m_correct, length(m_correct$shape),
-            change_color(split_correct[[length(split_correct)]]))
+            new_image)
 
   }
 

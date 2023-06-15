@@ -15,13 +15,13 @@
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
-#' bow.tie()
+#' vert_bow_tie()
 #'
 #' # change the coordinates for drawing a smaller bow tie
 #'
-#' bow.tie(size.x = 5)
+#' vert_bow_tie(size.x = 5)
 #' }
-bow.tie <- function(size.x = 10,
+vert_bow_tie <- function(size.x = 10,
                     size.y = 10, pos.x = 0, shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
                        size.x = size.x, size.y=size.y, shd = shd,
@@ -29,7 +29,7 @@ bow.tie <- function(size.x = 10,
               triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill", "d.int")
+  value$tag <- list(c("compose2","fill", "d.int", "vert", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -51,13 +51,13 @@ bow.tie <- function(size.x = 10,
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a bow tie
-#' s.bow.tie()
+#' s_vert_bow_tie()
 #'
 #' # change the coordinates for drawing a smaller bow tie
 #'
-#' bow.tie(size.x = 5)
+#' s_vert_bow_tie(size.x = 5)
 #' }
-s.bow.tie <- function(size.x = 10,
+s_vert_bow_tie <- function(size.x = 10,
                       size.y = size.x, pos.x = 0,
                       shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
@@ -66,9 +66,9 @@ s.bow.tie <- function(size.x = 10,
               triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd),
-              name = "s.bow.tie",
+              name = "s_vert_bow_tie",
               single = TRUE)
-  value$tag <- list("compose2","fill", "d.int")
+  value$tag <- list(c("compose2","fill", "d.int", "vert", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -91,13 +91,13 @@ s.bow.tie <- function(size.x = 10,
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
-#' bow.tie.inv()
+#' hor_bow_tie()
 #'
 #' # change the coordinates for drawing a smaller bow tie
 #'
-#' bow.tie.inv(size.x = 5)
+#' hor_bow_tie(size.x = 5)
 #' }
-bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
+hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
                        rot=pi/3,
@@ -108,7 +108,7 @@ bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd =
                        rot=-pi,
                        size.x = size.x, size.y=size.x, shd = shd,
                        lty = lty, lwd = lwd))
-  value$tag <- list("compose2","fill", "d.int")
+  value$tag <- list(c("compose2","fill", "d.int", "hor", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -132,13 +132,13 @@ bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd =
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single horizontal bow tie
-#' s.bow.tie.inv()
+#' s_hor_bow_tie()
 #'
 #' # change the coordinates for drawing a smaller bow tie
 #'
-#' s.bow.tie.inv(size.x = 5)
+#' s_hor_bow_tie(size.x = 5)
 #' }
-s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
+s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
                        rot=pi/3,
@@ -149,9 +149,9 @@ s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
                        rot=-pi,
                        size.x = size.x, size.y=size.x, shd = shd,
                        lty = lty, lwd = lwd),
-              name = "s.bow.tie.inv",
+              name = "s_hor_bow_tie",
               single = TRUE)
-  value$tag <- list("compose2","fill", "d.int")
+  value$tag <- list(c("compose2","fill", "d.int", "hor", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -182,7 +182,7 @@ s.bow.tie.inv <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty))
-  value$tag = list("compose4", "fill", "d.int")
+  value$tag = list(c("compose4", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -210,12 +210,12 @@ malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty
 #'
 #' s.malta(size.x = 5)
 #' }
-s.malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
+s_malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value = cof(s.bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               s.bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
               single = TRUE,
-              name = "s.malta")
-  value$tag = list("compose2", "fill", "d.int")
+              name = "s_malta")
+  value$tag = list(c("compose2", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -253,7 +253,7 @@ axe = function(size.x = 15, pos.x = 0,
               rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5))
-  value$tag = list("compose2", "fill", "d.int")
+  value$tag = list(c("compose2", "fill", "d.int", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -356,13 +356,13 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single maxi
-#' s.maxi()
+#' s_maxi()
 #'
 #' # change the coordinates for drawing a smaller single maxi
 #'
-#' s.maxi(size.x = 5)
+#' s_maxi(size.x = 5)
 #' }
-s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
+s_maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   value = cof(luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
                    size.x = size.x, size.y=size.y,
                    shd = shd, lty = lty, lwd = lwd),
@@ -375,8 +375,7 @@ s.maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
               luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
-              single = T,
-              names = "s.maxi")
+              single = TRUE)
   value$tag = list("compose4", "fill", "d.int")
   attr(value, "class") <- "figure"
   value

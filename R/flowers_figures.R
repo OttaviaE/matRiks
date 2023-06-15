@@ -18,8 +18,8 @@
 #' lily(lty = 3)
 #' }
 lily <- function(lwd = 3, lty = 1) {
-  value <-cof( horizontal.s.eight(lwd = lwd, lty = 1),
-               vertical.s.eight(lwd = lwd, lty = 1))
+  value <-cof( s_horizontal_eight(lwd = lwd, lty = 1),
+               s_vertical_eight(lwd = lwd, lty = 1))
   value$tag <- list("compose2", "d.int")
   attr(value, "class") <- "figure"
   value
@@ -39,16 +39,16 @@ lily <- function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single lily
-#' s.lily()
+#' s_lily()
 #'
 #' # change the line type of the single lily
 #'
-#' s.lily(lty = 3)
+#' s_lily(lty = 3)
 #' }
-s.lily <- function(lwd = 3, lty = 1) {
-  value <-cof( horizontal.s.eight(lwd = lwd, lty = 1),
-               vertical.s.eight(lwd = lwd, lty = 1),
-               name = "s.lily",
+s_lily <- function(lwd = 3, lty = 1) {
+  value <-cof( s_horizontal_eight(lwd = lwd, lty = 1),
+               s_vertical_eight(lwd = lwd, lty = 1),
+               name = "s_lily",
                single = TRUE)
   value$tag <- list("simple", "d.int")
   attr(value, "class") <- "figure"
@@ -69,18 +69,18 @@ s.lily <- function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing an up petal
-#' up.petal()
+#' up_petal()
 #'
 #' # change the line type of the up petal
 #'
-#' up.petal(lty = 3)
+#' up_petal(lty = 3)
 #' }
-up.petal = function(lwd = 3, lty = 1) {
+up_petal = function(lwd = 3, lty = 1) {
  value =  cof(v.arc.left.up(lwd = lwd, lty = lty),
          v.arc.right.up(lwd = lwd, lty = lty),
-        name="up.petal",
-        single = T)
- value$tag = list("compose2", "d.int")
+        name="up_petal",
+        single = TRUE)
+ value$tag = list("compose2", "d.int", "up", "petal")
  attr(value, "class") <- "figure"
  value
 }
@@ -99,18 +99,18 @@ up.petal = function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a down petal
-#' down.petal()
+#' down_petal()
 #'
 #' # change the line type of the down petal
 #'
-#' down.petal(lty = 3)
+#' down_petal(lty = 3)
 #' }
-down.petal = function(lwd = 3, lty = 1) {
+down_petal = function(lwd = 3, lty = 1) {
   value =  cof(v.arc.left.down(lwd = lwd, lty = lty),
                v.arc.right.down(lwd = lwd, lty = lty),
-               name="down.petal",
+               name="down_petal",
                single = T)
-  value$tag = list("compose2", "d.int")
+  value$tag = list("compose2", "d.int", "down", "petal")
   attr(value, "class") <- "figure"
   value
 }
@@ -128,18 +128,18 @@ down.petal = function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a left petal
-#' left.petal()
+#' left_petal()
 #'
 #' # change the line type of the left petal
 #'
-#' left.petal(lty = 3)
+#' left_petal(lty = 3)
 #' }
-left.petal = function(lwd = 3, lty = 1) {
+left_petal = function(lwd = 3, lty = 1) {
   value =  cof(h.arc.left.down(lwd = lwd, lty = lty),
                h.arc.left.up(lwd = lwd, lty = lty),
-               name="left.petal",
+               name="left_petal",
                single = T)
-  value$tag = list("compose2", "d.int")
+  value$tag = list("compose2", "d.int", "left", "petal")
   attr(value, "class") <- "figure"
   value
 }
@@ -156,18 +156,18 @@ left.petal = function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a right petal
-#' right.petal()
+#' right_petal()
 #'
 #' # change the line type of the right petal
 #'
-#' right.petal(lty = 3)
+#' right_petal(lty = 3)
 #' }
-right.petal = function(lwd = 3, lty = 1) {
+right_petal = function(lwd = 3, lty = 1) {
   value =  cof(h.arc.right.down(lwd = lwd, lty = lty),
                h.arc.right.up(lwd = lwd, lty = lty),
-               name="right.petal",
+               name="right_petal",
                single = T)
-  value$tag = list("compose2", "d.int")
+  value$tag = list("compose2", "d.int", "right", "petal")
   attr(value, "class") <- "figure"
   value
 }
@@ -192,9 +192,9 @@ right.petal = function(lwd = 3, lty = 1) {
 #' }
 flower = function(lwd = 3, lty = 1) {
   value = cof(up.petal(lwd = lwd, lty = lty),
-              down.petal(lwd = lwd, lty = lty),
-              left.petal(lwd = lwd, lty = lty),
-              right.petal(lwd = lwd, lty = lty))
+              down_petal(lwd = lwd, lty = lty),
+              left_petal(lwd = lwd, lty = lty),
+              right_petal(lwd = lwd, lty = lty))
   value$tag = list("compose4", "d.int")
   attr(value, "class") = "figure"
   value
@@ -218,11 +218,11 @@ flower = function(lwd = 3, lty = 1) {
 #'
 #' s.flower(lty = 3)
 #' }
-s.flower = function(lwd = 3, lty = 1) {
+s_flower = function(lwd = 3, lty = 1) {
   value = cof(up.petal(lwd = lwd, lty = lty),
-              down.petal(lwd = lwd, lty = lty),
-              left.petal(lwd = lwd, lty = lty),
-              right.petal(lwd = lwd, lty = lty),
+              down_petal(lwd = lwd, lty = lty),
+              left_petal(lwd = lwd, lty = lty),
+              right_petal(lwd = lwd, lty = lty),
               name = "flower",
               single = TRUE)
   value$tag = list("simple", "d.int")
