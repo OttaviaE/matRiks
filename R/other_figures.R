@@ -22,7 +22,7 @@
 #' vert_bow_tie(size.x = 5)
 #' }
 vert_bow_tie <- function(size.x = 10,
-                    size.y = 10, pos.x = 0, shd = NA, lty = 1, lwd = 3) {
+                    size.y = size.x, pos.x = 0, shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
                        size.x = size.x, size.y=size.y, shd = shd,
                        lty = lty, lwd = lwd),
@@ -179,9 +179,9 @@ s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 #'
 #' malta(size.x = 5)
 #' }
-malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
-              bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty))
+malta = function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1){
+  value = cof(hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
+              vert_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty))
   value$tag = list(c("compose4", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
@@ -204,15 +204,15 @@ malta = function(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single Malta cross
-#' s.malta()
+#' s_malta()
 #'
 #' # change the coordinates for drawing a smaller single Malta cross
 #'
-#' s.malta(size.x = 5)
+#' s_malta(size.x = 5)
 #' }
 s_malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(s.bow.tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
-              s.bow.tie.inv(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty),
+  value = cof(s_hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
+              s_vert_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               single = TRUE,
               name = "s_malta")
   value$tag = list(c("compose2", "fill", "d.int"))
@@ -276,20 +276,20 @@ axe = function(size.x = 15, pos.x = 0,
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing an axe
-#' s.axe()
+#' s_axe()
 #'
 #' # change the coordinates for drawing a smaller single Malta cross
 #'
-#' s.axe(size.x = 5)
+#' s_axe(size.x = 5)
 #' }
-s.axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
+s_axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value = cof(slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
                     lwd = lwd, lty = lty, shd = shd),
               rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5),
-              name = "s.axe",
+              name = "s_axe",
               single = TRUE)
   value$tag = list("compose2", "fill", "d.int")
   attr(value, "class") <- "figure"
@@ -375,7 +375,8 @@ s_maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
               luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
-              single = TRUE)
+              single = TRUE,
+              name = "s_maxi")
   value$tag = list("compose4", "fill", "d.int")
   attr(value, "class") <- "figure"
   value

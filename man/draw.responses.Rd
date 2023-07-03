@@ -16,6 +16,19 @@
   print = FALSE,
   ...
 )
+
+\method{draw}{responses}(
+  obj,
+  main = NULL,
+  canvas = TRUE,
+  hide = FALSE,
+  bg = "white",
+  mar = c(1, 1, 1, 1),
+  xlim = 16,
+  distractors = NULL,
+  print = FALSE,
+  ...
+)
 }
 \arguments{
 \item{obj}{The figure to be drawn. Can be a single figure, a matrix, or the responses}
@@ -42,7 +55,11 @@
 }
 \value{
 a list
+
+a list
 }
 \description{
+Draw the response list
+
 Draw the response list
 }

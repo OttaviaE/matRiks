@@ -201,3 +201,56 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
   }
 
 }
+
+
+#' Draw responses
+#'
+#' Draw the response list
+#'
+#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param main logical, print the title of the drawing. Default is FALSE
+#' @param canvas logical, draw the figure on a new canvas. Default is TRUE
+#' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
+#' @param n.figure integer, define the number of cells of the matrix. Default is 9
+#' @param bg character, define the color background. Default is white
+#' @param mar numeric vector, change margins of the canvas
+#' @param xlim numeric, change the length of the x axis
+#' @param distractors the distractors
+#' @param print the prrint
+#' @param ... Other arguments
+#'
+#' @return a list
+#' @export draw.responses
+#' @export
+#'
+#' @examples
+draw.responses <- function(obj, main = NULL, canvas = TRUE,
+                           hide = FALSE,
+                           bg = "white",mar=c(1,1,1,1),xlim=16,
+                           distractors = NULL, print = FALSE,
+                           ...) {
+  if (is.null(distractors) == TRUE) {
+    distractors <- names(obj)
+  }
+
+  if (print == FALSE) {
+    par(mfrow =c(2, round(length(distractors)/2 +0.2) ),
+        mar = c(0.5, 6, 0.5, 2) + .1,
+        mai=c(.1,.1,.1,.1),oma=c(4,4,0.2,0.2) )
+
+  } else {
+    par(mfrow = c(1, 1), mar = c(0.5, 6, 0.5, 2) + .1,
+        mai=c(.1,.1,.1,.1),oma=c(4,4,0.2,0.2) )
+  }
+
+  if (is.null(main) == FALSE) {
+    for (i in 1:length(distractors)) {
+      draw(obj[[distractors[i]]], main <- distractors[i])
+    }
+  } else {
+    for (i in 1:length(distractors)) {
+      draw(obj[[distractors[i]]])
+    }
+  }
+
+}
