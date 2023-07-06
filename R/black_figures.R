@@ -1,6 +1,6 @@
 #' Coordinates of a dot
 #'
-#' Define the coordinates of the ellipse within which a dot can be inscribed.
+#' Define the coordinates for drawing a dot
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 2
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
@@ -44,7 +44,7 @@ dot <- function(size.x = 2,
     nv = list(100),
     shade = list(shd),
     visible = vis,
-    tag = list('simple','fill', 'd.int')
+    tag = list(c('simple','fill', 'd.int'))
   )
   attr(value, "class") <- "figure"
   value
@@ -78,7 +78,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
               dot(pos.x = pos.x, pos.y = -pos.y, shd = shd, lwd = lwd, lty = lty),
               dot(pos.x = -pos.x, pos.y = -pos.y, shd = shd, lwd = lwd, lty = lty),
               single = TRUE, name = "dice")
-  value$tag <- list("compose4", "d.ext")
+  value$tag <- list(c("compose4", "d.ext"))
   attr(value, "class") <- "figure"
   value
 }
@@ -111,14 +111,14 @@ cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
               dot(pos.x = 0,
                   pos.y =13, shd = shd, lty = lty, lwd =lwd),
               single = TRUE,name = "cross_dice")
-  value$tag <- list("compose4", "d.ext")
+  value$tag <- list(c("compose4", "d.ext"))
   attr(value, "class") <- "figure"
   value
 }
 
 #' Coordinates of a biscuit
 #'
-#' Define the coordinates of the ellipses within which a biscuit (composed of two hexagons) can be inscribed.
+#' Define the coordinates for drawing a biscuit (composed of two hexagons)
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
@@ -149,13 +149,13 @@ biscuit = function(size.x = 15, size.y = size.x,
                                lwd = lwd, lty = lty,
                                shd = shd), 3),
               single = T, name = "biscuit")
-  value$tag <- list("compose2", "d.int", "black.figure")
+  value$tag <- list(c("compose2", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
 #' Coordinates of a single biscuit
 #'
-#' Define the coordinates of the ellipses within which a biscuit (composed of two hexagons) can be inscribed, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single biscuit (composed of two hexagons), to be used in shape()
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
@@ -189,14 +189,14 @@ s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
                       shd = shd, lty = lty, lwd = lwd),
               name = "s.biscuit",
               single = TRUE)
-  value$tag <- list("compose2", "d.int", "black.figure")
+  value$tag <- list(c("compose2", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
 
 #' Coordinates of a ninja star
 #'
-#' Define the coordinates of the ellipses within which a ninja (composed of two lucks) can be inscribed.
+#' Define the coordinates for drawing a ninja star (composed of two lucks)
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
@@ -220,14 +220,14 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "ninja")
-  value$tag = list("compose2", "rotate", "d.int", "black.figure")
+  value$tag = list(c("compose2", "rotate", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
 
 #' Coordinates of a single ninja
 #'
-#' Define the coordinates of the ellipses within which a ninja (composed of two lucks) can be inscribed, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single ninja star (composed of two lucks (composed of two lucks), to be used in shape()
 #'
 #' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
 #' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
@@ -252,14 +252,15 @@ s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "s_ninja",
               single = TRUE)
-  value$tag = list("compose2", "rotate", "d.int", "black.figure")
+  value$tag = list(c("compose2", "rotate", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
 
 
-
-#' Define the coordinates for drawing a star
+#' Coordinates of a star
+#'
+#' Define the coordinates for drawing a star (composed of 4 luck)
 #'
 #' @param size.x The length of the x-axis. Default is 10.
 #' @param size.y The length of the x-axis. Default is 15.
@@ -279,18 +280,20 @@ s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' draw(star(shd = "grey", lty = 0))
 #'
 #' }
-star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+star <- function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               name = "star")
-  value$tag = list("compose4",  "d.int", "black.figure")
+  value$tag = list(c("compose4",  "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates for drawing a single star (to be used in shape())
+#' Coordinates of a star
 #'
+#' Define the coordinates for drawing a single star (composed of 4 luck), to be used in shape()
+#' #'
 #' @param size.x The length of the x-axis. Default is 10.
 #' @param size.y The length of the x-axis. Default is 15.
 #' @param shd The shading of the figure. Default is black
@@ -316,7 +319,7 @@ s_star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               single = TRUE,
               name = "s_star")
-  value$tag = list("compose4",  "d.int", "black.figure")
+  value$tag = list(c("compose4",  "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
