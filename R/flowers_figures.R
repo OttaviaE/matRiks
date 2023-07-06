@@ -76,8 +76,8 @@ s_lily <- function(lwd = 3, lty = 1) {
 #' up_petal(lty = 3)
 #' }
 up_petal = function(lwd = 3, lty = 1) {
- value =  cof(v.arc.left.up(lwd = lwd, lty = lty),
-         v.arc.right.up(lwd = lwd, lty = lty),
+ value =  cof(v_arc_left_up(lwd = lwd, lty = lty),
+        v_arc_right_up(lwd = lwd, lty = lty),
         name="up_petal",
         single = TRUE)
  value$tag = list("compose2", "d.int", "up", "petal")
@@ -106,8 +106,8 @@ up_petal = function(lwd = 3, lty = 1) {
 #' down_petal(lty = 3)
 #' }
 down_petal = function(lwd = 3, lty = 1) {
-  value =  cof(v.arc.left.down(lwd = lwd, lty = lty),
-               v.arc.right.down(lwd = lwd, lty = lty),
+  value =  cof(v_arc_left_down(lwd = lwd, lty = lty),
+              v_arc_right_down(lwd = lwd, lty = lty),
                name="down_petal",
                single = T)
   value$tag = list("compose2", "d.int", "down", "petal")
@@ -135,8 +135,8 @@ down_petal = function(lwd = 3, lty = 1) {
 #' left_petal(lty = 3)
 #' }
 left_petal = function(lwd = 3, lty = 1) {
-  value =  cof(h.arc.left.down(lwd = lwd, lty = lty),
-               h.arc.left.up(lwd = lwd, lty = lty),
+  value =  cof(h_arc_left_down(lwd = lwd, lty = lty),
+               h_arc_left_up(lwd = lwd, lty = lty),
                name="left_petal",
                single = T)
   value$tag = list("compose2", "d.int", "left", "petal")
@@ -163,35 +163,35 @@ left_petal = function(lwd = 3, lty = 1) {
 #' right_petal(lty = 3)
 #' }
 right_petal = function(lwd = 3, lty = 1) {
-  value =  cof(h.arc.right.down(lwd = lwd, lty = lty),
-               h.arc.right.up(lwd = lwd, lty = lty),
+  value =  cof(h_arc_right_down(lwd = lwd, lty = lty),
+               h_arc_right_up(lwd = lwd, lty = lty),
                name="right_petal",
                single = T)
   value$tag = list("compose2", "d.int", "right", "petal")
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a flower
+#' Define the coordinates of a miley
 #'
-#' Define the coordinates of the circle sections composing a flower
+#' Define the coordinates of the circle sections composing a miley
 #'
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing a flower made of petals
+#' @return Return the coordinates for drawing a miley made of petals
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a right petal
-#' flower()
+#' miley()
 #'
 #' # change the line type of the right petal
 #'
-#' flower(lty = 3)
+#' miley(lty = 3)
 #' }
-flower = function(lwd = 3, lty = 1) {
-  value = cof(up.petal(lwd = lwd, lty = lty),
+miley = function(lwd = 3, lty = 1) {
+  value = cof(up_petal(lwd = lwd, lty = lty),
               down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty))
@@ -199,31 +199,31 @@ flower = function(lwd = 3, lty = 1) {
   attr(value, "class") = "figure"
   value
 }
-#' Define the coordinates a single flower
+#' Define the coordinates a single miley
 #'
-#' Define the coordinates of the circle sections composing a flower, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates of the circle sections composing a miley, which is forced to be a single figure (to be used in shape())
 #'
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing a single flower
+#' @return Return the coordinates for drawing a single miley
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' # return the default coordinates for drawing a single flower
-#' s.flower()
+#' # return the default coordinates for drawing a single miley
+#' s.miley()
 #'
-#' # change the line type of the single flower
+#' # change the line type of the single miley
 #'
-#' s.flower(lty = 3)
+#' s.miley(lty = 3)
 #' }
-s_flower = function(lwd = 3, lty = 1) {
+s_miley = function(lwd = 3, lty = 1) {
   value = cof(up.petal(lwd = lwd, lty = lty),
               down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty),
-              name = "flower",
+              name = "miley",
               single = TRUE)
   value$tag = list("simple", "d.int")
   attr(value, "class") = "figure"

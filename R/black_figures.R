@@ -96,13 +96,13 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a dot
-#' cross.dice()
+#' cross_dice()
 #'
 #' # change the shade of the cross dice
 #'
-#' cross.dice(shd = "grey")
+#' cross_dice(shd = "grey")
 #' }
-cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
+cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
   value <-cof(dot(pos.x=13,
                   pos.y=0,
                   shd = shd, lty = lty, lwd =lwd),
@@ -110,7 +110,7 @@ cross.dice <- function(shd = "black", lwd = 3, lty = 1) {
               dot(pos.x= 0,pos.y=-13, shd = shd, lty = lty, lwd =lwd),
               dot(pos.x = 0,
                   pos.y =13, shd = shd, lty = lty, lwd =lwd),
-              single = TRUE,name = "cross.dice")
+              single = TRUE,name = "cross_dice")
   value$tag <- list("compose4", "d.ext")
   attr(value, "class") <- "figure"
   value
@@ -177,7 +177,7 @@ biscuit = function(size.x = 15, size.y = size.x,
 #'
 #' biscuit(shd = "grey", lty = 0)
 #' }
-s.biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
+s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
                       size.y = size.x, shd = "black", lty = 1, lwd = 3) {
   value <-cof(hexagon(pos.x = pos.x,
                       pos.y = pos.y, size.x = size.x, size.y = size.y,
@@ -241,16 +241,16 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single ninja
-#' s.ninja()
+#' s_ninja()
 #'
 #' # change the shade of the single ninja
 #'
-#' ninja(shd = "grey", lty = 0)
+#' s_ninja(shd = "grey", lty = 0)
 #' }
-s.ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
-              name = "s.ninja",
+              name = "s_ninja",
               single = TRUE)
   value$tag = list("compose2", "rotate", "d.int", "black.figure")
   attr(value, "class") <- "figure"
@@ -303,19 +303,19 @@ star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @examples
 #' \dontrun{
 #' # get the coordinates of a single star composed of four luck
-#' s.star()
+#' s_star()
 #'
 #' # change the color of the star
 #' draw(s.star(shd = "grey", lty = 0))
 #'
 #' }
-s.star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+s_star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 4),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               single = TRUE,
-              name = "s.star")
+              name = "s_star")
   value$tag = list("compose4",  "d.int", "black.figure")
   attr(value, "class") <- "figure"
   value

@@ -17,16 +17,16 @@
 #' \dontrun{
 #' # default coordinates of the left up arch
 #'
-#' v.arc.left.up()
+#' v_arc_left_up()
 #'
 #' }
-v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
+v_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
                           size.y=size.x,
                           pos.x = 0, pos.y = 0,
                           vis = 1,
                           lty =1, lwd = 3) {
   value <- list(
-    shape = "v.arc.left.up",
+    shape = "v_arc_left_up",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(3*pi/4),
@@ -65,16 +65,16 @@ v.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the right up arch
 #'
-#' v.arc.right.up()
+#' v_arc_right_up()
 #'
 #' }
-v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
+v_arc_right_up <- function(size.x=square()$size.x[[1]]/2,
                            size.y=size.x,
                            pos.x = 0, pos.y = 0,
                            vis = 1,
                            lty =1, lwd = 3) {
   value <- list(
-    shape = "v.arc.right.up",
+    shape = "v_arc_right_up",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(7*pi/4),
@@ -114,14 +114,14 @@ v.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the left down arch
 #'
-#' v.arc.left.down()
+#' v_arc_left_down()
 #'
 #' }
-v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
+v_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
                             size.y=size.x,
                             lty =1, lwd = 3, vis  = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape  = "v.arc.left.down",
+    shape  = "v_arc_left_down",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(3*pi/4),
@@ -161,14 +161,14 @@ v.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the right down arch
 #'
-#' v.arc.right.down()
+#' v_arc_right_down()
 #'
 #' }
-v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
+v_arc_right_down <- function(size.x=square()$size.x[[1]]/2,
                              size.y=size.x,
                              lty =1, lwd = 3,vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape = "v.arc.right.down",
+    shape = "v_arc_right_down",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(7*pi/4),
@@ -208,14 +208,14 @@ v.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the left up arch
 #'
-#' h.arc.left.up()
+#' h_arc_left_up()
 #'
 #' }
-h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
+h_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
                           size.y=size.x,
                           lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape  = "h.arc.left.up",
+    shape  = "h_arc_left_up",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(pi/4),
@@ -254,14 +254,14 @@ h.arc.left.up <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the right up arch
 #'
-#' h.arc.right.up()
+#' h_arc_right_up()
 #'
 #' }
-h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
+h_arc_right_up <- function(size.x=square()$size.x[[1]]/2,
                            size.y=size.x,
                            lty =1, lwd = 3,vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape  = "h.arc.right.up",
+    shape  = "h_arc_right_up",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(pi/4),
@@ -301,14 +301,14 @@ h.arc.right.up <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the left down arch
 #'
-#' h.arc.left.down()
+#' h_arc_left_down()
 #'
 #' }
-h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
+h_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
                             size.y=size.x,
                             lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape = "h.arc.left.down",
+    shape = "h_arc_left_down",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(5*pi/4),
@@ -347,14 +347,14 @@ h.arc.left.down <- function(size.x=square()$size.x[[1]]/2,
 #' \dontrun{
 #' # default coordinates of the right down arch
 #'
-#' h.arc.right.down()
+#' h_arc_right_down()
 #'
 #' }
-h.arc.right.down <- function(size.x=square()$size.x[[1]]/2,
+h_arc_right_down <- function(size.x=square()$size.x[[1]]/2,
                              size.y=size.x,
                              lty =1, lwd = 3, vis = 1, pos.x = 0, pos.y = 0) {
   value <- list(
-    shape = "h.arc.right.down",
+    shape = "h_arc_right_down",
     size.x  = list(size.x),
     size.y  = list(size.y),
     theta.1  = list(5*pi/4),

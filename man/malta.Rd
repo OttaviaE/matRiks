@@ -4,7 +4,7 @@
 \alias{malta}
 \title{Coordinates of a Malta cross}
 \usage{
-malta(size.x = 10, size.y = size.y, pos.x = 0, shd = NA, lwd = 3, lty = 1)
+malta(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1)
 }
 \arguments{
 \item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}

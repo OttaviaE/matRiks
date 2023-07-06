@@ -26,10 +26,10 @@ Define the coordinates for drawing a single Malta cross, which is forced to be a
 \examples{
 \dontrun{
 # return the default coordinates for drawing a single Malta cross
-s.malta()
+s_malta()
 
 # change the coordinates for drawing a smaller single Malta cross
 
-s.malta(size.x = 5)
+s_malta(size.x = 5)
 }
 }

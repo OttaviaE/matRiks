@@ -117,9 +117,9 @@ pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @examples
 #' \dontrun{
 #' # default coordinates of the pizza with four slices
-#' pizza.4()
+#' pizza_4()
 #' }
-pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
+pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
@@ -143,14 +143,14 @@ pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single pizza with four slices
-#' s.pizza.4()
+#' s_pizza_4()
 #' }
-s.pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
+s_pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 7*pi/4, theta2 = 9*pi/4, shd = shd, lty = lty, lwd = lwd),
-              name = "s.pizza.4",
+              name = "s_pizza_4",
               single = TRUE)
   value$tag <- list("simple","fill", "d.int")
   attr(value, "class") <- "figure"
@@ -178,11 +178,11 @@ s.pizza.4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
 #' @examples
 #' \dontrun{
 #' # default coordinates of the downward-facing left semi-circle
-#' semi.circle()
+#' semi_circle()
 #' # change the rotation of the downward-facing left semi-circle
-#' semi.circle(theta1 = pi/2, theta2 = 3*pi/2)
+#' semi_circle(theta1 = pi/2, theta2 = 3*pi/2)
 #' }
-semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
+semi_circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
                         theta1 = pi/4,
@@ -192,7 +192,7 @@ semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         lwd =3,
                         vis = 1) {
   value <- list(
-    shape = "semi.circle",
+    shape = "semi_circle",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -233,11 +233,11 @@ semi.circle <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @examples
 #' \dontrun{
 #' # default coordinates of the upward-facing left semi-circle
-#' semi.circle.inv()
+#' semi_circle_inv()
 #' # change the rotation of the upward-facing left semi-circle
-#' semi.circle.inv(theta1 = pi, theta2 = 2*pi)
+#' semi_circle_inv(theta1 = pi, theta2 = 2*pi)
 #' }
-semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
+semi_circle_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
                         theta1 = 5*pi/4,
@@ -247,7 +247,7 @@ semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         lwd =3,
                         vis = 1) {
   value <- list(
-    shape = "semi.circle.inv",
+    shape = "semi_circle_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -285,19 +285,19 @@ semi.circle.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @examples
 #' \dontrun{
 #' # default coordinates of the pizza with two slices
-#' pizza.2()
+#' pizza_2()
 #' }
-pizza.2 <- function(size.x = 15, size.y = 0,
+pizza_2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
-  value <-cof(semi.circle(size.x = size.x,
+  value <-cof(semi_circle(size.x = size.x,
                           size.y = size.y,
                           pos.x = pos.x,
                           pos.y = pos.y,
                           shd = NA,
                           lty = lty,
                           lwd = lwd),
-              semi.circle.inv(size.x = size.x,
+              semi_circle_inv(size.x = size.x,
                               size.y = size.y,
                               pos.x = pos.x,
                               pos.y = pos.y,
@@ -326,26 +326,26 @@ pizza.2 <- function(size.x = 15, size.y = 0,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single pizza with two slices
-#' s.pizza.2()
+#' s_pizza_2()
 #' }
-s.pizza.2 <- function(size.x = 15, size.y = 0,
+s_pizza_2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
-  value <-cof(semi.circle(size.x = size.x,
+  value <-cof(semi_circle(size.x = size.x,
                           size.y = size.y,
                           pos.x = pos.x,
                           pos.y = pos.y,
                           shd = NA,
                           lty = lty,
                           lwd = lwd),
-              semi.circle.inv(size.x = size.x,
+              semi_circle_inv(size.x = size.x,
                               size.y = size.y,
                               pos.x = pos.x,
                               pos.y = pos.y,
                               shd = NA,
                               lty = lty,
                               lwd = lwd),
-              name= "s.pizza.2",
+              name= "s_pizza_2",
               single = T)
   value$tag <- list("compose2","fill")
   attr(value, "class") <- "figure"
@@ -373,11 +373,11 @@ s.pizza.2 <- function(size.x = 15, size.y = 0,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the downward-facing right semi-circle
-#' semi.circle.rev()
+#' semi_circle_inv()
 #' # change the rotation of the downward-facing right semi-circle
-#' semi.circle.rev(theta1 = 0, theta2 = pi/2)
+#' semi_circle_inv(theta1 = 0, theta2 = pi/2)
 #' }
-semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
+semi_circle_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
                         theta1 = 7*pi/4,
@@ -388,7 +388,7 @@ semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         lwd =3,
                         vis = 1) {
   value <- list(
-    shape = "semi.circle.rev",
+    shape = "semi_circle_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -429,11 +429,11 @@ semi.circle.rev <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @examples
 #' \dontrun{
 #' # default coordinates of the upward-facing left semi-circle
-#' semi.circle.rev.inv()
+#' semi_circle_inv_inv()
 #' # change the rotation of the upward-facing left semi-circle
-#' semi.circle.rev.inv(theta1 = pi, theta2 = 2*pi)
+#' semi_circle_inv_inv(theta1 = pi, theta2 = 2*pi)
 #' }
-semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
+semi_circle_inv_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                             size.y = 0,
                             pos.x=0 ,pos.y=0,
                             theta1 = 3*pi/4,
@@ -444,7 +444,7 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                             lwd =3,
                             vis = 1) {
   value <- list(
-    shape = "semi.circle.inv",
+    shape = "semi_circle_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -481,19 +481,19 @@ semi.circle.rev.inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single inverse pizza with two slices
-#' pizza.2.rev()
+#' pizza_2_inv()
 #' }
-pizza.2.rev <- function(size.x = 15, size.y = size.x,
+pizza_2_inv <- function(size.x = 15, size.y = size.x,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
-  value <-cof(semi.circle.rev(size.x = size.x,
+  value <-cof(semi_circle_inv(size.x = size.x,
                           size.y = size.y,
                           pos.x = pos.x,
                           pos.y = pos.y,
                           shd = NA,
                           lty = lty,
                           lwd = lwd),
-              semi.circle.rev.inv(size.x = size.x,
+              semi_circle_inv_inv(size.x = size.x,
                               size.y = size.y,
                               pos.x = pos.x,
                               pos.y = pos.y,
@@ -523,26 +523,26 @@ pizza.2.rev <- function(size.x = 15, size.y = size.x,
 #' @examples
 #' \dontrun{
 #' # default coordinates of the single inverse pizza with two slices
-#' s.pizza.2()
+#' s_pizza_2()
 #' }
-s.pizza.2.rev <- function(size.x = 15, size.y = 0,
+s_pizza_2_inv <- function(size.x = 15, size.y = 0,
                     pos.x=0 ,pos.y=0,
                     shd = NA, lty = 1, lwd = 3) {
-  value <-cof(semi.circle(size.x = size.x,
+  value <-cof(semi_circle(size.x = size.x,
                           size.y = size.y,
                           pos.x = pos.x,
                           pos.y = pos.y,
                           shd = NA,
                           lty = lty,
                           lwd = lwd),
-              semi.circle.inv(size.x = size.x,
+              semi_circle_inv(size.x = size.x,
                               size.y = size.y,
                               pos.x = pos.x,
                               pos.y = pos.y,
                               shd = NA,
                               lty = lty,
                               lwd = lwd),
-              name= "s.pizza.2.rev",
+              name= "s_pizza_2_inv",
               single = T)
   value$tag <- list("compose2","fill")
   attr(value, "class") <- "figure"

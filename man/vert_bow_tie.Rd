@@ -4,7 +4,14 @@
 \alias{vert_bow_tie}
 \title{Coordinates of a vertical bow tie}
 \usage{
-vert_bow_tie(size.x = 10, size.y = 10, pos.x = 0, shd = NA, lty = 1, lwd = 3)
+vert_bow_tie(
+  size.x = 10,
+  size.y = size.x,
+  pos.x = 0,
+  shd = NA,
+  lty = 1,
+  lwd = 3
+)
 }
 \arguments{
 \item{size.x}{numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.}
