@@ -333,7 +333,7 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
               luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd))
-  value$tag = list("compose4", "fill", "d.int")
+  value$tag = list(c("compose4", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }

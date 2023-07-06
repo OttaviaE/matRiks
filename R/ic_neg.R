@@ -26,20 +26,48 @@ ic_neg <- function(obj) {
 ic_neg.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {
-    if (any(!unlist(m_correct$tag) == "fill")) {
+    if (all(!unlist(m_correct$tag) == "fill")) {
       dist_ic_neg <- margin(m_correct, 2, "lty")
     } else {
       dist_ic_neg <- change_color(m_correct)
     }
   } else {
     split_correct <- split_mat(obj)
-    if (any(!unlist(split_correct) == "fill")) {
-      new_image <- margin(split_correct[[length(split_correct)]], 2, "lty")
+
+    if (any(m_correct$tag[[length(m_correct$tag)]] == "compose4" | m_correct$tag[[length(m_correct$tag)]] == "compose2")) {
+
+
+      index <- unlist(lapply(m_correct$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
+
+      if (length(index) > 1) {
+        index <- index[length(index)]
+      }
+
+      changing<-(length(split_correct)-index+1):length(split_correct)
+
+      new_image<-list()
+      for (i in 1:length(changing)) {
+        if (all(!unlist(split_correct[[changing[i]]]) == "fill",na.rm=TRUE)) {
+          new_image[[i]] <-  margin(split_correct[[changing[i]]], 2, "lty")
+        } else {
+          new_image[[i]] <-  change_color(split_correct[[changing[i]]])
+        }
+      }
+
+
+    } else if (all(!unlist(split_correct) == "fill",na.rm=TRUE)) {
+      new_image <- list(margin(split_correct[[length(split_correct)]], 2, "lty"))
+      changing<-length(m_correct$shape)
     } else {
-      new_image <- change_color(split_correct[[length(split_correct)]])
+      new_image <- list(change_color(split_correct[[length(split_correct)]]))
+      changing<-length(m_correct$shape)
     }
-   dist_ic_neg <-  replace(m_correct, length(m_correct$shape),
-            new_image)
+
+    dist_ic_neg <-m_correct
+    for(i in 1:length(changing)){
+      dist_ic_neg <-  replace(dist_ic_neg, changing[i],
+                              new_image[[i]])
+    }
 
   }
 

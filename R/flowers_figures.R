@@ -195,7 +195,7 @@ miley = function(lwd = 3, lty = 1) {
               down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty))
-  value$tag = list("compose4", "d.int")
+  value$tag = list(c("compose4", "d.int"))
   attr(value, "class") = "figure"
   value
 }
@@ -225,7 +225,7 @@ s_miley = function(lwd = 3, lty = 1) {
               right_petal(lwd = lwd, lty = lty),
               name = "miley",
               single = TRUE)
-  value$tag = list("simple", "d.int")
+  value$tag = list(c("simple", "d.int"))
   attr(value, "class") = "figure"
   value
 }
