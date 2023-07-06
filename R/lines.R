@@ -181,7 +181,7 @@ square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               hline(size.x = size.x,
                     size.y = size.y, pos.y=pos.y,
               lty = lty, lwd = lwd))
-  value$tag <- list(c("compose4",'rotate', "d.ext"))
+  value$tag <- list(c("compose4", "d.ext"))
   attr(value, "class") <- "figure"
   value
 }
