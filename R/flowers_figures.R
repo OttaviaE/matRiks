@@ -219,7 +219,7 @@ miley = function(lwd = 3, lty = 1) {
 #' s.miley(lty = 3)
 #' }
 s_miley = function(lwd = 3, lty = 1) {
-  value = cof(up.petal(lwd = lwd, lty = lty),
+  value = cof(up_petal(lwd = lwd, lty = lty),
               down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty),

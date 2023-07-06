@@ -412,7 +412,7 @@ phantom <- function() {
     nv = list(101),
     shade = list(NA),
     visible = 0,
-    tag=list(c('simple', 'phantom'))
+    tag=list(c('simple', 'phantom', 'no.d'))
   )
   attr(value, "class") <- "field"
   value
