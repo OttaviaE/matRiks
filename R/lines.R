@@ -164,7 +164,7 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' draw(square4(lty = 2))
 #'
 #' }
-square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
+square.4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = size.x,
                     pos.x = size.x,
                     pos.y = size.x,

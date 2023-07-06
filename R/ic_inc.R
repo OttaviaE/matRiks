@@ -29,9 +29,10 @@ ic_inc.matriks <- function(obj, ...) {
     dist_ic_inc <- m_correct
     warning("IC-Inc cannot be obtained with a single figure")
   } else {
-    split_correct <- split_mat(obj)
-    dist_ic_inc <-  hide(m_correct, length(m_correct$shape))
-
+    #split_correct <- split_mat(obj)
+    #dist_ic_inc <-  hide(m_correct, length(m_correct$shape))
+    transvestite <- which(m_correct$visible==1)
+    dist_ic_inc <-  hide(m_correct, max(transvestite))
   }
 
   class(dist_ic_inc) <- "figure"
