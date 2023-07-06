@@ -33,17 +33,10 @@ ic_neg.matriks <- function(obj, ...) {
     }
   } else {
     split_correct <- split_mat(obj)
-
     if (any(m_correct$tag[[length(m_correct$tag)]] == "compose4" | m_correct$tag[[length(m_correct$tag)]] == "compose2")) {
-
-
       index <- unlist(lapply(m_correct$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
 
-      if (length(index) > 1) {
-        index <- index[length(index)]
-      }
-
-      changing<-(length(split_correct)-index+1):length(split_correct)
+      changing<-(length(split_correct)-index[length(index)]+1):length(split_correct)
 
       new_image<-list()
       for (i in 1:length(changing)) {
@@ -64,8 +57,9 @@ ic_neg.matriks <- function(obj, ...) {
     }
 
     dist_ic_neg <-m_correct
+    transvestite<-which(m_correct$visible==1)
     for(i in 1:length(changing)){
-      dist_ic_neg <-  replace(dist_ic_neg, changing[i],
+      dist_ic_neg <-  replace(dist_ic_neg,  transvestite[changing[i]],
                               new_image[[i]])
     }
 
