@@ -1,28 +1,46 @@
 #' Flip incomplete correlate (method)
 #'
+#' Method for drawing the incomplete correlate flip distractor of a matrix
+#'
 #' @param obj Matriks
 #'
-#' @return A list
+#' @return The incomplete correlate flip distractor
 #' @export ic_flip
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-flip distractor
+#' draw(ic_flip(m1))
+#' }
 ic_flip <- function(obj) {
   UseMethod("ic_flip")
 }
 
-#' flipative incomplete correlate
+#' Flip incomplete correlate
 #'
-#' Change color to the correct response for creating the ic flip distractors
+#' Generate incomplete correlate flip distractor of a matrix
 #'
 #' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return A list
+#' @return The incomplete correlate flip distractor
 #' @export ic_flip.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-flip distractor
+#' draw(ic_flip(m1))
+#' }
 ic_flip.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   the_rules <- c(obj$hrule, obj$vrule)

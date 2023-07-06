@@ -8,6 +8,12 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # draw a square with inverted color
+#'
+#' draw(change_color(square()))
+#'
+#' }
 change_color <- function(obj, ...) {
   UseMethod("change_color")
 }
@@ -18,11 +24,17 @@ change_color <- function(obj, ...) {
 #' @param obj The figure
 #' @param ... other arguments
 #'
-#' @return
+#' @return Return a figure with an inverted color
 #' @export change_color.figure
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # draw a square with inverted color
+#'
+#' draw(change_color(square()))
+#'
+#' }
 change_color.figure <- function(obj, ...) {
   if (any(is.na(unlist(obj$shade))) == TRUE) {
     obj = shade(obj, 3)

@@ -1,28 +1,47 @@
-#' size incomplete correlate (method)
+#' Size incomplete correlate (Method)
 #'
-#' @param obj Matriks
-#'
-#' @return A list
-#' @export ic_size
-#' @export
-#'
-#' @examples
-ic_size <- function(obj) {
-  UseMethod("ic_size")
-}
-
-#' sizeative incomplete correlate
-#'
-#' Change color to the correct response for creating the ic size distractors
+#' Method for drawing the incomplete correlate size distractor of a matrix
 #'
 #' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return A list
+#' @return The incomplete correlate size distractor
+#' @export ic_size
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-size distractor
+#' draw(ic_size(m1))
+#' }
+ic_size <- function(obj) {
+  UseMethod("ic_size")
+}
+
+#' Size incomplete correlate
+#'
+#' Generate incomplete correlate size distractor of a matrix
+#'
+#' @param obj The matriks
+#' @param ... Other arguments
+#'
+#' @return The incomplete correlate size distractor
 #' @export ic_size.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-size distractor
+#' draw(ic_size(m1))
+#' }
 ic_size.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {

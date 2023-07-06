@@ -1,12 +1,22 @@
 #' Incomplete correlate (method)
 #'
+#' Method for drawing the incomplete correlate distractors of a matrix
+#'
 #' @param obj Matriks
 #'
-#' @return A list
+#' @return A list of incomplete correlate distractors to be passed to the draw function
 #' @export ic
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic distractor
+#' draw(ic(m1))
+#' }
 ic <- function(obj) {
   UseMethod("ic")
 }
@@ -19,11 +29,19 @@ ic <- function(obj) {
 #' @param obj object of class obj
 #' @param ... Other arguments
 #'
-#' @return A list of length three
+#' @return A list of length 3 composed of the incomplete correlate distractors to be passed to the draw function
 #' @export ic.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic distractor
+#' draw(ic(m1))
+#' }
 ic.matriks <- function(obj, ...) {
   m_correct = correct(obj)
 

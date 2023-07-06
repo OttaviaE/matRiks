@@ -171,6 +171,14 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # create the response list
+#' resp <- response_list(m1)
+#' # draw the response list
+#' draw(resp)
+#' }
 draw.responses <- function(obj, main = NULL, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,
@@ -224,6 +232,14 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # create the response list
+#' resp <- response_list(m1)
+#' # draw the response list
+#' draw(resp)
+#' }
 draw.responses <- function(obj, main = NULL, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,

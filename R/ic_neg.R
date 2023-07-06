@@ -1,28 +1,47 @@
-#' Negative incomplete correlate (method)
+#' Negative incomplete correlate (Method)
 #'
-#' @param obj Matriks
+#' Method for drawing the incomplete correlate negative distractor of a matrix
 #'
-#' @return A list
+#' @param obj The matriks
+#' @param ... Other arguments
+#'
+#' @return The incomplete correlate negative distractor
 #' @export ic_neg
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-neg distractor
+#' draw(ic_neg(m1))
+#' }
 ic_neg <- function(obj) {
   UseMethod("ic_neg")
 }
 
 #' Negative incomplete correlate
 #'
-#' Change color to the correct response for creating the ic neg distractors
+#' Generate incomplete correlate negative distractor of a matrix
 #'
 #' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return A list
+#' @return The incomplete correlate negative distractor
 #' @export ic_neg.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the ic-neg distractor
+#' draw(ic_neg(m1))
+#' }
 ic_neg.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (class(obj$mat.type) == "numeric") {

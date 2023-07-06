@@ -6,11 +6,20 @@
 #' @param ... other arguments
 #' @param seed seed
 #'
-#' @return An object
+#' @return The difference distractor of a matrix
 #' @export difference
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the difference distractor
+#' draw(difference(m1))
+#' }
+#'
 difference <- function(obj, seed, ...) {
   UseMethod("difference")
 }
@@ -22,11 +31,20 @@ difference <- function(obj, seed, ...) {
 #' @param ... Other arguments
 #' @param seed the seed
 #'
-#' @return
+#' @return The difference distractor of a matrix
 #' @export difference.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the difference distractor
+#' draw(difference(m1))
+#' }
+#'
 difference.matriks <- function(obj, seed = 666, ...) {
   set.seed(seed)
 

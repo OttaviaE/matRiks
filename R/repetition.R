@@ -1,30 +1,48 @@
-
-#' Repetition (method)
+#' Repetion distractors (Method)
 #'
-#' @param obj Matriks
+#' Method for drawing the repetition distractors of a matrix
 #'
-#' @return A list
+#' @param obj The matriks
+#' @param ... Other arguments
+#'
+#' @return A list of length 3 with the three repetition distractors
 #' @export repetition
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the repetition distractors
+#' draw(repetition(m1))
+#' }
 repetition <- function(obj) {
   UseMethod("repetition")
 }
 
 
-#' Repetition distractors
+#' Repetion distractors (Method)
 #'
-#' Generates the repetition distractors
+#' Generates the repetition distractors of a matrix
 #'
-#' @param obj object of class obj
+#' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return A list of length three
+#' @return A list of length 3 with the three repetition distractors
 #' @export repetition.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the repetition distractors
+#' draw(repetition(m1))
+#' }
 repetition.matriks <- function(obj, ...) {
   m_correct = correct(obj)
   n.cell<-obj$mat.type
