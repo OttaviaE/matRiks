@@ -68,7 +68,7 @@ s_vert_bow_tie <- function(size.x = 10,
                        lty = lty, lwd = lwd),
               name = "s_vert_bow_tie",
               single = TRUE)
-  value$tag <- list(c("compose2","fill", "d.int", "vert", "bow_tie"))
+  value$tag <- list(c("simple","fill", "d.int", "vert", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -151,7 +151,7 @@ s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
                        lty = lty, lwd = lwd),
               name = "s_hor_bow_tie",
               single = TRUE)
-  value$tag <- list(c("compose2","fill", "d.int", "hor", "bow_tie"))
+  value$tag <- list(c("simple","fill", "d.int", "hor", "bow_tie"))
   attr(value, "class") <- "figure"
   value
 }
@@ -179,10 +179,25 @@ s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 #'
 #' malta(size.x = 5)
 #' }
-malta = function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
-              vert_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty))
-  value$tag = list(c("compose4", "fill", "d.int"))
+malta <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1){
+  value <- cof(triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
+                        size.x = size.x, size.y=size.y, shd = shd,
+                        lty = lty, lwd = lwd),
+              triangle(pos.x = pos.x-size.x,
+                       pos.y = pos.x,
+                       rot=-pi,
+                       size.x = size.x, size.y=size.x, shd = shd,
+                       lty = lty, lwd = lwd),
+              triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
+                       size.x = size.x, size.y=size.y, shd = shd,
+                       lty = lty, lwd = lwd),
+              triangle(pos.x = pos.x+size.x,
+                       pos.y = pos.x,
+                       rot=pi/3,
+                       size.x = size.x, size.y=size.x,
+                       shd = shd, lty = lty, lwd = lwd)
+               )
+  value$tag <- list(c("compose4", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -210,12 +225,12 @@ malta = function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty
 #'
 #' s_malta(size.x = 5)
 #' }
-s_malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
-  value = cof(s_hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
+s_malta <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
+  value <- cof(s_hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               s_vert_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               single = TRUE,
               name = "s_malta")
-  value$tag = list(c("compose2", "fill", "d.int"))
+  value$tag <- list(c("simple", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -245,15 +260,15 @@ s_malta = function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #'
 #' axe(size.x = 5)
 #' }
-axe = function(size.x = 15, pos.x = 0,
+axe <- function(size.x = 15, pos.x = 0,
                pos.y = 0, lty = 1, lwd = 3, shd = NA) {
-  value = cof(slice(size.x = size.x,
+  value <- cof(rotate(slice(size.x = size.x,
+                          pos.x = pos.x, pos.y = pos.y,
+                          lwd = lwd, lty = lty, shd = shd), 5),
+              slice(size.x = size.x,
                     pos.x = pos.x, pos.y = pos.y,
-                    lwd = lwd, lty = lty, shd = shd),
-              rotate(slice(size.x = size.x,
-                             pos.x = pos.x, pos.y = pos.y,
-                             lwd = lwd, lty = lty, shd = shd), 5))
-  value$tag = list(c("compose2", "fill", "d.int", "rotate"))
+                    lwd = lwd, lty = lty, shd = shd))
+  value$tag <- list(c("compose2", "fill", "d.int", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -282,16 +297,16 @@ axe = function(size.x = 15, pos.x = 0,
 #'
 #' s_axe(size.x = 5)
 #' }
-s_axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
-  value = cof(slice(size.x = size.x,
-                    pos.x = pos.x, pos.y = pos.y,
-                    lwd = lwd, lty = lty, shd = shd),
-              rotate(slice(size.x = size.x,
+s_axe <- function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
+  value <- cof(rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
                              lwd = lwd, lty = lty, shd = shd), 5),
+              slice(size.x = size.x,
+                    pos.x = pos.x, pos.y = pos.y,
+                    lwd = lwd, lty = lty, shd = shd),
               name = "s_axe",
               single = TRUE)
-  value$tag = list("compose2", "fill", "d.int")
+  value$tag <- list(c("simple", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -320,9 +335,9 @@ s_axe = function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) 
 #'
 #' maxi(size.x = 5)
 #' }
-maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
-  value = cof(luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
-                   size.x = size.x, size.y=size.y,
+maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
+  value <- cof(luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
+                   size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
               luck(pos.x = pos.x-size.x, pos.y = pos.x, rot=-pi,
                    size.x = size.x, size.y=size.y,
@@ -330,10 +345,10 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
               luck(pos.x = pos.x, pos.y = pos.x+size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
-              luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
-                   size.x = size.y, size.y=size.x,
+              luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
+                   size.x = size.x, size.y=size.y,
                    shd = shd, lty = lty, lwd = lwd))
-  value$tag = list(c("compose4", "fill", "d.int"))
+  value$tag <- list(c("compose4", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -362,9 +377,9 @@ maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
 #'
 #' s_maxi(size.x = 5)
 #' }
-s_maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
-  value = cof(luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
-                   size.x = size.x, size.y=size.y,
+s_maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
+  value <- cof(luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
+                   size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
               luck(pos.x = pos.x-size.x, pos.y = pos.x, rot=-pi,
                    size.x = size.x, size.y=size.y,
@@ -372,12 +387,12 @@ s_maxi = function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) 
               luck(pos.x = pos.x, pos.y = pos.x+size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
                    shd = shd, lty = lty, lwd = lwd),
-              luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
-                   size.x = size.y, size.y=size.x,
+              luck(pos.x = pos.x+size.x, pos.y = pos.x, rot=pi,
+                   size.x = size.x, size.y=size.y,
                    shd = shd, lty = lty, lwd = lwd),
               single = TRUE,
               name = "s_maxi")
-  value$tag = list("compose4", "fill", "d.int")
+  value$tag <- list(c("simple", "fill", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -414,6 +429,6 @@ phantom <- function() {
     visible = 0,
     tag=list(c('simple', 'phantom', 'no.d'))
   )
-  attr(value, "class") <- "field"
+  attr(value, "class") <- "figure"
   value
 }

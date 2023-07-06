@@ -164,7 +164,7 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' draw(square4(lty = 2))
 #'
 #' }
-square.4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
+square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = size.x,
                     pos.x = size.x,
                     pos.y = size.x,
@@ -220,7 +220,7 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
                      rotation = pi-pi/4,
                      vis = 1) {
   value <- list(
-    shape = "diagline.inv",
+    shape = "diagline_inv",
     size.x = size.x,
     size.y = size.y,
     theta.1  = list(0),
@@ -259,21 +259,21 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
 #' \dontrun{
 #' # default coordinates of the main diagonal line
 #'
-#' diagline.inv()
+#' diagline_inv()
 #'
 #' # draw the main diagonal line with different lty
 #'
-#' draw(diagline.inv(lty = 2))
+#' draw(diagline_inv(lty = 2))
 #'
 #' }
-diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
+diagline_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                          size.y = size.x,
                          pos.x=0 ,pos.y=0,
                          lty = 1, lwd =3,
                          rotation = pi + pi / 4,
                          vis = 1) {
   value <- list(
-    shape = "diagline.inv",
+    shape = "diagline_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(0),
@@ -287,7 +287,7 @@ diagline.inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     nv =  list(2),
     shade = list(NA),
     visible = vis,
-    tag = list("simple","fill",'rotate' )
+    tag = list(c("simple","fill",'rotate') )
   )
   attr(value, "class") <- "figure"
   value
@@ -320,9 +320,9 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               size.y =  size.x,
               lwd = 3, lty = 1) {
   value <-cof(diagline(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
-              diagline.inv(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
+              diagline_inv(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
               single = TRUE,name = "X")
-  value$tag <- list("simple","fill",'rotate', "d.int")
+  value$tag <- list(c("simple","fill",'rotate', "d.int"))
   value$visible<-1
   attr(value, "class") <- "figure"
   value
@@ -343,21 +343,21 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' \dontrun{
 #' # default coordinates of an luck composed of 4 lines
 #'
-#' luck.4()
+#' luck4()
 #'
 #' # draw a luck composed of 4 lines with different lty
 #'
-#' draw(luck.4(lty = 2))
+#' draw(luck4(lty = 2))
 #'
 #' }
-luck.4 = function(size.x = 10,
+luck4 <- function(size.x = 10,
                   size.y = 7,
                   lwd = 3, lty = 1) {
-  value <-cof(diagline(size.x = size.x, pos.x = size.y, pos.y = size.y),
-               diagline.inv(size.x = size.x, pos.x = -size.y, pos.y = size.y),
-               diagline.inv(size.x = size.x, pos.x = size.y, pos.y = -size.y),
-               diagline(size.x = size.x, pos.x = -size.y, pos.y = -size.y))
-  value$tag <- list("compose4",'rotate', "d.ext")
+  value <-cof(diagline(size.x = size.x, pos.x = -size.y, pos.y = -size.y),
+              diagline_inv(size.x = size.x, pos.x = -size.y, pos.y = size.y),
+              diagline(size.x = size.x, pos.x = size.y, pos.y = size.y),
+              diagline_inv(size.x = size.x, pos.x = size.y, pos.y = -size.y))
+  value$tag <- list(c("compose4",'rotate', "d.ext"))
   attr(value, "class") <- "figure"
   value
 }

@@ -20,7 +20,7 @@
 lily <- function(lwd = 3, lty = 1) {
   value <-cof( s_horizontal_eight(lwd = lwd, lty = 1),
                s_vertical_eight(lwd = lwd, lty = 1))
-  value$tag <- list("compose2", "d.int")
+  value$tag <- list(c("compose2", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -50,7 +50,7 @@ s_lily <- function(lwd = 3, lty = 1) {
                s_vertical_eight(lwd = lwd, lty = 1),
                name = "s_lily",
                single = TRUE)
-  value$tag <- list("simple", "d.int")
+  value$tag <- list(c("simple", "d.int"))
   attr(value, "class") <- "figure"
   value
 }
@@ -80,7 +80,7 @@ up_petal = function(lwd = 3, lty = 1) {
         v_arc_right_up(lwd = lwd, lty = lty),
         name="up_petal",
         single = TRUE)
- value$tag = list("compose2", "d.int", "up", "petal")
+ value$tag = list(c("compose2", "d.int", "up", "petal"))
  attr(value, "class") <- "figure"
  value
 }
@@ -110,7 +110,7 @@ down_petal = function(lwd = 3, lty = 1) {
               v_arc_right_down(lwd = lwd, lty = lty),
                name="down_petal",
                single = T)
-  value$tag = list("compose2", "d.int", "down", "petal")
+  value$tag = list(c("compose2", "d.int", "down", "petal"))
   attr(value, "class") <- "figure"
   value
 }
@@ -139,7 +139,7 @@ left_petal = function(lwd = 3, lty = 1) {
                h_arc_left_up(lwd = lwd, lty = lty),
                name="left_petal",
                single = T)
-  value$tag = list("compose2", "d.int", "left", "petal")
+  value$tag = list(c("compose2", "d.int", "left", "petal"))
   attr(value, "class") <- "figure"
   value
 }
@@ -167,7 +167,7 @@ right_petal = function(lwd = 3, lty = 1) {
                h_arc_right_up(lwd = lwd, lty = lty),
                name="right_petal",
                single = T)
-  value$tag = list("compose2", "d.int", "right", "petal")
+  value$tag = list(c("compose2", "d.int", "right", "petal"))
   attr(value, "class") <- "figure"
   value
 }
@@ -191,9 +191,9 @@ right_petal = function(lwd = 3, lty = 1) {
 #' miley(lty = 3)
 #' }
 miley = function(lwd = 3, lty = 1) {
-  value = cof(up_petal(lwd = lwd, lty = lty),
-              down_petal(lwd = lwd, lty = lty),
+  value = cof(down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
+              up_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty))
   value$tag = list(c("compose4", "d.int"))
   attr(value, "class") = "figure"
@@ -212,16 +212,16 @@ miley = function(lwd = 3, lty = 1) {
 #' @examples
 #' \dontrun{
 #' # return the default coordinates for drawing a single miley
-#' s.miley()
+#' s_miley()
 #'
 #' # change the line type of the single miley
 #'
-#' s.miley(lty = 3)
+#' s_miley(lty = 3)
 #' }
 s_miley = function(lwd = 3, lty = 1) {
-  value = cof(up_petal(lwd = lwd, lty = lty),
-              down_petal(lwd = lwd, lty = lty),
+  value = cof(down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
+              up_petal(lwd = lwd, lty = lty),
               right_petal(lwd = lwd, lty = lty),
               name = "miley",
               single = TRUE)
