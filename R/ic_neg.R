@@ -53,7 +53,6 @@ ic_neg.matriks <- function(obj, ...) {
   } else {
     split_correct <- split_mat(obj)
     if (any(m_correct$tag[[length(m_correct$tag)]] == "compose4" | m_correct$tag[[length(m_correct$tag)]] == "compose2")) {
-
       index <- unlist(lapply(m_correct$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
       changing<-(length(split_correct)-index[length(index)]+1):length(split_correct)
       transvestite <- which(m_correct$visible==1)
