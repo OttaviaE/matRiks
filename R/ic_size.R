@@ -18,7 +18,7 @@
 #' # draw the ic-size distractor
 #' draw(ic_size(m1))
 #' }
-ic_size <- function(obj) {
+ic_size <- function(obj, ...) {
   UseMethod("ic_size")
 }
 
@@ -44,20 +44,19 @@ ic_size <- function(obj) {
 #' }
 ic_size.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
-  if (class(obj$mat.type) == "numeric") {
+  if (inherits(obj$mat.type, "numeric") == TRUE) {
     dist_ic_size <- size(m_correct, 3)
   } else {
     split_correct <- split_mat(obj)
 
     if (any(m_correct$tag[[length(m_correct$tag)]] == "compose4" | m_correct$tag[[length(m_correct$tag)]] == "compose2")) {
       index <- unlist(lapply(m_correct$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
-
-      index <- unlist(lapply(m_correct$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
       changing<-(length(split_correct)-index[length(index)]+1):length(split_correct)
       transvestite <- which(m_correct$visible==1)
       transvestite <- intersect((length(m_correct$visible)-index[length(index)]+1):(max(transvestite)),transvestite)
       trans<-transvestite-(max(transvestite)-max(changing))
       changing<-intersect(trans,changing)
+
 
 
       new_image<-list()

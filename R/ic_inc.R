@@ -1,4 +1,3 @@
-
 #' Flip incomplete correlate (Method)
 #'
 #' Method for drawing the incomplete correlate incomplete distractor of a matrix
@@ -19,7 +18,7 @@
 #' # draw the ic-inc distractor
 #' draw(ic_inc(m1))
 #' }
-ic_inc <- function(obj) {
+ic_inc <- function(obj, ...) {
   UseMethod("ic_inc")
 }
 
@@ -45,7 +44,7 @@ ic_inc <- function(obj) {
 #' }
 ic_inc.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
-  if (class(obj$mat.type) == "numeric") {
+  if (inherits(obj$mat.type, "numeric") == TRUE) {
     dist_ic_inc <- m_correct
     warning("IC-Inc cannot be obtained with a single figure")
   } else {

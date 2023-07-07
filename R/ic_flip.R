@@ -3,6 +3,7 @@
 #' Method for drawing the incomplete correlate flip distractor of a matrix
 #'
 #' @param obj Matriks
+#' @param ... other arguments
 #'
 #' @return The incomplete correlate flip distractor
 #' @export ic_flip
@@ -17,7 +18,7 @@
 #' # draw the ic-flip distractor
 #' draw(ic_flip(m1))
 #' }
-ic_flip <- function(obj) {
+ic_flip <- function(obj, ...) {
   UseMethod("ic_flip")
 }
 
@@ -44,7 +45,7 @@ ic_flip <- function(obj) {
 ic_flip.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   the_rules <- c(obj$hrule, obj$vrule)
-  if (class(obj$mat.type) == "numeric" & any(grepl("AND|OR", the_rules)) == FALSE) {
+  if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("AND|OR", the_rules)) == FALSE) {
     if (any(unlist(m_correct$tag) == "rotate")){
       dist_ic_flip <- rotate(m_correct, 2)
     } else {

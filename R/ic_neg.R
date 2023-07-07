@@ -18,7 +18,7 @@
 #' # draw the ic-neg distractor
 #' draw(ic_neg(m1))
 #' }
-ic_neg <- function(obj) {
+ic_neg <- function(obj, ...) {
   UseMethod("ic_neg")
 }
 
@@ -44,7 +44,7 @@ ic_neg <- function(obj) {
 #' }
 ic_neg.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
-  if (class(obj$mat.type) == "numeric") {
+  if (inherits(obj$mat.type, "numeric") == TRUE) {
     if (all(!unlist(m_correct$tag) == "fill")) {
       dist_ic_neg <- margin(m_correct, 2, "lty")
     } else {
