@@ -30,7 +30,11 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
   } else {
     index_elements <- 1:length(obj$shape)
   }
-
+ if(length(obj$tag)<max(index_elements))
+ {
+   #Va completato
+   tag_index <- unlist(lapply(obj$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
+ }
   split_m <- vector("list", length(index_elements))
   for (i in 1:length(split_m)) {
     split_m[[i]] <- vector("list", length(obj))
@@ -55,7 +59,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 #'
 #' @examples
 split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
-  if (is.null(cell) == T) {
+  if (is.null(cell) == TRUE) {
     cell.start = correct(obj)
   } else {
     cell = paste0("Sq", cell)
