@@ -35,16 +35,16 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 
 #' Draw figure
 #'
-#' Devo ancora capire bene
+#' Draw a figure
 #'
 #' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
-#' @param n.figure integer, define the number of cells of the matrix. Default is 9
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
+#' @param ... other arguments
 #'
 #' @return A graphic
 #' @export draw.figure
@@ -86,18 +86,18 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
   }
 }
 
-#' Draw MATRIKS
+#' Draw Matriks
 #'
-#' Devo ancora capire bene
+#' Draw the matriks
 #'
 #' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
-#' @param n.figure integer, define the number of cells of the matrix. Default is 9
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
+#' @param ... other arguments
 #'
 #' @return A graphic
 #' @export draw.matriks
@@ -158,12 +158,11 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
-#' @param n.figure integer, define the number of cells of the matrix. Default is 9
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
-#' @param distractors the distractors
-#' @param print the prrint
+#' @param distractors The selectio of distractors you want to print
+#' @param print The print
 #' @param ... Other arguments
 #'
 #' @return a list
@@ -219,12 +218,11 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
-#' @param n.figure integer, define the number of cells of the matrix. Default is 9
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
 #' @param distractors the distractors
-#' @param print the prrint
+#' @param print the print
 #' @param ... Other arguments
 #'
 #' @return a list
