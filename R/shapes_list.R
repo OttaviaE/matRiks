@@ -1,11 +1,16 @@
-#' Title
+#' List of figures
 #'
-#' @param filename
+#' Create a list of figures starting from the files in a working directory
 #'
-#' @return
+#' @param filename The file name from which the figures should be taken
+#'
+#' @return A data frame with a list of figures and their related tags
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' shapes_list("R/my_figure.R")
+#' }
 shapes_list<-function(filename)
 {
    source(filename,local=TRUE)
@@ -52,14 +57,17 @@ shapes_list<-function(filename)
   return(table)
 }
 
-#' Title
+#' Organize the list of figures
 #'
-#' @param filename
+#' @param filename The file name from which the figures should be taken
 #'
-#' @return
+#' @return The data frame of figures
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' multi_list("R/my_figure.R")
+#' }
 multi_list<-function(filename)
 {
   table<-NULL

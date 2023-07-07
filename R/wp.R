@@ -1,31 +1,41 @@
-#' Wp (method)
+#' Wrong principle distractors (method)
 #'
-#' generate wrong principle distractors
+#' Generate the wrong principle distractors
 #'
 #' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return a list of two
+#' @return A list of length two containing the wrong principle copy (wp_copy) and the wrong principle matrix (wp_matrix) distractors
 #' @export wp
 #' @export
 #'
 #' @examples
+#' m1 <- mat_apply(hexagon(),  hrules = "lty")
+#' # draw the matriks
+#' draw(m1)
+#' # draw the wp distractors with the title
+#' draw(wp(m1), main = TRUE)
 wp <- function(obj, ...) {
   UseMethod("wp")
 }
 
-#' wp
+#' Wrong principle distractors (method)
 #'
-#' generate wrong principle distractors
+#' Generate the wrong principle distractors
 #'
 #' @param obj The matriks
 #' @param ... Other arguments
 #'
-#' @return a list of two
+#' @return A list of length two containing the wrong principle copy (wp_copy) and the wrong principle matrix (wp_matrix) distractors
 #' @export wp.matriks
 #' @export
 #'
 #' @examples
+#' m1 <- mat_apply(hexagon(),  hrules = "lty")
+#' # draw the matriks
+#' draw(m1)
+#' # draw the wp distractors with the title
+#' draw(wp(m1), main = TRUE)
 wp.matriks <- function(obj, ...) {
   m_correct = correct(obj)
   hrules =gsub(".inv", "", obj$hrule)

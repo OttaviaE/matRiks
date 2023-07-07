@@ -1,29 +1,55 @@
 #' Response list (method)
 #'
-#' @param obj the matrix
-#' @param seed the seed
+#' Generate the response list from a matrix
+#'
+#' @param obj The matrix
+#' @param seed The random seed for choosing the difference distractor
 #' @param ...  other arguments
 #'
-#' @return A list
+#' @return A list of length 11 containing the correct response + 10 distractors (3 repetition, 1 difference, 2 wrong principles, 4 incomplete correlate)
 #' @export response_list
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the repetition distractors
+#' draw(response_list(m1))
+#'
+#' # change the difference distractors by changing the random seed
+#' draw(response_list(m1, seed = 8))
+#' }
 response_list <-function(obj, seed, ...) {
   UseMethod("response_list")
 }
 
 #' Response list
 #'
-#' @param obj the matrix
-#' @param seed the seed
+#' Generate the response list from a matrix
+#'
+#' @param obj The matrix
+#' @param seed The random seed for choosing the difference distractor
 #' @param ...  other arguments
 #'
-#' @return A list
+#' @return A list of length 11 containing the correct response + 10 distractors (3 repetition, 1 difference, 2 wrong principles, 4 incomplete correlate)
 #' @export response_list.matriks
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # create a matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' # draw the matrix
+#' draw(m1)
+#' # draw the repetition distractors
+#' draw(response_list(m1))
+#'
+#' # change the difference distractors by changing the random seed
+#' draw(response_list(m1, seed = 8))
+#' }
 response_list.matriks <- function(obj, seed = 666, ...) {
   my_repetion <- repetition(obj)
   my_wp <- wp(obj)

@@ -366,7 +366,9 @@ margin.figure <-function(obj,n,rule,...){
 }
 
 
-#' Apply logic rules to different figures
+#' Logic rules (Method)
+#'
+#' Apply logic rules (AND, OR, XOR) to the figure in a matrix
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
 #' @param n ???
@@ -379,10 +381,14 @@ margin.figure <-function(obj,n,rule,...){
 #' @export
 #'
 #' @examples
+#' draw(logic(cof(square(), malta(), circle()), "AND"))
+#'
 logic <- function(fig,n,rule,seed,...) {
   UseMethod("logic")
 }
-#' Logic figure
+#' Logic rules (Method)
+#'
+#' Apply logic rules (AND, OR, XOR) to the figure in a matrix
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
 #' @param n ???
@@ -392,6 +398,10 @@ logic <- function(fig,n,rule,seed,...) {
 #'
 #' @export logic.figure
 #' @export
+#'
+#' @examples
+#' draw(logic(cof(square(), malta(), circle()), "AND"))
+#'
 logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
   if(length(fig$shape) < 3)
   {
@@ -422,9 +432,9 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
   }
   return(fig)
 }
-#' Identity rule
+#' Identity rule (Method)
 #'
-#' Apply an identity rule (i.e., no changes)
+#' Apply an identity rule to the figures in a matrix (i.e., no changes)
 #'
 #' @param fig The figures on which the rules is applied.
 #' @param ... Other arguments
@@ -434,6 +444,10 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' # generate a matrix with 9 squares
+#' draw(mat_apply(square(), hrules = "indentity"))
+#' }
 identity <- function(fig,...) {
   UseMethod("identity")
 }
@@ -444,6 +458,12 @@ identity <- function(fig,...) {
 #'
 #' @export identity.figure
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # generate a matrix with 9 squares
+#' draw(mat_apply(square(), hrules = "indentity"))
+#' }
 identity.figure <- function(fig,...) {
   return(fig)
 }
