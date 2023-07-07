@@ -44,7 +44,7 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     nv =  list(2),
     shade = list(NA),
     visible = vis,
-    tag = list("simple","fill",'rotate')
+    tag = list(c("simple",'rotate'))
   )
   attr(value, "class") <- "figure"
   value
@@ -96,7 +96,7 @@ hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     nv =  list(2),
     shade = list(NA),
     visible = vis,
-    tag = list("simple","fill",'rotate' )
+    tag = list(c("simple", 'rotate') )
   )
   attr(value, "class") <- "figure"
   value
@@ -133,7 +133,7 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = size.y, lwd = lwd, lty = lty),
               single = TRUE,
               name = "cross")
-  value$tag <- list("simple","fill",'rotate')
+  value$tag <- list(c("simple", 'rotate'))
   value$visible<-1
   attr(value, "class") <- "figure"
   value
@@ -234,7 +234,7 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
     nv =  list(2),
     shade = list(NA),
     visible = vis,
-    tag = list("simple","fill",'rotate' )
+    tag = list(c("simple", 'rotate') )
   )
   attr(value, "class") <- "figure"
   value
@@ -287,7 +287,7 @@ diagline_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
     nv =  list(2),
     shade = list(NA),
     visible = vis,
-    tag = list(c("simple","fill",'rotate') )
+    tag = list(c("simple", 'rotate') )
   )
   attr(value, "class") <- "figure"
   value
@@ -322,7 +322,7 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value <-cof(diagline(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
               diagline_inv(size.x = size.x, size.y = size.y, lwd = lwd, lty = lty),
               single = TRUE,name = "X")
-  value$tag <- list(c("simple","fill",'rotate', "d.int"))
+  value$tag <- list(c("simple", 'rotate', "d.int"))
   value$visible<-1
   attr(value, "class") <- "figure"
   value

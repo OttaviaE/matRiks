@@ -18,7 +18,7 @@
 #' # draw the repetition distractors
 #' draw(repetition(m1))
 #' }
-repetition <- function(obj) {
+repetition <- function(obj, ...) {
   UseMethod("repetition")
 }
 
