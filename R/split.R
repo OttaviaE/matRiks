@@ -41,8 +41,8 @@ split_mat<- function(obj,vis = TRUE, cell = NULL) {
 #' }
 split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
   if(vis == TRUE) {
-   index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
-    #index_elements<-which(obj$visible==1)
+   #index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
+    index_elements<-which(obj$visible==1)
   } else {
     index_elements <- 1:length(obj$shape)
   }
@@ -50,6 +50,15 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
  {
    #Va completato
    tag_index <- unlist(lapply(obj$tag,function(x){as.integer(gsub("compose", "",  x[grepl("compose", x)]))}))
+   # i don't what I'm doing daje
+   object_index <- which(grepl("compose", obj$tag)) # forse non senso
+   the_tag <- obj$tag[[object_index]]
+   the_tag <- the_tag[-grep("compose", the_tag)]
+   figure_index <- (length(obj$shape) - tag_index +1):length(obj$shape)
+
+   for (i in figure_index) {
+     obj$tag[[i]] <- the_tag
+   }
  }
   split_m <- vector("list", length(index_elements))
   for (i in 1:length(split_m)) {
