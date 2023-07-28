@@ -251,15 +251,8 @@ shade <- function(fig, n, rule, ...) {
 #' @export shade.figure
 #' @export
 shade.figure<-function(fig,n = 1,rule = "shade",...){
-  if(grepl("par",rule))
-  {
-    index<-c("line1h","line2h","line12h","line1","line2","line12",
-             "line1inv","line2inv","line12inv")
-  }else if(grepl("line",rule)){
-    index <- rep(c("line12","line12h","line12inv"),3)
-  }else{
+
     index <- rep(c("white","grey","black"),3)
-  }
 
   if(grepl("multi",rule))
   {
