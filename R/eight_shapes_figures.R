@@ -70,7 +70,7 @@ s_vertical_eight <- function(lwd = 3, lty = 1) {
                 s_vertical_s(lwd = lwd, lty),
                 name = "s_vertical_eight",
                 single = T)
-  value$tag <- list(c("compose2", "d.int", "vert", "eight"))
+  value$tag <- list(c("simple", "d.int", "vert", "eight"))
   attr(value, "class") <- "figure"
   value
 }
@@ -97,7 +97,7 @@ s_horizontal_eight <- function(lwd = 3, lty = 1) {
                 s_horizontal_s(lwd = lwd, lty),
                 name = "s_horizontal_eight",
                 single = T)
-  value$tag <- list(c("compose2", "d.int", "hor", "eight"))
+  value$tag <- list(c("simple", "d.int", "hor", "eight"))
   attr(value, "class") <- "figure"
   value
 }
