@@ -54,7 +54,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
    if (length(tag_index) == 1) {
      object_index <- which(grepl("compose", obj$tag)) # forse non senso
      the_tag <- obj$tag[[object_index]]
-     the_tag <- the_tag[-grep("compose", the_tag)]
+    # the_tag <- the_tag[-grep("compose", the_tag)]
      figure_index <- (length(obj$shape) - tag_index +1):length(obj$shape)
 
      for (i in figure_index) {
