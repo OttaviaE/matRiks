@@ -274,13 +274,14 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
   }else{
     fig$shade <- lapply(fig$shade, function(x,i,n)
     {
-      pos <- index==x
+      lx <- length(x)
+      pos <- index==x[1]
       if(is.na(sum(pos)))
       {
         return(index[n])
       }else{
         pos <- which(pos)
-        return(index[pos[1]+n])
+        return(rep(index[pos[1]+n],lx))
       }
     },index,n)
   }
