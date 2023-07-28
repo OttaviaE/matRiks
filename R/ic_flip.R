@@ -93,7 +93,7 @@ ic_flip.matriks <- function(obj, ...) {
 
     } else {
       token <- TRUE
-      dist_ic_flip <- m_correct
+      dist_ic_flip <- cof(m_correct, size(X(lwd = 10), 3, "inv"))
       warning("Can't rotate, sorry!")
     }
 
