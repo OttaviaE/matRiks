@@ -64,9 +64,10 @@ ic_size.matriks <- function(obj, ...) {
         new_image[[i]] <-  size(split_correct[[changing[i]]], 3)
 
       }
-    } else if (all(!unlist(split_correct$tag) == "fill",na.rm=TRUE)) {
+    } else  {
       new_image <- list(size(split_correct[[length(split_correct)]], 3))
-      changing<-length(m_correct$shape)
+
+      changing<-   sum(m_correct$visible==1)
     }
 
     dist_ic_size <-m_correct
