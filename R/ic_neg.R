@@ -71,18 +71,23 @@ ic_neg.matriks <- function(obj, ...) {
       }
 
 
-    } else if (all(!unlist(split_correct) == "fill",na.rm=TRUE)) {
-      new_image <- list(margin(split_correct[[length(split_correct)]], 2, "lty"))
-      changing<-length(m_correct$shape)
     } else {
-      new_image <- list(change_color(split_correct[[length(split_correct)]]))
-      changing<-length(m_correct$shape)
+      split_correct <- split_mat(m_correct)
+      changing <- sum(m_correct$visible)
+      transvestite<-which(m_correct$visible==1)
+      if (all(!unlist(split_correct[[changing]]$tag) == "fill",na.rm=TRUE)) {
+        new_image <- cof(m_correct, size(X(lwd = 10), 3, "inv"))
+        warning("Can't change color, sorry!")
+      } else {
+      new_image <- list(change_color(split_correct[[changing]]))
     }
-
+}
     dist_ic_neg <-m_correct
     transvestite<-which(m_correct$visible==1)
     for(i in 1:length(changing)){
-      dist_ic_neg <-  replace(dist_ic_neg,  intersect(transvestite, changing[i]),
+      dist_ic_neg <-  replace(dist_ic_neg,
+                              #intersect(transvestite, changing[i]),
+                              transvestite[changing[i]],
                               new_image[[i]])
     }
 
@@ -90,4 +95,4 @@ ic_neg.matriks <- function(obj, ...) {
 
   class(dist_ic_neg) <- "figure"
   return(dist_ic_neg)
-}
+  }
