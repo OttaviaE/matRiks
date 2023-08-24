@@ -44,10 +44,9 @@ ic_inc <- function(obj, ...) {
 #' }
 ic_inc.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
-  if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("compose", m_correct$tag) == FALSE)) {
+  if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("compose", m_correct$tag) == FALSE) | sum(m_correct$visible) == 1) {
     dist_ic_inc <- cof(m_correct, size(X(lwd = 10), 3, "inv"))
     warning("IC-Inc cannot be obtained with a single figure")
-
   } else {
     #split_correct <- split_mat(obj)
     #dist_ic_inc <-  hide(m_correct, length(m_correct$shape))
