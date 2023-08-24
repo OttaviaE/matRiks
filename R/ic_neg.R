@@ -81,11 +81,18 @@ ic_neg.matriks <- function(obj, ...) {
 #           new_image[[i]] <-  change_color(split_correct[[changing[i]]])
 #         }
 #       }
+
       new_image<-list()
       for (i in 1:length(changing)) {
+        if (all(!unlist(split_correct[[changing]]$tag) == "fill",na.rm=TRUE)) {
+          w <- TRUE
+          warning("Can't change color, sorry!")
+          break
+        } else {
         new_image[[i]] <-  change_color(split_correct[[changing[i]]])
-
+        }
       }
+
 
 
     } else {
