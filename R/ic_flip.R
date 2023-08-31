@@ -81,7 +81,6 @@ ic_flip.matriks <- function(obj, ...) {
         }
       }
 
-      # fa cagare ma non mi funziona il cervello scusa
       replace_figure$size.x[c(1,2)]  <- size_x
       replace_figure$size.y[c(1,2)]  <- size_y
       replace_figure$lty[c(1,2)]  <- lty_fig
@@ -166,7 +165,7 @@ ic_flip.matriks <- function(obj, ...) {
     } else {
       token <- TRUE
 
-      for (i in 1:length(split_correct)) {
+      for (i in length(split_correct):1) {
 
         if (any(unlist(split_correct[[i]]$tag) == "rotate") & token == TRUE) {
           dist_ic_flip <- replace(m_correct, i,
