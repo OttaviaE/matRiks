@@ -99,7 +99,7 @@ ic_flip.matriks <- function(obj, ...) {
 
   } else {
     if (any(unlist(split_correct[[length(split_correct)]]$tag) == "rotate") & all(grepl("bow_tie", unlist(split_correct)) == FALSE)) {
-      dist_ic_flip <-  replace(m_correct, length(m_correct$shape),
+      dist_ic_flip <-  replace(m_correct, max(which(m_correct$visible==1)),
                                rotate(split_correct[[length(split_correct)]]))
     } else if (!all(grepl("bow_tie", unlist(split_correct)) == FALSE)){
       token <- TRUE
