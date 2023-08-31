@@ -124,7 +124,7 @@ pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
               slice(size.x = size.x, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 7*pi/4, theta2 = 9*pi/4, shd = shd, lty = lty, lwd = lwd))
-  value$tag <- list(c("compose4","fill", "d.ext"))
+  value$tag <- list(c("compose4","fill", "d.ext", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -152,7 +152,7 @@ s_pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
               slice(size.x = size.x,theta1 = 7*pi/4, theta2 = 9*pi/4, shd = shd, lty = lty, lwd = lwd),
               name = "s_pizza_4",
               single = TRUE)
-  value$tag <- list(c("simple","fill", "d.int"))
+  value$tag <- list(c("simple","fill", "d.int", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -304,7 +304,7 @@ pizza_2 <- function(size.x = 15, size.y = 0,
                               shd = shd,
                               lty = lty,
                               lwd = lwd))
-  value$tag <- list(c("compose2","fill"))
+  value$tag <- list(c("compose2","fill", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -347,7 +347,7 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
                                      lwd = lwd),
               name= "s_pizza_2",
               single = T)
-  value$tag <- list(c("compose2","fill"))
+  value$tag <- list(c("compose2","fill", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
@@ -500,7 +500,7 @@ pizza_2_inv <- function(size.x = 15, size.y = size.x,
                               shd = shd,
                               lty = lty,
                               lwd = lwd))
-  value$tag <- list(c("compose2","fill"))
+  value$tag <- list(c("compose2","fill", "rotate"))
   attr(value, "class") <- "figure"
   value
 }

@@ -44,11 +44,12 @@ ic_flip <- function(obj, ...) {
 #' }
 ic_flip.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
+  split_correct <- split_mat(obj)
   the_rules <- c(obj$hrule, obj$vrule)
   if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("AND|OR", the_rules)) == FALSE) {
     if (any(unlist(m_correct$tag) == "rotate")){
       dist_ic_flip <- rotate(m_correct, 2)
-    } else if (inherits(obj$mat.type, "numeric") == TRUE  & any(grepl("bow_tie", unlist(m_correct$tag))) == TRUE) {
+    } else if (inherits(obj$mat.type, "numeric") == TRUE  & any(grepl("bow_tie", unlist(split_correct))) == TRUE) {
       if (any(unlist(m_correct$tag) == "simple") == TRUE) {
         size_x <- (m_correct$size.x)
         size_y <- (m_correct$size.y)
@@ -97,11 +98,10 @@ ic_flip.matriks <- function(obj, ...) {
     }
 
   } else {
-    split_correct <- split_mat(obj)
-    if (any(unlist(split_correct[[length(split_correct)]]$tag) == "rotate") & all(grepl("bow_tie", unlist(m_correct$tag) == FALSE))) {
+    if (any(unlist(split_correct[[length(split_correct)]]$tag) == "rotate") & all(grepl("bow_tie", unlist(split_correct)) == FALSE)) {
       dist_ic_flip <-  replace(m_correct, length(m_correct$shape),
                                rotate(split_correct[[length(split_correct)]]))
-    } else if (any(grepl("bow_tie", unlist(m_correct$tag))) == TRUE) {
+    } else if (!all(grepl("bow_tie", unlist(split_correct)) == FALSE)){
       token <- TRUE
       index_figure <- which(grepl("bow_tie", m_correct$tag))
 
