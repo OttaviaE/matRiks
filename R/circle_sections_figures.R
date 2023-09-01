@@ -76,7 +76,7 @@ slice <- function(size.x =15,
 #' # draw an actual pacman
 #' draw(cof(pacman(shd = "yellow"), dot(pos.y = 6)))
 #' }
-pacman <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
+pacman <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
                    size.y = 0,pos.x=0 ,pos.y=0,
                    theta1 = pi/4,
                    theta2 = 7*pi/4,
@@ -192,7 +192,7 @@ semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         lwd =3,
                         vis = 1) {
   value <- list(
-    shape = "semi_circle",
+    shape = "semi_circle_top",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -238,16 +238,16 @@ semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' semi_circle_inv(theta1 = pi, theta2 = 2*pi)
 #' }
 semi_circle_bottom_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
-                        size.y = 0,
-                        pos.x=0 ,pos.y=0,
-                        theta1 = 5*pi/4,
-                        theta2 = pi/4,
-                        shd = NA,
-                        lty = 1,
-                        lwd =3,
-                        vis = 1) {
+                                   size.y = 0,
+                                   pos.x=0 ,pos.y=0,
+                                   theta1 = 5*pi/4,
+                                   theta2 = pi/4,
+                                   shd = NA,
+                                   lty = 1,
+                                   lwd =3,
+                                   vis = 1) {
   value <- list(
-    shape = "semi_circle_inv",
+    shape = "semi_circle_bottom_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
@@ -377,23 +377,22 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
 #' # change the rotation of the downward-facing right semi-circle
 #' semi_circle_inv(theta1 = 0, theta2 = pi/2)
 #' }
-semi_circle_top_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
-                        size.y = 0,
-                        pos.x=0 ,pos.y=0,
-                        theta1 = 7*pi/4,
-                        theta2 = 3*pi/4,
-                        shd = shd,
-                        rotation = pi - pi / 4,
-                        lty = 1,
-                        lwd =3,
-                        vis = 1) {
+semi_circle_top_inv <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
+                                size.y = 0,
+                                pos.x=0 ,pos.y=0,
+                                theta1 = 7*pi/4,
+                                theta2 = 3*pi/4,
+                                shd = NA,
+                                lty = 1,
+                                lwd =3,
+                                vis = 1) {
   value <- list(
-    shape = "semi_circle_inv",
+    shape = "semi_circle_top_inv",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
     theta.2  = list(theta2),
-    rotation = list(rotation),
+    rotation = list(0),
     pos.x = list(pos.x),
     pos.y = list(pos.y),
     lty = list(lty),
@@ -433,23 +432,22 @@ semi_circle_top_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' # change the rotation of the upward-facing left semi-circle
 #' semi_circle_inv_inv(theta1 = pi, theta2 = 2*pi)
 #' }
-semi_circle_bottom <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
-                            size.y = 0,
-                            pos.x=0 ,pos.y=0,
-                            theta1 = 3*pi/4,
-                            theta2 = 7*pi/4,
-                            shd = shd,
-                            rotation = pi - pi / 4,
-                            lty = 1,
-                            lwd =3,
-                            vis = 1) {
+semi_circle_bottom <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
+                               size.y = 0,
+                               pos.x=0 ,pos.y=0,
+                               theta1 = 3*pi/4,
+                               theta2 = 7*pi/4,
+                               shd = NA,
+                               lty = 1,
+                               lwd =3,
+                               vis = 1) {
   value <- list(
-    shape = "semi_circle_inv",
+    shape = "semi_circle_bottom",
     size.x = list(size.x),
     size.y = list(size.y),
     theta.1  = list(theta1),
     theta.2  = list(theta2),
-    rotation = list(rotation),
+    rotation = list(0),
     pos.x = list(pos.x),
     pos.y = list(pos.y),
     lty = list(lty),
