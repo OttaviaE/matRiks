@@ -544,7 +544,7 @@ s_pizza_2_inv <- function(size.x = 15, size.y = 0,
                                   lwd = lwd),
               name= "s_pizza_2_inv",
               single = T)
-  value$tag <- list(c("compose2","fill"))
+  value$tag <- list(c("compose2","fill", "rotate"))
   attr(value, "class") <- "figure"
   value
 }
