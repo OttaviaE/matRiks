@@ -41,9 +41,13 @@ change_color.figure <- function(obj, ...) {
   } else if (any(unlist(obj$shade) == "white")) {
     obj <- shade(obj, 3)
   } else if (any(unlist(obj$shade) == "black" & sum(grepl("black", unlist(obj$tag))) > 0)) {
-    obj <- shade(obj, 2)
+    obj <- shade(obj, 1)
   } else if (any(unlist(obj$shade) == "black" & sum(grepl("black", unlist(obj$tag))) == 0)) {
-    obj <- shade(obj, 2)
+    obj <- shade(obj, 1)
+  } else if (any(unlist(obj$shade) == "grey")) {
+    obj <- shade(obj, 1)
+  } else if (any(unlist(obj$shade) == "grey" )) {
+    obj <- shade(obj, 1)
   }
   class(obj) <- "figure"
   return(obj)

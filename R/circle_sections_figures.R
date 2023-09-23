@@ -362,7 +362,6 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
 #' @param theta1 Starting angle of the circle section. Default is 7*pi/4.
 #' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 3*pi/4.
 #' @param shd Color of the figure Default is NA which results in a transparent figure.
-#' @param rotation numeric, define the rotation of the semicircle. Default is pi - pi/4
 #' @param lwd The line width. Default is 3.
 #' @param lty The line type, default is 1 (solid line).
 #' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
@@ -416,7 +415,6 @@ semi_circle_top_inv <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
 #' @param pos.y Position on the y axis, Default is 0.
 #' @param theta1 Starting angle of the circle section. Default is 3*pi/4.
 #' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 7*pi/4.
-#' @param rotation numeric, define the rotation of the semicircle. Default is pi - pi/4
 #' @param shd Color of the figure Default is NA which results in a transparent figure.
 #' @param lwd The line width. Default is 3.
 #' @param lty The line type, default is 1 (solid line).
