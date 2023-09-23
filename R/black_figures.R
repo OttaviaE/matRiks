@@ -147,8 +147,7 @@ biscuit = function(size.x = 15, size.y = size.x,
               rotate(hexagon(size.x = size.x,
                                size.y = size.y,
                                lwd = lwd, lty = lty,
-                               shd = shd), 3),
-              single = T, name = "biscuit")
+                               shd = shd), 3))
   value$tag <- list(c("compose2", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
@@ -189,7 +188,7 @@ s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10,
                       shd = shd, lty = lty, lwd = lwd),
               name = "s.biscuit",
               single = TRUE)
-  value$tag <- list(c("compose2", "d.int", "black.figure"))
+  value$tag <- list(c("simple", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
@@ -252,7 +251,7 @@ s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "s_ninja",
               single = TRUE)
-  value$tag = list(c("compose2", "rotate", "d.int", "black.figure"))
+  value$tag = list(c("simple", "rotate", "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
@@ -319,7 +318,7 @@ s_star = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 6),
               single = TRUE,
               name = "s_star")
-  value$tag = list(c("compose4",  "d.int", "black.figure"))
+  value$tag = list(c("simple",  "d.int", "black.figure"))
   attr(value, "class") <- "figure"
   value
 }
