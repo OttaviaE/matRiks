@@ -216,60 +216,6 @@ square <- function(size.x= 15,
   value
 }
 
-#' Coordinates of a rectangle
-#'
-#' Define the coordinates  of the ellipse within which a rectangle can be inscribed.
-#'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 8.
-#' @param rot Rotation of the figure. Default is pi/4.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
-#'
-#' @return Return the coordinates for drawing a rectangle
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' # return the default coordinates for drawing a rectangle
-#' rectangle()
-#'
-#' # change the coordinates for drawing a smaller rectangle
-#'
-#' rectangle(size.x = 5, size.y = 10)
-#' }
-rectangle <- function(size.x=10,
-                      size.y=8,
-                      rot=pi / 4,
-                      pos.x = 0, pos.y = 0,
-                      shd=NA,
-                      lwd = 3,
-                      lty = 1,
-                      vis = 1) {
-  value <- list(
-    shape = "rectangle",
-    size.x = list(size.x),
-    size.y = list(size.y),
-    theta.1  = list(0),
-    theta.2  = list(0),
-    rotation = list(rot),
-    pos.x = list(pos.x),
-    pos.y = list(pos.y),
-    lty = list(lty),
-    lwd = list(lwd),
-    num = list(1),
-    nv = list(101),
-    shade = list(shd),
-    visible = vis,
-    tag=list(c('simple','fill', 'd.ext','rotate'))
-  )
-  attr(value, "class") <- "figure"
-  value
-}
 
 
 #' Coordinates of a luck
