@@ -1,9 +1,11 @@
 Package: matRiks
 Type: Package
-Title: Generates Raven-like Stimuli According to Rules
+Title: Generates Raven-Like Stimuli According to Rules
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Andrea Brancaccio [aut, ctb]
+        Ottavia M. Epifania [aut, ctb]
+        Debora de Chiusole [ctb]
+Maintainer: The package maintainer <ottavia.epifania@unipd.it>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
