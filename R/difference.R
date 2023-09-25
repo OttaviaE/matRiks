@@ -47,8 +47,6 @@ difference <- function(obj, seed, ...) {
 #'
 difference.matriks <- function(obj, seed = 666, ...) {
   set.seed(seed)
-
-
   hrules <- gsub(".inv", "", obj$hrule)
   vrules <-  gsub(".inv", "", obj$vrule)
 

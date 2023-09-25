@@ -17,17 +17,20 @@
 #' decof(my_mat)
 #' }
 decof<- function(obj) {
+  if (class(obj) != "figure") {
+    stop("decof can only be applied on object of class figure")
+  }
   UseMethod("decof")
 }
 
 #' Decof
 #'
-#' @param obj The object to split
+#' @param obj The object to split (must be a figure, not a matriks)
 #'
 #' @export decof.figure
 #' @export
-decof.figure<-function(obj)
-{
+decof.figure<-function(obj) {
+
   if(length(obj$shape)==1){
     nobj<-length(obj$nv[[1]])
   }else{

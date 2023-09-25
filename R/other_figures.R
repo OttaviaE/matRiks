@@ -203,7 +203,7 @@ malta <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lt
 }
 
 
-#' Coordinates of a Malta cross
+#' Coordinates of a single Malta cross
 #'
 #' Define the coordinates for drawing a single Malta cross, which is forced to be a single figure (to be used in shape())
 #'
