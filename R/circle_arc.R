@@ -37,10 +37,10 @@ v_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
     lty  = list(lty),
     lwd  = list(lwd),
     num  = list(2),
-    nv  = list(100), # non cambia nulla che sia indicato o meno
+    nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "vert"))
   )
   attr(value, "class") <- "figure"
   value
@@ -88,7 +88,7 @@ v_arc_right_up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "vert"))
   )
   attr(value, "class") <- "figure"
   value
@@ -135,7 +135,7 @@ v_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "vert"))
   )
   attr(value, "class") <- "figure"
   value
@@ -182,7 +182,7 @@ v_arc_right_down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "vert"))
   )
   attr(value, "class") <- "figure"
   value
@@ -229,7 +229,7 @@ h_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "vert"))
   )
   attr(value, "class") <- "figure"
   value
@@ -275,7 +275,7 @@ h_arc_right_up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "hor"))
   )
   attr(value, "class") <- "figure"
   value
@@ -322,7 +322,7 @@ h_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "hor"))
   )
   attr(value, "class") <- "figure"
   value
@@ -368,7 +368,7 @@ h_arc_right_down <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100), # non cambia nulla che sia indicato o meno
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d'))
+    tag=list(c('simple', 'no.d', "hor"))
   )
   attr(value, "class") <- "figure"
   value
