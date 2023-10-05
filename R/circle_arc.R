@@ -40,7 +40,7 @@ v_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
     nv  = list(100),
     shade  = list(NA),
     visible = vis,
-    tag=list(c('simple', 'no.d', "vert"))
+    tag=list(c("simple", "no.d", "vert"))
   )
   attr(value, "class") <- "figure"
   value
