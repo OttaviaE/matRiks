@@ -37,12 +37,11 @@ wp <- function(obj, ...) {
 #' # draw the wp distractors with the title
 #' draw(wp(m1), main = TRUE)
 wp.matriks <- function(obj, ...) {
-  m_correct = correct(obj)
-  hrules =gsub(".inv", "", obj$hrule)
-  vrules = gsub(".inv", "", obj$vrule)
+  m_correct <- correct(obj)
+  hrules <- gsub(".inv", "", obj$hrule)
+  vrules <- gsub(".inv", "", obj$vrule)
 
   if (any(hrules[order(hrules)] == vrules[order(vrules)]) == TRUE) {
-
     if (obj$mat.type == 4) {
       wp_copy <- obj$Sq1
       wp_matrix_start <- size(obj$Sq3)
@@ -60,10 +59,10 @@ wp.matriks <- function(obj, ...) {
   }
 
   if (length(unlist(wp_copy$nv)) == sum(grepl("rotate", unlist(wp_copy$tag)))) {
-    wp_matrix = cof(wp_matrix_start,
+    wp_matrix <- cof(wp_matrix_start,
                     rotate(wp_copy))
   } else {
-    wp_matrix = cof(wp_copy,
+    wp_matrix <- cof(wp_copy,
                     wp_matrix_start)
   }
 
