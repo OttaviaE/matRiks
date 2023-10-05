@@ -5,6 +5,7 @@ test_that("Repetion works on 9 cell", {
                      size(luck())), "shape", "shape")
   m <- com(m1, m2)
   dist_rep <- repetition(m)
+  expect_equal(class(dist_rep), "responses")
   expect_equal(unlist(dist_rep$r_left),
                unlist(m$Sq8))
   expect_equal(unlist(dist_rep$r_top),
