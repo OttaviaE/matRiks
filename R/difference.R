@@ -809,7 +809,7 @@ difference.matriks <- function(obj, seed = 666, ...) {
   }
 
 
-  class(dist_difference) <- "responses"
+  class(dist_difference) <- "figure"
   return(dist_difference)
 
 
