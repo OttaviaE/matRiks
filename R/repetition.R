@@ -53,27 +53,27 @@ repetition.matriks <- function(obj, ...) {
                               r_left = obj$Sq8)
   } else if (n.cell == 4){
 
-    distr_repetition <- list(  r_top = obj$Sq2,
+    distr_repetition <- list( r_top = obj$Sq2,
                               r_diag = obj$Sq1,
-                              r_left = obj$Sq4)
+                              r_left = obj$Sq3)
   }
 
   # I do realize this is not ideal but it works ----
 
-  if (any(unlist(distr_repetition$r_top) != unlist(m_correct),
-          na.rm = T) == F) {
+  if (all(unlist(distr_repetition$r_top) == unlist(m_correct),
+          na.rm = TRUE) == TRUE) {
     warning("R-Top is equal to the correct response")
     distr_repetition$r_top <- cof(distr_repetition$r_top,
                                   size(X(lwd = 10), 3, "inv"))
   }
-  if (any(unlist(distr_repetition$r_left) != unlist(m_correct),
-          na.rm = T) == F) {
+  if (all(unlist(distr_repetition$r_left) == unlist(m_correct),
+          na.rm = TRUE) == TRUE) {
     warning("R-left is equal to the correct response")
     distr_repetition$r_left <- cof(distr_repetition$r_left,
                                   size(X(lwd = 10), 3, "inv"))
   }
-  if (any(unlist(distr_repetition$r_diag) != unlist(m_correct),
-          na.rm = T) == F) {
+  if (all(unlist(distr_repetition$r_diag) == unlist(m_correct),
+          na.rm = TRUE) == TRUE) {
     warning("R-diag is equal to the correct response")
     distr_repetition$r_diag <- cof(distr_repetition$r_diag,
                                   size(X(lwd = 10), 3, "inv"))
