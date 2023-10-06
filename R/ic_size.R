@@ -56,9 +56,6 @@ ic_size.matriks <- function(obj, ...) {
       transvestite <- intersect((length(m_correct$visible)-index[length(index)]+1):(max(transvestite)),transvestite)
       trans<-transvestite-(max(transvestite)-max(changing))
       changing<-intersect(trans,changing)
-
-
-
       new_image<-list()
       for (i in 1:length(changing)) {
         new_image[[i]] <-  size(split_correct[[changing[i]]], 3)
