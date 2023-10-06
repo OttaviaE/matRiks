@@ -1,0 +1,22 @@
+test_that("Create IC list works", {
+  m1 <- mat_apply(cof(pacman(), luck(), square()), "shape", "shape")
+  m2 <- mat_apply(dot(), "shade", "shade")
+  m <- com(m1, m2)
+  risp_ic <- ic(m)
+  expect_length(risp_ic, 4)
+  expect_equal(class(risp_ic), "responses")
+})
+test_that("Create IC list works 4cells", {
+  m1 <- mat_apply(cof(pacman(), luck(), square()), "shape", "shape", mat.type = 4)
+  m2 <- mat_apply(dot(), "shade", "shade", mat.type = 4)
+  m <- com(m1, m2)
+  risp_ic <- ic(m)
+  expect_length(risp_ic, 4)
+  expect_equal(class(risp_ic), "responses")
+})
+test_that("Create IC list works (can't rotate", {
+  m1 <- mat_apply(cof(pacman(), luck(), s_lily()), "shape", "shape")
+  m2 <- mat_apply(dot(), "shade", "shade")
+  m <- com(m1, m2)
+  expect_warning(ic(m), "Can't rotate, sorry!")
+})
