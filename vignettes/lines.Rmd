@@ -1,0 +1,70 @@
+---
+title: "lines"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lines}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE, 
+  comment = "#>"
+)
+library(matRiks)
+```
+
+This vignette illustrates all the lines  available in the `matRiks` package. 
+
+::::{style="display: flex;"}
+
+:::{}
+```{r}
+draw(vline(), main = "vline()")
+```
+
+
+```{r}
+draw(diagline_inv(), main = "diagline_inv()")
+```
+
+```{r}
+draw(square4(), main = "square4()")
+```
+
+
+:::
+
+::: {}
+
+```{r}
+draw(hline(), main = "hline()")
+```
+
+```{r}
+draw(diagline(), main = "diagline()")
+```
+
+```{r}
+draw(luck4(), main = "luck4()")
+```
+
+:::
+
+
+::: {}
+
+```{r}
+draw(cross(), main = "cross()")
+
+```
+
+```{r}
+draw(X(), main = "X()")
+```
+
+
+:::
+::::

@@ -1,0 +1,72 @@
+---
+title: "circle-sections"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{circle-sections}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE, 
+  comment = "#>"
+)
+library(matRiks)
+```
+
+This vignette illustrates all the circle section figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obtain a single pizza with 2 slices, use the command `s_pizza_2()`. 
+
+::::{style="display: flex;"}
+
+:::{}
+```{r }
+draw(slice(), main = "slice()")
+```
+
+
+```{r}
+draw(pacman(), main = "pacman()")
+```
+
+```{r}
+draw(pizza_4(), main = "pizza_4()")
+```
+
+:::
+
+
+:::{}
+```{r }
+draw(semi_circle_top(), main = "semi_circle_top()")
+```
+
+
+```{r}
+draw(semi_circle_top_inv(), main = "semi_circle_top_inv()")
+```
+
+```{r}
+draw(pizza_2(), main = "pizza_2()")
+```
+:::
+
+
+
+:::{}
+```{r }
+draw(semi_circle_bottom(), main = "semi_circle_bottom()")
+```
+
+
+```{r}
+draw(semi_circle_bottom_inv(), main = "semi_circle_bottom_inv()")
+```
+
+```{r}
+draw(pizza_2_inv(), main = "pizza_2_inv()")
+```
+:::
+
+::::

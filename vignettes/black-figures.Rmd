@@ -1,0 +1,57 @@
+---
+title: "black-figures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{black-figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE,
+  comment = "#>"
+)
+library(matRiks)
+```
+
+This vignette illustrates all the black figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obatin a single biscuit, use the command `s_biscuit()`. 
+
+::::{style="display: flex;"}
+
+:::{}
+```{r}
+draw(dot(), main = "dot()")
+```
+
+
+
+```{r}
+draw(cross_dice(), main = "cross_dice()")
+```
+
+```{r}
+draw(dice(), main = "dice()")
+```
+
+
+::: 
+
+:::{}
+```{r}
+draw(biscuit(), main = "biscuit()")
+```
+
+```{r}
+draw(ninja(), main = "ninja()")
+```
+
+
+```{r}
+draw(star(), main = "star()")
+```
+
+:::
+
+::::

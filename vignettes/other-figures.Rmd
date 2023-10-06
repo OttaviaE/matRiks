@@ -1,0 +1,53 @@
+---
+title: "other-figures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{other-figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE, 
+  comment = "#>"
+)
+library(matRiks)
+```
+
+
+This vignette illustrates all the other figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obtain a single lily, use the command `s_malta()`. 
+
+::::{style="display: flex;"}
+::: {}
+```{r}
+draw(vert_bow_tie(),main = "vert_bow_tie()")
+```
+
+```{r}
+draw(axe(), main = "axe()")
+```
+
+:::
+
+::: {}
+```{r}
+draw(hor_bow_tie(),main = "hor_bow_tie()")
+```
+
+```{r}
+draw(maxi(), main = "maxi()")
+```
+
+:::
+
+
+::: {}
+```{r}
+draw(malta(), main = "malta")
+```
+
+:::
+
+::::

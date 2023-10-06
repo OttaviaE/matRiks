@@ -1,0 +1,58 @@
+---
+title: "flowers-figures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{flowers-figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE, 
+  comment = "#>"
+)
+library(matRiks)
+```
+
+
+This vignette illustrates all the flower-like figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obtain a single lily, use the command `s_lily()`. 
+
+The difference between `lily()` and `miley()` lies in how the two flowers are composed. `lily()` is a `compose2`, since it is composed of a vertical and an horizontal eight. Conversely, `miley()` is a `compose4`, since it is composed of 4 petals. 
+
+::::{style="display: flex;"}
+::: {}
+```{r}
+draw(up_petal(), main = "up_petal()")
+```
+
+```{r}
+draw(down_petal(), main = "down_petal()")
+```
+
+```{r}
+draw(lily(), main = "lily()")
+```
+
+:::
+
+
+::: {}
+```{r}
+draw(right_petal(), main = "right_petal()")
+```
+
+```{r}
+draw(left_petal(), main = "left_petal()")
+```
+
+
+```{r}
+draw(miley(), main = "miley()")
+```
+
+
+:::
+
+::::

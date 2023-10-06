@@ -1,0 +1,67 @@
+---
+title: "closed-figures"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{closed-figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo = FALSE, 
+  comment = "#>"
+)
+library(matRiks)
+```
+
+This vignette illustrates all the closed simple figures available in the `matRiks` package. 
+
+::::{style="display: flex;"}
+
+:::{}
+
+```{r }
+draw(circle(), main = "circle()")
+```
+
+```{r }
+draw(ellipse(), main = "ellipse()")
+```
+
+```{r }
+draw(triangle(), main = "triangle()")
+```
+
+:::
+
+
+:::{}
+
+```{r }
+draw(square(), main = "square()")
+```
+
+```{r }
+draw(luck(), main = "luck()")
+```
+
+
+:::
+
+
+
+:::{}
+```{r }
+draw(pentagon(), main = "pentagon()")
+```
+
+
+```{r }
+draw(hexagon(), main = "hexagon()")
+```
+
+
+:::
+::::
