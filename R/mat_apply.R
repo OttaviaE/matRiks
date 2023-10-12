@@ -58,7 +58,7 @@ mat_apply.figure <- function(Sq1,hrules = "identity", vrules = "identity", mat.t
   }
   if(length(vrules)>length(unique(vrules))|| length(hrules)>length(unique(hrules)))
   {
-    warning("You have repeat the same rule on the same logic\n")
+    warning("You have repeated the same rule on the same logic\n")
     vrules<-unique(vrules)
     hrules<-unique(hrules)
   }
