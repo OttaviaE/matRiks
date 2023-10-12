@@ -12,15 +12,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+devtools::load_all()
 ```
 
-```{r setup}
-library(matRiks)
-```
 
 This vignette illustrates how to create an RMarkdown file that can include both the generation of the matriks and of its related distractors. As such, the users can concurrently visualize the matriks and the distractors, like in the following example: 
 
-```{r, echo = FALSE, fig.align='center', out.width='100%'}
+```{r, echo = FALSE, fig.align='center', out.width='80%'}
 m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
                 hrules = "shape", vrules = "shape")
 
@@ -32,8 +30,85 @@ m <- com(m1, m2, m3)
 draw(m)
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, echo = FALSE, fig.align='center', out.width='80%'}
 resp_m <- response_list(m)
-draw(ic_flip(m))
+draw(resp_m, main = TRUE)
+
+```
+
+## Create an RMarkdown file 
+
+A new RMarkdown file can be created via File $\rightarrow$ New File $\rightarrow$ RMarkdown, then by choosing an RMarkdown document (preferably in PDF) from the dialogue window. 
+
+The YAML of the document should be modified to look like this: 
+
+
+<!-- ```{markdown, eval = FALSE} -->
+<!-- title: "My matriks" -->
+<!-- author: "Me, myself, and I" -->
+<!-- date: "`r Sys.Date()`" -->
+<!-- output: -->
+<!--   pdf_document: -->
+<!--     toc: yes -->
+<!-- ``` -->
+````
+---
+title: "My matriks"
+author: "Me, myself, and I"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: yes
+---
+````
+Then, a setup chunk should be included to set the behavior of the code chunks throughout the document: 
+
+````
+```{r setup, include=FALSE}`r ''`
+library(matRiks)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  eval = TRUE, 
+  fig.align = 'center'
+)
+```
+````
+
+You are all set to start generating your Raven-like matrices and the associated response lists!
+
+## matRiks 1
+
+````
+```{r}`r ''`
+m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
+                hrules = "shape", vrules = "shape")
+draw(m1)
+```
+````
+
+```{r echo = FALSE}
+m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
+                hrules = "shape", vrules = "shape")
+draw(m1)
+```
+
+
+
+````
+```{r}`r ''`
+dist_m1 <- response_list(m1)
+draw(response_list(m1), main = TRUE)
+```
+````
+
+```{r echo = FALSE}
+dist_m1 <- response_list(m1)
+draw(response_list(m1), main = TRUE)
+```
+
+Draw a specific selection of responses: 
+
+```{r}
+draw(response_list(m1), distractors = c("correct", "r_top", "wp_copy"))
 ```
 
