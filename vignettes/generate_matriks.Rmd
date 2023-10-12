@@ -9,8 +9,9 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
+  echo = FALSE,
+  eval = TRUE, 
+  fig.align = 'center'
 )
 devtools::load_all()
 ```
@@ -18,7 +19,7 @@ devtools::load_all()
 
 This vignette illustrates how to create an RMarkdown file that can include both the generation of the matriks and of its related distractors. As such, the users can concurrently visualize the matriks and the distractors, like in the following example: 
 
-```{r, echo = FALSE, fig.align='center', out.width='80%'}
+```{r, echo = FALSE, fig.align='center'}
 m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
                 hrules = "shape", vrules = "shape")
 
@@ -30,7 +31,7 @@ m <- com(m1, m2, m3)
 draw(m)
 ```
 
-```{r echo = FALSE, echo = FALSE, fig.align='center', out.width='80%'}
+```{r echo = FALSE, echo = FALSE, fig.align='center'}
 resp_m <- response_list(m)
 draw(resp_m, main = TRUE)
 
@@ -42,15 +43,6 @@ A new RMarkdown file can be created via File $\rightarrow$ New File $\rightarrow
 
 The YAML of the document should be modified to look like this: 
 
-
-<!-- ```{markdown, eval = FALSE} -->
-<!-- title: "My matriks" -->
-<!-- author: "Me, myself, and I" -->
-<!-- date: "`r Sys.Date()`" -->
-<!-- output: -->
-<!--   pdf_document: -->
-<!--     toc: yes -->
-<!-- ``` -->
 ````
 ---
 title: "My matriks"
@@ -61,7 +53,10 @@ output:
     toc: yes
 ---
 ````
-Then, a setup chunk should be included to set the behavior of the code chunks throughout the document: 
+
+The YAML sets the title of the document (My matriks), the author ("Me, myself, and I"), the date, and other settings concerning the document. For instance, this YAML will generate a PDF document with a **T**able **o**f **C**ontents. 
+
+A setup chunk should be included to set the behavior of the code chunks throughout the document: 
 
 ````
 ```{r setup, include=FALSE}`r ''`
@@ -74,10 +69,14 @@ knitr::opts_chunk$set(
 ```
 ````
 
+By setting `echo = FALSE` and `eval = TRUE` the code of each chunk will be executed (`eval = TRUE`) but the actual will not be displayed in the document (`echo = FALSE`)
+
 You are all set to start generating your Raven-like matrices and the associated response lists!
 
 ## matRiks 1
 
+The first matriks is a single-layer matriks where the `shape` is applied diagonally to three shapes, `square()`, `pentagon()`, and `hexagon()`:
+
 ````
 ```{r}`r ''`
 m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
@@ -92,23 +91,79 @@ m1 <- mat_apply(cof(square(), pentagon(), hexagon()),
 draw(m1)
 ```
 
-
+The response list can be created with the function `response_list()`, which generates a list of length 11 containing the correct response and 10 distractors:
 
 ````
 ```{r}`r ''`
 dist_m1 <- response_list(m1)
-draw(response_list(m1), main = TRUE)
+draw(dist_m1, main = TRUE)
 ```
 ````
 
 ```{r echo = FALSE}
 dist_m1 <- response_list(m1)
-draw(response_list(m1), main = TRUE)
+draw(dist_m1, main = TRUE)
 ```
 
-Draw a specific selection of responses: 
+A warning has appeared since some type of distractors cannot be generated given the type of matriks and/or the rules used for its generation. In this case, since it is a single-laye matriks it is not possible to generate the Incomplete Correlate-Incomplete distractors, which is also crossed with a thick black cross. The argument `main` set `TRUE` means that the names of the distractors are plotted as well. 
+
+The user can also specific a selection of the response options to associate to the matriks. The selection should be a character vector and it must be specified through th argument `distractors` of the `draw()` function. 
 
 ```{r}
-draw(response_list(m1), distractors = c("correct", "r_top", "wp_copy"))
+draw(dist_m1, distractors = c("correct", "r_top", "wp_copy"))
+```
+## matriks 2
+
+This code creates a multi-layer matriks with three layers. DIfferent rules are used to manipulate different objects in each layer. 
+
+````
+```{r}`r ''`
+m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
+                hrules = "shape", vrules = "shape")
+
+m2 <- mat_apply(pacman(), hrules = "rotate", vrules = "rotate")
+
+m3 <- mat_apply(size(malta(), 3), hrules = "shade")
+
+m <- com(m1, m2, m3)
+draw(m)
+```
+````
+
+```{r echo = FALSE}
+m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
+                hrules = "shape", vrules = "shape")
+
+m2 <- mat_apply(pacman(), hrules = "rotate", vrules = "rotate")
+
+m3 <- mat_apply(size(malta(), 3), hrules = "shade")
+
+m <- com(m1, m2, m3)
+draw(m)
+```
+
+The response list can be created with the function `response_list()`, which generates a list of length 11 containing the correct response and 10 distractors:
+
+````
+```{r}`r ''`
+dist_m <- response_list(m, seed = 123)
+draw(dist_m, main = TRUE)
+```
+````
+
+By setting the argument `seed = 123` it is possible to change the figure used for the generation of the `difference` distractor:
+
+```{r echo = FALSE}
+dist_m <- response_list(m, seed = 123)
+draw(dist_m, main = TRUE)
+```
+
+And here there is the selection of distractors:
+
+
+```{r}
+draw(dist_m, distractors = c("correct", "r_top", "r_diag",  
+                             "wp_copy", "wp_matrix", "ic_inc", "ic_flip", 
+                             "ic_neg"))
 ```
 
