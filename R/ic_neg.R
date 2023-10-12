@@ -43,6 +43,7 @@ ic_neg <- function(obj, ...) {
 #' draw(ic_neg(m1))
 #' }
 ic_neg.matriks <- function(obj, ...) {
+
   w <- FALSE
   m_correct <- correct(obj)
   if (inherits(obj$mat.type, "numeric") == TRUE) {
@@ -81,10 +82,9 @@ ic_neg.matriks <- function(obj, ...) {
 #           new_image[[i]] <-  change_color(split_correct[[changing[i]]])
 #         }
 #       }
-
       new_image<-list()
       for (i in 1:length(changing)) {
-        if (all(!unlist(split_correct[[changing]]$tag) == "fill",na.rm=TRUE)) {
+        if (all(!unlist(split_correct[[changing[i]]]$tag) == "fill",na.rm=TRUE)) {
           w <- TRUE
           warning("Can't change color, sorry!")
           break
@@ -92,9 +92,6 @@ ic_neg.matriks <- function(obj, ...) {
         new_image[[i]] <-  change_color(split_correct[[changing[i]]])
         }
       }
-
-
-
     } else {
       split_correct <- split_mat(m_correct)
       changing <- sum(m_correct$visible)
