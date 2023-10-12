@@ -17,3 +17,23 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(matRiks)
 ```
+
+This vignette illustrates how to create an RMarkdown file that can include both the generation of the matriks and of its related distractors. As such, the users can concurrently visualize the matriks and the distractors, like in the following example: 
+
+```{r, echo = FALSE, fig.align='center', out.width='100%'}
+m1 <- mat_apply(cof(square(), pentagon(), hexagon()), 
+                hrules = "shape", vrules = "shape")
+
+m2 <- mat_apply(pacman(), hrules = "rotate", vrules = "rotate")
+
+m3 <- mat_apply(size(malta(), 3), hrules = "shade")
+
+m <- com(m1, m2, m3)
+draw(m)
+```
+
+```{r echo = FALSE}
+resp_m <- response_list(m)
+draw(ic_flip(m))
+```
+

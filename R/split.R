@@ -40,11 +40,22 @@ split_mat<- function(obj,vis = TRUE, cell = NULL) {
 #' split_m1 <- split_mat(m1)
 #' }
 split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
+
   if(vis == TRUE) {
    #index_elements<-which(obj$visible==1 & unlist(lapply(obj$num, function(x,y) all(x==y), 1)))
     index_elements<-which(obj$visible==1)
   } else {
     index_elements <- 1:length(obj$shape)
+  }
+  split_m <- vector("list", length(index_elements))
+  for (i in 1:length(split_m)) {
+    split_m[[i]] <- vector("list", length(obj))
+    for (j in 1:length(split_m[[i]])) {
+      names(split_m)[i] = obj$shape[index_elements[i]]
+      attr(split_m[[i]], "class") = "figure"
+      split_m[[i]][[j]] = obj[[j]][index_elements[i]]
+      names(split_m[[i]])[j] = names(obj)[j]
+    }
   }
  if(length(obj$tag)<max(index_elements))
  {
@@ -57,7 +68,7 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
     # the_tag <- the_tag[-grep("compose", the_tag)]
      figure_index <- (length(obj$shape) - object_index +1):((length(obj$shape)-object_index)+tag_index-1)
      for (i in figure_index) {
-       obj$tag[[i]] <- the_tag
+       split_m[[i]]$tag[[1]] <- the_tag
      }
    } else {
      the_tag <- list()
@@ -66,22 +77,13 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
       # the_tag[[i]] <- the_tag[[i]][-grep("compose", the_tag[[i]])]
        figure_index <- (length(obj$shape) - object_index +1):((length(obj$shape)-object_index)+tag_index-1)
        for (j in figure_index) {
-         obj$tag[[j]] <- unlist(the_tag[[i]])
+         obj$tag[[j]] <- unlist(the_tag[[i]]) # se non funziona è perché questo codice ha dei problemi, la soluzione probabilmente è sostitutire obj con split_m (Andrea, 12/10/2023)
        }
      }
    }
 
  }
-  split_m <- vector("list", length(index_elements))
-  for (i in 1:length(split_m)) {
-    split_m[[i]] <- vector("list", length(obj))
-    for (j in 1:length(split_m[[i]])) {
-      names(split_m)[i] = obj$shape[index_elements[i]]
-      attr(split_m[[i]], "class") = "figure"
-      split_m[[i]][[j]] = obj[[j]][index_elements[i]]
-      names(split_m[[i]])[j] = names(obj)[j]
-    }
-  }
+
   return(split_m)
 }
 #' Split the correct response (Method)
