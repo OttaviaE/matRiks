@@ -1,5 +1,5 @@
 ---
-title: "generate_matriks"
+title: "Generate matRiks"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{generate_matriks}

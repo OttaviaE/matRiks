@@ -1,0 +1,20 @@
+test_that("hide figure works", {
+  fig1 <- cof(square(), triangle(), luck())
+  fig2 <- hide(fig1, 1)
+  expect_equal(sum(fig1$visible), length(fig1$shape))
+  expect_lt(sum(fig2$visible), length(fig1$shape))
+  expect_equal(fig2$visible, c(0, 1, 1))
+})
+test_that("show figure works", {
+  fig1 <- shape(cof(square(), triangle(), luck()))
+  fig2 <- show(fig1, 3)
+  expect_equal(sum(fig1$visible), 1)
+  expect_lt(sum(fig1$visible), sum(fig2$visible))
+  expect_equal(fig2$visible, c(1, 0, 1))
+})
+test_that("replace figure works", {
+  fig1 <- cof(square(), triangle(), luck())
+  fig2 <- replace(fig1, 1, pacman())
+  expect_equal(length(fig1$shape), length(fig2$shape))
+  expect_lt(fig1$nv[[1]], fig2$nv[[1]])
+})

@@ -90,8 +90,8 @@ show<- function(obj,index) {
 #'
 #' @examples
 #' \dontrun{
-#' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' # concanate three figures into an object (only the first is visble)
+#' my_shapes <- shape(cof(square(), triangle(), slice()))
 #' # draw object
 #' draw(my_shapes)
 #' # show the triangle
@@ -124,7 +124,7 @@ show.figure<-function(obj,index="Full")
 #' @examples
 #' \dontrun{
 #' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
 #' # replace the square with a gray pacman
@@ -150,8 +150,8 @@ replace <- function(obj,index,replacement,visible) {
 #'
 #' @examples
 #' \dontrun{
-#' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' # concatenate three figures into an object
+#' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
 #' # replace the square with a gray pacman
