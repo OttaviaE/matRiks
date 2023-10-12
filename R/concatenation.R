@@ -41,11 +41,11 @@ cof <- function(...,name, single) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
