@@ -119,7 +119,6 @@ ic_neg.matriks <- function(obj, ...) {
 
 
   }
-
   class(dist_ic_neg) <- "figure"
   return(dist_ic_neg)
   }

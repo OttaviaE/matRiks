@@ -161,7 +161,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
-#' @param distractors The selectio of distractors you want to print
+#' @param distractors The selection of distractors you want to print
 #' @param print The print
 #' @param ... Other arguments
 #'

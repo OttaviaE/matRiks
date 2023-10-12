@@ -51,6 +51,7 @@ response_list <-function(obj, seed, ...) {
 #' draw(response_list(m1, seed = 8))
 #' }
 response_list.matriks <- function(obj, seed = 666, ...) {
+  seed <- seed
   my_repetion <- repetition(obj)
   my_wp <- wp(obj)
   resp <- list(correct = correct(obj),
