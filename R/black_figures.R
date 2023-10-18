@@ -15,20 +15,13 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a dot
 #' dot()
 #'
 #' # change the shade of the dot
 #'
 #' dot(shd = "grey")
-#' }
-dot <- function(size.x = 2,
-                size.y = size.x,
-                pos.x = 0, pos.y = 0, shd = "black",
-                lty = 1,
-                lwd = 3,
-                vis = 1) {
+dot <- function(size.x = 2, size.y = size.x,  pos.x = 0, pos.y = 0, shd = "black", lty = 1, lwd = 3, vis = 1) {
   value <- list(
     shape = "dot",
     size.x = list(size.x),
@@ -60,7 +53,7 @@ dot <- function(size.x = 2,
 #' @param lwd The line width. Default is 3
 #' @param lty The lime type, default is 1 (solid line).
 #'
-#' @return The coordinates for drawing a dice with 4 dots
+#' @return Return the coordinates for drawing a dice with 4 dots
 #' @export
 #'
 #' @examples
