@@ -26,7 +26,7 @@
 cof <- function(...,name, single) {
   UseMethod("cof")
 }
-#' Cof (Method)
+#' @describeIn cof Cof (Method)
 #'
 #' Concatenation of figures
 #'
@@ -65,7 +65,7 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 }
 
 
-#' Cof character (Method)
+#' @describeIn cof Cof character (Method)
 #'
 #' This allow for concatenating matrices
 #'
@@ -94,7 +94,7 @@ cof.character <- function(...) {
   obj
 }
 
-#' Concatenation of matrices (Method)
+#' @describeIn cof Concatenation of matrices (Method)
 #'
 #' Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
 #'
@@ -120,10 +120,9 @@ cof.character <- function(...) {
 com <- function(...) {
   UseMethod("com")
 }
-#' Concatenation of matrices
+#' @describeIn cof Concatenation of matrices
 #'
 #' Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
-
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -149,7 +148,7 @@ com.matriks <- function(...) {
 }
 
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -173,7 +172,7 @@ concatenation <- function(...) {
   UseMethod("concatenation")
 }
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -197,7 +196,7 @@ concatenation.list <- function(...) {
 }
 
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -221,7 +220,7 @@ concatenation.double <- function(...) {
   obj
 }
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -247,7 +246,7 @@ cof.double <- function(...) {
   obj
 }
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -275,7 +274,7 @@ cof.numeric <- function(...) {
 
 
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
@@ -300,7 +299,7 @@ concatenation.character <- function(...) {
   return(obj)
 }
 
-#' Concatenation of stuff
+#' @describeIn cof Concatenation of stuff
 #'
 #' @param ... The matrices to be concatenated
 #'
