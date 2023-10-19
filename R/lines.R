@@ -1,9 +1,10 @@
-#' Coordinates of a vertical line
+#' Coordinates of lines
 #'
-#' Define the coordinates for drawing a vertical line
+#' Define the coordinates for drawing lines
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' vline() Define the coordinates for drawing a vertical line
+#'
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
@@ -14,16 +15,10 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of a vertical line
-#'
 #' vline()
-#'
 #' # draw a vertical line with different lty
-#'
 #' draw(vline(lty = 2))
-#'
-#' }
 vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                   size.y = size.x,
                   pos.x=0 ,pos.y=0,
@@ -50,12 +45,12 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of an horizontal line
+#' @describeIn vline description Coordinates of an horizontal line
 #'
 #' Define the coordinates for drawing an horizontal line
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
@@ -66,16 +61,10 @@ vline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of an horizontal line
-#'
 #' hline()
-#'
 #' # draw a vertical line with different lty
-#'
 #' draw(hline(lty = 2))
-#'
-#' }
 hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                   size.y = size.x,
                   pos.x=0 ,pos.y=0,
@@ -101,29 +90,23 @@ hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a cross
+#' @describeIn vline Coordinates of a cross
 #'
-#' Define the coordinates for drawing a cross line
+#' Define the coordinates for drawing a cross
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing an horizontal line
+#' @return Return the coordinates for drawing a cross
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of an horizontal line
-#'
 #' cross()
-#'
 #' # draw a vertical line with different lty
-#'
 #' draw(cross(lty = 2))
-#'
-#' }
 cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                   size.y = size.x,
                   lwd = 3, lty = 1) {
@@ -139,31 +122,25 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of a square composed of 4 lines
+#' @describeIn vline Coordinates of a square composed of 4 lines
 #'
 #' Define the coordinates for drawing a square composed of 4 lines
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing an horizontal line
+#' @return Return the coordinates for drawing a square composed of 4 lines
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of square composed of 4 lines
-#'
 #' square4()
-#'
 #' # draw square composed of 4 lines with different lty
-#'
 #' draw(square4(lty = 2))
-#'
-#' }
 square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                     size.y = size.x,
                     pos.x = size.x,
@@ -186,33 +163,27 @@ square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of the main diagonal line
+#' @describeIn vline Coordinates of the main diagonal line
 #'
 #' Define the coordinates for drawing the main diagonal line
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
-#' @param rotation integer, rotation of the line. Default is pi -pi/4.
+#' @param rotation integer, rotation of the line. Default is \eqn{\frac{(\pi - \pi)}{4}}
 #' @param vis integer, define the visibility of the figure (default is 1, visible).
 #'
-#' @return Return the coordinates for drawing an horizontal line
+#' @return Return the coordinates for drawing the main diagonal line
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the main diagonal line
-#'
 #' diagline()
-#'
 #' # draw the main diagonal line with different lty
-#'
 #' draw(diagline(lty = 2))
-#'
-#' }
 diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
                      size.y=size.x,
                      pos.x=0 ,pos.y=0,
@@ -240,32 +211,26 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
   value
 }
 
-#' Coordinates of the inverse diagonal line
+#' @describeIn vline Coordinates of the inverse diagonal line
 #'
 #' Define the coordinates for drawing the inverse diagonal line
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, position on the x axis. Default is 0.
-#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
+#' @param pos.x numeric, position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
-#' @param rotation integer, rotation of the line. Default is pi + pi/4.
-#' @param vis integer, define the visibility of the figure (default is 1, visible).
+#' @param rotation integer, rotation of the line. Default is \eqn{\frac{(\pi + \pi)}{4}}
+#' @param vis integer, define the visibility of the figure (default is 1, visible)
 #' @return Return the coordinates for drawing the inverse diagonal line
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the main diagonal line
-#'
 #' diagline_inv()
-#'
 #' # draw the main diagonal line with different lty
-#'
 #' draw(diagline_inv(lty = 2))
-#'
-#' }
 diagline_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
                          size.y = size.x,
                          pos.x=0 ,pos.y=0,
@@ -297,25 +262,19 @@ diagline_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #'
 #' Define the coordinates for drawing an X
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x.
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line
 #'
 #' @return Return the coordinates for drawing an X
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of an X
-#'
 #' X()
-#'
 #' # draw an X with different lty
-#'
 #' draw(X(lty = 2))
-#'
-#' }
 X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
               size.y =  size.x,
               lwd = 3, lty = 1) {
@@ -331,25 +290,19 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #'
 #' Define the coordinates for drawing of a luck composed of 4 lines
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 7
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 7
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
-#' @return Return the coordinates for drawing an X
+#' @return Return the coordinates for drawing a luck composed of 4 lines
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of an luck composed of 4 lines
-#'
 #' luck4()
-#'
 #' # draw a luck composed of 4 lines with different lty
-#'
 #' draw(luck4(lty = 2))
-#'
-#' }
 luck4 <- function(size.x = 10,
                   size.y = 7,
                   lwd = 3, lty = 1) {

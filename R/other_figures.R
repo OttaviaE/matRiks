@@ -1,26 +1,24 @@
-#' Coordinates of a vertical bow tie
+#' Coordinates of  bow ties
 #'
-#' Define the coordinates for drawing a vertical bow tie composed of two triangles
+#' Define the coordinates for drawing bow ties composed of two triangles
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' vert_bow_tie() Define the coordinates for drawing a vertical bow tie composed of two triangles
+#'
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a vertical bow tie
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
 #' vert_bow_tie()
-#'
 #' # change the coordinates for drawing a smaller bow tie
-#'
 #' vert_bow_tie(size.x = 5)
-#' }
 vert_bow_tie <- function(size.x = 10,
                     size.y = size.x, pos.x = 0, shd = NA, lty = 1, lwd = 3) {
   value <-cof(triangle(pos.x = pos.x, pos.y = pos.x+10, rot=pi/6,
@@ -34,29 +32,25 @@ vert_bow_tie <- function(size.x = 10,
   value
 }
 
-#' Coordinates of a single vertical bow tie
+#' @describeIn vert_bow_tie Coordinates of a single vertical bow tie
 #'
-#' Define the coordinates for drawing a single vertical bow tie composed of two triangles, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single vertical bow tie composed of two triangles, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return Return the coordinates for drawing a single vertical bow tie
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a bow tie
 #' s_vert_bow_tie()
-#'
 #' # change the coordinates for drawing a smaller bow tie
-#'
 #' s_vert_bow_tie(size.x = 5)
-#' }
 s_vert_bow_tie <- function(size.x = 10,
                       size.y = size.x, pos.x = 0,
                       shd = NA, lty = 1, lwd = 3) {
@@ -74,29 +68,25 @@ s_vert_bow_tie <- function(size.x = 10,
 }
 
 
-#' Coordinates of an horizontal bow tie
+#' @describeIn vert_bow_tie Coordinates of an horizontal bow tie
 #'
 #' Define the coordinates for drawing an horizontal bow tie composed of two triangles
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a vertical bow tie
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a vertical bow tie
 #' hor_bow_tie()
-#'
 #' # change the coordinates for drawing a smaller bow tie
-#'
 #' hor_bow_tie(size.x = 5)
-#' }
 hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
@@ -115,29 +105,25 @@ hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd =
 
 
 
-#' Coordinates of a single horizontal bow tie
+#' @describeIn vert_bow_tie Coordinates of a single horizontal bow tie
 #'
-#' Define the coordinates for drawing a single horizontal bow tie composed of two triangles, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single horizontal bow tie composed of two triangles, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a single horizontal bow tie
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a single horizontal bow tie
 #' s_hor_bow_tie()
-#'
 #' # change the coordinates for drawing a smaller bow tie
-#'
 #' s_hor_bow_tie(size.x = 5)
-#' }
 s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1) {
   value <-cof(triangle(pos.x = pos.x+size.x,
                        pos.y = pos.x,
@@ -160,25 +146,21 @@ s_hor_bow_tie <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd
 #'
 #' Define the coordinates for drawing a Malta cross
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
-#' @return  Return the coordinates for drawing a single horizontal bow tie
+#' @return  Return the coordinates for drawing a Malta cross
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a Malta cross
 #' malta()
-#'
 #' # change the coordinates for drawing a smaller Malta cross
-#'
 #' malta(size.x = 5)
-#' }
 malta <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value <- cof(triangle(pos.x = pos.x, pos.y = pos.x-10, rot=pi/2,
                         size.x = size.x, size.y=size.y, shd = shd,
@@ -203,28 +185,24 @@ malta <- function(size.x = 10, size.y = size.x, pos.x = 0, shd = NA, lwd = 3, lt
 }
 
 
-#' Coordinates of a single Malta cross
+#' @describeIn malta Coordinates of a single Malta cross
 #'
-#' Define the coordinates for drawing a single Malta cross, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single Malta cross, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a single Malta cross
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a single Malta cross
 #' s_malta()
-#'
 #' # change the coordinates for drawing a smaller single Malta cross
-#'
 #' s_malta(size.x = 5)
-#' }
 s_malta <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   value <- cof(s_hor_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
               s_vert_bow_tie(size.x = size.x, pos.x = pos.x, shd = shd, lwd = lwd, lty = lty),
@@ -234,32 +212,25 @@ s_malta <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
   attr(value, "class") <- "figure"
   value
 }
-
-
-
 #' Coordinates of an axe
 #'
 #' Define the coordinates for drawing an axe
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
-#' @param pos.y numeric, define the position on the y axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10.
+#' @param pos.x numeric, define the position on the x axis. Default is 0
+#' @param pos.y numeric, define the position on the y axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing an axe
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing an axe
 #' axe()
-#'
 #' # change the coordinates for drawing a smaller single Malta cross
-#'
 #' axe(size.x = 5)
-#' }
 axe <- function(size.x = 15, pos.x = 0,
                pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value <- cof(rotate(slice(size.x = size.x,
@@ -274,29 +245,25 @@ axe <- function(size.x = 15, pos.x = 0,
 }
 
 
-#' Coordinates of a single axe
+#' @describeIn axe Coordinates of a single axe
 #'
-#' Define the coordinates for drawing a single axe, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single axe, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
-#' @param pos.y numeric, position the y axis, Default is 0.
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param pos.x numeric, define the position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
-#' @return Return the coordinates for drawing an axe
+#' @return Return the coordinates for drawing a single axe
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # return the default coordinates for drawing an axe
+#' # return the default coordinates for drawing single axe
 #' s_axe()
-#'
 #' # change the coordinates for drawing a smaller single Malta cross
-#'
 #' s_axe(size.x = 5)
-#' }
 s_axe <- function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value <- cof(rotate(slice(size.x = size.x,
                              pos.x = pos.x, pos.y = pos.y,
@@ -316,25 +283,21 @@ s_axe <- function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA)
 #'
 #' Define the coordinates for drawing a maxi (i.e., a cross composed of four lucks)
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 8
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 4.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 8
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 4
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a maxi
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a maxi
 #' maxi()
-#'
 #' # change the coordinates for drawing a smaller maxi
-#'
 #' maxi(size.x = 5)
-#' }
 maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   value <- cof(luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
@@ -354,29 +317,25 @@ maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
 }
 
 
-#' Coordinates of a single maxi
+#' @describeIn maxi Coordinates of a single maxi
 #'
-#' Define the coordinates for drawing a single maxi (i.e., a cross composed of four lucks), which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing a single maxi (i.e., a cross composed of four lucks), to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 8
-#' @param size.y  numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 4.
-#' @param pos.x numeric, define the position on the x axis. Default is 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 8
+#' @param size.y  numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 4
+#' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return  Return the coordinates for drawing a maxi
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a single maxi
 #' s_maxi()
-#'
 #' # change the coordinates for drawing a smaller single maxi
-#'
 #' s_maxi(size.x = 5)
-#' }
 s_maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3) {
   value <- cof(luck(pos.x = pos.x, pos.y = pos.x-size.x, rot=-pi,
                    size.x = size.y, size.y=size.x,
@@ -405,12 +364,10 @@ s_maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3)
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # empty figure
 #' phantom()
 #' # draw an empty figure
 #' draw(phantom())
-#' }
 phantom <- function() {
   value <- list(
     shape = "phantom",
