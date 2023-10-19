@@ -123,16 +123,16 @@ pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn pizza4 Coordinates of a single pizza with four slices
+#' @describeIn pizza_4 Coordinates of a single pizza with four slices
 #'
-#' Define the coordinates for drawing the circle section composing a pizza with four slices, which is forced to be a single figure, to be used in shape()
+#' Define the coordinates for drawing the circle section composing a single pizza with four slices, to be used in shape()
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line)
 #' @param shd Color of the figure Default is NA which results in a transparent figure
 #'
-#' @return Return the coordinates for drawing four circle sections composing a single pizza with four slices
+#' @return Return the coordinates for drawing four circle sections composing a singledocu pizza with four slices
 #' @export
 #'
 #' @examples
@@ -288,7 +288,7 @@ pizza_2 <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn pizza2 Coordinates of a single pizza with two slices
+#' @describeIn pizza_2 Coordinates of a single pizza with two slices
 #'
 #' Define the coordinates for drawing the circle section composing a single pizza with two slices, to be used in shape()
 #'
