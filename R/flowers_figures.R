@@ -1,22 +1,18 @@
 #' Define the coordinates of a lily
 #'
-#' Define the coordinates of the circle sections composing a lily
+#' Define the coordinates for drawing the circle arches composing a lily
 #'
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing a lily
+#' @return Return the coordinates drawing the circle arches composing a lily
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # return the default coordinates for drawing a lily
+#' # return the default coordinates drawing the circle arches composing a lily
 #' lily()
-#'
 #' # change the line type of the lily
-#'
 #' lily(lty = 3)
-#' }
 lily <- function(lwd = 3, lty = 1) {
   value <-cof( horizontal_eight(lwd = lwd, lty = 1),
                vertical_eight(lwd = lwd, lty = 1))
@@ -26,25 +22,21 @@ lily <- function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates a single lily
+#' @describeIn lily Define the coordinates a single lily
 #'
-#' Define the coordinates of the circle sections composing a lily, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing the circle arches composing a single lily, to be used in shape()
 #'
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #'
-#' @return Return the coordinates for drawing a single lily
+#' @return Return the coordinates for drawing the circle arches composing a single lily, to be used in shape()
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a single lily
 #' s_lily()
-#'
 #' # change the line type of the single lily
-#'
 #' s_lily(lty = 3)
-#' }
 s_lily <- function(lwd = 3, lty = 1) {
   value <-cof( s_horizontal_eight(lwd = lwd, lty = 1),
                s_vertical_eight(lwd = lwd, lty = 1),
@@ -56,26 +48,21 @@ s_lily <- function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates of an up petal
+#' Define the coordinates of petals
 #'
-#' Define the coordinates of the circle sections composing an up petal
+#' Define the coordinates for drawing the circle arches composing some petals
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
 #' @return Return the coordinates for drawing an up petal
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # return the default coordinates for drawing an up petal
+#' # return the default coordinates for drawing the circle arches composing an up petal
 #' up_petal()
-#'
 #' # change the line type of the up petal
-#'
 #' up_petal(lty = 3)
-#' }
-up_petal = function(lwd = 3, lty = 1) {
+up_petal <- function(lwd = 3, lty = 1) {
  value =  cof(v_arc_left_up(lwd = lwd, lty = lty),
         v_arc_right_up(lwd = lwd, lty = lty),
         name="up_petal",
@@ -86,26 +73,21 @@ up_petal = function(lwd = 3, lty = 1) {
 }
 
 
-#' Define the coordinates of a down petal
+#' @describeIn up_petal Define the coordinates of a down petal
 #'
-#' Define the coordinates of the circle sections composing a down petal
+#' Define the coordinates for drawing the circle arches composing a down petal
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing a down petal
+#' @return Return the coordinates for drawing  the circle arches composing a down petal
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a down petal
 #' down_petal()
-#'
 #' # change the line type of the down petal
-#'
 #' down_petal(lty = 3)
-#' }
-down_petal = function(lwd = 3, lty = 1) {
+down_petal <- function(lwd = 3, lty = 1) {
   value =  cof(v_arc_left_down(lwd = lwd, lty = lty),
               v_arc_right_down(lwd = lwd, lty = lty),
                name="down_petal",
@@ -115,26 +97,21 @@ down_petal = function(lwd = 3, lty = 1) {
   value
 }
 
-#' Define the coordinates of a left petal
+#' @describeIn up_petal Define the coordinates of a left petal
 #'
-#' Define the coordinates of the circle sections composing a left petal
+#' Define the coordinates for drawing the circle arches composing a left petal
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing a left petal
+#' @return Return the coordinates for drawing the circle arches composing a left petal
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a left petal
 #' left_petal()
-#'
 #' # change the line type of the left petal
-#'
 #' left_petal(lty = 3)
-#' }
-left_petal = function(lwd = 3, lty = 1) {
+left_petal <- function(lwd = 3, lty = 1) {
   value =  cof(h_arc_left_down(lwd = lwd, lty = lty),
                h_arc_left_up(lwd = lwd, lty = lty),
                name="left_petal",
@@ -145,24 +122,19 @@ left_petal = function(lwd = 3, lty = 1) {
 }
 #' Define the coordinates of a right petal
 #'
-#' Define the coordinates of the circle sections composing a right petal
+#' Define the coordinates for drawing the circle arches composing a right petal
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing a right petal
+#' @return Return the coordinates for drawing the circle arches composing a right petal
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a right petal
 #' right_petal()
-#'
 #' # change the line type of the right petal
-#'
 #' right_petal(lty = 3)
-#' }
-right_petal = function(lwd = 3, lty = 1) {
+right_petal <- function(lwd = 3, lty = 1) {
   value =  cof(h_arc_right_down(lwd = lwd, lty = lty),
                h_arc_right_up(lwd = lwd, lty = lty),
                name="right_petal",
@@ -171,26 +143,21 @@ right_petal = function(lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a miley
+#' @describeIn up_petal description Define the coordinates of a miley
 #'
-#' Define the coordinates of the circle sections composing a miley
+#' Define the coordinates for drawing the petals composing a miley
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing a miley made of petals
+#' @return Return the coordinates for drawing the petals composing a miley
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a right petal
 #' miley()
-#'
 #' # change the line type of the right petal
-#'
 #' miley(lty = 3)
-#' }
-miley = function(lwd = 3, lty = 1) {
+miley <- function(lwd = 3, lty = 1) {
   value = cof(down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               up_petal(lwd = lwd, lty = lty),
@@ -201,24 +168,19 @@ miley = function(lwd = 3, lty = 1) {
 }
 #' Define the coordinates a single miley
 #'
-#' Define the coordinates of the circle sections composing a miley, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing the petals composing a single miley, to be used in shape()
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing a single miley
+#' @return Return the coordinates for drawing the petals composing a single miley
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # return the default coordinates for drawing a single miley
+#' # return the default coordinates for drawing the petals composing a single miley
 #' s_miley()
-#'
 #' # change the line type of the single miley
-#'
 #' s_miley(lty = 3)
-#' }
-s_miley = function(lwd = 3, lty = 1) {
+s_miley <- function(lwd = 3, lty = 1) {
   value = cof(down_petal(lwd = lwd, lty = lty),
               left_petal(lwd = lwd, lty = lty),
               up_petal(lwd = lwd, lty = lty),
