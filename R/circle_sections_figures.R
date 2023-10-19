@@ -1,27 +1,25 @@
 #' Coordinates of a pizza slice
 #'
-#' Define the coordinates of a circle section
+#' Define the coordinates for drawing a circle section
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param size.y The length of the x-axis. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param theta1 Starting angle of the circle section. Default is pi/4.
-#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 3*pi/4.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
+#' @param size.y An integer giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 0
+#' @param pos.x Position on the x axis. Default is 0
+#' @param pos.y Position on the y axis, Default is 0
+#' @param theta1 Starting angle of the circle section. Default is \eqn{\frac{\pi}{4}}
+#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is  \eqn{\frac{3\pi}{4}}
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line)
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @return The coordinates of a circle section
+#' @return Return the coordinates for drawing a circle section
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the pizza slice
 #' slice()
 #' # change the rotation of the pizza slice
 #' slice(theta1 = 3*pi/4, theta2 = 5*pi/4)
-#' }
 slice <- function(size.x =15,
                   size.y = 0,
                   pos.x=0,
@@ -53,29 +51,27 @@ slice <- function(size.x =15,
 }
 #' Coordinates of a pacman
 #'
-#' Define the coordinates of the circle sections for drawing a pacman
+#' Define the coordinates for drawing the circle sections for drawing a pacman
 #'
-#' @param size.x The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).
-#' @param size.y The length of the x-axis. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param theta1 Starting angle of the circle section. Default is pi/4.
-#' @param theta2 Ending angle of the circle section. Default is 7*pi/4.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y An integer giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 0
+#' @param pos.x Position on the x axis. Default is 0
+#' @param pos.y Position on the y axis, Default is 0
+#' @param theta1 Starting angle of the circle section. Default is  \eqn{\frac{\pi}{4}}
+#' @param theta2 Ending angle of the circle section. Default is  \eqn{\frac{7\pi}{4}}
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line)
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd Color of the figure Default is NA which results in a transparent figure
 #'
-#' @return The coordinates of a pacman
+#' @return Return the coordinates for drawing a pacman
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of pacman
 #' slice()
 #' # draw an actual pacman
 #' draw(cof(pacman(shd = "yellow"), dot(pos.y = 6)))
-#' }
 pacman <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
                    size.y = 0,pos.x=0 ,pos.y=0,
                    theta1 = pi/4,
@@ -102,23 +98,22 @@ pacman <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
+
 #' Coordinates of a pizza with four slices
 #'
-#' Define the coordinates of the circle section composing a pizza with four slices
+#' Define the coordinates for drawing the circle sections composing a pizza with four slices
 #'
-#' @param size.x The length of the x-axis. Default is 15.
-#' @param lwd The line width. Default is 3.
-#' @param lty The lime type, default is 1 (solid line).
+#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
+#' @param lwd The line width. Default is 3
+#' @param lty The lime type, default is 1 (solid line)
 #' @param shd Color of the figure Default is NA which results in a transparent figure
 #'
-#' @return The coordinates of four circle sections composing a pizza with four slices
+#' @return Return the coordinates for drawing four circle sections composing a pizza with four slices
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the pizza with four slices
 #' pizza_4()
-#' }
 pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
@@ -128,23 +123,21 @@ pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a single pizza with four slices
+#' @describeIn pizza4 Coordinates of a single pizza with four slices
 #'
-#' Define the coordinates of the circle section composing a pizza with four slices, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing the circle section composing a pizza with four slices, which is forced to be a single figure, to be used in shape()
 #'
 #' @param size.x The length of the x-axis. Default is 15.
 #' @param lwd The line width. Default is 3.
 #' @param lty The lime type, default is 1 (solid line).
 #' @param shd Color of the figure Default is NA which results in a transparent figure
 #'
-#' @return The coordinates of four circle sections composing a single pizza with four slices
+#' @return Return the coordinates for drawing four circle sections composing a single pizza with four slices
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the single pizza with four slices
 #' s_pizza_4()
-#' }
 s_pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
   value <-cof(slice(size.x = size.x,theta1 = 5*pi/4, theta2 = 7*pi/4, shd = shd, lty = lty, lwd = lwd),
               slice(size.x = size.x,theta1 = 3*pi/4, theta2 = 5*pi/4, shd = shd,  lty = lty, lwd = lwd),
@@ -159,29 +152,27 @@ s_pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
 
 #' Coordinates of a downward-facing left semi-circle
 #'
-#' Define the coordinates of a downward-facing left semi-circle
+#' Define the coordinates for drawing a downward-facing left semi-circle
 #'
-#' @param size.x The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).
-#' @param size.y The length of the x-axis. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param theta1 Starting angle of the circle section. Default is pi/4.
-#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is 5*pi/4.
-#' @param shd Color of the figure Default is NA which results in a transparent figure.
-#' @param lwd The line width. Default is 3.
-#' @param lty The line type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y An integer giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 0
+#' @param pos.x Position on the x axis. Default is 0
+#' @param pos.y Position on the y axis, Default is 0
+#' @param theta1 Starting angle of the circle section. Default is \eqn{\frac{\pi}{4}}
+#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is \eqn{\frac{5\pi}{4}}
+#' @param shd Color of the figure Default is NA which results in a transparent figure
+#' @param lwd The line width. Default is 3
+#' @param lty The line type, default is 1 (solid line)
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #'
-#' @return The coordinates a downward-facing left semi-circle
+#' @return Return the coordinates for drawing downward-facing left semi-circle
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the downward-facing left semi-circle
 #' semi_circle()
 #' # change the rotation of the downward-facing left semi-circle
 #' semi_circle(theta1 = pi/2, theta2 = 3*pi/2)
-#' }
 semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                         size.y = 0,
                         pos.x=0 ,pos.y=0,
@@ -212,31 +203,22 @@ semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of a upward-facing left semi-circle
+#' Coordinates of a upward-facing right semi-circle
 #'
-#' Define the coordinates of a upward-facing left semi-circle
+#' Define the coordinates of a upward-facing right semi-circle
 #'
-#' @param size.x The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).
-#' @param size.y The length of the x-axis. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param theta1 Starting angle of the circle section. Default is 5*pi/4.
-#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is pi/4.
-#' @param shd Color of the figure Default is NA which results in a transparent figure.
-#' @param lwd The line width. Default is 3.
-#' @param lty The line type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams semi_circle_top
+#' @param theta1 Starting angle of the circle section. Default is \eqn{\frac{5\pi}{4}}
+#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is \eqn{\frac{\pi}{4}}
 #'
 #' @return The coordinates a upward-facing left semi-circle
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # default coordinates of the upward-facing left semi-circle
-#' semi_circle_inv()
-#' # change the rotation of the upward-facing left semi-circle
-#' semi_circle_inv(theta1 = pi, theta2 = 2*pi)
-#' }
+#' # default coordinates of the upward-facing right semi-circle
+#' semi_circle_bottom_inv()
+#' # change the rotation of the upward-facing right semi-circle
+#' semi_circle_bottom_inv(theta1 = pi, theta2 = 2*pi)
 semi_circle_bottom_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
                                    size.y = 0,
                                    pos.x=0 ,pos.y=0,
@@ -269,24 +251,22 @@ semi_circle_bottom_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 
 #' Coordinates of a pizza with two slices
 #'
-#' Define the coordinates of the circle section composing a pizza with two slices
+#' Define the coordinates for drawing the circle sections composing a pizza with two slices
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x numeric, position on the x axis. Default is 0.
-#' @param pos.y numeric, position the y axis, Default is 0.
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param size.x Define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y Define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
-#' @return The coordinates of two circle sections composing a pizza with two slices
+#' @return Return the coordinates for two circle sections composing a pizza with two slices
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the pizza with two slices
 #' pizza_2()
-#' }
 pizza_2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
@@ -308,26 +288,24 @@ pizza_2 <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a single pizza with two slices
+#' @describeIn pizza2 Coordinates of a single pizza with two slices
 #'
-#' Define the coordinates of the circle section composing a pizza with two slices, which is forced to be a single figure (to be used in shape())
+#' Define the coordinates for drawing the circle section composing a single pizza with two slices, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y numeric, define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
+#' @param size.x Define the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
+#' @param size.y Define the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
-#' @return The coordinates of two circle sections composing a single pizza with two slices
+#' @return Return the coordinates for drawing two circle sections composing a single pizza with two slices
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the single pizza with two slices
 #' s_pizza_2()
-#' }
 s_pizza_2 <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
@@ -353,7 +331,7 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
 }
 #' Coordinates of a downward-facing right semi-circle
 #'
-#' Define the coordinates of a downward-facing right semi-circle
+#' Define the coordinates for drawing a downward-facing right semi-circle
 #'
 #' @param size.x The length of the x-axis. Default is sqrt(square()$ size.x[[1]]^2 /2).
 #' @param size.y The length of the x-axis. Default is 0.

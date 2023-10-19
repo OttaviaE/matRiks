@@ -17,7 +17,7 @@
 #' decof(my_mat)
 #' }
 decof<- function(obj) {
-  if (class(obj) != "figure") {
+  if (inherits(obj$mat.type, "figure") == FALSE) {
     stop("decof can only be applied on object of class figure")
   }
   UseMethod("decof")
