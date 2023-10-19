@@ -1,34 +1,30 @@
 #' Coordinates of a circle
 #'
-#' Define the coordinates of the ellipse within which a circle can be inscribed.
+#' Define the coordinates for drawing a circle
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, position on the x axis. Default is 0.
+#' @param pos.y numeric, position the y axis, Default is 0.
+#' @param theta1 Starting angle of the circle section. Default is \eqn{\frac{\pi}{4}}
+#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is  \eqn{\frac{3\pi}{4}}
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
+#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return Return the coordinates for drawing a circle
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a circle
 #' circle()
-#'
 #' # change the coordinates for drawing a smaller circle
-#'
 #' circle(size.x = 5)
-#' }
-circle <- function(size.x = 10,
-                   size.y = size.x,
-                   pos.x = 0, pos.y = 0, shd = NA,
-                   vis = 1,
-                   lty = 1,
-                   lwd = 3) {
+circle <- function(size.x = 10, size.y = size.x,
+                   pos.x = 0, pos.y = 0,
+                   lty = 1,  lwd = 3,
+                   shd = NA, vis = 1) {
   value <- list(
     shape = "circle",
     size.x = list(size.x),
@@ -52,30 +48,20 @@ circle <- function(size.x = 10,
 
 #' Coordinates of an ellipse
 #'
-#' Define the coordinates an ellipse
+#' Define the coordinates for drawing an ellipse
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 7.
-#' @param rot Rotation of the figure. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @inheritParams circle
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 7
+#' @param rot define the rotation. Default is 0
 #'
-#' @return Return the coordinates fro drawing a ellipse
+#' @return Return the coordinates for drawing a ellipse
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing an ellipse
 #' ellipse()
-#'
 #' # change the coordinates for drawing a smaller ellipse
-#'
 #' ellipse(size.x = 5, size.y = 3)
-#' }
 ellipse <- function(size.x=10,
                     size.y=7,
                     rot=0,
@@ -106,31 +92,20 @@ ellipse <- function(size.x=10,
 
 #' Coordinates of a triangle
 #'
-#' Define the coordinates  of the ellipse within which a triangle can be inscribed.
+#' Define the coordinates for drawing a triangle
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param rot Rotation of the figure. Default is pi/2.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @inheritParams circle
+#' @param rot define the rotation. Default is \eqn{\frac{\pi}{2}}
 #'
 #' @return Return the coordinates for drawing a triangle
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a triangle
 #' triangle()
-#'
 #' # change the coordinates for drawing a smaller triangle
-#'
 #' triangle(size.x = 5)
-#' }
-triangle <- function(size.x=15,
+triangle <- function(size.x=10,
                      size.y=size.x,
                      pos.x = 0,
                      pos.y = 0,
@@ -162,30 +137,19 @@ triangle <- function(size.x=15,
 
 #' Coordinates of a square
 #'
-#' Define the coordinates  of the ellipse within which a square can be inscribed.
+#' Define the coordinates for drawing a square of the ellipse within which a square can be inscribed.
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param rot Rotation of the figure. Default is pi/4.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @inheritParams circle
+#' @param rot define the rotation. Default is \eqn{\frac{pi}{4}}
 #'
 #' @return Return the coordinates for drawing a square
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a square
 #' square()
-#'
 #' # change the coordinates for drawing a smaller square
-#'
 #' square(size.x = 5)
-#' }
 square <- function(size.x= 15,
                    size.y= size.x,
                    rot=pi / 4,
@@ -220,30 +184,21 @@ square <- function(size.x= 15,
 
 #' Coordinates of a luck
 #'
-#' Define the coordinates  of the ellipse within which a luck can be inscribed.
+#' Define the coordinates  for drawing a luck of the ellipse within which a luck can be inscribed.
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10.
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15.
-#' @param rot Rotation of the figure. Default is pi/2.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @param rot define the rotation. Default is \eqn{\frac{pi}{2}}
+#'
+#' @inheritParams circle
 #'
 #' @return Return the coordinates for drawing a luck
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a luck
 #' luck()
-#'
 #' # change the coordinates for drawing a smaller luck
-#'
 #' luck(size.x = 10, size.y = 15)
-#' }
 luck <- function(    size.x=10,
                      size.y=15,
                      rot=pi / 2,
@@ -276,30 +231,20 @@ luck <- function(    size.x=10,
 
 #' Coordinates of a pentagon
 #'
-#' Define the coordinates  of the ellipse within which a pentagon can be inscribed.
+#' Define the coordinates for drawing a pentagon
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param rot Rotation of the figure. Default is pi/2.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @param size.x numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @inheritParams circle
+#' @param rot define the rotation. Default is \eqn{\frac{pi}{2}}
 #'
 #' @return Return the coordinates for drawing a pentagon
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a pentagon
 #' pentagon()
-#'
 #' # change the coordinates for drawing a smaller pentagon
-#'
 #' pentagon(size.x = 10)
-#' }
 pentagon <- function(size.x=15,
                      size.y=size.x,
                      rot=pi / 2,
@@ -331,30 +276,20 @@ pentagon <- function(size.x=15,
 
 #' Coordinates of a hexagon
 #'
-#' Define the coordinates  of the ellipse within which an hexagon can be inscribed.
+#' Define the coordinates for drawing an hexagon
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x.
-#' @param rot Rotation of the figure. Default is 0.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param shd Color of the figure Default is NA which results in a transparent figure
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @inheritParams circle
+#' @param rot define the rotation. Default is 0
 #'
 #' @return Return the coordinates for drawing an hexagon
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a hexagon
 #' hexagon()
-#'
 #' # change the coordinates for drawing a smaller hexagon
-#'
 #' hexagon(size.x = 10)
-#' }
 hexagon <- function(size.x=15,
                     size.y=size.x,
                       rot=0,
