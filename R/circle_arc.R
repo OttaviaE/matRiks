@@ -2,13 +2,10 @@
 #'
 #' Define the coordinates for drawing different circle arches
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2
-#' @param size.y The length of the x-axis. Default is size.x
-#' @param pos.x Position on the x axis. Default is 0
-#' @param pos.y Position on the y axis, Default is 0
-#' @param lwd The line width. Default is 3
-#' @param lty The line type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is square()$size.x[[1]]/2
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#'
+#' @inheritParams slice
 #'
 #' @return Return the coordinates for drawing the left up arch of a circle
 #' @export
@@ -46,13 +43,7 @@ v_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing the right up arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the right up arch of a circle
 #' @export
@@ -89,13 +80,7 @@ v_arc_right_up <- function(size.x=square()$size.x[[1]]/2, size.y=size.x, pos.x =
 #'
 #' Define the coordinates for drawing the left down arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2
-#' @param size.y The length of the x-axis. Default is size.x
-#' @param pos.x Position on the x axis. Default is 0
-#' @param pos.y Position on the y axis, Default is 0
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the left down arch of a circle
 #' @export
@@ -132,13 +117,7 @@ v_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing f the right down arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the right down arch of a circle
 #' @export
@@ -175,13 +154,7 @@ v_arc_right_down <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing the left up arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the left up arch of a circle
 #' @export
@@ -217,13 +190,7 @@ h_arc_left_up <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing the right up arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the right up arch of a circle
 #' @export
@@ -260,13 +227,7 @@ h_arc_right_up <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing the left down arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the left down arch of a circle
 #' @export
@@ -302,13 +263,7 @@ h_arc_left_down <- function(size.x=square()$size.x[[1]]/2,
 #'
 #' Define the coordinates for drawing the right down arch of a circle
 #'
-#' @param size.x The length of the x-axis. Default is square()$size.x[[1]]/2.
-#' @param size.y The length of the x-axis. Default is size.x.
-#' @param pos.x Position on the x axis. Default is 0.
-#' @param pos.y Position on the y axis, Default is 0.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0.
+#' @inheritParams v_arc_left_up
 #'
 #' @return Return the coordinates for drawing the right down arch
 #' @export
