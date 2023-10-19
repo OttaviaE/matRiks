@@ -2,14 +2,14 @@
 #'
 #' Define the coordinates for drawing a dot
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 2
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x
-#' @param pos.x Position on the x axis. Default is 0
-#' @param pos.y Position on the y axis, Default is 0
-#' @param shd Color of the figure Default is "black".
-#' @param vis Integer, indicates whether the object should be visible (1) or not (0). Default is 1
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 2
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
+#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
+#' @param shd character, define the shading of the figure. Default is black
 #'
 #' @return Return the coordinates for drawing a dot
 #' @export
@@ -21,7 +21,7 @@
 #' # change the shade of the dot
 #'
 #' dot(shd = "grey")
-dot <- function(size.x = 2, size.y = size.x,  pos.x = 0, pos.y = 0, shd = "black", lty = 1, lwd = 3, vis = 1) {
+dot <- function(size.x = 2, size.y = size.x,  pos.x = 0, pos.y = 0, lwd = 3, lty = 1,  shd = "black", vis = 1) {
   value <- list(
     shape = "dot",
     size.x = list(size.x),
@@ -47,11 +47,9 @@ dot <- function(size.x = 2, size.y = size.x,  pos.x = 0, pos.y = 0, shd = "black
 #'
 #' Define the coordinates for drawing four dots placed in the vertices of a square
 #'
-#' @param pos.x The x coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13)
-#' @param pos.y The y coordinate on the Cartesian system with origin (0, 0). Default is 13 (-13)
-#' @param shd The shading of the figure. Default is black.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
+#' @inheritParams dot
+#' @param pos.x numeric, position on the x axis. Default is 13 (-13)
+#' @param pos.y numeric, position on the y axis. Default is 13 (-13)
 #'
 #' @return Return the coordinates for drawing a dice with 4 dots
 #' @export
@@ -59,9 +57,7 @@ dot <- function(size.x = 2, size.y = size.x,  pos.x = 0, pos.y = 0, shd = "black
 #' @examples
 #' # return the default coordinates for drawing a dot
 #' dice()
-#'
 #' # change the shade of the dice
-#'
 #' dice(shd = "grey")
 dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
   value <-cof(dot(pos.x = pos.x, pos.y = pos.y, shd = shd, lwd = lwd, lty = lty),
@@ -77,9 +73,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
 #'
 #' Define the coordinates for drawing four dots placed in the vertices of a luck
 #'
-#' @param shd The shading of the figure. Default is black.
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
+#' @inheritParams dice
 #'
 #' @return The coordinates for drawing a dice with 4 dots
 #' @export
@@ -109,25 +103,20 @@ cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
 #'
 #' Define the coordinates for drawing a biscuit (composed of two hexagons)
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x
-#' @param shd Color of the figure Default is black
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 15
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#'
+#' @inheritParams dice
 #'
 #' @return Return the coordinates for drawing a biscuit
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # return the default coordinates for drawing a biscuit
 #' biscuit()
-#'
 #' # change the shade of the biscuit
-#'
 #' biscuit(shd = "grey", lty = 0)
-#' }
-biscuit = function(size.x = 15, size.y = size.x,
+biscuit <- function(size.x = 15, size.y = size.x,
                    shd = "black", lwd = 3, lty = 0) {
   value = cof(hexagon(size.x = size.x,
                       size.y = size.y,
@@ -145,13 +134,7 @@ biscuit = function(size.x = 15, size.y = size.x,
 #'
 #' Define the coordinates for drawing a single biscuit (composed of two hexagons), to be used in shape()
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is size.x
-#' @param pos.x Position on the x axis. Default is 0
-#' @param pos.y Position on the y axis, Default is 0
-#' @param shd Color of the figure Default is black
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3
+#' @inheritParams biscuit
 #'
 #' @return Return the coordinates for drawing a single biscuit
 #' @export
@@ -159,9 +142,7 @@ biscuit = function(size.x = 15, size.y = size.x,
 #' @examples
 #' # return the default coordinates for drawing a single biscuit
 #' s_biscuit()
-#'
 #' # change the shade of the single biscuit
-#'
 #' biscuit(shd = "grey", lty = 0)
 s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10, size.y = size.x, shd = "black", lty = 1, lwd = 3) {
   value <-cof(hexagon(pos.x = pos.x,
@@ -183,23 +164,18 @@ s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10, size.y = size.x, shd = 
 #'
 #' Define the coordinates for drawing a ninja star (composed of two lucks)
 #'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param shd Color of the figure Default is black.
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3.
-#'
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @inheritParams biscuit
 #' @return Return the coordinates for drawing a ninja star
 #' @export
 #'
 #' @examples
 #' # return the default coordinates for drawing a ninja
 #' ninja()
-#'
 #' # change the shade of the ninja
-#'
 #' ninja(shd = "grey", lty = 0)
-ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
+ninja <- function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
               rotate(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty), 3),
               name = "ninja")
@@ -211,12 +187,7 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @describeIn ninja Coordinates of a single ninja
 #'
 #' Define the coordinates for drawing a single ninja star (composed of two lucks (composed of two lucks), to be used in shape()
-#'
-#' @param size.x An integer giving the semi-major axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 10
-#' @param size.y An integer or a vector giving the semi-minor axis of the ellipse for the polygon(s) within which the figure is inscribed. Default is 15
-#' @param shd Color of the figure Default is black
-#' @param lty An integer defining the border line. Default is 1 (solid), can be dotted (2) or dashed (3)
-#' @param lwd An integer defining the width of the border line. Default is 3
+#' @inheritParams ninja
 #'
 #' @return Return the coordinates for drawing a single ninja
 #' @export
@@ -224,9 +195,7 @@ ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #' @examples
 #' # return the default coordinates for drawing a single ninja
 #' s_ninja()
-#'
 #' # change the shade of the single ninja
-#'
 #' s_ninja(shd = "grey", lty = 0)
 s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   value = cof(luck(size.x = size.x, size.y = size.y, shd = shd, lwd = lwd, lty = lty),
@@ -243,11 +212,7 @@ s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #'
 #' Define the coordinates for drawing a star (composed of 4 luck)
 #'
-#' @param size.x The length of the x-axis. Default is 10
-#' @param size.y The length of the x-axis. Default is 15
-#' @param shd The shading of the figure. Default is black
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
+#' @inheritParams ninja
 #'
 #' @return Return the coordinates for drawing star composed of four lucks
 #' @export
@@ -272,11 +237,7 @@ star <- function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 #'
 #' Define the coordinates for drawing a single star (composed of 4 luck), to be used in shape()
 #'
-#' @param size.x The length of the x-axis. Default is 10
-#' @param size.y The length of the x-axis. Default is 15
-#' @param shd The shading of the figure. Default is black
-#' @param lwd The line width. Default is 3
-#' @param lty The lime type, default is 1 (solid line).
+#' @inheritParams star
 #'
 #' @return Return the coordinates for drawing a single star composed of four lucks
 #' @export
