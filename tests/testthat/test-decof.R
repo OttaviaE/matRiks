@@ -5,6 +5,6 @@ test_that("decof works", {
                      size(luck())), "shape")
   m <- com(m1, m2)
   new_obj <- decof(m$Sq1)
-  expect_error(decof(m))
+  expect_error(decof(m), "decof can only be applied to objects of class figure")
   expect_equal(length(new_obj), length(m$Sq1$shape))
 })

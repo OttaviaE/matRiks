@@ -158,9 +158,9 @@ s_pizza_4 <- function(size.x = 15, shd = NA, lwd = 3, lty =1) {
 #'
 #' @examples
 #' # default coordinates of the downward-facing left semi-circle
-#' semi_circle()
+#' semi_circle_top()
 #' # change the rotation of the downward-facing left semi-circle
-#' semi_circle(theta1 = pi/2, theta2 = 3*pi/2)
+#' semi_circle_top(theta1 = pi/2, theta2 = 3*pi/2)
 semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2), size.y = 0,
                         pos.x=0 ,pos.y=0,
                         theta1 = pi/4, theta2 = 5*pi/4,
@@ -237,10 +237,10 @@ semi_circle_bottom_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
 #' Coordinates of a pizza with two slices
 #'
 #' Define the coordinates for drawing the circle sections composing a pizza with two slices
+#'
 #' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 15
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 0
-#'
-#' @inheritParams pizza_4
+#' @inheritParams slice
 #'
 #' @return Return the coordinates for drawing two circle sections composing a pizza with two slices
 #' @export
@@ -318,9 +318,9 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
 #'
 #' @examples
 #' # default coordinates of the downward-facing right semi-circle
-#' semi_circle_inv()
+#' semi_circle_top_inv()
 #' # change the rotation of the downward-facing right semi-circle
-#' semi_circle_inv(theta1 = 0, theta2 = pi/2)
+#' semi_circle_top_inv(theta1 = 0, theta2 = pi/2)
 semi_circle_top_inv <- function(size.x =sqrt(square()$size.x[[1]]^2 /2), size.y = 0,
                                 pos.x=0 ,pos.y=0,
                                 theta1 = 7*pi/4,

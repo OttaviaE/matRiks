@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 library(matRiks)
+library(knitr)
 ```
 
 This vignette illustrates all the circle section figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obtain a single pizza with 2 slices, use the command `s_pizza_2()`. 

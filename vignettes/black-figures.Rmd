@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 library(matRiks)
 ```
 
-This vignette illustrates all the black figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obatin a single biscuit, use the command `s_biscuit()`. 
+This vignette illustrates all the black figures available in the `matRiks` package. To obtain the single figures to use for concatenating the figures, use the prefix `s_` before the command of the figure. For instance, to obtain a single biscuit, use the command `s_biscuit()`. 
 
 ::::{style="display: flex;"}
 

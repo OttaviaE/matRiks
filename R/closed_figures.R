@@ -6,8 +6,6 @@
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
 #' @param pos.x numeric, position on the x axis. Default is 0.
 #' @param pos.y numeric, position the y axis, Default is 0.
-#' @param theta1 Starting angle of the circle section. Default is \eqn{\frac{\pi}{4}}
-#' @param theta2 Ending angle of the circle section (built counterclockwise). Default is  \eqn{\frac{3\pi}{4}}
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0

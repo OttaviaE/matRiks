@@ -11,18 +11,16 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
 #'  str(my_figure)
-#' }
 cof <- function(...,name, single) {
   UseMethod("cof")
 }
@@ -39,18 +37,16 @@ cof <- function(...,name, single) {
 #' @export cof.figure
 #' @export
 #' @examples
-#' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
 #'  str(my_figure)
-#' }
 cof.figure <- function( ...,name=NULL, single=FALSE) {
   if(single==TRUE)
   {
@@ -78,11 +74,11 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
@@ -158,11 +154,11 @@ com.matriks <- function(...) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
@@ -230,11 +226,11 @@ concatenation.double <- function(...) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
@@ -256,11 +252,11 @@ cof.double <- function(...) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
@@ -284,11 +280,11 @@ cof.numeric <- function(...) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure
@@ -309,11 +305,11 @@ concatenation.character <- function(...) {
 #' @examples
 #' \dontrun{
 #' # concatenate figures without creating a new figure
-#' new_figure <- cof(suqare(), size(malta(), 2))
+#' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
 #' str(new_figure)
 #' # concatenate figures and create a new figure
-#' my_figure <- cof(suqare(), size(malta(), 2),
+#' my_figure <- cof(square(), size(malta(), 2),
 #'                   single = TRUE,
 #'                    name = "my_figure")
 #' # structure of new_figure

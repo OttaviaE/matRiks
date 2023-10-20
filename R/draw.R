@@ -48,13 +48,11 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #'
 #'
 #' @examples
-#' \dontrun{
 #' # draw a circle
 #' draw.figure(circle())
 #'
 #' # draw a circle inside the other
 #' draw.figure(size(circle(), 2), canvas = FALSE)
-#' }
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
                        hide = FALSE,
                        bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
