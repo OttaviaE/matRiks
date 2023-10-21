@@ -1,40 +1,35 @@
-#' Method for changing color
+#' Change shade
+#'
+#' Change the shade of a figure
 #'
 #' @param obj The figure
 #' @param ... other arguments
 #'
-#' @return l
+#' @return Return the original figure with the inverted shade
 #' @export change_color
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # draw a square with inverted color
-#'
 #' draw(change_color(square()))
-#'
-#' }
 change_color <- function(obj, ...) {
   UseMethod("change_color")
 }
 
 
-#' Change color
+#' @describeIn change_color Change shade
+#'
+#' Change the shade of a figure
 #'
 #' @param obj The figure
 #' @param ... other arguments
 #'
-#' @return Return a figure with an inverted color
+#' @return Return the original figure with the inverted shade
 #' @export change_color.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # draw a square with inverted color
-#'
 #' draw(change_color(square()))
-#'
-#' }
 change_color.figure <- function(obj, ...) {
   if (any(is.na(unlist(obj$shade))) == TRUE) {
     obj <- shade(obj, 3)

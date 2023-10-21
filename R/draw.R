@@ -19,21 +19,17 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # draw a circle
 #' draw(circle())
-#'
-#' # draw a circle inside the other
+#' # draw a circle inside the first circle
 #' draw(size(circle(), 2), canvas = FALSE)
-#' }
 draw <- function(obj, main = NULL, canvas = TRUE,
                  hide = FALSE,
                  bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
   UseMethod("draw")
 }
 
-
-#' Draw figure
+#' @describeIn draw Draw figure
 #'
 #' Draw a figure
 #'
@@ -52,13 +48,11 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #'
 #'
 #' @examples
-#' \dontrun{
 #' # draw a circle
 #' draw.figure(circle())
 #'
 #' # draw a circle inside the other
 #' draw.figure(size(circle(), 2), canvas = FALSE)
-#' }
 draw.figure<- function(obj, main = NULL, canvas = TRUE,
                        hide = FALSE,
                        bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
@@ -86,7 +80,7 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
   }
 }
 
-#' Draw Matriks
+#' @describeIn draw Draw Matriks
 #'
 #' Draw the matriks
 #'
@@ -150,7 +144,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 }
 
 
-#' Draw responses
+#' @describeIn draw Draw responses
 #'
 #' Draw the response list
 #'

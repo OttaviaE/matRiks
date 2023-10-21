@@ -9,16 +9,15 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
+#' my_mat1 <- mat_apply(triangle(), hrules = "size")
+#' my_mat2 <- mat_apply(dot(), hrules = "shade")
+#' my_mat <- com(my_mat1, my_mat2)
 #' # Return the figures composing the first cell of the matriks
-#' decof(my_mat)
-#' }
+#' decof(my_mat$Sq2)
 decof<- function(obj) {
-  if (inherits(obj$mat.type, "figure") == FALSE) {
-    stop("decof can only be applied on object of class figure")
+  if (inherits(obj, "figure") == FALSE) {
+    stop("decof can only be applied to objects of class figure")
   }
   UseMethod("decof")
 }
@@ -29,6 +28,7 @@ decof<- function(obj) {
 #'
 #' @export decof.figure
 #' @export
+#'
 decof.figure<-function(obj) {
 
   if(length(obj$shape)==1){
