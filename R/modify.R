@@ -3,7 +3,7 @@
 #' Change the visibility of a figure from 1 to 0
 #'
 #' @param obj A figure composed of different figures
-#' @param index The index of the element to hide
+#' @param index integer, the index of the element to hide
 #'
 #' @return The starting object with a hidden figure
 #' @export hide
@@ -24,7 +24,7 @@ hide<- function(obj,index) {
 #' Change the visibility of a figure from 1 to 0
 #'
 #' @param obj A figure composed of different figures
-#' @param index The index of the element to hide
+#' @param index integer, the index of the element to hide
 #'
 #' @return The starting object with a hidden figure
 #' @export hide.figure
@@ -52,7 +52,7 @@ hide.figure<-function(obj,index="Full")
 #' Change the visibility of a figure from 0 to 1
 #'
 #' @param obj A figure composed of different figures
-#' @param index The index of the element to show
+#' @param index integer, the index of the element to hide
 #'
 #' @return The starting object with one more visible figure
 #' @export show
@@ -68,12 +68,12 @@ hide.figure<-function(obj,index="Full")
 show<- function(obj,index) {
   UseMethod("show")
 }
-#' Show figures
+#' @describeIn show Show figures
 #'
 #' Change the visibility of a figure from 0 to 1
 #'
 #' @param obj A figure composed of different figures
-#' @param index The index of the element to show
+#' @param index integer, the index of the element to hide
 #'
 #' @return The starting object with one more visible figure
 #' @export show.figure
@@ -119,7 +119,7 @@ show.figure<-function(obj,index="Full")
 replace <- function(obj,index,replacement,visible) {
   UseMethod("replace")
 }
-#' Replace figures
+#' @describeIn replace Replace figures
 #'
 #' Replace a figure with another figure
 #'

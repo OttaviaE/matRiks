@@ -2,10 +2,10 @@
 #'
 #' Define the coordinates for drawing the circle arches composing a lily
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
-#' @return Return the coordinates drawing the circle arches composing a lily
+#' @return Return the coordinates for drawing the circle arches composing a lily
 #' @export
 #'
 #' @examples
@@ -26,8 +26,8 @@ lily <- function(lwd = 3, lty = 1) {
 #'
 #' Define the coordinates for drawing the circle arches composing a single lily, to be used in shape()
 #'
-#' @param lwd integer, define the line width of the figure. Default is 3.
-#' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 1 (solid line)
 #'
 #' @return Return the coordinates for drawing the circle arches composing a single lily, to be used in shape()
 #' @export

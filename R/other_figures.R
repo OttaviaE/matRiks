@@ -216,7 +216,7 @@ s_malta <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #'
 #' Define the coordinates for drawing an axe
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10.
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 15
 #' @param pos.x numeric, define the position on the x axis. Default is 0
 #' @param pos.y numeric, define the position on the y axis. Default is 0
 #' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
@@ -249,12 +249,12 @@ axe <- function(size.x = 15, pos.x = 0,
 #'
 #' Define the coordinates for drawing a single axe, to be used in shape()
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 15
 #' @param pos.x numeric, define the position on the x axis. Default is 0
-#' @param pos.y numeric, position the y axis, Default is 0
+#' @param pos.y numeric, define the position on the y axis. Default is 0
+#' @param shd character, define the color of the figure. Default is NA, which results in a transparent figure
 #' @param lwd integer, define the line width of the figure. Default is 3
 #' @param lty integer, define the line type of the figure, default is 1 (solid line)
-#' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
 #'
 #' @return Return the coordinates for drawing a single axe
 #' @export

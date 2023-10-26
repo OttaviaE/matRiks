@@ -183,13 +183,13 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #'
 #' @examples
 #' # Three figures, only the first is shown
-#' draw(shape(cof(s.lily(), square(), s.star())))
+#' draw(shape(cof(s_lily(), square(), s_star())))
 #'
 #' # Show the third figure (star)
-#' draw(shape(cof(s.lily(), square(), s.star()), n = 3))
+#' draw(shape(cof(s_lily(), square(), s_star()), n = 3))
 #'
 #' # Show the first and the second figures
-#'  draw(shape(cof(s.lily(), square(), s.star()), n = c(1,2)))
+#'  draw(shape(cof(s_lily(), square(), s_star()), n = c(1,2)))
 shape <- function(fig,n, rule, ...) {
   UseMethod("shape")
 }
@@ -379,7 +379,7 @@ margin.figure <-function(fig,n,rule,...){
 #' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatenation of figures to which the logical operation is applied. n=3 is the result of the operation.
 #' @param rule character, logic rule to be applied, either `AND`, `OR`, `XOR`
 #' @param seed integer, Set the random seed so that the permutations are consistent
-#'
+#' @param ... Other arguments
 #' @return An object that is the logical combination of the figures
 #' @export logic
 #' @export
@@ -398,6 +398,7 @@ logic <- function(fig,n,rule,seed,...) {
 #' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatanations of figures to which the logical operation is applied. n=3 is the result of the operation.
 #' @param rule character, logic rule to be applied, either `AND`, `OR`, `XOR`
 #' @param seed integer, Set the random seed so that the permutations are consistent
+#' @param ... Other arguments
 #' @return An object that is the logical combination of the figures
 #'
 #' @export logic.figure
@@ -453,7 +454,7 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 identity <- function(fig,...) {
   UseMethod("identity")
 }
-#' Identity figure
+#' @describeIn identity Identity figure
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
 #' @param ... Other arguments

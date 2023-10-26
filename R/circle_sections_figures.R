@@ -56,7 +56,7 @@ slice <- function(size.x =15,
 #' Define the coordinates for drawing the circle sections for drawing a pacman
 #'
 #' @param size.x integer, length of the semi-major axis of the ellipse within which the figure is inscribed. Default is sqrt(square()$ size.x[[1]]^2 /2)
-#' @param size.y integer, length of the semi-mino axis of the ellipse within which the figure is inscribed. Default is 0
+#' @param size.y integer, length of the semi-minor axis of the ellipse within which the figure is inscribed. Default is 0
 #' @param theta1 Starting angle of the circle section. Default is  \eqn{\frac{\pi}{4}}
 #' @param theta2 Ending angle of the circle section. Default is  \eqn{\frac{7\pi}{4}}
 #' @inheritParams slice
@@ -188,7 +188,7 @@ semi_circle_top <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2), size.y = 0
   value
 }
 
-#' Coordinates of an upward-facing right semi-circle
+#' @describeIn semi_circle_bottom Coordinates of an upward-facing right semi-circle
 #'
 #' Define the coordinates fr drawing an upward-facing right semi-circle
 #'
@@ -234,7 +234,7 @@ semi_circle_bottom_inv <- function(size.x =sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of a pizza with two slices
+#' @describeIn pizza_4 Coordinates of a pizza with two slices
 #'
 #' Define the coordinates for drawing the circle sections composing a pizza with two slices
 #'
@@ -269,7 +269,7 @@ pizza_2 <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn pizza_2 Coordinates of a single pizza with two slices
+#' @describeIn pizza_4 Coordinates of a single pizza with two slices
 #'
 #' Define the coordinates for drawing the circle section composing a single pizza with two slices, to be used in shape()
 #'
@@ -305,7 +305,7 @@ s_pizza_2 <- function(size.x = 15, size.y = 0,
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a downward-facing right semi-circle
+#' @describeIn semi_circle_top Coordinates of a downward-facing right semi-circle
 #'
 #' Define the coordinates for drawing a downward-facing right semi-circle
 #'
@@ -396,7 +396,7 @@ semi_circle_bottom <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of an inverse pizza with two slices
+#' @describeIn pizza_4 Coordinates of an inverse pizza with two slices
 #'
 #' Define the coordinates for drawing the circle sections composing an inverse pizza with two slices
 #'
@@ -429,7 +429,7 @@ pizza_2_inv <- function(size.x = 15, size.y = size.x,
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn pizza_2_inv Coordinates of a single inverse pizza with two slices
+#' @describeIn pizza_4 Coordinates of a single inverse pizza with two slices
 #'
 #' Define the coordinates for drawing the circle sections composing an inverse pizza with two slices, to be used in shape()
 #'

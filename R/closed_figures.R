@@ -4,9 +4,9 @@
 #'
 #' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
-#' @param pos.x numeric, position on the x axis. Default is 0.
-#' @param pos.y numeric, position the y axis, Default is 0.
-#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param pos.x numeric, position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
+#' @param lwd integer, define the line width of the figure. Default is 3
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd character, define the shading of the figure. Default is NA which results in a transparent figure
@@ -185,7 +185,7 @@ square <- function(size.x= 15,
 #' Define the coordinates  for drawing a luck of the ellipse within which a luck can be inscribed.
 #'
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
-#' @param rot define the rotation. Default is \eqn{\frac{pi}{2}}
+#' @param rot define the rotation. Default is \eqn{\frac{\pi}{2}}
 #'
 #' @inheritParams circle
 #'
@@ -233,7 +233,7 @@ luck <- function(    size.x=10,
 #'
 #' @param size.x numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
 #' @inheritParams circle
-#' @param rot define the rotation. Default is \eqn{\frac{pi}{2}}
+#' @param rot define the rotation. Default is \eqn{\frac{\pi}{2}}
 #'
 #' @return Return the coordinates for drawing a pentagon
 #' @export
@@ -276,7 +276,8 @@ pentagon <- function(size.x=15,
 #'
 #' Define the coordinates for drawing an hexagon
 #'
-#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @param size.x numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
 #' @inheritParams circle
 #' @param rot define the rotation. Default is 0
 #'

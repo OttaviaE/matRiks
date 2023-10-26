@@ -1,14 +1,12 @@
 Package: matRiks
 Type: Package
-Title: Generates Raven-Like Stimuli According to Rules
+Title: Generates Raven-Like Matrices According to Rules
 Version: 0.1.0
 Author: Andrea Brancaccio [aut, ctb, cph]
         Ottavia M. Epifania [aut, ctb, com]
         Debora de Chiusole [ctb]
 Maintainer: Andrea Brancaccio <ottavia.epifania@unipd.it>
-Description: Generates Raven like stimuli according to different rules and the response list associated to the matrix. 
-    The package can generate matrices composed of 4 or 9 cells, along with a response list of 11 elements (the correct response + 10 distractros).
-    The matrices can be generated according to both logical rules (i.e., the relastionships between the elements in the matrix are manipulated to create the matrix) and visuospatial rules (i.e., the visual or spatial charcateristics of the elements are manipulated to generate the matrix).
+Description: Generates Raven like matrices according to different rules and the response list associated to the matrix. The package can generate matrices composed of 4 or 9 cells, along with a response list of 11 elements (the correct response + 10 distractros). The matrices can be generated according to both logical rules (i.e., the relastionships between the elements in the matrix are manipulated to create the matrix) and visuospatial rules (i.e., the visual or spatial charcteristics of the elements are manipulated to generate the matrix).
     The graphical elements of the matRiks package are based on the 'DescTools' package.
 License: MIT + file LICENSE
 Encoding: UTF-8

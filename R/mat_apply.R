@@ -20,16 +20,16 @@ mat_apply<- function(Sq1,
   UseMethod("mat_apply")
 }
 
-#' Apply rule to generate a matriks (method)
+#' @describeIn mat_apply Apply rule to generate a matriks (method)
 #'
 #' Apply a rule or a set of rules to a figure to create a matriks
 #'
 #' @param Sq1 the figure(s) on which the rule should be applied for creating the matriks
 #' @param mat.type integer, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
-#' @param hrules character, the rule(s) to be applied horizontally
-#' @param vrules character, the rule(s) to be applied vertically
+#' @param hrules character, the rule(s) to be applied horizontally. Default is identity
+#' @param vrules character, the rule(s) to be applied vertically. Default is identity
 #'
-#' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
+#' @return An object of class matriks of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
 #' @export mat_apply.figure
 #' @export
 #'

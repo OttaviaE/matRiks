@@ -4,7 +4,7 @@
 #'
 #' @inheritParams ic_inc
 #'
-#' @return An object of class responses of length 4, which contains the incomplete correlate distractors of a matriks (IC-Inc, IC-Flip, IC-Neg, IC-Size). . If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
+#' @return An object of class responses of length 4, which contains the incomplete correlate distractors of a matriks (IC-Inc, IC-Flip, IC-Neg, IC-Size). If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic
 #' @export
 #'

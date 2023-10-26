@@ -90,7 +90,7 @@ hline <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn vline Coordinates of a cross
+#' Coordinates of a cross
 #'
 #' Define the coordinates for drawing a cross
 #'
@@ -122,7 +122,7 @@ cross <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' @describeIn vline Coordinates of a square composed of 4 lines
+#' @describeIn square Coordinates of a square composed of 4 lines
 #'
 #' Define the coordinates for drawing a square composed of 4 lines
 #'
@@ -258,7 +258,7 @@ diagline_inv <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   value
 }
 
-#' Coordinates of an X
+#' @describeIn cross Coordinates of an X
 #'
 #' Define the coordinates for drawing an X
 #'
@@ -286,7 +286,7 @@ X <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a luck composed of 4 lines
+#' @describeIn luck Coordinates of a luck composed of 4 lines
 #'
 #' Define the coordinates for drawing of a luck composed of 4 lines
 #'

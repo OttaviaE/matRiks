@@ -99,7 +99,7 @@ cof.character <- function(...) {
 #'
 #' @param ... the matrices to be concatenated
 #'
-#' @return Return an object of class matriks resulting from the hierarchical concatenation of the original matrices
+#' @return An object of class matriks resulting from the hierarchical concatenation of the original matrices
 #'
 #' @export com
 #' @export
@@ -122,7 +122,7 @@ com <- function(...) {
 #'
 #' @param ... the matrices to be concatenated
 #'
-#' @return Return an object of class matriks resulting from the hierarchical concatenation of the original matrices
+#' @return An object of class matriks resulting from the hierarchical concatenation of the original matrices
 #'
 #' @export com.matriks
 #' @export
@@ -249,7 +249,7 @@ concatenation.character <- function(...) {
 
 #' @describeIn cof Concatenation of stuff
 #'
-#' @param ... The objects of class integer to be concatenated
+#' @param ... The to be concatenated
 #'
 #' @export concatenation.integer
 #' @export

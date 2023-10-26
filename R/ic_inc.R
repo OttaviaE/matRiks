@@ -1,4 +1,4 @@
-#' Incomplete correlate incomplete distractor (method)
+#' @describeIn ic Incomplete correlate incomplete distractor (method)
 #'
 #' Generate incomplete correlate incomplete distractor from a matriks
 #'
@@ -20,7 +20,7 @@
 ic_inc <- function(obj, ...) {
   UseMethod("ic_inc")
 }
-#' @describeIn ic_inc Incomplete correlate incomplete distractor
+#' @describeIn ic Incomplete correlate incomplete distractor
 #'
 #' Generate incomplete correlate incomplete distractor from a matriks
 #'

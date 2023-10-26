@@ -1,4 +1,4 @@
-#' Incomplete correlate negative distractor (method)
+#' @describeIn ic Incomplete correlate negative distractor (method)
 #'
 #' Generate incomplete negative incomplete distractor from a matriks
 #'
@@ -18,7 +18,7 @@
 ic_neg <- function(obj, ...) {
   UseMethod("ic_neg")
 }
-#' @describeIn ic_neg Incomplete correlate negative distractor
+#' @describeIn ic Incomplete correlate negative distractor
 #'
 #' Generate incomplete negative incomplete distractor from a matriks
 #'

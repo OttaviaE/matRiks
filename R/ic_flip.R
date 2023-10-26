@@ -1,4 +1,4 @@
-#' Incomplete correlate flip distractor (method)
+#' @describeIn ic Incomplete correlate flip distractor (method)
 #'
 #' Generate incomplete correlate flip distractor from a matriks
 #'
@@ -19,7 +19,7 @@ ic_flip <- function(obj, ...) {
   UseMethod("ic_flip")
 }
 
-#' @describeIn ic_flip Incomplete correlate flip distractor
+#' @describeIn ic Incomplete correlate flip distractor
 #'
 #' Generate incomplete correlate flip distractor from a matriks
 #'

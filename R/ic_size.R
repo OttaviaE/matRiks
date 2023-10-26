@@ -1,4 +1,4 @@
-#' Incomplete correlate size distractor (method)
+#' @describeIn ic Incomplete correlate size distractor (method)
 #'
 #' Generate incomplete size incomplete distractor from a matriks
 #'
@@ -17,7 +17,7 @@ ic_size <- function(obj, ...) {
   UseMethod("ic_size")
 }
 
-#' @describeIn ic_size  Size incomplete correlate
+#' @describeIn ic Incomplete correlate size
 #'
 #' Generate incomplete correlate size distractor of a matrix
 #'

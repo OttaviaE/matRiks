@@ -6,7 +6,7 @@
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
 #' @param pos.x numeric, position on the x axis. Default is 0
 #' @param pos.y numeric, position the y axis, Default is 0
-#' @param lwd integer, define the line width of the figure. Default is 3.
+#' @param lwd integer, define the line width of the figure. Default is 3
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd character, define the shading of the figure. Default is black
@@ -69,7 +69,7 @@ dice <- function(pos.x = 13, pos.y = 13, shd = "black", lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Coordinates of a cross dice with four dots
+#' @describeIn dice Coordinates of a cross dice with four dots
 #'
 #' Define the coordinates for drawing four dots placed in the vertices of a luck
 #'
@@ -103,10 +103,12 @@ cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
 #'
 #' Define the coordinates for drawing a biscuit (composed of two hexagons)
 #'
-#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 15
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
-#'
-#' @inheritParams dice
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 0
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
+#' @param shd character, define the shading of the figure. Default is black
 #'
 #' @return Return the coordinates for drawing a biscuit
 #' @export
@@ -116,7 +118,7 @@ cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
 #' biscuit()
 #' # change the shade of the biscuit
 #' biscuit(shd = "grey", lty = 0)
-biscuit <- function(size.x = 15, size.y = size.x,
+biscuit <- function(size.x = 10, size.y = size.x,
                    shd = "black", lwd = 3, lty = 0) {
   value = cof(hexagon(size.x = size.x,
                       size.y = size.y,
@@ -134,7 +136,14 @@ biscuit <- function(size.x = 15, size.y = size.x,
 #'
 #' Define the coordinates for drawing a single biscuit (composed of two hexagons), to be used in shape()
 #'
-#' @inheritParams biscuit
+#' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
+#' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
+#' @param pos.x numeric, position on the x axis. Default is 0
+#' @param pos.y numeric, position the y axis, Default is 0
+#' @param lwd integer, define the line width of the figure. Default is 3
+#' @param lty integer, define the line type of the figure, default is 0
+#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
+#' @param shd character, define the shading of the figure. Default is black
 #'
 #' @return Return the coordinates for drawing a single biscuit
 #' @export
@@ -167,6 +176,7 @@ s_biscuit <- function(pos.x = 0, pos.y = 0, size.x = 10, size.y = size.x, shd = 
 #' @param size.x numeric, define the semi-major axis of the ellipse within which the figure is inscribed. Default is 10
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is 15
 #' @inheritParams biscuit
+#'
 #' @return Return the coordinates for drawing a ninja star
 #' @export
 #'
@@ -206,8 +216,6 @@ s_ninja = function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
   attr(value, "class") <- "figure"
   value
 }
-
-
 #' Coordinates of a star
 #'
 #' Define the coordinates for drawing a star (composed of 4 luck)

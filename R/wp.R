@@ -2,7 +2,8 @@
 #'
 #' Generate the wrong principle distractors
 #'
-#' @inheritParams ic
+#' @param obj The matriks
+#' @param ... Other arguments
 #'
 #' @return An object of class responses that contains the wrong principle distractors of a matriks (WP-Matrix and WP-Copy). If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export wp
@@ -18,7 +19,7 @@ wp <- function(obj, ...) {
   UseMethod("wp")
 }
 
-#' Wrong principle distractors
+#' @describeIn wp Wrong principle distractors
 #'
 #' Generate the wrong principle distractors
 #'

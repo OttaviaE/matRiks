@@ -16,7 +16,7 @@
 #' # draw the matrix
 #' draw(mat)
 #' # draw the incomplete correlate distractors
-#' draw(repetition(m1))
+#' draw(repetition(mat))
 repetition <- function(obj, ...) {
   UseMethod("repetition")
 }
@@ -27,7 +27,7 @@ repetition <- function(obj, ...) {
 #' @inheritParams ic
 #'
 #' @return An object of class responses of length 3, which contains the repetition distractors of a matriks (R-Left, R-Top, R-Diag). If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
-#' @export repetition
+#' @export repetition.matriks
 #' @export
 #'
 #' @examples
@@ -37,11 +37,8 @@ repetition <- function(obj, ...) {
 #' mat <- com(m1, m2)
 #' # draw the matrix
 #' draw(mat)
-#' # draw the incomplete correlate distractors
-#' draw(repetition(m1))
-repetition <- function(obj, ...) {
-  UseMethod("repetition")
-}
+#' # draw the repetition distractors
+#' draw(repetition(mat))
 repetition.matriks <- function(obj, ...) {
   m_correct = correct(obj)
   n.cell<-obj$mat.type
