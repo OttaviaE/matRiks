@@ -1,49 +1,42 @@
-#' Hide figures
+#' Hide figures (Method)
 #'
-#' Change the visibility of the single objects composing a figure from 1 to 0
+#' Change the visibility of a figure from 1 to 0
 #'
-#'
-#' @param obj The figure of a matrix
+#' @param obj A figure composed of different figures
 #' @param index The index of the element to hide
 #'
-#' @return An object with changed visibility
+#' @return The starting object with a hidden figure
 #' @export hide
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' # concatenate three figures into an object
+#' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
-#' # show the triangle
-#' draw(show(my_shapes, 2))
-#' }
+#' # hide the triangle
+#' draw(hide(my_shapes, 2))
 hide<- function(obj,index) {
   UseMethod("hide")
 }
-
 #' Hide figures
 #'
-#' Change the visibility of the single objects composing a figure from 1 to 0
+#' Change the visibility of a figure from 1 to 0
 #'
-#'
-#' @param obj The figure of a matrix
+#' @param obj A figure composed of different figures
 #' @param index The index of the element to hide
 #'
-#' @return An object with changed visibility
+#' @return The starting object with a hidden figure
 #' @export hide.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' # concatenate three figures into an object
+#' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
-#' # show the triangle
-#' draw(show(my_shapes, 2))
-#' }
+#' # hide the triangle
+#' draw(hide(my_shapes, 2))
 hide.figure<-function(obj,index="Full")
 {
   if(any(index=="Full"))
@@ -54,49 +47,45 @@ hide.figure<-function(obj,index="Full")
   return(obj)
 }
 
-#' Show figures
+#' Show figures (Method)
 #'
-#' Change the visibility of the single objects composing a figure from 0 to 1
+#' Change the visibility of a figure from 0 to 1
 #'
-#' @param obj The figure of a matrix
+#' @param obj A figure composed of different figures
 #' @param index The index of the element to show
 #'
-#' @return An object with changed visibility
+#' @return The starting object with one more visible figure
 #' @export show
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concanate three figures into an object
-#' my_shapes = cof(square(), triangle(), slice())
+#' # concatenate three figures into an object. The first figure is not visible
+#' my_shapes <- cof(square(vis = 0), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
-#' # show the triangle
-#' draw(show(my_shapes, 2))
-#' }
+#' # show the square
+#' draw(show(my_shapes, 1))
 show<- function(obj,index) {
   UseMethod("show")
 }
 #' Show figures
 #'
-#' Change the visibility of the single objects composing a figure from 0 to 1
+#' Change the visibility of a figure from 0 to 1
 #'
-#' @param obj The figure of a matrix
+#' @param obj A figure composed of different figures
 #' @param index The index of the element to show
 #'
-#' @return An object with changed visibility
+#' @return The starting object with one more visible figure
 #' @export show.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concanate three figures into an object (only the first is visble)
-#' my_shapes <- shape(cof(square(), triangle(), slice()))
+#' # concatenate three figures into an object. The first figure is not visible
+#' my_shapes <- cof(square(vis = 0), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
-#' # show the triangle
-#' draw(show(my_shapes, 2))
-#' }
+#' # show the square
+#' draw(show(my_shapes, 1))
 show.figure<-function(obj,index="Full")
 {
   if(any(index=="Full"))
@@ -106,58 +95,51 @@ show.figure<-function(obj,index="Full")
   obj$visible[index]<-rep(1,length(index))
   return(obj)
 }
-#' Replace objects
+#' Replace figures (Method)
 #'
-#' Replace an object in a figure with another object
+#' Replace a figure with another figure
 #'
-#' @param obj The figure of a matrix
-#' @param index The index of the element to replace
-#' @param replacement The name of the figure with which the original one is replaced
-#' @param visible If true it will replace only the visible figure
+#' @inheritParams show
+#' @param replacement The figure with which the original one is replaced
+#' @param visible logical, if TRUE it will replace only the visible figure. Default is FALSE
 #'
 #' @return An object with a changed figure
 #'
-#' @return Return an object with a different figure
+#' @return The starting object with a replaced figure
 #' @export replace
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # concanate three figures into an object
 #' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
 #' # replace the square with a gray pacman
 #' draw(replace(my_shapes, 1, pacman(shd = "grey")))
-#' }
 replace <- function(obj,index,replacement,visible) {
   UseMethod("replace")
 }
-#' Replace objects
+#' Replace figures
 #'
-#' Replace an object in a figure with another object
+#' Replace a figure with another figure
 #'
-#' @param obj The figure of a matrix
-#' @param index The index of the element to replace
-#' @param replacement The name of the figure with which the original one is replaced
-#' @param visible If true it will replace only the visible figure
+#' @inheritParams show
+#' @param replacement The figure with which the original one is replaced
+#' @param visible logical, if TRUE it will replace only the visible figure. Default is FALSE
 #'
 #' @return An object with a changed figure
 #'
-#' @return Return an object with a different figure
+#' @return The starting object with a replaced figure
 #' @export replace.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate three figures into an object
+#' # concanate three figures into an object
 #' my_shapes <- cof(square(), triangle(), slice())
 #' # draw object
 #' draw(my_shapes)
 #' # replace the square with a gray pacman
 #' draw(replace(my_shapes, 1, pacman(shd = "grey")))
-#' }
-
 replace.figure<-function(obj,index,replacement,visible=FALSE)
 {
   if(visible==TRUE)

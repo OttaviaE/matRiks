@@ -1,48 +1,47 @@
-#' Repetion distractors (Method)
+#' Repetition distractors (Method)
 #'
-#' Method for drawing the repetition distractors of a matrix
+#' Generate repetition distractors from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic
 #'
-#' @return A list of length 3 with the three repetition distractors, R-top, R-left, R-diag
+#' @return An object of class responses of length 3, which contains the repetition distractors of a matriks (R-Left, R-Top, R-Diag). If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export repetition
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the repetition distractors
+#' draw(mat)
+#' # draw the incomplete correlate distractors
 #' draw(repetition(m1))
-#' }
 repetition <- function(obj, ...) {
   UseMethod("repetition")
 }
-
-
-#' Repetition distractors
+#' @describeIn repetition Repetition distractors (Method)
 #'
-#' Generates the repetition distractors of a matrix
+#' Generate repetition distractors from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic
 #'
-#' @return A list of length 3 with the three repetition distractors, R-top, R-left, R-diag
-#' @export repetition.matriks
+#' @return An object of class responses of length 3, which contains the repetition distractors of a matriks (R-Left, R-Top, R-Diag). If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
+#' @export repetition
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the repetition distractors
+#' draw(mat)
+#' # draw the incomplete correlate distractors
 #' draw(repetition(m1))
-#' }
+repetition <- function(obj, ...) {
+  UseMethod("repetition")
+}
 repetition.matriks <- function(obj, ...) {
   m_correct = correct(obj)
   n.cell<-obj$mat.type

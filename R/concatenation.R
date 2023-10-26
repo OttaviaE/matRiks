@@ -1,16 +1,17 @@
-#' Cof (Method)
+#' Concatenation of figures (method)
 #'
-#' Concatenation of figures
+#' Concatenation of different figures to create a new figure
 #'
-#' @param ... Vector of figures to be concatened together.
-#' @param name Name of the newely created object (See Details).
-#' @param single Should the objects be collapsed into a single object? Deafult is FALSE
+#' @param ... Vector of figures to be concatenated together
+#' @param name character, name of the figure created with cof()
+#' @param single logical, force the figure to be a single figure to be used in shape(). Default is FALSE
 #'
 #' @return An object of class figure
 #' @export cof
 #' @export
 #'
 #' @examples
+#'
 #' # concatenate figures without creating a new figure
 #' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
@@ -24,18 +25,19 @@
 cof <- function(...,name, single) {
   UseMethod("cof")
 }
-#' @describeIn cof Cof (Method)
+#' @describeIn cof Concatenation of figures (figures)
 #'
-#' Concatenation of figures
+#' Concatenation of different figures to create a new figure
 #'
-#' @param ... The figures to be concatenated
-#' @param name character, the name to assign to the newly created figure. Default is NULL (no name).
-#' @param single logical, define whether the newly created figure is considered as single element to e used in shape() or not. Default is FALSE.
+#' @param ... Vector of figures to be concatenated together
+#' @param name character, name of the figure created with cof()
+#' @param single logical, force the figure to be a single figure to be used in shape(). Default is FALSE
 #'
 #' @return An object of class figure
 #'
 #' @export cof.figure
 #' @export
+#'
 #' @examples
 #' # concatenate figures without creating a new figure
 #' new_figure <- cof(square(), size(malta(), 2))
@@ -61,10 +63,13 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 }
 
 
-#' @describeIn cof Cof character (Method)
+#' @describeIn cof Concatenation of character
 #'
-#' This allow for concatenating matrices
+#' Concatenation of different figures to create a new figure
 #'
+#' @param ... Vector of figures to be concatenated together
+#' @param name character, name of the figure created with cof()
+#' @param single logical, force the figure to be a single figure to be used in shape(). Default is FALSE
 #' @param ... Arguments of the function
 #'
 #' @return A concatenation of character
@@ -72,7 +77,6 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # concatenate figures without creating a new figure
 #' new_figure <- cof(square(), size(malta(), 2))
 #' # structure of new_figure
@@ -83,7 +87,6 @@ cof.figure <- function( ...,name=NULL, single=FALSE) {
 #'                    name = "my_figure")
 #' # structure of new_figure
 #'  str(my_figure)
-#' }
 cof.character <- function(...) {
   obj <- c(...)
   attr(obj, "class") <- "character"
@@ -92,17 +95,16 @@ cof.character <- function(...) {
 
 #' @describeIn cof Concatenation of matrices (Method)
 #'
-#' Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
+#' Hierarchical concatenation of 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
 #'
 #' @param ... the matrices to be concatenated
 #'
-#' @return Return a matrix composed of 2+ matrices
+#' @return Return an object of class matriks resulting from the hierarchical concatenation of the original matrices
 #'
 #' @export com
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create the first layer matrix
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # create the second matrix
@@ -111,22 +113,20 @@ cof.character <- function(...) {
 #' the_mat <- com(m1, m2)
 #' # draw the final matrix
 #' draw(the_mat)
-#'
-#' }
 com <- function(...) {
   UseMethod("com")
 }
 #' @describeIn cof Concatenation of matrices
 #'
-#' Hierarchically concatenates 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
+##' Hierarchical concatenation of 2+ matrices on top of one another. The first matrix is placed on the bottom, the last matrix is placed on top of all other matrices.
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... the matrices to be concatenated
+#'
+#' @return Return an object of class matriks resulting from the hierarchical concatenation of the original matrices
 #'
 #' @export com.matriks
 #' @export
-#'
 #' @examples
-#' \dontrun{
 #' # create the first layer matrix
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # create the second matrix
@@ -135,8 +135,6 @@ com <- function(...) {
 #' the_mat <- com(m1, m2)
 #' # draw the final matrix
 #' draw(the_mat)
-#'
-#' }
 com.matriks <- function(...) {
   obj <- Map("cof", ...)
   attr(obj, "class") <- "matriks"
@@ -144,62 +142,44 @@ com.matriks <- function(...) {
 }
 
 
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation (Method)
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects to be concanted
 #'
 #' @export concatenation
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate figures without creating a new figure
-#' new_figure <- cof(square(), size(malta(), 2))
-#' # structure of new_figure
-#' str(new_figure)
-#' # concatenate figures and create a new figure
-#' my_figure <- cof(square(), size(malta(), 2),
-#'                   single = TRUE,
-#'                    name = "my_figure")
-#' # structure of new_figure
-#'  str(my_figure)
-#' }
+#' # concatenate two characters
+#' concatenation("a", "b")
 concatenation <- function(...) {
   UseMethod("concatenation")
 }
 
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation of lists
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The lists to be concatenated
 #'
 #' @export concatenation.list
 #' @export
 #' @examples
-#' \dontrun{
-#' # create the first layer matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
-#' # create the second matrix
-#' m2 <- mat_apply(size(malta(), 2), vrules = "shade")
-#' # concatenate the matrices
-#' the_mat <- com(m1, m2)
-#' # draw the final matrix
-#' draw(the_mat)
-#'
-#' }
+#' # create some lists
+#' a <- list(letters[c(14,13)], LETTERS[c(4, 3)])
+#' b <- list(letters[c(12, 13)], LETTERS[c(4, 3)])
+#' concatenation(a, b)
 concatenation.list <- function(...) {
   obj <- Map("c", ...)
   return(obj)
 }
 
 
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation of double
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects of class double to be concatenated
 #'
 #' @export concatenation.double
 #' @export
 #' @examples
-#' \dontrun{
 #' # create the first layer matrix
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # create the second matrix
@@ -208,88 +188,60 @@ concatenation.list <- function(...) {
 #' the_mat <- com(m1, m2)
 #' # draw the final matrix
 #' draw(the_mat)
-#'
-#' }
 concatenation.double <- function(...) {
   obj <- c(...)
   attr(obj, "class") <- "double"
   obj
 }
 
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation of double
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects of class double to be concatenated
 #'
-#' @export cof.double
+#' @export concatenation.double
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate figures without creating a new figure
-#' new_figure <- cof(square(), size(malta(), 2))
-#' # structure of new_figure
-#' str(new_figure)
-#' # concatenate figures and create a new figure
-#' my_figure <- cof(square(), size(malta(), 2),
-#'                   single = TRUE,
-#'                    name = "my_figure")
-#' # structure of new_figure
-#'  str(my_figure)
-#' }
+#' # create the first layer matrix
+#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' # create the second matrix
+#' m2 <- mat_apply(size(malta(), 2), vrules = "shade")
+#' # concatenate the matrices
+#' the_mat <- com(m1, m2)
+#' # draw the final matrix
+#' draw(the_mat)
 cof.double <- function(...) {
   obj <- unique(c(...))
   attr(obj, "class") <- "double"
   obj
 }
 
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation of numeric
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects of class numeric to be concatenated
 #'
 #' @export cof.numeric
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate figures without creating a new figure
-#' new_figure <- cof(square(), size(malta(), 2))
-#' # structure of new_figure
-#' str(new_figure)
-#' # concatenate figures and create a new figure
-#' my_figure <- cof(square(), size(malta(), 2),
-#'                   single = TRUE,
-#'                    name = "my_figure")
-#' # structure of new_figure
-#'  str(my_figure)
-#' }
+#' # concatenate two numeric
+#' cof(rnorm(1, 25), rnorm(4, 34))
 cof.numeric <- function(...) {
   obj <- unique(c(...))
   attr(obj, "class") <- "numeric"
   obj
 }
 
-
-
-#' @describeIn cof Concatenation of stuff
+#' @describeIn cof Concatenation of characters
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects of class character to be concatenated
 #'
-#' @export concatenation.character
+#' @export cof.character
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate figures without creating a new figure
-#' new_figure <- cof(square(), size(malta(), 2))
-#' # structure of new_figure
-#' str(new_figure)
-#' # concatenate figures and create a new figure
-#' my_figure <- cof(square(), size(malta(), 2),
-#'                   single = TRUE,
-#'                    name = "my_figure")
-#' # structure of new_figure
-#'  str(my_figure)
-#' }
+#' # concatenate two numeric
+#' cof("a", "b", "d")
 concatenation.character <- function(...) {
   obj <- c(...)
   return(obj)
@@ -297,24 +249,14 @@ concatenation.character <- function(...) {
 
 #' @describeIn cof Concatenation of stuff
 #'
-#' @param ... The matrices to be concatenated
+#' @param ... The objects of class integer to be concatenated
 #'
 #' @export concatenation.integer
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # concatenate figures without creating a new figure
-#' new_figure <- cof(square(), size(malta(), 2))
-#' # structure of new_figure
-#' str(new_figure)
-#' # concatenate figures and create a new figure
-#' my_figure <- cof(square(), size(malta(), 2),
-#'                   single = TRUE,
-#'                    name = "my_figure")
-#' # structure of new_figure
-#'  str(my_figure)
-#' }
+#' # concatenate two numeric
+#' cof(1:3, 22:20)
 concatenation.integer <- function(...) {
   obj <- c(...)
   return(obj)

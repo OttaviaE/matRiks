@@ -1,47 +1,44 @@
-#' Flip incomplete correlate (Method)
+#' Incomplete correlate incomplete distractor (method)
 #'
-#' Method for drawing the incomplete correlate incomplete distractor of a matrix
+#' Generate incomplete correlate incomplete distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_flip
 #'
-#' @return The incomplete correlate incomplete distractor
+#' @return An object of class figure that is the incomplete correlate incomplete distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_inc
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the ic-inc distractor
+#' draw(mat)
+#' # draw the incomplete correlate incomplete distractor
 #' draw(ic_inc(m1))
-#' }
 ic_inc <- function(obj, ...) {
   UseMethod("ic_inc")
 }
-
-#' Flip incomplete correlate
+#' @describeIn ic_inc Incomplete correlate incomplete distractor
 #'
-#' Generate incomplete correlate incomplete distractor of a matrix
+#' Generate incomplete correlate incomplete distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_inc
 #'
-#' @return The incomplete correlate incomplete distractor
+#' @return An object of class figure that is the incomplete correlate incomplete distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_inc.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the ic-inc distractor
+#' draw(mat)
+#' # draw the incomplete correlate incomplete distractor
 #' draw(ic_inc(m1))
-#' }
 ic_inc.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("compose", m_correct$tag) == FALSE) | sum(m_correct$visible) == 1) {

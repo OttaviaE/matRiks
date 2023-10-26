@@ -1,47 +1,40 @@
-#' Negative incomplete correlate (Method)
+#' Incomplete correlate negative distractor (method)
 #'
-#' Method for drawing the incomplete correlate negative distractor of a matrix
+#' Generate incomplete negative incomplete distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_inc
 #'
-#' @return The incomplete correlate negative distractor
+#' @return An object of class figure that is the incomplete correlate negative distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_neg
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the ic-neg distractor
+#' # draw the incomplete correlate negative distractor
 #' draw(ic_neg(m1))
-#' }
 ic_neg <- function(obj, ...) {
   UseMethod("ic_neg")
 }
-
-#' Negative incomplete correlate
+#' @describeIn ic_neg Incomplete correlate negative distractor
 #'
-#' Generate incomplete correlate negative distractor of a matrix
+#' Generate incomplete negative incomplete distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_inc
 #'
-#' @return The incomplete correlate negative distractor
+#' @return An object of class figure that is the incomplete correlate negative distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_neg.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the ic-neg distractor
+#' # draw the incomplete correlate negative distractor
 #' draw(ic_neg(m1))
-#' }
 ic_neg.matriks <- function(obj, ...) {
 
   w <- FALSE

@@ -1,10 +1,10 @@
-#' Split the elements of a figure
+#' Split the elements of a figure (Method)
 #'
 #' Return the elements composing a figure
 #'
-#' @param obj The figure to be split in its single components
+#' @param obj The figure of class figure to be split in its single components
 #'
-#' @return A named list of figures
+#' @return A named list of figures of length equal to the total of shapes in a figure (both visible and not visible)
 #' @export decof
 #' @export
 #'
@@ -22,13 +22,23 @@ decof<- function(obj) {
   UseMethod("decof")
 }
 
-#' Decof
+#' @describeIn decof Split the elements of a figure
 #'
-#' @param obj The object to split (must be a figure, not a matriks)
+#' Return the elements composing a figure
 #'
+#' @param obj The figure of class figure to be split in its single components
+#'
+#' @return A named list of figures of length equal to the total of shapes in a figure (both visible and not visible)
 #' @export decof.figure
 #' @export
 #'
+#' @examples
+#' # apply the size rule on a triangle for creating a matriks with 9 cell
+#' my_mat1 <- mat_apply(triangle(), hrules = "size")
+#' my_mat2 <- mat_apply(dot(), hrules = "shade")
+#' my_mat <- com(my_mat1, my_mat2)
+#' # Return the figures composing the first cell of the matriks
+#' decof(my_mat$Sq2)
 decof.figure<-function(obj) {
 
   if(length(obj$shape)==1){

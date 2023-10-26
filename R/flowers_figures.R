@@ -120,7 +120,7 @@ left_petal <- function(lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' Define the coordinates of a right petal
+#' @describeIn up_petal Define the coordinates of a right petal
 #'
 #' Define the coordinates for drawing the circle arches composing a right petal
 #'
@@ -143,7 +143,7 @@ right_petal <- function(lwd = 3, lty = 1) {
   attr(value, "class") <- "figure"
   value
 }
-#' @describeIn up_petal description Define the coordinates of a miley
+#' Define the coordinates of a miley
 #'
 #' Define the coordinates for drawing the petals composing a miley
 #'
@@ -166,7 +166,7 @@ miley <- function(lwd = 3, lty = 1) {
   attr(value, "class") = "figure"
   value
 }
-#' Define the coordinates a single miley
+#' @describeIn miley Define the coordinates a single miley
 #'
 #' Define the coordinates for drawing the petals composing a single miley, to be used in shape()
 #'

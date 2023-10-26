@@ -1,47 +1,37 @@
-#' Size incomplete correlate (Method)
+#' Incomplete correlate size distractor (method)
 #'
-#' Method for drawing the incomplete correlate size distractor of a matrix
+#' Generate incomplete size incomplete distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_inc
 #'
-#' @return The incomplete correlate size distractor
+#' @return An object of class figure that is the incomplete correlate size distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_size
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
-#' # draw the matrix
-#' draw(m1)
-#' # draw the ic-size distractor
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' # draw the incomplete correlate size distractor
 #' draw(ic_size(m1))
-#' }
 ic_size <- function(obj, ...) {
   UseMethod("ic_size")
 }
 
-#' Size incomplete correlate
+#' @describeIn ic_size  Size incomplete correlate
 #'
 #' Generate incomplete correlate size distractor of a matrix
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_size
 #'
-#' @return The incomplete correlate size distractor
+#' @return An object of class figure that is the incomplete correlate size distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_size.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
-#' # draw the matrix
-#' draw(m1)
-#' # draw the ic-size distractor
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' # draw the incomplete correlate size distractor
 #' draw(ic_size(m1))
-#' }
 ic_size.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (inherits(obj$mat.type, "numeric") == TRUE) {

@@ -1,50 +1,44 @@
-#' Difference (method)
+#' Difference distractor (Method)
 #'
-#' Difference distractors
+#' Generate difference distractor from a matriks
 #'
-#' @param obj the matrikes
-#' @param ... other arguments
+#' @param obj matriks, The matriks for which the distractor is generataed
 #' @param seed seed
+#' @param ... other arguments
 #'
-#' @return The difference distractor of a matrix
+#' @return An object of class figure that is the difference distractor of a matrix
 #' @export difference
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
 #' # draw the difference distractor
 #' draw(difference(m1))
-#' }
-#'
 difference <- function(obj, seed, ...) {
   UseMethod("difference")
 }
 
 
-#' Difference distractors
+#' @describeIn difference Difference distractors
 #'
-#' @param obj the object
-#' @param ... Other arguments
-#' @param seed the seed
+#' @param obj matriks, The matriks for which the distractor is generataed
+#' @param seed seed
+#' @param ... other arguments
 #'
-#' @return The difference distractor of a matrix
+#' @return An object of class figure that is the difference distractor of a matrix
 #' @export difference.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
 #' # draw the difference distractor
 #' draw(difference(m1))
-#' }
-#'
 difference.matriks <- function(obj, seed = 666, ...) {
   set.seed(seed)
   hrules <- gsub(".inv", "", obj$hrule)

@@ -1,8 +1,8 @@
-#' Draw
+#' Draw (Method)
 #'
-#' Draws single figures or a matrix with 9 or 4 cells
+#' Draws single figures, matrices with 9 or 4 cells, or response list of a matriks
 #'
-#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param obj The figure/matriks/response list to be drawn
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
@@ -33,7 +33,7 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #'
 #' Draw a figure
 #'
-#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param obj The figure to be drawn
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
@@ -42,7 +42,7 @@ draw <- function(obj, main = NULL, canvas = TRUE,
 #' @param xlim numeric, change the length of the x axis
 #' @param ... other arguments
 #'
-#' @return A graphic
+#' @return A graphic of the figure
 #' @export draw.figure
 #' @export
 #'
@@ -82,9 +82,9 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 
 #' @describeIn draw Draw Matriks
 #'
-#' Draw the matriks
+#' Draw a matriks
 #'
-#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param obj The matriks to be drawn
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
@@ -93,18 +93,14 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 #' @param xlim numeric, change the length of the x axis
 #' @param ... other arguments
 #'
-#' @return A graphic
+#' @return A graphic of the matriks
 #' @export draw.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # draw a circle
-#' draw.matriks(circle())
-#'
-#' # draw a circle inside the other
-#' draw.matriks(size(circle(), 2), canvas = FALSE)
-#' }
+#' # draw a matriks
+#' my_mat <- mat_apply(cof(circle(), luck(), pacman()), "shade", "shape")
+#' draw(my_mat)
 draw.matriks<- function(obj, main = NULL, canvas = TRUE,
                         hide = FALSE,
                         bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
@@ -144,34 +140,34 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 }
 
 
-#' @describeIn draw Draw responses
+#' @describeIn draw Draw response list
 #'
-#' Draw the response list
+#' Draw the response list of a matriks
 #'
-#' @param obj The figure to be drawn. Can be a single figure, a matrix, or the responses
+#' @param obj The figure/matriks/response list to be drawn
 #' @param main logical, print the title of the drawing. Default is FALSE
 #' @param canvas logical, draw the figure on a new canvas. Default is TRUE
 #' @param hide logical, hide the cell corresponding to the correct response. Default is FALSE
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
-#' @param distractors The selection of distractors you want to print
-#' @param print The print
-#' @param ... Other arguments
+#' @param distractors character, names of the distractors to be printed
+#' @param print logical, print all the distractors together (default, FALSE) or one by one (TRUE)
+#' @param ... other arguments
 #'
-#' @return a list
-#' @export draw.responses
+#' @return A graphic of the matriks
+#' @export draw.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
-#' # create the response list
-#' resp <- response_list(m1)
-#' # draw the response list
-#' draw(resp)
-#' }
+#' # generate a matriks
+#' my_mat1 <- mat_apply(cof(s_axe(), luck(), pacman()), "rotate", "shape")
+#' my_mat2 <- mat_apply(dot(), "shade", "shade")
+#' my_mat <- com(my_mat1, my_mat2)
+#' # generate a response list
+#' my_resp <- response_list(my_mat)
+#' # draw response list
+#' draw(my_resp)
 draw.responses <- function(obj, main = NULL, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,

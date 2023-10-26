@@ -1,47 +1,46 @@
-#' Incomplete correlate (method)
+#' Incomplete correlate distractors (method)
 #'
-#' Method for drawing the incomplete correlate distractors of a matrix
+#' Generate incomplete correlate flip distractor from a matriks
 #'
-#' @param obj Matriks
+#' @inheritParams ic_inc
 #'
-#' @return A list of incomplete correlate distractors to be passed to the draw function
+#' @return An object of class responses of length 4, which contains the incomplete correlate distractors of a matriks (IC-Inc, IC-Flip, IC-Neg, IC-Size). . If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the ic distractor
+#' draw(mat)
+#' # draw the incomplete correlate distractors
 #' draw(ic(m1))
-#' }
 ic <- function(obj) {
   UseMethod("ic")
 }
 
 
-#' Incomplete correlate distractors
+#' @describeIn ic Incomplete correlate distractors
 #'
-#' Generates the incomplete correlate distractors
+#' Generate incomplete correlate flip distractor from a matriks
 #'
-#' @param obj object of class obj
-#' @param ... Other arguments
+#' @inheritParams ic_inc
 #'
-#' @return A list of length 3 composed of the incomplete correlate distractors to be passed to the draw function
-#' @export ic.matriks
+#' @return An object of class responses of length 4, which contains the incomplete correlate distractors of a matriks. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
+#' @export ic
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
+#' m2 <- mat_apply(dot(), "shade")
+#' mat <- com(m1, m2)
 #' # draw the matrix
-#' draw(m1)
-#' # draw the ic distractor
+#' draw(mat)
+#' # draw the incomplete correlate distractors
 #' draw(ic(m1))
-#' }
 ic.matriks <- function(obj, ...) {
   m_correct = correct(obj)
 

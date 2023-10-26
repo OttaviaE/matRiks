@@ -1,9 +1,9 @@
-#' Apply rule
+#' Apply rule to generate a matriks (method)
 #'
-#' Apply a rule or a set of rules to a figure in order to create a matriks
+#' Apply a rule or a set of rules to a figure to create a matriks
 #'
-#' @param Sq1 the figures on which the rule should be applied for creating the matriks
-#' @param mat.type ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
+#' @param Sq1 the figure(s) on which the rule should be applied for creating the matriks
+#' @param mat.type integer, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
 #' @param hrules character, the rule(s) to be applied horizontally
 #' @param vrules character, the rule(s) to be applied vertically
 #'
@@ -12,36 +12,30 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
-#' }
+#' my_mat <- mat_apply(triangle(), mat.type = 9, hrule = "size")
 mat_apply<- function(Sq1,
                              hrules = "identity", vrules = "identity",
                      mat.type=9) {
   UseMethod("mat_apply")
 }
 
-#' Apply rule
+#' Apply rule to generate a matriks (method)
 #'
-#' Apply a rule or a set of rules to a figure in order to create a matriks
+#' Apply a rule or a set of rules to a figure to create a matriks
 #'
-#' @param Sq1 the figures on which the rule should be applied for creating the matriks
+#' @param Sq1 the figure(s) on which the rule should be applied for creating the matriks
+#' @param mat.type integer, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
 #' @param hrules character, the rule(s) to be applied horizontally
 #' @param vrules character, the rule(s) to be applied vertically
-#' @param mat.type ineteger, the type of matriks, either 4-cell matriks or 9-cell matriks (Default is 9)
 #'
 #' @return A list of length 7 (4-cell matriks) or of length 12 (9-cell matriks)
 #' @export mat_apply.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
-#' }
+#' my_mat <- mat_apply(triangle(), mat.type = 9, hrule = "size")
 mat_apply.figure <- function(Sq1,hrules = "identity", vrules = "identity", mat.type=9) {
   #Definition of the matRiks
   obj <- list()

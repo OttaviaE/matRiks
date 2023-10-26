@@ -1,47 +1,41 @@
-#' Flip incomplete correlate (method)
+#' Incomplete correlate flip distractor (method)
 #'
-#' Method for drawing the incomplete correlate flip distractor of a matrix
+#' Generate incomplete correlate flip distractor from a matriks
 #'
-#' @param obj Matriks
-#' @param ... other arguments
+#' @inheritParams difference
 #'
-#' @return The incomplete correlate flip distractor
+#' @return An object of class figure that is the incomplete correlate flip distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_flip
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the ic-flip distractor
+#' # draw the incomplete correalate flip distractor
 #' draw(ic_flip(m1))
-#' }
 ic_flip <- function(obj, ...) {
   UseMethod("ic_flip")
 }
 
-#' Flip incomplete correlate
+#' @describeIn ic_flip Incomplete correlate flip distractor
 #'
-#' Generate incomplete correlate flip distractor of a matrix
+#' Generate incomplete correlate flip distractor from a matriks
 #'
-#' @param obj The matriks
-#' @param ... Other arguments
+#' @inheritParams ic_flip
 #'
-#' @return The incomplete correlate flip distractor
+#' @return An object of class figure that is the incomplete correlate flip distractor of a matrix. If the distractor could not be generated because of the constraints imposed by the matrix, it will be covered by a thick, black X and a warning is given.
 #' @export ic_flip.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # create a matrix
-#' m1 <- mat_apply(hexagon(), hrules = "lty")
+#' m1 <- mat_apply(pacman(), hrules = "lty")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the ic-flip distractor
+#' # draw the incomplete correalate flip distractor
 #' draw(ic_flip(m1))
-#' }
 ic_flip.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   split_correct <- split_mat(obj)

@@ -1,18 +1,17 @@
-#' Rotation rule
+#' Rotation rule (Method)
 #'
-#' Apply a rotation of pi/4 to a figure.
+#' Apply a rotation of \eqn{\frac{pi}{4}} to a figure.
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of pi/4.
-#' @param rule Define the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
+#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{\frac{pi}{4}}
+#' @param rule character, defines the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
 #' @param ... Other arguments
 #'
-#' @return A figure with different rotation coordinates
+#' @return A figure of class figure with different rotation coordinates
 #' @export rotate
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default luck
 #' draw(luck())
 #'
@@ -21,21 +20,32 @@
 #'
 #' # force clockwise rotation
 #' draw(rotate(luck(), rule = "inv"))
-#' }
-
 rotate <- function(fig ,n, rule,...) {
   UseMethod("rotate")
 }
 
-#' Rotate figure
+#' @describeIn rotate Rotate a figure
+#'
+#' Apply a rotation of \eqn{\frac{pi}{4}} to a figure.
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the angle of the rotation. Default is 4, which corresponds to a rotation of pi/4.
-#' @param rule Define the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
+#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{\frac{pi}{4}}
+#' @param rule character, defines the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
 #' @param ... Other arguments
 #'
+#' @return A figure of class figure with different rotation coordinates
 #' @export rotate.figure
 #' @export
+#'
+#' @examples
+#' # default luck
+#' draw(luck())
+#'
+#' # apply the default rotation on the default luck
+#' draw(rotate(luck()))
+#'
+#' # force clockwise rotation
+#' draw(rotate(luck(), rule = "inv"))
 rotate.figure<-function(fig,n=4,rule="rotation",...) {
   numbers<-unlist(strsplit(rule,split=""))
   num<-4
@@ -58,38 +68,41 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 }
 
 
-#' Reflection rule
+#' Reflection rule (Method)
 #'
-#' Apply a reflection of pi on a figure
+#' Apply a rotation of \eqn{\pi} to a figure.
 #'
-#' @param fig The figure on which the rule is applied
-#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection
-#' @param ... Other arguments
+#' @inheritParams rotate
 #'
-#' @return A figure with different rotation coordinates
+#' @return A figure of class figure with different rotation coordinates
 #' @export reflect
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default pacman
 #' draw(pacman())
 #'
-#' # apply the default rotation on the default luck
+#' # apply the default reflection on the default luck
 #' draw(reflect(pacman()))
-#' }
 reflect <- function(fig,n,...) {
   UseMethod("reflect")
 }
-
-#' Reflect figure
+#' @describeIn reflect Reflect a figure
 #'
-#' @param fig The figure on which the rule is applied
-#' @param n A number defining the reflection. Default is 2 which corresponds to a 180 degree (pi) reflection
-#' @param ... Other arguments
+#' Apply a rotation of \eqn{\pi} to a figure.
 #'
+#' @inheritParams rotate
+#'
+#' @return A figure of class figure with different rotation coordinates
 #' @export reflect.figure
 #' @export
+#'
+#' @examples
+#' # default pacman
+#' draw(pacman())
+#'
+#' # apply the default reflection on the default luck
+#' draw(reflect(pacman()))
 reflect.figure<-function(fig,n=2,...) {
   fig$rotation<-Map('+', fig$rotation,(n-1)*pi)
   fig$theta.1<-Map('+', fig$theta.1,(n-1)*pi)
@@ -97,21 +110,20 @@ reflect.figure<-function(fig,n=2,...) {
   return(fig)
 }
 
-#' Sizing rule
+#' Sizing rule (Method)
 #'
-#' Resize a figure
+#' Apply a resizing to a figure
 #'
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the dimension of the sizing. Default is 2.
 #' @param rule Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.
 #' @param ... Other arguments
 #'
-#' @return A figure with different size.x (and size.y) coordinates
+#' @return A figure of class figure with different size.x and size.y
 #' @export size
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default square
 #' draw(square())
 #'
@@ -120,11 +132,10 @@ reflect.figure<-function(fig,n=2,...) {
 #'
 #' # make the square bigger
 #' draw(size(square(), rule = "inv"))
-#' }
 size <- function(fig,n,rule, ...) {
   UseMethod("size")
 }
-#' Size figure
+#' @describeIn size Resize a figure
 #'
 #' @param fig The figure on which the rule is applied
 #' @param n A number defining the dimension of the sizing. Default is 2.
@@ -157,19 +168,20 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
   return(fig)
 }
 
-#' Change the visibility of the shapes in a figure
+#' Shape rule (Method)
 #'
-#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
-#' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
-#' @param rule Define the shape rule.
+#' Apply a change in figures rule by change the visibility of the shapes in a figure
+#'
+#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed
+#' @param n integer, the index of the element to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to index the figure you want to show
+#' @param rule character, defines the rule for shading the figure
 #' @param ... Other arguments
 #'
-#' @return A list of three figures, only the first of which is visible
+#' @return An object of class figures, only the first figure is visible
 #' @export shape
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # Three figures, only the first is shown
 #' draw(shape(cof(s.lily(), square(), s.star())))
 #'
@@ -178,15 +190,14 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #'
 #' # Show the first and the second figures
 #'  draw(shape(cof(s.lily(), square(), s.star()), n = c(1,2)))
-#' }
 shape <- function(fig,n, rule, ...) {
   UseMethod("shape")
 }
-#' Shape figure
+#' @describeIn shape Change the visible shapes
 #'
-#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed.
-#' @param n The number of the figure you want to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to the position of the figure you want to show.
-#' @param rule Define the shape rule.
+#' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed
+#' @param n integer, the index of the element to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to index the figure you want to show
+#' @param rule character, defines the rule for shading the figure
 #' @param ... Other arguments
 #'
 #' @export shape.figure
@@ -215,39 +226,47 @@ shape.figure<-function(fig,n = 1,rule = "shape",...) {
   return(fig)
 }
 
-#' Shading of a figure
+#' Shade rule (Method)
 #'
-#' Change the shading of a figure
+#' Apply a change in the shading of the figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
-#' @param rule The rule for shading the figure
+#' @param n integer, defines the color of the shading. Default is 1 (white). Other options are 2 (grey) and 3 (black)
+#' @param rule character, defines the rule for shading the figure
 #' @param ... Other arguments
 #'
-#' @return A figure with different shading characteristics
+#' @return An object of class figure with different shading characteristics
 #' @export shade
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'
 #' # draw default triangle
 #' draw(triangle())
 #'
 #' # make it grey
 #' draw(shade(triangle(), 2))
-#'
-#' }
 shade <- function(fig, n, rule, ...) {
   UseMethod("shade")
 }
-#' Shade figure
+#' @describeIn shade Change the shade of a figure
+#'
+#' Apply a change in the shading of the figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the color of the shading Default is 1 (white). Other options are 2 (grey) and 3 (black)
-#' @param rule The rule for shading the figure
+#' @param n integer, defines the color of the shading. Default is 1 (white). Other options are 2 (grey) and 3 (black)
+#' @param rule character, defines the rule for shading the figure
 #' @param ... Other arguments
 #'
+#' @return An object of class figure with different shading characteristics
+#' @export shade.figure
+#' @export
+#'
+#' @examples
+#' # draw default triangle
+#' draw(triangle())
+#'
+#' # make it grey
+#' draw(shade(triangle(), 2))
 #' @export shade.figure
 #' @export
 shade.figure<-function(fig,n = 1,rule = "shade",...){
@@ -289,12 +308,12 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
   return(fig)
 }
 
-#' Margin
+#' Margin rule (Method)
 #'
-#' Chnage the margin of the figure
+#' Apply a change in the margins of the figure
 #'
-#' @param obj the figure
-#' @param n ineteger, either the linetype or the linewidth
+#' @param fig The figure on which the rule is applied
+#' @param n integer, defines the linetype of the linewidth
 #' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewdith
 #' @param ... Other arguments
 #'
@@ -303,44 +322,36 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'
 #' # draw default triangle
 #' draw(triangle())
 #'
 #' # change the linetype
-#' draw(margin(triangle(), 2))
-#'
-#' }
-margin <- function(obj,n,rule,...) {
+#' draw(margin(triangle(), "lty", 2))
+margin <- function(fig,n,rule,...) {
   UseMethod("margin")
 }
 
 
-#' Margin
+#' @describeIn margin Change the margins rule
 #'
-#' Chnage the margin of the figure
+#' Apply a change in the margins of the figure
 #'
-#' @param obj the figure
-#' @param n ineteger, either the linetype or the linewidth
+#' @param fig The figure on which the rule is applied
+#' @param n integer, defines the linetype of the linewidth
 #' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewdith
 #' @param ... Other arguments
 #'
 #' @return A figure with changed margins
-#' @export margin.figure
+#' @export margin
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'
 #' # draw default triangle
 #' draw(triangle())
 #'
 #' # change the linetype
-#' draw(margin(triangle(), 2))
-#'
-#' }
-margin.figure <-function(obj,n,rule,...){
+#' draw(margin(triangle(),"lty", 2))
+margin.figure <-function(fig,n,rule,...){
   if(grepl("inv",rule))
   {
     index<-c(3:1,3:1,3:1) #TL-LR
@@ -352,25 +363,24 @@ margin.figure <-function(obj,n,rule,...){
   #   obj$lty<- lapply(obj$lty,function(x,i,n){i[x+n]},index,n)
   # }  else
   if(grepl("lwd",rule)){
-    obj$lwd<- lapply(obj$lwd,function(x,i,n){i[x+n]+1},index,n)
+    fig$lwd<- lapply(fig$lwd,function(x,i,n){i[x+n]+1},index,n)
   }else if(grepl("lty",rule)){
-    obj$lty<- lapply(obj$lty,function(x,i,n){i[x+n]},index,n)
+    fig$lty<- lapply(fig$lty,function(x,i,n){i[x+n]},index,n)
   }
-  return(obj)
+  return(fig)
 }
 
 
-#' Logic rules (Method)
+#' Logical rules (Method)
 #'
-#' Apply logic rules (AND, OR, XOR) to the figure in a matrix
+#' Apply logical rules (intersection--AND, union--OR, symmetrical difference--XOR) to a concatenation of figures
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
-#' @param n ???
-#' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
-#' @param seed Set the random seed so that the permutations are consistent
-#' @param ... Other arguments
+#' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatenation of figures to which the logical operation is applied. n=3 is the result of the operation.
+#' @param rule character, logic rule to be applied, either `AND`, `OR`, `XOR`
+#' @param seed integer, Set the random seed so that the permutations are consistent
 #'
-#' @return An object composed of figures combined according to different logic rules
+#' @return An object that is the logical combination of the figures
 #' @export logic
 #' @export
 #'
@@ -380,15 +390,15 @@ margin.figure <-function(obj,n,rule,...){
 logic <- function(fig,n,rule,seed,...) {
   UseMethod("logic")
 }
-#' Logic rules (Method)
+#' @describeIn logic Logical rules
 #'
-#' Apply logic rules (AND, OR, XOR) to the figure in a matrix
+#' Apply logical rules (intersection--AND, union--OR, symmetrical difference--XOR) to a concatenation of figures
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
-#' @param n ???
-#' @param rule Define the logic rule to be applied, either `AND`, `OR`, `XOR`
-#' @param seed Set the random seed so that the permutations are consistent
-#' @param ... Other arguments
+#' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatanations of figures to which the logical operation is applied. n=3 is the result of the operation.
+#' @param rule character, logic rule to be applied, either `AND`, `OR`, `XOR`
+#' @param seed integer, Set the random seed so that the permutations are consistent
+#' @return An object that is the logical combination of the figures
 #'
 #' @export logic.figure
 #' @export
@@ -399,7 +409,7 @@ logic <- function(fig,n,rule,seed,...) {
 logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
   if(length(fig$shape) < 3)
   {
-    stop("You must have three forms to apply a logical AND !")
+    stop("You must have three figures to apply a logical rule!")
   }
   ##gestione di più immagini
   domain<-1:length(fig$shape)
@@ -438,10 +448,8 @@ logic.figure<-function(fig,n = 1,rule = "logic",seed = 1,...) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # generate a matrix with 9 squares
-#' draw(mat_apply(square(), hrules = "indentity"))
-#' }
+#' draw(mat_apply(square(), hrules = "identity"))
 identity <- function(fig,...) {
   UseMethod("identity")
 }
@@ -454,10 +462,8 @@ identity <- function(fig,...) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # generate a matrix with 9 squares
-#' draw(mat_apply(square(), hrules = "indentity"))
-#' }
+#' draw(mat_apply(square(), hrules = "identity"))
 identity.figure <- function(fig,...) {
   return(fig)
 }

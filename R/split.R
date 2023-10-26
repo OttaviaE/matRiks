@@ -1,44 +1,40 @@
 #' Split the correct response (Method)
 #'
-#' Split all the figures in the correct response
+#' Split all the visible figures composing a cell of the matrix or a concatenation of figures
 #'
-#' @param obj The figure
-#' @param cell the index of the cell to be split. Default is the correct response
-#' @param vis Does the selection involve only the figures visible in the selected cell? Default is TRUE
+#' @param obj The complex figure or the matrix to split
+#' @param vis logical, split only the visible figures. Default is TRUE
+#' @param cell integer, The index of the cell to be split. Default is the correct response
 #'
-#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures used in the matrix (vis = FALSE)
+#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures composing the complex figure (vis = FALSE)
 #'
 #' @export split_mat
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # split the elements in the correct response and assign to an object
-#' split_m1 <- split_mat(m1)
-#' }
-split_mat<- function(obj,vis = TRUE, cell = NULL) {
+#' split_m1 <- split_mat(m1$Sq1)
+split_mat<- function(obj, vis = TRUE, cell = NULL) {
   UseMethod("split_mat")
 }
-#' Split the correct response
+#' @describeIn split_mat Split the correct response
 #'
-#' Split all the figures in the correct response
+#' Split all the visible figures composing a cell of the matrix or a concatenation of figures
 #'
-#' @param obj The figure
-#' @param cell the index of the cell to be split. Default is the correct response
-#' @param vis Does the selection involve only the figures visible in the selected cell? Default is TRUE
+#' @param obj The complex figure to split
+#' @param vis logical, split only the visible figures. Default is TRUE
+#' @param cell integer, The index of the cell to be split. Default is the correct response
 #'
-#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures used in the matrix (vis = FALSE)
+#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures composing the complex figure (vis = FALSE)
 #'
 #' @export split_mat.figure
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # split the elements in the correct response and assign to an object
-#' split_m1 <- split_mat(m1)
-#' }
+#' split_m1 <- split_mat(m1$Sq1)
 split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 
   if(vis == TRUE) {
@@ -104,24 +100,20 @@ split_mat.figure = function(obj, vis = TRUE, cell = NULL) {
 
   return(split_m)
 }
-#' Split the correct response (Method)
+#' @describeIn split_mat Split all the visible figures composing a cell of the matrix or a concatenation of figures
 #'
-#' Split all the figures in the correct response
+#' @param obj The complex figure or the matrix to split
+#' @param vis logical, split only the visible figures. Default is TRUE
+#' @param cell integer, The index of the cell to be split. Default is the correct response
 #'
-#' @param obj The figure
-#' @param cell the index of the cell to be split. Default is the correct response
-#' @param vis Does the selection involve only the figures visible in the selected cell? Default is TRUE
-#'
-#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures used in the matrix (vis = FALSE)
+#' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures composing the complex figure (vis = FALSE)
 #' @export split_mat.matriks
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' m1 <- mat_apply(hexagon(), hrules = "lty")
 #' # split the elements in the correct response and assign to an object
 #' split_m1 <- split_mat(m1)
-#' }
 split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
 
   if (is.null(cell) == TRUE) {
@@ -138,34 +130,31 @@ split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
 #'
 #' Isolate the correct response from a matriks
 #'
-#' @param obj The matrix
+#' @param obj The matriks
+#'
 #' @return The correct response of a matriks
 #'
 #' @export correct
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
+#' my_mat <- mat_apply(triangle(), mat.type = 9, hrule = "size")
 #' # draw the matriks without the correct response
 #' draw(my_mat, hide = TRUE)
 #' # add the correct response
 #' draw(correct(my_mat))
-#'
-#' # # apply the reflect rule on a pacman for creating a matriks with 4 cell
-#' my_mat = mat_apply(pacman(), mat.type = 4,
+#' # apply the reflect rule on a pacman for creating a matriks with 4 cell
+#' my_mat <- mat_apply(pacman(), mat.type = 4,
 #'                   vrule = "reflect")
 #' # draw the matriks without the correct response
 #' draw(my_mat, hide = TRUE)
 #' # add the correct response
 #' draw(correct(my_mat))
-#' }
 correct<- function(obj) {
   UseMethod("correct")
 }
-#' Correct response (Method)
+#' @describeIn correct Correct response
 #'
 #' Isolate the correct response from a matriks
 #'
@@ -175,23 +164,20 @@ correct<- function(obj) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # apply the size rule on a triangle for creating a matriks with 9 cell
-#' my_mat = mat_apply(triangle(), mat.type = 9,
-#' hrule = "size")
+#' my_mat <- mat_apply(triangle(), mat.type = 9, hrule = "size")
 #' # draw the matriks without the correct response
 #' draw(my_mat, hide = TRUE)
 #' # add the correct response
 #' draw(correct(my_mat))
 #'
-#' # # apply the reflect rule on a pacman for creating a matriks with 4 cell
-#' my_mat = mat_apply(pacman(), mat.type = 4,
+#' # apply the reflect rule on a pacman for creating a matriks with 4 cell
+#' my_mat <- mat_apply(pacman(), mat.type = 4,
 #'                   vrule = "reflect")
 #' # draw the matriks without the correct response
 #' draw(my_mat, hide = TRUE)
 #' # add the correct response
 #' draw(correct(my_mat))
-#' }
 correct.matriks = function(obj) {
 
     n.cell<-obj$mat.type
