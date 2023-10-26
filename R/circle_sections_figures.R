@@ -66,7 +66,7 @@ slice <- function(size.x =15,
 #'
 #' @examples
 #' # default coordinates of pacman
-#' slice()
+#' pacman()
 #' # draw an actual pacman
 #' draw(cof(pacman(shd = "yellow"), dot(pos.y = 6)))
 pacman <- function(size.x =sqrt(square()$size.x[[1]]^2 /2), size.y = 0,
@@ -361,12 +361,10 @@ semi_circle_top_inv <- function(size.x =sqrt(square()$size.x[[1]]^2 /2), size.y 
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # default coordinates of the upward-facing left semi-circle
-#' semi_circle_inv_inv()
+#' semi_circle_inv()
 #' # change the rotation of the upward-facing left semi-circle
-#' semi_circle_inv_inv(theta1 = pi, theta2 = 2*pi)
-#' }
+#' semi_circle_inv(theta1 = pi, theta2 = 2*pi)
 semi_circle_bottom <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
                                size.y = 0,
                                pos.x=0 ,pos.y=0,
@@ -440,7 +438,7 @@ pizza_2_inv <- function(size.x = 15, size.y = size.x,
 #'
 #' @examples
 #' # default coordinates of the single inverse pizza with two slices
-#' s_pizza_2()
+#' s_pizza_2_inv()
 s_pizza_2_inv <- function(size.x = 15, size.y = 0,
                     pos.x=0 ,pos.y=0,
                     shd = NA, lty = 1, lwd = 3) {

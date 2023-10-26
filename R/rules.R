@@ -1,10 +1,10 @@
 #' Rotation rule (Method)
 #'
-#' Apply a rotation of \eqn{\frac{pi}{4}} to a figure.
+#' Apply a rotation of a fixed angle to a figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{\frac{pi}{4}}
-#' @param rule character, defines the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
+#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{{4}\alpha}
+#' @param rule character, defines the rotation rule. Default is counterclockwise. If the  rule arguments contain the string "inv" forces a clockwise rotation. Each corresponds to an \eqn{\alpha=\frac{1}{k}\pi}. Default \eqn{k} is 4. To change the value of \eqn{k} is sufficient to add a number from 1 to 9 in the argument.
 #' @param ... Other arguments
 #'
 #' @return A figure of class figure with different rotation coordinates
@@ -26,11 +26,11 @@ rotate <- function(fig ,n, rule,...) {
 
 #' @describeIn rotate Rotate a figure
 #'
-#' Apply a rotation of \eqn{\frac{pi}{4}} to a figure.
+#' Apply a rotation of a fixed angle to a figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{\frac{pi}{4}}
-#' @param rule character, defines the rotation rule. Default is counterclockwise.`rule = "inv"` forces a clockwise rotation
+#' @param n integer, defines the angle of the rotation. Default is 4, which corresponds to a rotation of \eqn{{4}\alpha}
+#' @param rule character, defines the rotation rule. Default is counterclockwise. If the  rule arguments contain the string "inv" forces a clockwise rotation. Each corresponds to an \eqn{\alpha=\frac{1}{k}\pi}. Default \eqn{k} is 4. To change the value of \eqn{k} is sufficient to add a number from 1 to 9 in the argument.
 #' @param ... Other arguments
 #'
 #' @return A figure of class figure with different rotation coordinates
@@ -72,7 +72,8 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #'
 #' Apply a rotation of \eqn{\pi} to a figure.
 #'
-#' @inheritParams rotate
+#' @param fig The figure to be reflected
+#' @param n integer, defines the angle of the rotation. Default is 2
 #'
 #' @return A figure of class figure with different rotation coordinates
 #' @export reflect
@@ -82,7 +83,7 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #' # default pacman
 #' draw(pacman())
 #'
-#' # apply the default reflection on the default luck
+#' # apply the default reflection on the default pacman
 #' draw(reflect(pacman()))
 reflect <- function(fig,n,...) {
   UseMethod("reflect")
@@ -91,7 +92,8 @@ reflect <- function(fig,n,...) {
 #'
 #' Apply a rotation of \eqn{\pi} to a figure.
 #'
-#' @inheritParams rotate
+#' @param fig The figure to be reflected
+#' @param n integer, defines the angle of the rotation. Default is 2
 #'
 #' @return A figure of class figure with different rotation coordinates
 #' @export reflect.figure
@@ -101,7 +103,7 @@ reflect <- function(fig,n,...) {
 #' # default pacman
 #' draw(pacman())
 #'
-#' # apply the default reflection on the default luck
+#' # apply the default reflection on the default pacman
 #' draw(reflect(pacman()))
 reflect.figure<-function(fig,n=2,...) {
   fig$rotation<-Map('+', fig$rotation,(n-1)*pi)
@@ -115,8 +117,8 @@ reflect.figure<-function(fig,n=2,...) {
 #' Apply a resizing to a figure
 #'
 #' @param fig The figure on which the rule is applied
-#' @param n A number defining the dimension of the sizing. Default is 2.
-#' @param rule Define the sizing rule. Default is to reduce the dimension. rule = "inv" forces to increase the dimension.
+#' @param n A number defining the dimension of the sizing. Default is 2
+#' @param rule Define the sizing rule. Default is to reduce the dimension.  If the  rule arguments contain the string "inv" size is increased
 #' @param ... Other arguments
 #'
 #' @return A figure of class figure with different size.x and size.y
@@ -173,7 +175,7 @@ size.figure<-function(fig,n = 2,  rule = "size", ...) {
 #' Apply a change in figures rule by change the visibility of the shapes in a figure
 #'
 #' @param fig A vector of figures obtained with the concatenation of figures function (cof()). Three figures are needed
-#' @param n integer, the index of the element to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to index the figure you want to show
+#' @param n vector, the index of the element to see. Default is 1 (the first figure in cof() is shown). To see the other figures, change n to index the figure you want to show
 #' @param rule character, defines the rule for shading the figure
 #' @param ... Other arguments
 #'

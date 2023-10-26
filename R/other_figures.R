@@ -229,7 +229,7 @@ s_malta <- function(size.x = 10, pos.x = 0, shd = NA, lwd = 3, lty = 1){
 #' @examples
 #' # return the default coordinates for drawing an axe
 #' axe()
-#' # change the coordinates for drawing a smaller single Malta cross
+#' # change the coordinates for drawing a smaller single axe
 #' axe(size.x = 5)
 axe <- function(size.x = 15, pos.x = 0,
                pos.y = 0, lty = 1, lwd = 3, shd = NA) {
@@ -262,7 +262,7 @@ axe <- function(size.x = 15, pos.x = 0,
 #' @examples
 #' # return the default coordinates for drawing single axe
 #' s_axe()
-#' # change the coordinates for drawing a smaller single Malta cross
+#' # change the coordinates for drawing a smaller single axe
 #' s_axe(size.x = 5)
 s_axe <- function(size.x = 15, pos.x = 0, pos.y = 0, lty = 1, lwd = 3, shd = NA) {
   value <- cof(rotate(slice(size.x = size.x,

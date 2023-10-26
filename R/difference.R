@@ -2,8 +2,8 @@
 #'
 #' Generate difference distractor from a matriks
 #'
-#' @param obj matriks, The matriks for which the distractor is generataed
-#' @param seed seed
+#' @param obj matriks, The matriks for which the distractor is generated
+#' @param seed integer, random seed for the generation of the difference distractor
 #' @param ... other arguments
 #'
 #' @return An object of class figure that is the difference distractor of a matrix
@@ -24,7 +24,7 @@ difference <- function(obj, seed, ...) {
 
 #' @describeIn difference Difference distractors
 #'
-#' @param obj matriks, The matriks for which the distractor is generataed
+#' @param obj matriks, The matriks for which the distractor is generated
 #' @param seed seed
 #' @param ... other arguments
 #'

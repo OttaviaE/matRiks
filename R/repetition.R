@@ -15,7 +15,7 @@
 #' mat <- com(m1, m2)
 #' # draw the matrix
 #' draw(mat)
-#' # draw the incomplete correlate distractors
+#' # draw the repetition distractors
 #' draw(repetition(mat))
 repetition <- function(obj, ...) {
   UseMethod("repetition")

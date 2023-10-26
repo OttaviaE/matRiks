@@ -51,8 +51,8 @@ hide.figure<-function(obj,index="Full")
 #'
 #' Change the visibility of a figure from 0 to 1
 #'
-#' @param obj A figure composed of different figures
-#' @param index integer, the index of the element to hide
+#' @param obj A figure composed of a concatenation of figures
+#' @param index vector, the index(es) of the element(s) to show. index = "FULL" makes everything visible
 #'
 #' @return The starting object with one more visible figure
 #' @export show
@@ -100,6 +100,7 @@ show.figure<-function(obj,index="Full")
 #' Replace a figure with another figure
 #'
 #' @inheritParams show
+#' @param index integer, the index of the element to replace
 #' @param replacement The figure with which the original one is replaced
 #' @param visible logical, if TRUE it will replace only the visible figure. Default is FALSE
 #'

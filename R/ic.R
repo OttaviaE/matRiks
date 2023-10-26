@@ -16,7 +16,7 @@
 #' # draw the matrix
 #' draw(mat)
 #' # draw the incomplete correlate distractors
-#' draw(ic(m1))
+#' draw(ic(mat))
 ic <- function(obj) {
   UseMethod("ic")
 }
@@ -40,7 +40,7 @@ ic <- function(obj) {
 #' # draw the matrix
 #' draw(mat)
 #' # draw the incomplete correlate distractors
-#' draw(ic(m1))
+#' draw(ic(mat))
 ic.matriks <- function(obj, ...) {
   m_correct = correct(obj)
 

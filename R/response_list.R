@@ -14,10 +14,10 @@
 #' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the repetition distractors
+#' # draw the responses
 #' draw(response_list(m1))
 #'
-#' # change the difference distractors by changing the random seed
+#' # change the difference distractor by changing the random seed
 #' draw(response_list(m1, seed = 8))
 response_list <-function(obj, seed, ...) {
   UseMethod("response_list")
@@ -39,7 +39,7 @@ response_list <-function(obj, seed, ...) {
 #' m1 <- mat_apply(hexagon(), hrules = "lty", vrules = "size")
 #' # draw the matrix
 #' draw(m1)
-#' # draw the repetition distractors
+#' # draw the responses
 #' draw(response_list(m1))
 #'
 #' # change the difference distractors by changing the random seed

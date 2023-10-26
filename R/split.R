@@ -1,10 +1,10 @@
 #' Split the correct response (Method)
 #'
-#' Split all the visible figures composing a cell of the matrix or a concatenation of figures
+#' Split all the visible figures composing a cell of the matrix or of a concatenation of figures
 #'
 #' @param obj The complex figure or the matrix to split
 #' @param vis logical, split only the visible figures. Default is TRUE
-#' @param cell integer, The index of the cell to be split. Default is the correct response
+#' @param cell integer, The index of the cell to be split. Default is the correct response, either cell 4 (4-cell matriks) or cell 9 (9-cell matriks)
 #'
 #' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures composing the complex figure (vis = FALSE)
 #'
@@ -20,11 +20,11 @@ split_mat<- function(obj, vis = TRUE, cell = NULL) {
 }
 #' @describeIn split_mat Split the correct response
 #'
-#' Split all the visible figures composing a cell of the matrix or a concatenation of figures
+#' Split all the visible figures composing a cell of the matrix or of a concatenation of figures
 #'
-#' @param obj The complex figure to split
+#' @param obj The complex figure or the matrix to split
 #' @param vis logical, split only the visible figures. Default is TRUE
-#' @param cell integer, The index of the cell to be split. Default is the correct response
+#' @param cell integer, The index of the cell to be split. Default is the correct response, either cell 4 (4-cell matriks) or cell 9 (9-cell matriks)
 #'
 #' @return A list of figures of length equal to the number of figures visible in the correct response (vis = TRUE) or to all the figures composing the complex figure (vis = FALSE)
 #'
@@ -145,8 +145,7 @@ split_mat.matriks = function(obj, vis = TRUE, cell = NULL) {
 #' # add the correct response
 #' draw(correct(my_mat))
 #' # apply the reflect rule on a pacman for creating a matriks with 4 cell
-#' my_mat <- mat_apply(pacman(), mat.type = 4,
-#'                   vrule = "reflect")
+#' my_mat <- mat_apply(pacman(), mat.type = 4, vrule = "reflect")
 #' # draw the matriks without the correct response
 #' draw(my_mat, hide = TRUE)
 #' # add the correct response

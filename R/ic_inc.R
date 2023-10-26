@@ -16,7 +16,7 @@
 #' # draw the matrix
 #' draw(mat)
 #' # draw the incomplete correlate incomplete distractor
-#' draw(ic_inc(m1))
+#' draw(ic_inc(mat))
 ic_inc <- function(obj, ...) {
   UseMethod("ic_inc")
 }
@@ -38,7 +38,7 @@ ic_inc <- function(obj, ...) {
 #' # draw the matrix
 #' draw(mat)
 #' # draw the incomplete correlate incomplete distractor
-#' draw(ic_inc(m1))
+#' draw(ic_inc(mat))
 ic_inc.matriks <- function(obj, ...) {
   m_correct <- correct(obj)
   if (inherits(obj$mat.type, "numeric") == TRUE & any(grepl("compose", m_correct$tag) == FALSE) | sum(m_correct$visible) == 1) {

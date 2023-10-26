@@ -107,7 +107,6 @@ cross_dice <- function(shd = "black", lwd = 3, lty = 1) {
 #' @param size.y numeric, define the semi-minor axis of the ellipse within which the figure is inscribed. Default is size.x
 #' @param lwd integer, define the line width of the figure. Default is 3
 #' @param lty integer, define the line type of the figure, default is 0
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd character, define the shading of the figure. Default is black
 #'
 #' @return Return the coordinates for drawing a biscuit
@@ -142,7 +141,6 @@ biscuit <- function(size.x = 10, size.y = size.x,
 #' @param pos.y numeric, position the y axis, Default is 0
 #' @param lwd integer, define the line width of the figure. Default is 3
 #' @param lty integer, define the line type of the figure, default is 0
-#' @param vis Visibility of the figure. Default is 1, making the figure visible. To hide the figure, change it to 0
 #' @param shd character, define the shading of the figure. Default is black
 #'
 #' @return Return the coordinates for drawing a single biscuit
@@ -196,7 +194,7 @@ ninja <- function(size.x = 10, size.y = 15, shd = "black", lwd = 3, lty = 0) {
 
 #' @describeIn ninja Coordinates of a single ninja
 #'
-#' Define the coordinates for drawing a single ninja star (composed of two lucks (composed of two lucks), to be used in shape()
+#' Define the coordinates for drawing a single ninja star (composed of two lucks), to be used in shape()
 #' @inheritParams ninja
 #'
 #' @return Return the coordinates for drawing a single ninja

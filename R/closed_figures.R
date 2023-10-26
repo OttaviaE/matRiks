@@ -135,7 +135,7 @@ triangle <- function(size.x=10,
 
 #' Coordinates of a square
 #'
-#' Define the coordinates for drawing a square of the ellipse within which a square can be inscribed.
+#' Define the coordinates for drawing a square
 #'
 #' @inheritParams circle
 #' @param rot define the rotation. Default is \eqn{\frac{pi}{4}}

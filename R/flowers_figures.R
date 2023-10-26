@@ -54,7 +54,7 @@ s_lily <- function(lwd = 3, lty = 1) {
 #'
 #' @inheritParams lily
 #'
-#' @return Return the coordinates for drawing an up petal
+#' @return Return the coordinates for drawing the circle arches composing an up petal
 #' @export
 #'
 #' @examples
