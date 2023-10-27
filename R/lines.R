@@ -173,6 +173,7 @@ square4 <- function(size.x = sqrt(square()$ size.x[[1]]^2 /2),
 #' @param pos.y numeric, position the y axis, Default is 0.
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
+#' @param rotation define the rotation of the line
 #' @param vis integer, define the visibility of the figure (default is 1, visible).
 #'
 #' @return Return the coordinates for drawing the main diagonal line
@@ -221,6 +222,8 @@ diagline <- function(size.x=list(sqrt(square()$ size.x[[1]]^2 /2)),
 #' @param lwd integer, define the line width of the figure. Default is 3.
 #' @param lty integer, define the line type of the figure, default is 1 (solid line).
 #' @param vis integer, define the visibility of the figure (default is 1, visible)
+#' @param rotation define the rotation of the line
+#'
 #' @return Return the coordinates for drawing the inverse diagonal line
 #' @export
 #'

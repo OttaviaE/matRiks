@@ -362,9 +362,9 @@ semi_circle_top_inv <- function(size.x =sqrt(square()$size.x[[1]]^2 /2), size.y 
 #'
 #' @examples
 #' # default coordinates of the upward-facing left semi-circle
-#' semi_circle_inv()
+#' semi_circle_bottom()
 #' # change the rotation of the upward-facing left semi-circle
-#' semi_circle_inv(theta1 = pi, theta2 = 2*pi)
+#' semi_circle_bottom(theta1 = pi, theta2 = 2*pi)
 semi_circle_bottom <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
                                size.y = 0,
                                pos.x=0 ,pos.y=0,
@@ -406,7 +406,7 @@ semi_circle_bottom <- function(size.x =sqrt(square()$size.x[[1]]^2 /2),
 #' @examples
 #' # default coordinates of the inverse pizza with two slices
 #' pizza_2_inv()
-pizza_2_inv <- function(size.x = 15, size.y = size.x,
+pizza_2_inv <- function(size.x = 15, size.y = 0,
                   pos.x=0 ,pos.y=0,
                   shd = NA, lty = 1, lwd = 3) {
   value <-cof(semi_circle_bottom(size.x = size.x,

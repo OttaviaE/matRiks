@@ -74,6 +74,7 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 #'
 #' @param fig The figure to be reflected
 #' @param n integer, defines the angle of the rotation. Default is 2
+#' @param ... Other arguments
 #'
 #' @return A figure of class figure with different rotation coordinates
 #' @export reflect
@@ -94,6 +95,7 @@ reflect <- function(fig,n,...) {
 #'
 #' @param fig The figure to be reflected
 #' @param n integer, defines the angle of the rotation. Default is 2
+#' @param ... Other arguments
 #'
 #' @return A figure of class figure with different rotation coordinates
 #' @export reflect.figure
