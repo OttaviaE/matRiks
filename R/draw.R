@@ -78,6 +78,7 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
       }
     }
   }
+
 }
 
 #' @describeIn draw Draw Matriks
@@ -104,6 +105,8 @@ draw.figure<- function(obj, main = NULL, canvas = TRUE,
 draw.matriks<- function(obj, main = NULL, canvas = TRUE,
                         hide = FALSE,
                         bg = "white",mar=c(1,1,1,1),xlim=16, ...) {
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
   # ti prego non arrabbiarti
   # come non fungeva più per ragioni che boh, ho capito che aveva bisogno di nuove funzioni (cof.double e cof.numeric)
   # quando commi delle matrici, mat.type prende classe double ed ha lunghezza del numero di matrici
@@ -173,6 +176,8 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,
                            distractors = NULL, print = FALSE,
                            ...) {
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
   if (is.null(distractors) == TRUE) {
     distractors <- names(obj)
   }
