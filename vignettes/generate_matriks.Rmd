@@ -46,7 +46,7 @@ The YAML of the document should be modified to look like this:
 ````
 ---
 title: "My matriks"
-author: "Me, myself, and I"
+author: "The author"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
@@ -54,7 +54,7 @@ output:
 ---
 ````
 
-The YAML sets the title of the document (My matriks), the author ("Me, myself, and I"), the date, and other settings concerning the document. For instance, this YAML will generate a PDF document with a **T**able **o**f **C**ontents. 
+The YAML sets the title of the document (My matriks), the author ("The author"), the date, and other settings concerning the document. For instance, this YAML will generate a PDF document with a **T**able **o**f **C**ontents. 
 
 A setup chunk should be included to set the behavior of the code chunks throughout the document: 
 
