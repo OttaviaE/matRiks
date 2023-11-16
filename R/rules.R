@@ -318,7 +318,7 @@ shade.figure<-function(fig,n = 1,rule = "shade",...){
 #'
 #' @param fig The figure on which the rule is applied
 #' @param n integer, defines the linetype of the linewidth
-#' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewdith
+#' @param rule character, lty changes the linetype (1 = solid, 2 = dashed, 3 = dotted), lwd changes the linewidth
 #' @param ... Other arguments
 #'
 #' @return A figure with changed margins
@@ -399,7 +399,7 @@ logic <- function(fig,n,rule,seed,...) {
 #' Apply logical rules (intersection--AND, union--OR, symmetrical difference--XOR) to a concatenation of figures
 #'
 #' @param fig Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.
-#' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatanations of figures to which the logical operation is applied. n=3 is the result of the operation.
+#' @param n integer, defines the elements of the logical expression. n=1 and n=2 are the concatenations of figures to which the logical operation is applied. n=3 is the result of the operation.
 #' @param rule character, logic rule to be applied, either `AND`, `OR`, `XOR`
 #' @param seed integer, Set the random seed so that the permutations are consistent
 #' @param ... Other arguments

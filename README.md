@@ -44,6 +44,7 @@ horizontally:
 
 ``` r
 library(matRiks)
+#> Warning: il pacchetto 'matRiks' è stato creato con R versione 4.3.2
 #> 
 #> Caricamento pacchetto: 'matRiks'
 #> Il seguente oggetto è mascherato da 'package:methods':
@@ -76,9 +77,9 @@ draw(responses, main = TRUE)
 
 Since two distractors cannot be generated given the rule and the
 directional logic used for generating the matriks, two warnings are
-thrown and the related distractors are cancelled by a thick black X.
+thrown and the related distractors are crossed out by a thick black X.
 
-This code print a small selection fo distractors:
+This code print a small selection of distractors:
 
 ``` r
 draw(responses, main = TRUE, distractors = c("correct", "r_diag", "wp_matrix", "difference", "ic_flip"))

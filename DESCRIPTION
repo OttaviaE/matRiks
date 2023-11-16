@@ -1,7 +1,7 @@
 Package: matRiks
 Type: Package
 Title: Generates Raven-Like Matrices According to Rules
-Version: 0.1.0
+Version: 0.1.1
 Author: Andrea Brancaccio [aut, ctb, cph],
   Ottavia M. Epifania [aut, ctb, com],
   Debora de Chiusole [ctb]

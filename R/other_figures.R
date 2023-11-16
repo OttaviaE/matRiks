@@ -356,7 +356,7 @@ s_maxi <- function(size.x = 8, size.y = 4, pos.x =0, shd = NA, lty = 1, lwd = 3)
   value
 }
 
-#' Cooordinates of a panthom figure
+#' Coordinates of a panthom figure
 #'
 #' Draw an empty figure
 #'

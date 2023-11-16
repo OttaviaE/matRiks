@@ -105,16 +105,16 @@ dist_m1 <- response_list(m1)
 draw(dist_m1, main = TRUE)
 ```
 
-A warning has appeared since some type of distractors cannot be generated given the type of matriks and/or the rules used for its generation. In this case, since it is a single-laye matriks it is not possible to generate the Incomplete Correlate-Incomplete distractors, which is also crossed with a thick black cross. The argument `main` set `TRUE` means that the names of the distractors are plotted as well. 
+A warning has appeared since some type of distractors cannot be generated given the type of matriks and/or the rules used for its generation. In this case, since it is a single-layer matriks it is not possible to generate the Incomplete Correlate-Incomplete distractors, which is also crossed with a thick black cross. The argument `main` set `TRUE` means that the names of the distractors are plotted as well. 
 
-The user can also specific a selection of the response options to associate to the matriks. The selection should be a character vector and it must be specified through th argument `distractors` of the `draw()` function. 
+The user can also specific a selection of the response options to associate to the matriks. The selection should be a character vector and it must be specified through the argument `distractors` of the `draw()` function. 
 
 ```{r}
 draw(dist_m1, distractors = c("correct", "r_top", "wp_copy"))
 ```
 ## matriks 2
 
-This code creates a multi-layer matriks with three layers. DIfferent rules are used to manipulate different objects in each layer. 
+This code creates a multi-layer matriks with three layers. Different rules are used to manipulate different objects in each layer. 
 
 ````
 ```{r}`r ''`
