@@ -2,7 +2,7 @@
 % Please edit documentation in R/other_figures.R
 \name{phantom}
 \alias{phantom}
-\title{Cooordinates of a panthom figure}
+\title{Coordinates of a panthom figure}
 \usage{
 phantom()
 }

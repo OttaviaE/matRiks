@@ -12,7 +12,7 @@ logic(fig, n, rule, seed, ...)
 \arguments{
 \item{fig}{Vector of figures obtained with the concatenation of figures function (`cof()`). Three figures are needed.}
 
-\item{n}{integer, defines the elements of the logical expression. n=1 and n=2 are the concatanations of figures to which the logical operation is applied. n=3 is the result of the operation.}
+\item{n}{integer, defines the elements of the logical expression. n=1 and n=2 are the concatenations of figures to which the logical operation is applied. n=3 is the result of the operation.}
 
 \item{rule}{character, logic rule to be applied, either `AND`, `OR`, `XOR`}
 
