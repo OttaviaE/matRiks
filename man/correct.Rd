@@ -34,8 +34,10 @@ my_mat <- mat_apply(triangle(), mat.type = 9, hrule = "size")
 draw(my_mat, hide = TRUE)
 # add the correct response
 draw(correct(my_mat))
-# apply the reflect rule on a pacman for creating a matriks with 4 cell
-my_mat <- mat_apply(pacman(), mat.type = 4, vrule = "reflect")
+
+# apply the rotate rule on a pacman for creating a matriks with 4 cells
+my_mat <- mat_apply(pacman(), mat.type = 4,
+                  vrule = "rotate")
 # draw the matriks without the correct response
 draw(my_mat, hide = TRUE)
 # add the correct response
@@ -47,9 +49,9 @@ draw(my_mat, hide = TRUE)
 # add the correct response
 draw(correct(my_mat))
 
-# apply the reflect rule on a pacman for creating a matriks with 4 cell
+# apply the rotate rule on a pacman for creating a matriks with 4 cells
 my_mat <- mat_apply(pacman(), mat.type = 4,
-                  vrule = "reflect")
+                  vrule = "rotate")
 # draw the matriks without the correct response
 draw(my_mat, hide = TRUE)
 # add the correct response

@@ -10,16 +10,6 @@ test_that("Rotation works (theta.1 and theta.2)", {
   }
 })
 
-test_that("Reflection works (theta.1 and theta.2)", {
-  for(n in 1:9)
-  {
-    fig1 <- pacman()
-    fig2 <- reflect(pacman(), n = n)
-    expect_equal(fig2$rotation[[1]], fig1$rotation[[1]] + (n-1)*pi)
-    expect_equal(fig2$theta.1[[1]], fig1$theta.1[[1]] + (n-1)*pi)
-    expect_equal(fig2$theta.2[[1]], fig1$theta.2[[1]] + (n-1)*pi)
-  }
-})
 
 test_that("Is getting bigger? Increasing size", {
   for(n in 1:9)

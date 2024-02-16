@@ -68,52 +68,6 @@ rotate.figure<-function(fig,n=4,rule="rotation",...) {
 }
 
 
-#' Reflection rule (Method)
-#'
-#' Apply a rotation of \eqn{\pi} to a figure.
-#'
-#' @param fig The figure to be reflected
-#' @param n integer, defines the angle of the rotation. Default is 2
-#' @param ... Other arguments
-#'
-#' @return A figure of class figure with different rotation coordinates
-#' @export reflect
-#' @export
-#'
-#' @examples
-#' # default pacman
-#' draw(pacman())
-#'
-#' # apply the default reflection on the default pacman
-#' draw(reflect(pacman()))
-reflect <- function(fig,n,...) {
-  UseMethod("reflect")
-}
-#' @describeIn reflect Reflect a figure
-#'
-#' Apply a rotation of \eqn{\pi} to a figure.
-#'
-#' @param fig The figure to be reflected
-#' @param n integer, defines the angle of the rotation. Default is 2
-#' @param ... Other arguments
-#'
-#' @return A figure of class figure with different rotation coordinates
-#' @export reflect.figure
-#' @export
-#'
-#' @examples
-#' # default pacman
-#' draw(pacman())
-#'
-#' # apply the default reflection on the default pacman
-#' draw(reflect(pacman()))
-reflect.figure<-function(fig,n=2,...) {
-  fig$rotation<-Map('+', fig$rotation,(n-1)*pi)
-  fig$theta.1<-Map('+', fig$theta.1,(n-1)*pi)
-  fig$theta.2<-Map('+', fig$theta.2,(n-1)*pi)
-  return(fig)
-}
-
 #' Sizing rule (Method)
 #'
 #' Apply a resizing to a figure
