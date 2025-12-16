@@ -155,6 +155,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
 #' @param distractors character, names of the distractors to be printed
+#' @param labels character, alternative labels to be printed as the main title of the distractors (main = TRUE). The labels must have the same length as the vector of distractors.
 #' @param print logical, print all the distractors together (default, FALSE) or one by one (TRUE)
 #' @param ... other arguments
 #'
@@ -174,12 +175,14 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 draw.responses <- function(obj, main = NULL, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,
-                           distractors = NULL, print = FALSE,
+                           distractors = NULL, labels = NULL, print = FALSE,
                            ...) {
   oldpar <- par(no.readonly = TRUE)
   on.exit(par(oldpar))
-  if (is.null(distractors) == TRUE) {
-    distractors <- names(obj)
+  if (is.null(distractors) == TRUE & is.null(labels) == TRUE) {
+    labels <- names(obj)
+  } else if (is.null(labels) == FALSE) {
+    labels <- labels
   }
 
   if (print == FALSE) {
@@ -194,7 +197,7 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
 
   if (is.null(main) == FALSE) {
     for (i in 1:length(distractors)) {
-      draw(obj[[distractors[i]]], main <- distractors[i])
+      draw(obj[[distractors[i]]], main <- labels[i])
     }
   } else {
     for (i in 1:length(distractors)) {
