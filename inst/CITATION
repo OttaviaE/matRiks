@@ -1,0 +1,17 @@
+citHeader("If you use the matRiks package, please cite the following article:")
+
+citEntry(
+  entry    = "Article",
+  title    = "Automatic Generation of Rule-Based Raven-Like Matrices in R: The matRiks Package",
+  author   = c(
+    person("Brancaccio", "Andrea"),
+    person("Epifania", "Ottavia M."),
+    person("Anselmi", "Pasquale"),
+    person("de Chiusole", "Debora")
+  ),
+  journal  = "Applied Psychological Measurement",
+  year     = 2025,
+  doi      = "10.1177/01466216251374826",
+  textVersion =
+    "Brancaccio, A., Epifania, O. M., Anselmi, P., & de Chiusole, D. (2025). Automatic Generation of Rule-Based Raven-Like Matrices in R: The matRiks Package. *Applied Psychological Measurement*. https://doi.org/10.1177/01466216251374826"
+)
