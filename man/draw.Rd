@@ -51,6 +51,7 @@ draw(
   distractors = NULL,
   labels = NULL,
   print = FALSE,
+  frow = NULL,
   ...
 )
 }
@@ -76,6 +77,8 @@ draw(
 \item{labels}{character, alternative labels to be printed as the main title of the distractors (main = TRUE). The labels must have the same length as the vector of distractors.}
 
 \item{print}{logical, print all the distractors together (default, FALSE) or one by one (TRUE)}
+
+\item{frow}{numeric, vector of length 2 (nrow, ncol), response options will be drawn in a nrow x ncol array. Further details in `par()` documentation}
 }
 \value{
 A graphic

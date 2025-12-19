@@ -157,6 +157,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @param distractors integer, default length of the response list. Works also with a character vector with the labels of the desired distractors.
 #' @param labels character, alternative labels to be printed as the main title of the distractors (main = TRUE). The labels must have the same length as the vector of distractors.
 #' @param print logical, print all the distractors together (default, FALSE) or one by one (TRUE)
+#' @param frow numeric, vector of length 2 (nrow, ncol), response options will be drawn in a nrow x ncol array. Further details in `par()` documentation
 #' @param ... other arguments
 #'
 #' @return A graphic of the matriks
@@ -175,21 +176,23 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 draw.responses <- function(obj, main = FALSE, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,
-                           distractors = NULL, labels = NULL, print = FALSE,
+                           distractors = NULL, labels = NULL,
+                           print = FALSE, frow = NULL,
                            ...) {
   oldpar <- par(no.readonly = TRUE)
   on.exit(par(oldpar))
-  distractors <- 1:length(obj)
+  if (is.null(distractors)) distractors <- 1:length(obj)
+  if (is.null(frow)) frow = c(2, round(length(distractors)/2 +0.2) )
+  if (prod(frow) < length(distractors)) stop("There's not enough space for all the selected response options, increase frow")
   if (is.null(labels) == TRUE) {
     labels <- names(obj)
-    # distractors <- names(obj)
   } else if (is.null(labels) == FALSE) {
     labels <- labels
     main <- TRUE
   }
 
   if (print == FALSE) {
-    par(mfrow =c(2, round(length(distractors)/2 +0.2) ),
+    par(mfrow = frow,
         mar = c(0.5, 6, 0.5, 2) + .1,
         mai=c(.1,.1,.1,.1),oma=c(4,4,0.2,0.2) )
 
@@ -198,7 +201,7 @@ draw.responses <- function(obj, main = FALSE, canvas = TRUE,
         mai=c(.1,.1,.1,.1),oma=c(4,4,0.2,0.2) )
   }
 
-  if (is.null(labels) == FALSE | main == TRUE) {
+  if (main == TRUE) {
     for (i in 1:length(distractors)) {
       draw(obj[[distractors[i]]], main = labels[i])
     }
