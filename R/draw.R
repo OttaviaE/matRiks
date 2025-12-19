@@ -154,7 +154,7 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' @param bg character, define the color background. Default is white
 #' @param mar numeric vector, change margins of the canvas
 #' @param xlim numeric, change the length of the x axis
-#' @param distractors character, names of the distractors to be printed
+#' @param distractors integer, default length of the response list. Works also with a character vector with the labels of the desired distractors.
 #' @param labels character, alternative labels to be printed as the main title of the distractors (main = TRUE). The labels must have the same length as the vector of distractors.
 #' @param print logical, print all the distractors together (default, FALSE) or one by one (TRUE)
 #' @param ... other arguments
@@ -172,17 +172,20 @@ draw.matriks<- function(obj, main = NULL, canvas = TRUE,
 #' my_resp <- response_list(my_mat)
 #' # draw response list
 #' draw(my_resp)
-draw.responses <- function(obj, main = NULL, canvas = TRUE,
+draw.responses <- function(obj, main = FALSE, canvas = TRUE,
                            hide = FALSE,
                            bg = "white",mar=c(1,1,1,1),xlim=16,
                            distractors = NULL, labels = NULL, print = FALSE,
                            ...) {
   oldpar <- par(no.readonly = TRUE)
   on.exit(par(oldpar))
-  if (is.null(distractors) == TRUE & is.null(labels) == TRUE) {
+  distractors <- 1:length(obj)
+  if (is.null(labels) == TRUE) {
     labels <- names(obj)
+    # distractors <- names(obj)
   } else if (is.null(labels) == FALSE) {
     labels <- labels
+    main <- TRUE
   }
 
   if (print == FALSE) {
@@ -195,9 +198,9 @@ draw.responses <- function(obj, main = NULL, canvas = TRUE,
         mai=c(.1,.1,.1,.1),oma=c(4,4,0.2,0.2) )
   }
 
-  if (is.null(main) == FALSE) {
+  if (is.null(labels) == FALSE | main == TRUE) {
     for (i in 1:length(distractors)) {
-      draw(obj[[distractors[i]]], main <- labels[i])
+      draw(obj[[distractors[i]]], main = labels[i])
     }
   } else {
     for (i in 1:length(distractors)) {

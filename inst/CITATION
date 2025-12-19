@@ -1,6 +1,6 @@
 citHeader("If you use the matRiks package, please cite the following article:")
 
-citEntry(
+bibentry(bibtype = "article",
   entry    = "Article",
   title    = "Automatic Generation of Rule-Based Raven-Like Matrices in R: The matRiks Package",
   author   = c(

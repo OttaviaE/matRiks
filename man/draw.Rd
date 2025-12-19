@@ -42,13 +42,14 @@ draw(
 
 \method{draw}{responses}(
   obj,
-  main = NULL,
+  main = FALSE,
   canvas = TRUE,
   hide = FALSE,
   bg = "white",
   mar = c(1, 1, 1, 1),
   xlim = 16,
   distractors = NULL,
+  labels = NULL,
   print = FALSE,
   ...
 )
@@ -70,7 +71,9 @@ draw(
 
 \item{...}{other arguments}
 
-\item{distractors}{character, names of the distractors to be printed}
+\item{distractors}{integer, default length of the response list. Works also with a character vector with the labels of the desired distractors.}
+
+\item{labels}{character, alternative labels to be printed as the main title of the distractors (main = TRUE). The labels must have the same length as the vector of distractors.}
 
 \item{print}{logical, print all the distractors together (default, FALSE) or one by one (TRUE)}
 }

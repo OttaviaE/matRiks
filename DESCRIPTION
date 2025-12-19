@@ -1,11 +1,18 @@
 Package: matRiks
 Type: Package
 Title: Generates Raven-Like Matrices According to Rules
-Version: 0.1.3
-Author: Andrea Brancaccio [aut, ctb, cph, cre],
-  Ottavia M. Epifania [aut, ctb, com],
-  Debora de Chiusole [ctb]
-Maintainer: Andrea Brancaccio <andrea.brancaccio@unipd.it>
+Version: 0.1.4
+Authors@R: c(person(given = "Andrea",
+                      family = "Brancaccio",
+                      role = c("aut", "ctb", "cph", "cre"),
+                      email = "andreabrancaccio01@gmail.com"),
+               person(given = c("Ottavia", "M."),
+                      family = "Epifania",
+                      role = c("aut", "ctb", "com")),
+               person(given = "Debora",
+                      family = "de Chiusole",
+                      role = "ctb"))
+Maintainer: Andrea Brancaccio <andreabrancaccio01@gmail.com>
 Description: Generates Raven like matrices according to different rules and the response list associated to the matrix. The package can generate matrices composed of 4 or 9 cells, along with a response list of 11 elements (the correct response + 10 incorrect responses). The matrices can be generated according to both logical rules (i.e., the relationships between the elements in the matrix are manipulated to create the matrix) and visual-spatial rules (i.e., the visual or spatial characteristics of the elements are manipulated to generate the matrix).
     The graphical elements of this package are based on the 'DescTools' package.
     This package has been developed within the PRIN2020 Project (Prot. 20209WKCLL) titled "Computerized, Adaptive and Personalized Assessment of Executive Functions and Fluid Intelligence" and founded by the Italian Ministry of Education and Research.
@@ -21,5 +28,5 @@ Suggests:
     testthat (>= 3.0.0),
     V8
 Config/testthat/edition: 3
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
